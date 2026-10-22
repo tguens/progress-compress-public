@@ -1,0 +1,3 @@
+[2026-10-20 22:42:14,719][opentelemetry.exporter.otlp.proto.http.metric_exporter][WARNING] - Transient error Bad Gateway encountered while exporting metrics batch, retrying in 1.08s.
+[2026-10-20 22:42:15,877][opentelemetry.exporter.otlp.proto.http.metric_exporter][WARNING] - Transient error Bad Gateway encountered while exporting metrics batch, retrying in 1.82s.
+[2026-10-21 01:59:52,503][opentelemetry.exporter.otlp.proto.http.metric_exporter][WARNING] - Transient error Service Unavailable encountered while exporting metrics batch, retrying in 1.02s.

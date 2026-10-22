@@ -1,0 +1,189 @@
+Using device: cuda
+wandb: [wandb.login()] Loaded credentials for https://api.forge.coreweave.com from /root/.netrc.
+wandb: Currently logged in as: tg-2746 (tg-2746-n-a) to https://api.forge.coreweave.com. Use `wandb login --relogin` to force relogin
+wandb: setting up run 6po2i37o
+wandb: Tracking run with wandb version 0.31.0
+wandb: Run data is saved locally in /root/pc-cleanup/outputs/atari/pc_single/pcsingle_Hero_s0/wandb/run-20261022_101405-6po2i37o
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run pcsingle_Hero_s0
+wandb: ⭐️ View project at https://forge.coreweave.com/wandb/tg-2746-n-a/progress-compress
+wandb: 🚀 View run at https://forge.coreweave.com/wandb/tg-2746-n-a/progress-compress/runs/6po2i37o
+[T0 Hero-v5] actions=18 random return=585.5
+[progress Hero-v5] step=102400 SPS=1575 return(last 20)=2716.0 entropy=2.707
+[progress Hero-v5] step=204800 SPS=1617 return(last 20)=3326.8 entropy=2.474
+[progress Hero-v5] step=307200 SPS=1630 return(last 20)=3416.2 entropy=2.392
+[progress Hero-v5] step=409600 SPS=1637 return(last 20)=3420.5 entropy=2.268
+[progress Hero-v5] step=512000 SPS=1639 return(last 20)=3725.2 entropy=2.194
+[progress Hero-v5] step=614400 SPS=1640 return(last 20)=5617.0 entropy=2.226
+[progress Hero-v5] step=716800 SPS=1641 return(last 20)=6274.0 entropy=2.061
+[progress Hero-v5] step=819200 SPS=1644 return(last 20)=2963.5 entropy=2.227
+[progress Hero-v5] step=921600 SPS=1645 return(last 20)=6702.0 entropy=2.251
+[progress Hero-v5] step=1024000 SPS=1644 return(last 20)=6445.5 entropy=2.576
+[progress Hero-v5] step=1126400 SPS=1644 return(last 20)=4249.0 entropy=2.579
+[progress Hero-v5] step=1228800 SPS=1643 return(last 20)=6295.0 entropy=2.445
+[progress Hero-v5] step=1331200 SPS=1641 return(last 20)=7289.2 entropy=2.304
+[progress Hero-v5] step=1433600 SPS=1640 return(last 20)=9437.8 entropy=2.219
+[progress Hero-v5] step=1536000 SPS=1639 return(last 20)=6858.8 entropy=2.233
+[progress Hero-v5] step=1638400 SPS=1639 return(last 20)=7438.2 entropy=2.360
+[progress Hero-v5] step=1740800 SPS=1637 return(last 20)=10590.0 entropy=2.189
+[progress Hero-v5] step=1843200 SPS=1634 return(last 20)=11327.2 entropy=2.344
+[progress Hero-v5] step=1945600 SPS=1632 return(last 20)=12467.2 entropy=2.148
+[progress Hero-v5] step=2048000 SPS=1630 return(last 20)=12970.0 entropy=1.985
+[progress Hero-v5] step=2150400 SPS=1628 return(last 20)=13333.0 entropy=2.151
+[progress Hero-v5] step=2252800 SPS=1626 return(last 20)=12889.0 entropy=2.147
+[progress Hero-v5] step=2355200 SPS=1629 return(last 20)=12473.5 entropy=1.982
+[progress Hero-v5] step=2457600 SPS=1633 return(last 20)=13391.5 entropy=2.187
+[progress Hero-v5] step=2560000 SPS=1637 return(last 20)=12020.8 entropy=2.237
+[progress Hero-v5] step=2662400 SPS=1640 return(last 20)=13320.2 entropy=2.016
+[progress Hero-v5] step=2764800 SPS=1643 return(last 20)=13412.0 entropy=2.129
+[progress Hero-v5] step=2867200 SPS=1646 return(last 20)=12374.2 entropy=2.042
+[progress Hero-v5] step=2969600 SPS=1650 return(last 20)=13302.0 entropy=2.103
+[progress Hero-v5] step=3072000 SPS=1653 return(last 20)=13092.2 entropy=1.941
+[progress Hero-v5] step=3174400 SPS=1656 return(last 20)=13467.0 entropy=2.101
+[progress Hero-v5] step=3276800 SPS=1658 return(last 20)=13521.8 entropy=1.917
+[progress Hero-v5] step=3379200 SPS=1660 return(last 20)=12305.5 entropy=1.971
+[progress Hero-v5] step=3481600 SPS=1663 return(last 20)=12955.0 entropy=1.961
+[progress Hero-v5] step=3584000 SPS=1664 return(last 20)=13564.8 entropy=1.926
+[progress Hero-v5] step=3686400 SPS=1666 return(last 20)=12996.8 entropy=2.022
+[progress Hero-v5] step=3788800 SPS=1667 return(last 20)=13556.0 entropy=1.909
+[progress Hero-v5] step=3891200 SPS=1669 return(last 20)=13537.2 entropy=1.984
+[progress Hero-v5] step=3993600 SPS=1669 return(last 20)=13525.8 entropy=1.963
+[progress Hero-v5] step=4096000 SPS=1669 return(last 20)=11934.8 entropy=2.212
+[progress Hero-v5] step=4198400 SPS=1670 return(last 20)=11034.2 entropy=1.908
+[progress Hero-v5] step=4300800 SPS=1671 return(last 20)=11825.0 entropy=2.153
+[progress Hero-v5] step=4403200 SPS=1672 return(last 20)=12190.0 entropy=2.017
+[progress Hero-v5] step=4505600 SPS=1673 return(last 20)=12256.0 entropy=2.049
+[progress Hero-v5] step=4608000 SPS=1674 return(last 20)=13072.2 entropy=2.156
+[progress Hero-v5] step=4710400 SPS=1675 return(last 20)=12270.0 entropy=2.054
+[progress Hero-v5] step=4812800 SPS=1676 return(last 20)=12478.5 entropy=2.032
+[progress Hero-v5] step=4915200 SPS=1676 return(last 20)=12321.0 entropy=1.950
+[progress Hero-v5] step=5017600 SPS=1677 return(last 20)=11818.0 entropy=1.916
+[progress Hero-v5] step=5120000 SPS=1676 return(last 20)=13221.0 entropy=2.064
+[progress Hero-v5] step=5222400 SPS=1676 return(last 20)=13557.0 entropy=1.844
+[progress Hero-v5] step=5324800 SPS=1676 return(last 20)=12599.2 entropy=2.173
+[progress Hero-v5] step=5427200 SPS=1675 return(last 20)=13223.8 entropy=2.135
+[progress Hero-v5] step=5529600 SPS=1674 return(last 20)=13290.0 entropy=2.110
+[progress Hero-v5] step=5632000 SPS=1673 return(last 20)=13296.2 entropy=2.013
+[progress Hero-v5] step=5734400 SPS=1672 return(last 20)=13563.2 entropy=2.055
+[progress Hero-v5] step=5836800 SPS=1672 return(last 20)=12597.0 entropy=2.204
+[progress Hero-v5] step=5939200 SPS=1672 return(last 20)=13347.2 entropy=2.027
+[progress Hero-v5] step=6041600 SPS=1672 return(last 20)=13718.5 entropy=2.223
+[progress Hero-v5] step=6144000 SPS=1671 return(last 20)=13660.2 entropy=2.150
+[progress Hero-v5] step=6246400 SPS=1670 return(last 20)=14576.0 entropy=2.127
+[progress Hero-v5] step=6348800 SPS=1670 return(last 20)=13568.5 entropy=1.953
+[progress Hero-v5] step=6451200 SPS=1671 return(last 20)=13757.0 entropy=2.065
+[progress Hero-v5] step=6553600 SPS=1671 return(last 20)=15214.8 entropy=2.063
+[progress Hero-v5] step=6656000 SPS=1671 return(last 20)=13648.5 entropy=2.121
+[progress Hero-v5] step=6758400 SPS=1671 return(last 20)=15205.8 entropy=1.879
+[progress Hero-v5] step=6860800 SPS=1671 return(last 20)=14298.2 entropy=2.043
+[progress Hero-v5] step=6963200 SPS=1671 return(last 20)=16557.2 entropy=1.824
+[progress Hero-v5] step=7065600 SPS=1671 return(last 20)=17249.2 entropy=1.621
+[progress Hero-v5] step=7168000 SPS=1671 return(last 20)=17199.5 entropy=2.197
+[progress Hero-v5] step=7270400 SPS=1671 return(last 20)=15994.2 entropy=2.457
+[progress Hero-v5] step=7372800 SPS=1671 return(last 20)=15139.2 entropy=2.161
+[progress Hero-v5] step=7475200 SPS=1671 return(last 20)=15682.5 entropy=2.220
+[progress Hero-v5] step=7577600 SPS=1672 return(last 20)=16827.5 entropy=2.228
+[progress Hero-v5] step=7680000 SPS=1673 return(last 20)=15733.8 entropy=2.136
+[progress Hero-v5] step=7782400 SPS=1674 return(last 20)=15044.5 entropy=2.224
+[progress Hero-v5] step=7884800 SPS=1674 return(last 20)=16538.0 entropy=2.172
+[progress Hero-v5] step=7987200 SPS=1675 return(last 20)=17186.2 entropy=2.003
+[progress Hero-v5] step=8089600 SPS=1676 return(last 20)=16931.0 entropy=1.926
+[progress Hero-v5] step=8192000 SPS=1677 return(last 20)=18565.2 entropy=2.035
+[progress Hero-v5] step=8294400 SPS=1677 return(last 20)=18906.5 entropy=1.928
+[progress Hero-v5] step=8396800 SPS=1678 return(last 20)=19346.5 entropy=1.967
+[progress Hero-v5] step=8499200 SPS=1678 return(last 20)=18747.2 entropy=1.968
+[progress Hero-v5] step=8601600 SPS=1679 return(last 20)=15060.0 entropy=1.962
+[progress Hero-v5] step=8704000 SPS=1679 return(last 20)=17373.8 entropy=2.098
+[progress Hero-v5] step=8806400 SPS=1680 return(last 20)=18879.5 entropy=1.965
+[progress Hero-v5] step=8908800 SPS=1680 return(last 20)=19698.0 entropy=2.046
+[progress Hero-v5] step=9011200 SPS=1680 return(last 20)=19055.2 entropy=2.149
+[progress Hero-v5] step=9113600 SPS=1679 return(last 20)=20458.8 entropy=1.939
+[progress Hero-v5] step=9216000 SPS=1679 return(last 20)=20433.0 entropy=1.942
+[progress Hero-v5] step=9318400 SPS=1679 return(last 20)=19692.0 entropy=2.037
+[progress Hero-v5] step=9420800 SPS=1679 return(last 20)=19896.2 entropy=2.024
+[progress Hero-v5] step=9523200 SPS=1679 return(last 20)=19854.8 entropy=2.164
+[progress Hero-v5] step=9625600 SPS=1680 return(last 20)=18935.2 entropy=2.125
+[progress Hero-v5] step=9728000 SPS=1679 return(last 20)=19647.5 entropy=1.995
+[progress Hero-v5] step=9830400 SPS=1679 return(last 20)=20371.0 entropy=2.027
+[progress Hero-v5] step=9932800 SPS=1679 return(last 20)=20058.2 entropy=1.947
+[progress Hero-v5] step=9998336 SPS=1679 return(last 20)=20304.5 entropy=2.113
+[T0] active policy return=20405.0 ± 0.0 (5964 s)
+[compress] epoch 0 kl=0.6770 ewc=0.0000
+[compress] epoch 1 kl=0.4909 ewc=0.0000
+[compress] epoch 2 kl=0.3782 ewc=0.0000
+[compress] epoch 3 kl=0.2864 ewc=0.0000
+[compress] epoch 4 kl=0.2169 ewc=0.0000
+[compress] epoch 5 kl=0.1691 ewc=0.0000
+[compress] epoch 6 kl=0.1442 ewc=0.0000
+[compress] epoch 7 kl=0.1093 ewc=0.0000
+[compress] epoch 8 kl=0.0915 ewc=0.0000
+[compress] epoch 9 kl=0.0752 ewc=0.0000
+[compress] epoch 0 kl=0.1014 ewc=0.0000
+[compress] epoch 1 kl=0.0804 ewc=0.0000
+[compress] epoch 2 kl=0.0650 ewc=0.0000
+[compress] epoch 3 kl=0.0553 ewc=0.0000
+[compress] epoch 4 kl=0.0499 ewc=0.0000
+[compress] epoch 5 kl=0.0428 ewc=0.0000
+[compress] epoch 6 kl=0.0405 ewc=0.0000
+[compress] epoch 7 kl=0.0402 ewc=0.0000
+[compress] epoch 8 kl=0.0346 ewc=0.0000
+[compress] epoch 9 kl=0.0314 ewc=0.0000
+[compress] epoch 0 kl=0.0376 ewc=0.0000
+[compress] epoch 1 kl=0.0329 ewc=0.0000
+[compress] epoch 2 kl=0.0298 ewc=0.0000
+[compress] epoch 3 kl=0.0277 ewc=0.0000
+[compress] epoch 4 kl=0.0261 ewc=0.0000
+[compress] epoch 5 kl=0.0243 ewc=0.0000
+[compress] epoch 6 kl=0.0232 ewc=0.0000
+[compress] epoch 7 kl=0.0222 ewc=0.0000
+[compress] epoch 8 kl=0.0204 ewc=0.0000
+[compress] epoch 9 kl=0.0193 ewc=0.0000
+[compress] epoch 0 kl=0.0187 ewc=0.0000
+[compress] epoch 1 kl=0.0176 ewc=0.0000
+[compress] epoch 2 kl=0.0166 ewc=0.0000
+[compress] epoch 3 kl=0.0153 ewc=0.0000
+[compress] epoch 4 kl=0.0148 ewc=0.0000
+[compress] epoch 5 kl=0.0141 ewc=0.0000
+[compress] epoch 6 kl=0.0136 ewc=0.0000
+[compress] epoch 7 kl=0.0132 ewc=0.0000
+[compress] epoch 8 kl=0.0125 ewc=0.0000
+[compress] epoch 9 kl=0.0126 ewc=0.0000
+Computing Fisher matrix for task 0
+[Fisher T0] total_mass=1.413386e+03  per-param mean=8.392391e-04  max=1.000000e-02
+After T0: Hero-v5: 14471.5 (kl 0.006)
+Results saved to /root/pc-cleanup/outputs/atari/pc_single/pcsingle_Hero_s0/results.json
+wandb: WARNING Symlinked 1 file into the W&B run directory; call wandb.save again to sync new files.
+wandb: updating run metadata
+wandb: uploading history steps 4922-4922, summary, console lines 141-144
+wandb: 
+wandb: Run history:
+wandb:      compress/epoch ▁▁▁▂▂▂▂▂▂▃▃▃▃▃▄▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇███
+wandb:        compress/ewc ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         compress/kl █▆▅▄▃▃▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       compress/loss █▆▅▄▃▃▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     eval/Hero-v5/kl ▁
+wandb:   eval/Hero-v5/norm ▁
+wandb: eval/Hero-v5/return ▁
+wandb:   eval/all_avg_norm ▁
+wandb:         global_step ▁▂▂▂▂▂▂▂▂▃▃▃▃▄▄▄▄▄▄▄▅▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇███
+wandb:    progress/entropy █▆▅▄▇▄▃▃▂▃▂▄▄▃▃▂▃▁▃▄▄▂▃▄▂▄▂▃▃▆▃▅▄▄▃▃▁▂▃▃
+wandb:                 +11 ...
+wandb: 
+wandb: Run summary:
+wandb:      compress/epoch 39
+wandb:        compress/ewc 0
+wandb:         compress/kl 0.01259
+wandb:       compress/loss 0.01259
+wandb:     eval/Hero-v5/kl 0.00595
+wandb:   eval/Hero-v5/norm 0.70062
+wandb: eval/Hero-v5/return 14471.5
+wandb:   eval/all_avg_norm 0.70062
+wandb:  eval/prev_avg_norm nan
+wandb:         global_step 10000000
+wandb:                 +11 ...
+wandb: 
+wandb: 🚀 View run pcsingle_Hero_s0 at: https://forge.coreweave.com/wandb/tg-2746-n-a/progress-compress/runs/6po2i37o
+wandb: ⭐️ View project at: https://forge.coreweave.com/wandb/tg-2746-n-a/progress-compress
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 1 other file(s)
+wandb: Find logs at: ./outputs/atari/pc_single/pcsingle_Hero_s0/wandb/run-20261022_101405-6po2i37o/logs
+[W1022 11:54:15.027782687 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())

@@ -1,0 +1,62 @@
+# Task 2: Progress & Compress on Atari. Flat keys, one comment per key.
+seed: 0
+device: auto          # auto | cuda | cpu
+
+mode: pc              # pc | finetune | ewc. pc = Progress & Compress; finetune and ewc = one network trained by PPO on every game in turn (the paper's baselines), ewc adds the online EWC penalty to the PPO loss.
+games: [Pong-v5, Boxing-v5, Breakout-v5]   # envpool ids, one game = one task; a game may appear again (a re-visit keeps its heads)
+max_n_tasks: 3
+total_timesteps: [3000000, 2000000, 2000000]  # PPO budget per game, same length as games
+
+# Environments (envpool)
+num_envs: 8           # parallel training environments
+env_threads: 4        # envpool threads per environment pool
+n_eval_episodes: 10   # full games per evaluation, run in parallel
+eval_mode: sample     # sample | greedy. How the evaluated policy picks its action.
+
+# PPO (CleanRL ppo_atari_envpool defaults)
+num_steps: 128        # steps per environment in one rollout (CleanRL default)
+learning_rate: 2.5e-4 # Adam lr of the progress phase (CleanRL default)
+anneal_lr: true       # decay the lr linearly to 0 over each progress phase (CleanRL default)
+ppo_gamma: 0.99       # discount; `gamma` below is the EWC decay
+gae_lambda: 0.95      # GAE lambda (CleanRL default)
+num_minibatches: 4    # minibatches per rollout (CleanRL default)
+update_epochs: 4      # PPO epochs over each rollout (CleanRL default)
+norm_adv: true        # normalise the advantages per minibatch (CleanRL default)
+clip_coef: 0.1        # PPO ratio clip, also the value clip (CleanRL default)
+clip_vloss: true      # clip the value loss (CleanRL default)
+ent_coef: 0.01        # entropy bonus coefficient (CleanRL default)
+vf_coef: 0.5          # value loss coefficient (CleanRL default)
+max_grad_norm: 0.5    # gradient norm clip of PPO (CleanRL default)
+
+# Logging
+wandb: false                  # bool. Log to Weights & Biases; results.json is written in any case.
+wandb_project: progress-compress
+wandb_entity: null            # null | str. The wandb team; null = the default entity of the login.
+
+# Model
+adaptor_init: uniform  # uniform | gaussian
+save_teachers: false   # save the agent after each progress phase as <run dir>/teacher_T<k>.pt
+checkpoint_every: 0    # int, PPO steps. > 0: save the agent every N steps of each progress phase as <run dir>/ckpt/T<k>_<step>.pt, and after each task as T<k>_end.pt (for the gameplay animation). 0 = off.
+teachers_dir: null     # null | path. Compress-only mode: load the teachers from that run instead of running PPO.
+
+# Compress phase: distillation of the frozen active policy into the KB
+compress_n_states: 16384   # states collected per round
+compress_n_rounds: 4       # round 0: states of the active policy; rounds 1+: states of the KB policy, labelled by the teacher (DAgger)
+compress_optimizer: sgd    # adam | sgd
+sgd_momentum: 0.9
+compress_lr: 0.01          # lr of the compress optimizer
+n_epochs_compress: 10      # epochs over the buffer in each round
+compress_head_warmup: 0    # int. Epochs of round 0 that move only the KB head.
+compress_max_grad_norm: null  # null | float. Gradient norm clip of the KB in the compress phase (PPO uses 0.5).
+compress_batch_size: 256   # minibatch size of the compress phase
+compress_online: false        # bool. true = after round 0, distil on fresh rollouts of the KB policy (the paper's compress phase). false = the DAgger rounds on a buffer.
+compress_online_steps: 2000000   # env steps of the online phase per compress phase (compress_online only)
+compress_online_epochs: 1     # SGD passes over each rollout of num_envs * num_steps states (compress_online only)
+tau: 1.0                      # distillation temperature
+
+# EWC
+ewc_lambda: 500.0         # EWC penalty weight (compress phase; the PPO loss in mode=ewc)
+gamma: 0.99               # running Fisher decay (paper eq. 8)
+fisher_n_samples: 1024    # states for the diagonal Fisher, one backward each
+normalize_fisher: false
+fisher_clip: 0.01         # null | float. Clip each diagonal Fisher entry.

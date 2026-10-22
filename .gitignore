@@ -1,0 +1,16 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Omniglot is downloaded here on first run
+data/
+
+# Fresh runs (reference results live in reference_outputs/)
+outputs/
+.claude/
+
+# Weights & Biases local run files
+wandb/

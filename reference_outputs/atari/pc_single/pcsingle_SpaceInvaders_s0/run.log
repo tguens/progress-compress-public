@@ -1,0 +1,189 @@
+Using device: cuda
+wandb: [wandb.login()] Loaded credentials for https://api.forge.coreweave.com from /root/.netrc.
+wandb: Currently logged in as: tg-2746 (tg-2746-n-a) to https://api.forge.coreweave.com. Use `wandb login --relogin` to force relogin
+wandb: setting up run ypl88ns7
+wandb: Tracking run with wandb version 0.31.0
+wandb: Run data is saved locally in /root/pc-cleanup/outputs/atari/pc_single/pcsingle_SpaceInvaders_s0/wandb/run-20261022_101405-ypl88ns7
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run pcsingle_SpaceInvaders_s0
+wandb: ⭐️ View project at https://forge.coreweave.com/wandb/tg-2746-n-a/progress-compress
+wandb: 🚀 View run at https://forge.coreweave.com/wandb/tg-2746-n-a/progress-compress/runs/ypl88ns7
+[T0 SpaceInvaders-v5] actions=6 random return=129.0
+[progress SpaceInvaders-v5] step=102400 SPS=1694 return(last 20)=148.0 entropy=1.700
+[progress SpaceInvaders-v5] step=204800 SPS=1723 return(last 20)=231.0 entropy=1.596
+[progress SpaceInvaders-v5] step=307200 SPS=1737 return(last 20)=275.0 entropy=1.464
+[progress SpaceInvaders-v5] step=409600 SPS=1752 return(last 20)=350.0 entropy=1.269
+[progress SpaceInvaders-v5] step=512000 SPS=1762 return(last 20)=416.8 entropy=1.378
+[progress SpaceInvaders-v5] step=614400 SPS=1768 return(last 20)=378.5 entropy=1.348
+[progress SpaceInvaders-v5] step=716800 SPS=1777 return(last 20)=476.8 entropy=1.365
+[progress SpaceInvaders-v5] step=819200 SPS=1788 return(last 20)=416.0 entropy=1.288
+[progress SpaceInvaders-v5] step=921600 SPS=1794 return(last 20)=419.2 entropy=1.284
+[progress SpaceInvaders-v5] step=1024000 SPS=1795 return(last 20)=460.2 entropy=1.012
+[progress SpaceInvaders-v5] step=1126400 SPS=1797 return(last 20)=412.8 entropy=1.221
+[progress SpaceInvaders-v5] step=1228800 SPS=1798 return(last 20)=479.0 entropy=1.086
+[progress SpaceInvaders-v5] step=1331200 SPS=1800 return(last 20)=478.8 entropy=1.214
+[progress SpaceInvaders-v5] step=1433600 SPS=1801 return(last 20)=413.0 entropy=1.132
+[progress SpaceInvaders-v5] step=1536000 SPS=1801 return(last 20)=507.5 entropy=1.164
+[progress SpaceInvaders-v5] step=1638400 SPS=1803 return(last 20)=477.5 entropy=1.093
+[progress SpaceInvaders-v5] step=1740800 SPS=1803 return(last 20)=444.5 entropy=1.143
+[progress SpaceInvaders-v5] step=1843200 SPS=1803 return(last 20)=512.5 entropy=0.907
+[progress SpaceInvaders-v5] step=1945600 SPS=1801 return(last 20)=501.2 entropy=1.020
+[progress SpaceInvaders-v5] step=2048000 SPS=1798 return(last 20)=480.2 entropy=1.026
+[progress SpaceInvaders-v5] step=2150400 SPS=1794 return(last 20)=560.0 entropy=1.041
+[progress SpaceInvaders-v5] step=2252800 SPS=1792 return(last 20)=497.5 entropy=0.994
+[progress SpaceInvaders-v5] step=2355200 SPS=1792 return(last 20)=538.8 entropy=0.980
+[progress SpaceInvaders-v5] step=2457600 SPS=1788 return(last 20)=504.5 entropy=1.077
+[progress SpaceInvaders-v5] step=2560000 SPS=1790 return(last 20)=525.0 entropy=1.004
+[progress SpaceInvaders-v5] step=2662400 SPS=1795 return(last 20)=571.8 entropy=0.904
+[progress SpaceInvaders-v5] step=2764800 SPS=1798 return(last 20)=457.5 entropy=0.742
+[progress SpaceInvaders-v5] step=2867200 SPS=1802 return(last 20)=511.0 entropy=0.967
+[progress SpaceInvaders-v5] step=2969600 SPS=1806 return(last 20)=610.8 entropy=0.999
+[progress SpaceInvaders-v5] step=3072000 SPS=1809 return(last 20)=578.5 entropy=0.820
+[progress SpaceInvaders-v5] step=3174400 SPS=1812 return(last 20)=529.8 entropy=0.934
+[progress SpaceInvaders-v5] step=3276800 SPS=1815 return(last 20)=539.5 entropy=0.771
+[progress SpaceInvaders-v5] step=3379200 SPS=1818 return(last 20)=547.0 entropy=0.904
+[progress SpaceInvaders-v5] step=3481600 SPS=1821 return(last 20)=560.0 entropy=0.883
+[progress SpaceInvaders-v5] step=3584000 SPS=1824 return(last 20)=561.2 entropy=0.780
+[progress SpaceInvaders-v5] step=3686400 SPS=1826 return(last 20)=547.8 entropy=0.917
+[progress SpaceInvaders-v5] step=3788800 SPS=1829 return(last 20)=498.8 entropy=0.866
+[progress SpaceInvaders-v5] step=3891200 SPS=1831 return(last 20)=528.0 entropy=0.985
+[progress SpaceInvaders-v5] step=3993600 SPS=1832 return(last 20)=608.2 entropy=0.920
+[progress SpaceInvaders-v5] step=4096000 SPS=1834 return(last 20)=588.2 entropy=0.741
+[progress SpaceInvaders-v5] step=4198400 SPS=1836 return(last 20)=577.8 entropy=1.034
+[progress SpaceInvaders-v5] step=4300800 SPS=1838 return(last 20)=595.8 entropy=0.967
+[progress SpaceInvaders-v5] step=4403200 SPS=1839 return(last 20)=572.5 entropy=0.895
+[progress SpaceInvaders-v5] step=4505600 SPS=1840 return(last 20)=642.0 entropy=0.822
+[progress SpaceInvaders-v5] step=4608000 SPS=1841 return(last 20)=629.0 entropy=0.882
+[progress SpaceInvaders-v5] step=4710400 SPS=1842 return(last 20)=681.2 entropy=1.050
+[progress SpaceInvaders-v5] step=4812800 SPS=1843 return(last 20)=604.0 entropy=0.971
+[progress SpaceInvaders-v5] step=4915200 SPS=1845 return(last 20)=624.0 entropy=1.037
+[progress SpaceInvaders-v5] step=5017600 SPS=1845 return(last 20)=640.0 entropy=0.926
+[progress SpaceInvaders-v5] step=5120000 SPS=1847 return(last 20)=634.2 entropy=1.016
+[progress SpaceInvaders-v5] step=5222400 SPS=1848 return(last 20)=646.2 entropy=1.096
+[progress SpaceInvaders-v5] step=5324800 SPS=1849 return(last 20)=587.8 entropy=1.063
+[progress SpaceInvaders-v5] step=5427200 SPS=1849 return(last 20)=770.0 entropy=0.979
+[progress SpaceInvaders-v5] step=5529600 SPS=1849 return(last 20)=730.2 entropy=1.014
+[progress SpaceInvaders-v5] step=5632000 SPS=1849 return(last 20)=697.8 entropy=0.953
+[progress SpaceInvaders-v5] step=5734400 SPS=1849 return(last 20)=793.0 entropy=0.915
+[progress SpaceInvaders-v5] step=5836800 SPS=1849 return(last 20)=596.0 entropy=1.054
+[progress SpaceInvaders-v5] step=5939200 SPS=1850 return(last 20)=674.0 entropy=1.043
+[progress SpaceInvaders-v5] step=6041600 SPS=1849 return(last 20)=633.8 entropy=0.936
+[progress SpaceInvaders-v5] step=6144000 SPS=1849 return(last 20)=710.2 entropy=0.911
+[progress SpaceInvaders-v5] step=6246400 SPS=1849 return(last 20)=724.8 entropy=0.985
+[progress SpaceInvaders-v5] step=6348800 SPS=1849 return(last 20)=614.5 entropy=0.956
+[progress SpaceInvaders-v5] step=6451200 SPS=1850 return(last 20)=746.2 entropy=0.869
+[progress SpaceInvaders-v5] step=6553600 SPS=1850 return(last 20)=777.5 entropy=1.055
+[progress SpaceInvaders-v5] step=6656000 SPS=1850 return(last 20)=821.0 entropy=0.957
+[progress SpaceInvaders-v5] step=6758400 SPS=1850 return(last 20)=826.8 entropy=0.940
+[progress SpaceInvaders-v5] step=6860800 SPS=1850 return(last 20)=791.5 entropy=1.053
+[progress SpaceInvaders-v5] step=6963200 SPS=1850 return(last 20)=925.8 entropy=0.903
+[progress SpaceInvaders-v5] step=7065600 SPS=1849 return(last 20)=922.8 entropy=0.965
+[progress SpaceInvaders-v5] step=7168000 SPS=1850 return(last 20)=703.2 entropy=1.028
+[progress SpaceInvaders-v5] step=7270400 SPS=1850 return(last 20)=768.8 entropy=1.015
+[progress SpaceInvaders-v5] step=7372800 SPS=1850 return(last 20)=859.5 entropy=0.883
+[progress SpaceInvaders-v5] step=7475200 SPS=1851 return(last 20)=808.8 entropy=0.910
+[progress SpaceInvaders-v5] step=7577600 SPS=1851 return(last 20)=869.0 entropy=0.946
+[progress SpaceInvaders-v5] step=7680000 SPS=1851 return(last 20)=829.2 entropy=0.846
+[progress SpaceInvaders-v5] step=7782400 SPS=1852 return(last 20)=909.0 entropy=0.978
+[progress SpaceInvaders-v5] step=7884800 SPS=1852 return(last 20)=888.2 entropy=0.899
+[progress SpaceInvaders-v5] step=7987200 SPS=1852 return(last 20)=812.8 entropy=0.815
+[progress SpaceInvaders-v5] step=8089600 SPS=1852 return(last 20)=913.2 entropy=0.949
+[progress SpaceInvaders-v5] step=8192000 SPS=1852 return(last 20)=901.2 entropy=0.845
+[progress SpaceInvaders-v5] step=8294400 SPS=1853 return(last 20)=865.2 entropy=0.890
+[progress SpaceInvaders-v5] step=8396800 SPS=1853 return(last 20)=764.0 entropy=0.868
+[progress SpaceInvaders-v5] step=8499200 SPS=1854 return(last 20)=799.5 entropy=0.966
+[progress SpaceInvaders-v5] step=8601600 SPS=1855 return(last 20)=967.2 entropy=0.902
+[progress SpaceInvaders-v5] step=8704000 SPS=1856 return(last 20)=893.0 entropy=0.880
+[progress SpaceInvaders-v5] step=8806400 SPS=1856 return(last 20)=913.5 entropy=0.912
+[progress SpaceInvaders-v5] step=8908800 SPS=1857 return(last 20)=973.5 entropy=0.995
+[progress SpaceInvaders-v5] step=9011200 SPS=1858 return(last 20)=874.2 entropy=0.930
+[progress SpaceInvaders-v5] step=9113600 SPS=1858 return(last 20)=921.5 entropy=0.868
+[progress SpaceInvaders-v5] step=9216000 SPS=1859 return(last 20)=977.0 entropy=0.899
+[progress SpaceInvaders-v5] step=9318400 SPS=1859 return(last 20)=933.8 entropy=0.929
+[progress SpaceInvaders-v5] step=9420800 SPS=1860 return(last 20)=1059.5 entropy=0.925
+[progress SpaceInvaders-v5] step=9523200 SPS=1861 return(last 20)=993.8 entropy=0.848
+[progress SpaceInvaders-v5] step=9625600 SPS=1861 return(last 20)=1001.0 entropy=0.901
+[progress SpaceInvaders-v5] step=9728000 SPS=1862 return(last 20)=993.5 entropy=0.938
+[progress SpaceInvaders-v5] step=9830400 SPS=1862 return(last 20)=995.0 entropy=0.995
+[progress SpaceInvaders-v5] step=9932800 SPS=1863 return(last 20)=931.8 entropy=0.833
+[progress SpaceInvaders-v5] step=9998336 SPS=1864 return(last 20)=920.8 entropy=0.952
+[T0] active policy return=1048.0 ± 59.3 (5370 s)
+[compress] epoch 0 kl=0.8112 ewc=0.0000
+[compress] epoch 1 kl=0.6740 ewc=0.0000
+[compress] epoch 2 kl=0.5585 ewc=0.0000
+[compress] epoch 3 kl=0.4742 ewc=0.0000
+[compress] epoch 4 kl=0.4170 ewc=0.0000
+[compress] epoch 5 kl=0.3688 ewc=0.0000
+[compress] epoch 6 kl=0.3389 ewc=0.0000
+[compress] epoch 7 kl=0.3197 ewc=0.0000
+[compress] epoch 8 kl=0.2942 ewc=0.0000
+[compress] epoch 9 kl=0.2660 ewc=0.0000
+[compress] epoch 0 kl=0.2940 ewc=0.0000
+[compress] epoch 1 kl=0.2277 ewc=0.0000
+[compress] epoch 2 kl=0.1954 ewc=0.0000
+[compress] epoch 3 kl=0.1602 ewc=0.0000
+[compress] epoch 4 kl=0.1399 ewc=0.0000
+[compress] epoch 5 kl=0.1247 ewc=0.0000
+[compress] epoch 6 kl=0.1104 ewc=0.0000
+[compress] epoch 7 kl=0.0998 ewc=0.0000
+[compress] epoch 8 kl=0.0938 ewc=0.0000
+[compress] epoch 9 kl=0.0854 ewc=0.0000
+[compress] epoch 0 kl=0.1048 ewc=0.0000
+[compress] epoch 1 kl=0.0875 ewc=0.0000
+[compress] epoch 2 kl=0.0771 ewc=0.0000
+[compress] epoch 3 kl=0.0699 ewc=0.0000
+[compress] epoch 4 kl=0.0630 ewc=0.0000
+[compress] epoch 5 kl=0.0599 ewc=0.0000
+[compress] epoch 6 kl=0.0549 ewc=0.0000
+[compress] epoch 7 kl=0.0525 ewc=0.0000
+[compress] epoch 8 kl=0.0494 ewc=0.0000
+[compress] epoch 9 kl=0.0459 ewc=0.0000
+[compress] epoch 0 kl=0.0589 ewc=0.0000
+[compress] epoch 1 kl=0.0514 ewc=0.0000
+[compress] epoch 2 kl=0.0474 ewc=0.0000
+[compress] epoch 3 kl=0.0439 ewc=0.0000
+[compress] epoch 4 kl=0.0427 ewc=0.0000
+[compress] epoch 5 kl=0.0403 ewc=0.0000
+[compress] epoch 6 kl=0.0381 ewc=0.0000
+[compress] epoch 7 kl=0.0368 ewc=0.0000
+[compress] epoch 8 kl=0.0351 ewc=0.0000
+[compress] epoch 9 kl=0.0332 ewc=0.0000
+Computing Fisher matrix for task 0
+[Fisher T0] total_mass=7.021122e+02  per-param mean=4.168996e-04  max=1.000000e-02
+After T0: SpaceInvaders-v5: 982.5 (kl 0.008)
+Results saved to /root/pc-cleanup/outputs/atari/pc_single/pcsingle_SpaceInvaders_s0/results.json
+wandb: WARNING Symlinked 1 file into the W&B run directory; call wandb.save again to sync new files.
+wandb: updating run metadata
+wandb: uploading history steps 4920-4922, summary, console lines 138-144
+wandb: 
+wandb: Run history:
+wandb:               compress/epoch ▁▁▁▂▂▂▂▂▂▃▃▃▃▃▄▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇███
+wandb:                 compress/ewc ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:                  compress/kl █▇▆▅▄▄▄▄▃▃▃▃▂▂▂▂▂▂▂▁▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:                compress/loss █▇▆▅▄▄▄▄▃▃▃▃▂▂▂▂▂▂▂▁▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     eval/SpaceInvaders-v5/kl ▁
+wandb:   eval/SpaceInvaders-v5/norm ▁
+wandb: eval/SpaceInvaders-v5/return ▁
+wandb:            eval/all_avg_norm ▁
+wandb:                  global_step ▁▁▁▂▂▂▂▃▃▃▃▃▃▃▃▄▄▄▅▅▅▅▅▅▅▅▆▆▆▆▆▆▆▆▇▇▇███
+wandb:             progress/entropy █▆▆▆▅▄▅▅▅▃▃▃▃▂▂▃▁▁▃▃▄▄▃▄▄▂▃▃▃▃▂▃▃▃▃▃▃▃▃▃
+wandb:                          +11 ...
+wandb: 
+wandb: Run summary:
+wandb:               compress/epoch 39
+wandb:                 compress/ewc 0
+wandb:                  compress/kl 0.0332
+wandb:                compress/loss 0.0332
+wandb:     eval/SpaceInvaders-v5/kl 0.00788
+wandb:   eval/SpaceInvaders-v5/norm 0.92873
+wandb: eval/SpaceInvaders-v5/return 982.5
+wandb:            eval/all_avg_norm 0.92873
+wandb:           eval/prev_avg_norm nan
+wandb:                  global_step 10000000
+wandb:                          +11 ...
+wandb: 
+wandb: 🚀 View run pcsingle_SpaceInvaders_s0 at: https://forge.coreweave.com/wandb/tg-2746-n-a/progress-compress/runs/ypl88ns7
+wandb: ⭐️ View project at: https://forge.coreweave.com/wandb/tg-2746-n-a/progress-compress
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 1 other file(s)
+wandb: Find logs at: ./outputs/atari/pc_single/pcsingle_SpaceInvaders_s0/wandb/run-20261022_101405-ypl88ns7/logs
+[W1022 11:44:12.740995805 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())

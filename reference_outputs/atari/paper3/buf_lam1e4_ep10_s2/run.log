@@ -1,0 +1,574 @@
+Using device: cuda
+Total number of model parameters: 5318701
+wandb: [wandb.login()] Loaded credentials for https://api.forge.coreweave.com from /root/.netrc.
+wandb: Currently logged in as: tg-2746 (tg-2746-n-a) to https://api.forge.coreweave.com. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.31.0
+wandb: Run data is saved locally in /root/progress-compress/outputs/atari/paper3/buf_lam1e4_ep10_s2/wandb/run-20261022_050834-vrzgil9x
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run buf_lam1e4_ep10_s2
+wandb: ⭐️ View project at https://forge.coreweave.com/wandb/tg-2746-n-a/progress-compress
+wandb: 🚀 View run at https://forge.coreweave.com/wandb/tg-2746-n-a/progress-compress/runs/vrzgil9x
+[T0 SpaceInvaders-v5] actions=6 random return=210.0
+[T0] active policy return=1398.0 ± 232.2 (12 s)
+[compress] epoch 0 kl=0.6835 ewc=0.0000
+[compress] epoch 1 kl=0.5423 ewc=0.0000
+[compress] epoch 2 kl=0.4708 ewc=0.0000
+[compress] epoch 3 kl=0.4226 ewc=0.0000
+[compress] epoch 4 kl=0.3911 ewc=0.0000
+[compress] epoch 5 kl=0.3700 ewc=0.0000
+[compress] epoch 6 kl=0.3530 ewc=0.0000
+[compress] epoch 7 kl=0.3428 ewc=0.0000
+[compress] epoch 8 kl=0.3283 ewc=0.0000
+[compress] epoch 9 kl=0.3192 ewc=0.0000
+[compress] epoch 0 kl=0.3525 ewc=0.0000
+[compress] epoch 1 kl=0.2923 ewc=0.0000
+[compress] epoch 2 kl=0.2674 ewc=0.0000
+[compress] epoch 3 kl=0.2477 ewc=0.0000
+[compress] epoch 4 kl=0.2325 ewc=0.0000
+[compress] epoch 5 kl=0.2197 ewc=0.0000
+[compress] epoch 6 kl=0.2088 ewc=0.0000
+[compress] epoch 7 kl=0.2010 ewc=0.0000
+[compress] epoch 8 kl=0.1924 ewc=0.0000
+[compress] epoch 9 kl=0.1850 ewc=0.0000
+[compress] epoch 0 kl=0.1993 ewc=0.0000
+[compress] epoch 1 kl=0.1816 ewc=0.0000
+[compress] epoch 2 kl=0.1706 ewc=0.0000
+[compress] epoch 3 kl=0.1596 ewc=0.0000
+[compress] epoch 4 kl=0.1497 ewc=0.0000
+[compress] epoch 5 kl=0.1438 ewc=0.0000
+[compress] epoch 6 kl=0.1381 ewc=0.0000
+[compress] epoch 7 kl=0.1349 ewc=0.0000
+[compress] epoch 8 kl=0.1302 ewc=0.0000
+[compress] epoch 9 kl=0.1234 ewc=0.0000
+[compress] epoch 0 kl=0.1331 ewc=0.0000
+[compress] epoch 1 kl=0.1268 ewc=0.0000
+[compress] epoch 2 kl=0.1202 ewc=0.0000
+[compress] epoch 3 kl=0.1151 ewc=0.0000
+[compress] epoch 4 kl=0.1074 ewc=0.0000
+[compress] epoch 5 kl=0.1038 ewc=0.0000
+[compress] epoch 6 kl=0.0982 ewc=0.0000
+[compress] epoch 7 kl=0.0943 ewc=0.0000
+[compress] epoch 8 kl=0.0916 ewc=0.0000
+[compress] epoch 9 kl=0.0891 ewc=0.0000
+[Fisher T0] total_mass=4.334404e+02  per-param mean=2.573679e-04  max=1.000000e-03
+After T0: SpaceInvaders-v5: 757.5 (kl 0.038)
+[T1 Krull-v5] actions=18 random return=1747.0
+[T1] active policy return=10017.0 ± 893.3 (8 s)
+[compress] epoch 0 kl=0.6490 ewc=0.0040
+[compress] epoch 1 kl=0.4314 ewc=0.0070
+[compress] epoch 2 kl=0.3993 ewc=0.0069
+[compress] epoch 3 kl=0.3564 ewc=0.0068
+[compress] epoch 4 kl=0.3282 ewc=0.0068
+[compress] epoch 5 kl=0.3122 ewc=0.0068
+[compress] epoch 6 kl=0.3028 ewc=0.0067
+[compress] epoch 7 kl=0.2954 ewc=0.0066
+[compress] epoch 8 kl=0.2919 ewc=0.0067
+[compress] epoch 9 kl=0.2750 ewc=0.0066
+[compress] epoch 0 kl=0.2909 ewc=0.0064
+[compress] epoch 1 kl=0.2715 ewc=0.0062
+[compress] epoch 2 kl=0.2591 ewc=0.0060
+[compress] epoch 3 kl=0.2611 ewc=0.0058
+[compress] epoch 4 kl=0.2437 ewc=0.0054
+[compress] epoch 5 kl=0.2426 ewc=0.0052
+[compress] epoch 6 kl=0.2311 ewc=0.0051
+[compress] epoch 7 kl=0.2292 ewc=0.0049
+[compress] epoch 8 kl=0.2203 ewc=0.0047
+[compress] epoch 9 kl=0.2299 ewc=0.0046
+[compress] epoch 0 kl=0.2197 ewc=0.0045
+[compress] epoch 1 kl=0.2110 ewc=0.0042
+[compress] epoch 2 kl=0.2061 ewc=0.0041
+[compress] epoch 3 kl=0.2008 ewc=0.0039
+[compress] epoch 4 kl=0.1955 ewc=0.0038
+[compress] epoch 5 kl=0.1924 ewc=0.0036
+[compress] epoch 6 kl=0.1913 ewc=0.0034
+[compress] epoch 7 kl=0.1836 ewc=0.0035
+[compress] epoch 8 kl=0.1824 ewc=0.0033
+[compress] epoch 9 kl=0.1804 ewc=0.0032
+[compress] epoch 0 kl=0.1784 ewc=0.0031
+[compress] epoch 1 kl=0.1780 ewc=0.0030
+[compress] epoch 2 kl=0.1699 ewc=0.0029
+[compress] epoch 3 kl=0.1719 ewc=0.0030
+[compress] epoch 4 kl=0.1679 ewc=0.0027
+[compress] epoch 5 kl=0.1638 ewc=0.0027
+[compress] epoch 6 kl=0.1630 ewc=0.0027
+[compress] epoch 7 kl=0.1569 ewc=0.0026
+[compress] epoch 8 kl=0.1584 ewc=0.0026
+[compress] epoch 9 kl=0.1554 ewc=0.0025
+[Fisher T1] total_mass=5.453865e+02  per-param mean=3.238391e-04  max=1.000000e-03
+After T1: SpaceInvaders-v5: 974.0 (kl 0.074) | Krull-v5: 8212.0 (kl 0.021)
+[T2 BeamRider-v5] actions=9 random return=343.2
+[T2] active policy return=4138.4 ± 1108.0 (31 s)
+[compress] epoch 0 kl=0.6645 ewc=0.0009
+[compress] epoch 1 kl=0.5733 ewc=0.0019
+[compress] epoch 2 kl=0.5421 ewc=0.0022
+[compress] epoch 3 kl=0.5257 ewc=0.0026
+[compress] epoch 4 kl=0.5072 ewc=0.0026
+[compress] epoch 5 kl=0.4966 ewc=0.0028
+[compress] epoch 6 kl=0.4853 ewc=0.0029
+[compress] epoch 7 kl=0.4777 ewc=0.0032
+[compress] epoch 8 kl=0.4660 ewc=0.0032
+[compress] epoch 9 kl=0.4599 ewc=0.0034
+[compress] epoch 0 kl=0.4925 ewc=0.0039
+[compress] epoch 1 kl=0.4726 ewc=0.0041
+[compress] epoch 2 kl=0.4558 ewc=0.0040
+[compress] epoch 3 kl=0.4430 ewc=0.0041
+[compress] epoch 4 kl=0.4301 ewc=0.0043
+[compress] epoch 5 kl=0.4205 ewc=0.0043
+[compress] epoch 6 kl=0.4124 ewc=0.0043
+[compress] epoch 7 kl=0.4055 ewc=0.0043
+[compress] epoch 8 kl=0.3910 ewc=0.0044
+[compress] epoch 9 kl=0.3837 ewc=0.0043
+[compress] epoch 0 kl=0.3821 ewc=0.0042
+[compress] epoch 1 kl=0.3721 ewc=0.0043
+[compress] epoch 2 kl=0.3611 ewc=0.0043
+[compress] epoch 3 kl=0.3526 ewc=0.0041
+[compress] epoch 4 kl=0.3470 ewc=0.0041
+[compress] epoch 5 kl=0.3445 ewc=0.0042
+[compress] epoch 6 kl=0.3361 ewc=0.0040
+[compress] epoch 7 kl=0.3272 ewc=0.0039
+[compress] epoch 8 kl=0.3234 ewc=0.0039
+[compress] epoch 9 kl=0.3163 ewc=0.0040
+[compress] epoch 0 kl=0.3127 ewc=0.0039
+[compress] epoch 1 kl=0.3078 ewc=0.0038
+[compress] epoch 2 kl=0.3056 ewc=0.0038
+[compress] epoch 3 kl=0.2975 ewc=0.0037
+[compress] epoch 4 kl=0.2909 ewc=0.0037
+[compress] epoch 5 kl=0.2924 ewc=0.0037
+[compress] epoch 6 kl=0.2844 ewc=0.0037
+[compress] epoch 7 kl=0.2810 ewc=0.0036
+[compress] epoch 8 kl=0.2778 ewc=0.0035
+[compress] epoch 9 kl=0.2768 ewc=0.0035
+[Fisher T2] total_mass=7.234981e+02  per-param mean=4.295981e-04  max=1.000000e-03
+After T2: SpaceInvaders-v5: 460.0 (kl 0.085) | Krull-v5: 7252.0 (kl 0.366) | BeamRider-v5: 1096.8 (kl 0.146)
+[T3 Hero-v5] actions=18 random return=395.0
+[T3] active policy return=20929.0 ± 13.7 (19 s)
+[compress] epoch 0 kl=0.6556 ewc=0.0011
+[compress] epoch 1 kl=0.5099 ewc=0.0020
+[compress] epoch 2 kl=0.4623 ewc=0.0026
+[compress] epoch 3 kl=0.4264 ewc=0.0033
+[compress] epoch 4 kl=0.4016 ewc=0.0036
+[compress] epoch 5 kl=0.3821 ewc=0.0039
+[compress] epoch 6 kl=0.3638 ewc=0.0039
+[compress] epoch 7 kl=0.3567 ewc=0.0041
+[compress] epoch 8 kl=0.3413 ewc=0.0043
+[compress] epoch 9 kl=0.3384 ewc=0.0044
+[compress] epoch 0 kl=0.3545 ewc=0.0044
+[compress] epoch 1 kl=0.3315 ewc=0.0039
+[compress] epoch 2 kl=0.3284 ewc=0.0040
+[compress] epoch 3 kl=0.3187 ewc=0.0040
+[compress] epoch 4 kl=0.3058 ewc=0.0039
+[compress] epoch 5 kl=0.3038 ewc=0.0040
+[compress] epoch 6 kl=0.2952 ewc=0.0040
+[compress] epoch 7 kl=0.3082 ewc=0.0042
+[compress] epoch 8 kl=0.2863 ewc=0.0040
+[compress] epoch 9 kl=0.2965 ewc=0.0041
+[compress] epoch 0 kl=0.2989 ewc=0.0053
+[compress] epoch 1 kl=0.2834 ewc=0.0050
+[compress] epoch 2 kl=0.2681 ewc=0.0050
+[compress] epoch 3 kl=0.2815 ewc=0.0050
+[compress] epoch 4 kl=0.2834 ewc=0.0051
+[compress] epoch 5 kl=0.2663 ewc=0.0049
+[compress] epoch 6 kl=0.2472 ewc=0.0046
+[compress] epoch 7 kl=0.2543 ewc=0.0047
+[compress] epoch 8 kl=0.2587 ewc=0.0048
+[compress] epoch 9 kl=0.2382 ewc=0.0045
+[compress] epoch 0 kl=0.2624 ewc=0.0048
+[compress] epoch 1 kl=0.2649 ewc=0.0049
+[compress] epoch 2 kl=0.2631 ewc=0.0049
+[compress] epoch 3 kl=0.2442 ewc=0.0047
+[compress] epoch 4 kl=0.2331 ewc=0.0045
+[compress] epoch 5 kl=0.2300 ewc=0.0044
+[compress] epoch 6 kl=0.2355 ewc=0.0045
+[compress] epoch 7 kl=0.2511 ewc=0.0047
+[compress] epoch 8 kl=0.2312 ewc=0.0046
+[compress] epoch 9 kl=0.2181 ewc=0.0043
+[Fisher T3] total_mass=7.691474e+02  per-param mean=4.567037e-04  max=1.000000e-03
+After T3: SpaceInvaders-v5: 417.5 (kl 0.082) | Krull-v5: 6427.0 (kl 0.266) | BeamRider-v5: 861.6 (kl 0.149) | Hero-v5: 6125.0 (kl 0.116)
+[T4 StarGunner-v5] actions=18 random return=620.0
+[T4] active policy return=54170.0 ± 1134.1 (21 s)
+[compress] epoch 0 kl=1.0535 ewc=0.0008
+[compress] epoch 1 kl=0.9637 ewc=0.0017
+[compress] epoch 2 kl=0.9157 ewc=0.0029
+[compress] epoch 3 kl=0.8843 ewc=0.0033
+[compress] epoch 4 kl=0.8566 ewc=0.0031
+[compress] epoch 5 kl=0.8374 ewc=0.0037
+[compress] epoch 6 kl=0.8202 ewc=0.0036
+[compress] epoch 7 kl=0.8085 ewc=0.0040
+[compress] epoch 8 kl=0.7955 ewc=0.0041
+[compress] epoch 9 kl=0.7847 ewc=0.0040
+[compress] epoch 0 kl=0.8200 ewc=0.0041
+[compress] epoch 1 kl=0.7872 ewc=0.0047
+[compress] epoch 2 kl=0.7630 ewc=0.0045
+[compress] epoch 3 kl=0.7445 ewc=0.0044
+[compress] epoch 4 kl=0.7289 ewc=0.0046
+[compress] epoch 5 kl=0.7177 ewc=0.0048
+[compress] epoch 6 kl=0.7031 ewc=0.0047
+[compress] epoch 7 kl=0.6945 ewc=0.0046
+[compress] epoch 8 kl=0.6862 ewc=0.0046
+[compress] epoch 9 kl=0.6751 ewc=0.0047
+[compress] epoch 0 kl=0.6945 ewc=0.0050
+[compress] epoch 1 kl=0.6787 ewc=0.0049
+[compress] epoch 2 kl=0.6665 ewc=0.0049
+[compress] epoch 3 kl=0.6560 ewc=0.0050
+[compress] epoch 4 kl=0.6470 ewc=0.0050
+[compress] epoch 5 kl=0.6389 ewc=0.0049
+[compress] epoch 6 kl=0.6315 ewc=0.0051
+[compress] epoch 7 kl=0.6231 ewc=0.0052
+[compress] epoch 8 kl=0.6157 ewc=0.0050
+[compress] epoch 9 kl=0.6090 ewc=0.0051
+[compress] epoch 0 kl=0.6161 ewc=0.0051
+[compress] epoch 1 kl=0.6056 ewc=0.0052
+[compress] epoch 2 kl=0.5982 ewc=0.0051
+[compress] epoch 3 kl=0.5907 ewc=0.0051
+[compress] epoch 4 kl=0.5824 ewc=0.0051
+[compress] epoch 5 kl=0.5760 ewc=0.0051
+[compress] epoch 6 kl=0.5683 ewc=0.0051
+[compress] epoch 7 kl=0.5642 ewc=0.0049
+[compress] epoch 8 kl=0.5556 ewc=0.0053
+[compress] epoch 9 kl=0.5491 ewc=0.0051
+[Fisher T4] total_mass=3.712048e+02  per-param mean=2.204136e-04  max=1.000000e-03
+After T4: SpaceInvaders-v5: 252.5 (kl 0.097) | Krull-v5: 6603.0 (kl 0.242) | BeamRider-v5: 866.4 (kl 0.150) | Hero-v5: 1602.5 (kl 0.303) | StarGunner-v5: 11710.0 (kl 0.309)
+[T5 MsPacman-v5] actions=9 random return=242.0
+[T5] active policy return=1808.0 ± 283.6 (6 s)
+[compress] epoch 0 kl=0.7337 ewc=0.0013
+[compress] epoch 1 kl=0.6020 ewc=0.0024
+[compress] epoch 2 kl=0.5608 ewc=0.0026
+[compress] epoch 3 kl=0.5347 ewc=0.0028
+[compress] epoch 4 kl=0.5175 ewc=0.0030
+[compress] epoch 5 kl=0.5060 ewc=0.0033
+[compress] epoch 6 kl=0.5032 ewc=0.0036
+[compress] epoch 7 kl=0.4825 ewc=0.0036
+[compress] epoch 8 kl=0.4703 ewc=0.0037
+[compress] epoch 9 kl=0.4836 ewc=0.0039
+[compress] epoch 0 kl=0.5885 ewc=0.0074
+[compress] epoch 1 kl=0.5475 ewc=0.0077
+[compress] epoch 2 kl=0.5267 ewc=0.0071
+[compress] epoch 3 kl=0.5078 ewc=0.0069
+[compress] epoch 4 kl=0.4995 ewc=0.0067
+[compress] epoch 5 kl=0.5044 ewc=0.0067
+[compress] epoch 6 kl=0.4862 ewc=0.0060
+[compress] epoch 7 kl=0.4869 ewc=0.0061
+[compress] epoch 8 kl=0.4710 ewc=0.0060
+[compress] epoch 9 kl=0.4731 ewc=0.0061
+[compress] epoch 0 kl=0.4790 ewc=0.0060
+[compress] epoch 1 kl=0.4809 ewc=0.0060
+[compress] epoch 2 kl=0.4878 ewc=0.0060
+[compress] epoch 3 kl=0.4741 ewc=0.0059
+[compress] epoch 4 kl=0.4800 ewc=0.0059
+[compress] epoch 5 kl=0.4582 ewc=0.0057
+[compress] epoch 6 kl=0.4574 ewc=0.0056
+[compress] epoch 7 kl=0.4559 ewc=0.0056
+[compress] epoch 8 kl=0.4528 ewc=0.0056
+[compress] epoch 9 kl=0.4597 ewc=0.0057
+[compress] epoch 0 kl=0.4543 ewc=0.0060
+[compress] epoch 1 kl=0.4365 ewc=0.0055
+[compress] epoch 2 kl=0.4210 ewc=0.0053
+[compress] epoch 3 kl=0.4488 ewc=0.0058
+[compress] epoch 4 kl=0.4307 ewc=0.0054
+[compress] epoch 5 kl=0.4253 ewc=0.0052
+[compress] epoch 6 kl=0.4219 ewc=0.0053
+[compress] epoch 7 kl=0.4046 ewc=0.0051
+[compress] epoch 8 kl=0.4243 ewc=0.0053
+[compress] epoch 9 kl=0.4184 ewc=0.0051
+[Fisher T5] total_mass=5.004791e+02  per-param mean=2.971741e-04  max=1.000000e-03
+After T5: SpaceInvaders-v5: 215.0 (kl 0.098) | Krull-v5: 5864.0 (kl 0.241) | BeamRider-v5: 858.4 (kl 0.150) | Hero-v5: 1595.0 (kl 0.303) | StarGunner-v5: 5670.0 (kl 0.310) | MsPacman-v5: 1069.0 (kl 0.198)
+[T6 SpaceInvaders-v5] actions=6 random return=210.0 (re-visit)
+[T6] active policy return=1009.5 ± 89.3 (8 s)
+[compress] epoch 0 kl=1.0910 ewc=0.1535
+[compress] epoch 1 kl=0.8276 ewc=0.1024
+[compress] epoch 2 kl=0.7152 ewc=0.0665
+[compress] epoch 3 kl=0.6407 ewc=0.0467
+[compress] epoch 4 kl=0.5781 ewc=0.0349
+[compress] epoch 5 kl=0.5308 ewc=0.0278
+[compress] epoch 6 kl=0.4958 ewc=0.0227
+[compress] epoch 7 kl=0.4670 ewc=0.0198
+[compress] epoch 8 kl=0.4485 ewc=0.0171
+[compress] epoch 9 kl=0.4275 ewc=0.0154
+[compress] epoch 0 kl=0.4567 ewc=0.0218
+[compress] epoch 1 kl=0.4063 ewc=0.0153
+[compress] epoch 2 kl=0.3790 ewc=0.0132
+[compress] epoch 3 kl=0.3612 ewc=0.0118
+[compress] epoch 4 kl=0.3456 ewc=0.0115
+[compress] epoch 5 kl=0.3364 ewc=0.0111
+[compress] epoch 6 kl=0.3239 ewc=0.0106
+[compress] epoch 7 kl=0.3155 ewc=0.0110
+[compress] epoch 8 kl=0.3081 ewc=0.0102
+[compress] epoch 9 kl=0.2990 ewc=0.0099
+[compress] epoch 0 kl=0.3276 ewc=0.0107
+[compress] epoch 1 kl=0.3137 ewc=0.0102
+[compress] epoch 2 kl=0.3029 ewc=0.0103
+[compress] epoch 3 kl=0.2933 ewc=0.0099
+[compress] epoch 4 kl=0.2840 ewc=0.0100
+[compress] epoch 5 kl=0.2814 ewc=0.0094
+[compress] epoch 6 kl=0.2723 ewc=0.0098
+[compress] epoch 7 kl=0.2677 ewc=0.0093
+[compress] epoch 8 kl=0.2618 ewc=0.0092
+[compress] epoch 9 kl=0.2581 ewc=0.0091
+[compress] epoch 0 kl=0.2715 ewc=0.0096
+[compress] epoch 1 kl=0.2666 ewc=0.0096
+[compress] epoch 2 kl=0.2604 ewc=0.0092
+[compress] epoch 3 kl=0.2545 ewc=0.0096
+[compress] epoch 4 kl=0.2498 ewc=0.0096
+[compress] epoch 5 kl=0.2458 ewc=0.0094
+[compress] epoch 6 kl=0.2404 ewc=0.0097
+[compress] epoch 7 kl=0.2385 ewc=0.0091
+[compress] epoch 8 kl=0.2339 ewc=0.0094
+[compress] epoch 9 kl=0.2307 ewc=0.0093
+[Fisher T6] total_mass=5.985230e+02  per-param mean=3.553904e-04  max=1.000000e-03
+After T6: SpaceInvaders-v5: 419.5 (kl 0.119) | Krull-v5: 6704.0 (kl 0.267) | BeamRider-v5: 1312.8 (kl 0.151) | Hero-v5: 2633.0 (kl 0.309) | StarGunner-v5: 7090.0 (kl 0.312) | MsPacman-v5: 664.0 (kl 0.214)
+[T7 Krull-v5] actions=18 random return=1747.0 (re-visit)
+[T7] active policy return=9632.0 ± 1652.8 (7 s)
+[compress] epoch 0 kl=0.4296 ewc=0.0349
+[compress] epoch 1 kl=0.3431 ewc=0.0219
+[compress] epoch 2 kl=0.3234 ewc=0.0174
+[compress] epoch 3 kl=0.3092 ewc=0.0151
+[compress] epoch 4 kl=0.2996 ewc=0.0139
+[compress] epoch 5 kl=0.2883 ewc=0.0124
+[compress] epoch 6 kl=0.2832 ewc=0.0118
+[compress] epoch 7 kl=0.2749 ewc=0.0106
+[compress] epoch 8 kl=0.2789 ewc=0.0110
+[compress] epoch 9 kl=0.2584 ewc=0.0096
+[compress] epoch 0 kl=0.2635 ewc=0.0087
+[compress] epoch 1 kl=0.2617 ewc=0.0082
+[compress] epoch 2 kl=0.2565 ewc=0.0076
+[compress] epoch 3 kl=0.2494 ewc=0.0074
+[compress] epoch 4 kl=0.2482 ewc=0.0074
+[compress] epoch 5 kl=0.2462 ewc=0.0069
+[compress] epoch 6 kl=0.2422 ewc=0.0070
+[compress] epoch 7 kl=0.2381 ewc=0.0060
+[compress] epoch 8 kl=0.2301 ewc=0.0054
+[compress] epoch 9 kl=0.2359 ewc=0.0056
+[compress] epoch 0 kl=0.2420 ewc=0.0051
+[compress] epoch 1 kl=0.2392 ewc=0.0050
+[compress] epoch 2 kl=0.2323 ewc=0.0049
+[compress] epoch 3 kl=0.2312 ewc=0.0047
+[compress] epoch 4 kl=0.2257 ewc=0.0047
+[compress] epoch 5 kl=0.2256 ewc=0.0046
+[compress] epoch 6 kl=0.2221 ewc=0.0047
+[compress] epoch 7 kl=0.2239 ewc=0.0047
+[compress] epoch 8 kl=0.2172 ewc=0.0043
+[compress] epoch 9 kl=0.2159 ewc=0.0041
+[compress] epoch 0 kl=0.2228 ewc=0.0043
+[compress] epoch 1 kl=0.2157 ewc=0.0045
+[compress] epoch 2 kl=0.2156 ewc=0.0047
+[compress] epoch 3 kl=0.2155 ewc=0.0045
+[compress] epoch 4 kl=0.2115 ewc=0.0044
+[compress] epoch 5 kl=0.2157 ewc=0.0046
+[compress] epoch 6 kl=0.2101 ewc=0.0046
+[compress] epoch 7 kl=0.2100 ewc=0.0043
+[compress] epoch 8 kl=0.2089 ewc=0.0045
+[compress] epoch 9 kl=0.2029 ewc=0.0043
+[Fisher T7] total_mass=7.303972e+02  per-param mean=4.336946e-04  max=1.000000e-03
+After T7: SpaceInvaders-v5: 422.0 (kl 0.120) | Krull-v5: 8884.0 (kl 0.043) | BeamRider-v5: 1219.2 (kl 0.147) | Hero-v5: 2750.5 (kl 0.289) | StarGunner-v5: 12080.0 (kl 0.313) | MsPacman-v5: 1863.0 (kl 0.193)
+[T8 BeamRider-v5] actions=9 random return=343.2 (re-visit)
+[T8] active policy return=3890.8 ± 775.2 (22 s)
+[compress] epoch 0 kl=0.6848 ewc=0.0318
+[compress] epoch 1 kl=0.6052 ewc=0.0233
+[compress] epoch 2 kl=0.5677 ewc=0.0174
+[compress] epoch 3 kl=0.5440 ewc=0.0145
+[compress] epoch 4 kl=0.5174 ewc=0.0129
+[compress] epoch 5 kl=0.4950 ewc=0.0110
+[compress] epoch 6 kl=0.4793 ewc=0.0099
+[compress] epoch 7 kl=0.4634 ewc=0.0086
+[compress] epoch 8 kl=0.4552 ewc=0.0085
+[compress] epoch 9 kl=0.4411 ewc=0.0077
+[compress] epoch 0 kl=0.4527 ewc=0.0075
+[compress] epoch 1 kl=0.4331 ewc=0.0068
+[compress] epoch 2 kl=0.4195 ewc=0.0065
+[compress] epoch 3 kl=0.4073 ewc=0.0057
+[compress] epoch 4 kl=0.3946 ewc=0.0058
+[compress] epoch 5 kl=0.3813 ewc=0.0056
+[compress] epoch 6 kl=0.3722 ewc=0.0053
+[compress] epoch 7 kl=0.3658 ewc=0.0051
+[compress] epoch 8 kl=0.3581 ewc=0.0048
+[compress] epoch 9 kl=0.3537 ewc=0.0048
+[compress] epoch 0 kl=0.3487 ewc=0.0046
+[compress] epoch 1 kl=0.3408 ewc=0.0046
+[compress] epoch 2 kl=0.3351 ewc=0.0047
+[compress] epoch 3 kl=0.3326 ewc=0.0047
+[compress] epoch 4 kl=0.3312 ewc=0.0044
+[compress] epoch 5 kl=0.3253 ewc=0.0043
+[compress] epoch 6 kl=0.3202 ewc=0.0044
+[compress] epoch 7 kl=0.3177 ewc=0.0045
+[compress] epoch 8 kl=0.3170 ewc=0.0043
+[compress] epoch 9 kl=0.3137 ewc=0.0042
+[compress] epoch 0 kl=0.3137 ewc=0.0045
+[compress] epoch 1 kl=0.3145 ewc=0.0043
+[compress] epoch 2 kl=0.3117 ewc=0.0043
+[compress] epoch 3 kl=0.3098 ewc=0.0044
+[compress] epoch 4 kl=0.3088 ewc=0.0044
+[compress] epoch 5 kl=0.3043 ewc=0.0043
+[compress] epoch 6 kl=0.3045 ewc=0.0043
+[compress] epoch 7 kl=0.3026 ewc=0.0043
+[compress] epoch 8 kl=0.3032 ewc=0.0044
+[compress] epoch 9 kl=0.2982 ewc=0.0042
+[Fisher T8] total_mass=8.637660e+02  per-param mean=5.128862e-04  max=1.000000e-03
+After T8: SpaceInvaders-v5: 476.5 (kl 0.125) | Krull-v5: 9458.0 (kl 0.040) | BeamRider-v5: 867.6 (kl 0.161) | Hero-v5: 2750.5 (kl 0.310) | StarGunner-v5: 6300.0 (kl 0.312) | MsPacman-v5: 1761.0 (kl 0.190)
+[T9 Hero-v5] actions=18 random return=395.0 (re-visit)
+[T9] active policy return=21029.0 ± 171.3 (28 s)
+[compress] epoch 0 kl=0.5698 ewc=0.0346
+[compress] epoch 1 kl=0.4270 ewc=0.0185
+[compress] epoch 2 kl=0.4138 ewc=0.0149
+[compress] epoch 3 kl=0.3937 ewc=0.0133
+[compress] epoch 4 kl=0.3894 ewc=0.0123
+[compress] epoch 5 kl=0.3628 ewc=0.0115
+[compress] epoch 6 kl=0.3308 ewc=0.0115
+[compress] epoch 7 kl=0.3237 ewc=0.0103
+[compress] epoch 8 kl=0.3144 ewc=0.0097
+[compress] epoch 9 kl=0.3101 ewc=0.0097
+[compress] epoch 0 kl=0.3502 ewc=0.0098
+[compress] epoch 1 kl=0.3416 ewc=0.0083
+[compress] epoch 2 kl=0.3119 ewc=0.0075
+[compress] epoch 3 kl=0.2955 ewc=0.0070
+[compress] epoch 4 kl=0.3175 ewc=0.0064
+[compress] epoch 5 kl=0.3023 ewc=0.0060
+[compress] epoch 6 kl=0.3119 ewc=0.0057
+[compress] epoch 7 kl=0.3083 ewc=0.0054
+[compress] epoch 8 kl=0.2842 ewc=0.0055
+[compress] epoch 9 kl=0.2881 ewc=0.0055
+[compress] epoch 0 kl=0.2709 ewc=0.0051
+[compress] epoch 1 kl=0.2860 ewc=0.0053
+[compress] epoch 2 kl=0.2783 ewc=0.0049
+[compress] epoch 3 kl=0.2950 ewc=0.0047
+[compress] epoch 4 kl=0.2937 ewc=0.0048
+[compress] epoch 5 kl=0.2920 ewc=0.0047
+[compress] epoch 6 kl=0.2756 ewc=0.0048
+[compress] epoch 7 kl=0.2636 ewc=0.0046
+[compress] epoch 8 kl=0.2673 ewc=0.0045
+[compress] epoch 9 kl=0.2689 ewc=0.0045
+[compress] epoch 0 kl=0.2783 ewc=0.0047
+[compress] epoch 1 kl=0.2785 ewc=0.0043
+[compress] epoch 2 kl=0.2582 ewc=0.0046
+[compress] epoch 3 kl=0.2501 ewc=0.0044
+[compress] epoch 4 kl=0.2681 ewc=0.0043
+[compress] epoch 5 kl=0.2637 ewc=0.0044
+[compress] epoch 6 kl=0.2582 ewc=0.0042
+[compress] epoch 7 kl=0.2527 ewc=0.0041
+[compress] epoch 8 kl=0.2603 ewc=0.0042
+[compress] epoch 9 kl=0.2377 ewc=0.0040
+[Fisher T9] total_mass=8.104858e+02  per-param mean=4.812495e-04  max=1.000000e-03
+After T9: SpaceInvaders-v5: 455.5 (kl 0.123) | Krull-v5: 8304.0 (kl 0.042) | BeamRider-v5: 962.4 (kl 0.161) | Hero-v5: 7695.0 (kl 0.146) | StarGunner-v5: 7470.0 (kl 0.311) | MsPacman-v5: 782.0 (kl 0.190)
+[T10 StarGunner-v5] actions=18 random return=620.0 (re-visit)
+[T10] active policy return=46760.0 ± 2806.1 (16 s)
+[compress] epoch 0 kl=0.8801 ewc=0.0175
+[compress] epoch 1 kl=0.8462 ewc=0.0141
+[compress] epoch 2 kl=0.8229 ewc=0.0128
+[compress] epoch 3 kl=0.8082 ewc=0.0122
+[compress] epoch 4 kl=0.7952 ewc=0.0120
+[compress] epoch 5 kl=0.7876 ewc=0.0117
+[compress] epoch 6 kl=0.7727 ewc=0.0104
+[compress] epoch 7 kl=0.7629 ewc=0.0097
+[compress] epoch 8 kl=0.7528 ewc=0.0098
+[compress] epoch 9 kl=0.7465 ewc=0.0095
+[compress] epoch 0 kl=0.7742 ewc=0.0096
+[compress] epoch 1 kl=0.7583 ewc=0.0097
+[compress] epoch 2 kl=0.7477 ewc=0.0094
+[compress] epoch 3 kl=0.7388 ewc=0.0089
+[compress] epoch 4 kl=0.7269 ewc=0.0089
+[compress] epoch 5 kl=0.7196 ewc=0.0086
+[compress] epoch 6 kl=0.7159 ewc=0.0081
+[compress] epoch 7 kl=0.7110 ewc=0.0083
+[compress] epoch 8 kl=0.7001 ewc=0.0079
+[compress] epoch 9 kl=0.6960 ewc=0.0082
+[compress] epoch 0 kl=0.7120 ewc=0.0083
+[compress] epoch 1 kl=0.7045 ewc=0.0083
+[compress] epoch 2 kl=0.6992 ewc=0.0081
+[compress] epoch 3 kl=0.6934 ewc=0.0084
+[compress] epoch 4 kl=0.6870 ewc=0.0080
+[compress] epoch 5 kl=0.6834 ewc=0.0084
+[compress] epoch 6 kl=0.6804 ewc=0.0084
+[compress] epoch 7 kl=0.6760 ewc=0.0085
+[compress] epoch 8 kl=0.6716 ewc=0.0082
+[compress] epoch 9 kl=0.6697 ewc=0.0084
+[compress] epoch 0 kl=0.6797 ewc=0.0084
+[compress] epoch 1 kl=0.6746 ewc=0.0086
+[compress] epoch 2 kl=0.6710 ewc=0.0086
+[compress] epoch 3 kl=0.6696 ewc=0.0082
+[compress] epoch 4 kl=0.6650 ewc=0.0083
+[compress] epoch 5 kl=0.6607 ewc=0.0084
+[compress] epoch 6 kl=0.6583 ewc=0.0088
+[compress] epoch 7 kl=0.6574 ewc=0.0088
+[compress] epoch 8 kl=0.6527 ewc=0.0086
+[compress] epoch 9 kl=0.6523 ewc=0.0087
+[Fisher T10] total_mass=4.152441e+02  per-param mean=2.465633e-04  max=1.000000e-03
+After T10: SpaceInvaders-v5: 377.0 (kl 0.125) | Krull-v5: 7838.0 (kl 0.051) | BeamRider-v5: 1140.0 (kl 0.162) | Hero-v5: 7711.0 (kl 0.143) | StarGunner-v5: 8080.0 (kl 0.353) | MsPacman-v5: 934.0 (kl 0.192)
+[T11 MsPacman-v5] actions=9 random return=242.0 (re-visit)
+[T11] active policy return=2233.0 ± 235.8 (4 s)
+[compress] epoch 0 kl=0.7015 ewc=0.0151
+[compress] epoch 1 kl=0.7324 ewc=0.0168
+[compress] epoch 2 kl=0.6437 ewc=0.0146
+[compress] epoch 3 kl=0.6324 ewc=0.0132
+[compress] epoch 4 kl=0.5930 ewc=0.0124
+[compress] epoch 5 kl=0.6373 ewc=0.0127
+[compress] epoch 6 kl=0.5758 ewc=0.0114
+[compress] epoch 7 kl=0.5554 ewc=0.0115
+[compress] epoch 8 kl=0.5404 ewc=0.0103
+[compress] epoch 9 kl=0.5523 ewc=0.0109
+[compress] epoch 0 kl=0.5523 ewc=0.0084
+[compress] epoch 1 kl=0.5408 ewc=0.0079
+[compress] epoch 2 kl=0.5489 ewc=0.0076
+[compress] epoch 3 kl=0.5227 ewc=0.0072
+[compress] epoch 4 kl=0.5498 ewc=0.0074
+[compress] epoch 5 kl=0.5085 ewc=0.0074
+[compress] epoch 6 kl=0.4754 ewc=0.0063
+[compress] epoch 7 kl=0.4787 ewc=0.0062
+[compress] epoch 8 kl=0.4624 ewc=0.0057
+[compress] epoch 9 kl=0.4583 ewc=0.0056
+[compress] epoch 0 kl=0.4908 ewc=0.0056
+[compress] epoch 1 kl=0.4760 ewc=0.0052
+[compress] epoch 2 kl=0.4748 ewc=0.0052
+[compress] epoch 3 kl=0.4685 ewc=0.0051
+[compress] epoch 4 kl=0.4432 ewc=0.0050
+[compress] epoch 5 kl=0.4400 ewc=0.0046
+[compress] epoch 6 kl=0.4403 ewc=0.0044
+[compress] epoch 7 kl=0.4656 ewc=0.0047
+[compress] epoch 8 kl=0.4366 ewc=0.0045
+[compress] epoch 9 kl=0.4290 ewc=0.0043
+[compress] epoch 0 kl=0.4326 ewc=0.0047
+[compress] epoch 1 kl=0.4099 ewc=0.0045
+[compress] epoch 2 kl=0.4153 ewc=0.0044
+[compress] epoch 3 kl=0.4040 ewc=0.0042
+[compress] epoch 4 kl=0.3900 ewc=0.0040
+[compress] epoch 5 kl=0.3910 ewc=0.0041
+[compress] epoch 6 kl=0.3976 ewc=0.0041
+[compress] epoch 7 kl=0.4070 ewc=0.0041
+[compress] epoch 8 kl=0.3853 ewc=0.0039
+[compress] epoch 9 kl=0.3812 ewc=0.0041
+[Fisher T11] total_mass=3.877670e+02  per-param mean=2.302479e-04  max=1.000000e-03
+After T11: SpaceInvaders-v5: 439.5 (kl 0.125) | Krull-v5: 7906.0 (kl 0.049) | BeamRider-v5: 795.2 (kl 0.166) | Hero-v5: 7706.0 (kl 0.145) | StarGunner-v5: 9010.0 (kl 0.353) | MsPacman-v5: 894.0 (kl 0.140)
+Results saved to /root/progress-compress/outputs/atari/paper3/buf_lam1e4_ep10_s2/results.json
+wandb: WARNING Symlinked 1 file into the W&B run directory; call wandb.save again to sync new files.
+wandb: updating run metadata
+wandb: uploading history steps 491-491, summary, console lines 527-529
+wandb: 
+wandb: Run history:
+wandb:           compress/epoch ▁▁▂▂▂▃▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▅▅▆▆▆▆▆▆▇▇▇▇▇▇▇██
+wandb:             compress/ewc ▁▁▄▄▃▂▃▃▃▃▃▃▃▃▃▃▅▄▄█▅▅▅▆▃▃▅▄▃▃▇▆▄▃▅▅▅▄▄▃
+wandb:              compress/kl ▃▂▂▁▁▁▃▂▂▁▃▃▃▃▂▂█▆▆▅▆▃▂▂▂▄▄▄▃▃▂▆▆▆▅▄▄▄▄▃
+wandb:           compress/total ▇▄▂▁▁▇▂▂▆▅▄▄▃▃▃▆▅▅▅▅▇▆▄▄▄▃▂▂▇▄▃▄▃▃██▇▅▅▄
+wandb:     eval/BeamRider-v5/kl ▁▂▃▂▃▂▆▆▇█
+wandb:   eval/BeamRider-v5/norm ▅▂▂▁█▇▂▄▆▁
+wandb: eval/BeamRider-v5/return ▅▂▂▂█▇▂▃▆▁
+wandb:          eval/Hero-v5/kl ▁███▇█▂▂▂
+wandb:        eval/Hero-v5/norm ▆▁▁▂▂▂███
+wandb:      eval/Hero-v5/return ▆▁▁▂▂▂███
+wandb:                      +20 ...
+wandb: 
+wandb: Run summary:
+wandb:           compress/epoch 480
+wandb:             compress/ewc 0.00408
+wandb:              compress/kl 0.38123
+wandb:           compress/total 0.38531
+wandb:     eval/BeamRider-v5/kl 0.16631
+wandb:   eval/BeamRider-v5/norm 0.12741
+wandb: eval/BeamRider-v5/return 795.2
+wandb:          eval/Hero-v5/kl 0.14531
+wandb:        eval/Hero-v5/norm 0.35432
+wandb:      eval/Hero-v5/return 7706
+wandb:                      +20 ...
+wandb: 
+wandb: 🚀 View run buf_lam1e4_ep10_s2 at: https://forge.coreweave.com/wandb/tg-2746-n-a/progress-compress/runs/vrzgil9x
+wandb: ⭐️ View project at: https://forge.coreweave.com/wandb/tg-2746-n-a/progress-compress
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 1 other file(s)
+wandb: Find logs at: ./outputs/atari/paper3/buf_lam1e4_ep10_s2/wandb/run-20261022_050834-vrzgil9x/logs
+[W1022 05:33:32.763266042 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())

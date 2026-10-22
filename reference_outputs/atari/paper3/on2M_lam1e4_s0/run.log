@@ -1,0 +1,454 @@
+Using device: cuda
+Total number of model parameters: 5318701
+wandb: [wandb.login()] Loaded credentials for https://api.forge.coreweave.com from /root/.netrc.
+wandb: Currently logged in as: tg-2746 (tg-2746-n-a) to https://api.forge.coreweave.com. Use `wandb login --relogin` to force relogin
+wandb: setting up run zasronca
+wandb: Tracking run with wandb version 0.31.0
+wandb: Run data is saved locally in /root/progress-compress/outputs/atari/paper3/on2M_lam1e4_s0/wandb/run-20261021_073438-zasronca
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run on2M_lam1e4_s0
+wandb: ⭐️ View project at https://forge.coreweave.com/wandb/tg-2746-n-a/progress-compress
+wandb: 🚀 View run at https://forge.coreweave.com/wandb/tg-2746-n-a/progress-compress/runs/zasronca
+[T0 SpaceInvaders-v5] actions=6 random return=129.0
+[T0] active policy return=843.5 ± 237.8 (5 s)
+[compress] epoch 0 kl=0.9348 ewc=0.0000
+[compress] epoch 1 kl=0.7775 ewc=0.0000
+[compress] epoch 2 kl=0.6248 ewc=0.0000
+[compress] epoch 3 kl=0.5352 ewc=0.0000
+[compress] epoch 4 kl=0.4784 ewc=0.0000
+[compress] epoch 5 kl=0.4374 ewc=0.0000
+[compress] epoch 6 kl=0.4079 ewc=0.0000
+[compress] epoch 7 kl=0.3827 ewc=0.0000
+[compress] epoch 8 kl=0.3592 ewc=0.0000
+[compress] epoch 9 kl=0.3385 ewc=0.0000
+[compress online SpaceInvaders-v5] step=100352 kl=0.3407 ewc=0.0000 held_out_kl=0.2180 return(last 20)=401.8
+[compress online SpaceInvaders-v5] step=200704 kl=0.2883 ewc=0.0000 held_out_kl=0.1794 return(last 20)=456.5
+[compress online SpaceInvaders-v5] step=301056 kl=0.3174 ewc=0.0000 held_out_kl=0.1685 return(last 20)=518.5
+[compress online SpaceInvaders-v5] step=401408 kl=0.2344 ewc=0.0000 held_out_kl=0.1294 return(last 20)=458.5
+[compress online SpaceInvaders-v5] step=501760 kl=0.1975 ewc=0.0000 held_out_kl=0.0928 return(last 20)=546.2
+[compress online SpaceInvaders-v5] step=600064 kl=0.2353 ewc=0.0000 held_out_kl=0.1017 return(last 20)=522.5
+[compress online SpaceInvaders-v5] step=700416 kl=0.1950 ewc=0.0000 held_out_kl=0.0753 return(last 20)=474.0
+[compress online SpaceInvaders-v5] step=800768 kl=0.1633 ewc=0.0000 held_out_kl=0.0619 return(last 20)=500.0
+[compress online SpaceInvaders-v5] step=901120 kl=0.1755 ewc=0.0000 held_out_kl=0.0532 return(last 20)=565.2
+[compress online SpaceInvaders-v5] step=1001472 kl=0.1619 ewc=0.0000 held_out_kl=0.0504 return(last 20)=596.0
+[compress online SpaceInvaders-v5] step=1101824 kl=0.1760 ewc=0.0000 held_out_kl=0.0549 return(last 20)=578.2
+[compress online SpaceInvaders-v5] step=1200128 kl=0.1521 ewc=0.0000 held_out_kl=0.0481 return(last 20)=596.8
+[compress online SpaceInvaders-v5] step=1300480 kl=0.1651 ewc=0.0000 held_out_kl=0.0427 return(last 20)=673.2
+[compress online SpaceInvaders-v5] step=1400832 kl=0.0908 ewc=0.0000 held_out_kl=0.0327 return(last 20)=637.5
+[compress online SpaceInvaders-v5] step=1501184 kl=0.1011 ewc=0.0000 held_out_kl=0.0325 return(last 20)=728.8
+[compress online SpaceInvaders-v5] step=1601536 kl=0.1111 ewc=0.0000 held_out_kl=0.0312 return(last 20)=731.5
+[compress online SpaceInvaders-v5] step=1701888 kl=0.0892 ewc=0.0000 held_out_kl=0.0361 return(last 20)=781.0
+[compress online SpaceInvaders-v5] step=1800192 kl=0.0776 ewc=0.0000 held_out_kl=0.0281 return(last 20)=663.0
+[compress online SpaceInvaders-v5] step=1900544 kl=0.0845 ewc=0.0000 held_out_kl=0.0225 return(last 20)=706.5
+[compress online SpaceInvaders-v5] step=1998848 kl=0.0815 ewc=0.0000 held_out_kl=0.0236 return(last 20)=722.5
+[Fisher T0] total_mass=1.684010e+02  per-param mean=9.999302e-05  max=1.000000e-03
+After T0: SpaceInvaders-v5: 778.5 (kl 0.024)
+[T1 Krull-v5] actions=18 random return=1614.0
+[T1] active policy return=9968.0 ± 1453.7 (6 s)
+[compress] epoch 0 kl=0.8287 ewc=0.0057
+[compress] epoch 1 kl=0.4955 ewc=0.0137
+[compress] epoch 2 kl=0.3829 ewc=0.0153
+[compress] epoch 3 kl=0.3281 ewc=0.0153
+[compress] epoch 4 kl=0.2943 ewc=0.0151
+[compress] epoch 5 kl=0.2727 ewc=0.0145
+[compress] epoch 6 kl=0.2561 ewc=0.0139
+[compress] epoch 7 kl=0.2410 ewc=0.0135
+[compress] epoch 8 kl=0.2284 ewc=0.0133
+[compress] epoch 9 kl=0.2164 ewc=0.0127
+[compress online Krull-v5] step=100352 kl=0.3151 ewc=0.0144 held_out_kl=0.0228 return(last 20)=6554.5
+[compress online Krull-v5] step=200704 kl=0.1652 ewc=0.0116 held_out_kl=0.0415 return(last 20)=7300.5
+[compress online Krull-v5] step=301056 kl=0.2197 ewc=0.0118 held_out_kl=0.0344 return(last 20)=7060.5
+[compress online Krull-v5] step=401408 kl=0.1780 ewc=0.0103 held_out_kl=0.0280 return(last 20)=8294.5
+[compress online Krull-v5] step=501760 kl=0.1731 ewc=0.0111 held_out_kl=0.0274 return(last 20)=8274.5
+[compress online Krull-v5] step=600064 kl=0.1831 ewc=0.0105 held_out_kl=0.0282 return(last 20)=8013.5
+[compress online Krull-v5] step=700416 kl=0.1605 ewc=0.0084 held_out_kl=0.0237 return(last 20)=8405.0
+[compress online Krull-v5] step=800768 kl=0.1356 ewc=0.0082 held_out_kl=0.0256 return(last 20)=7783.0
+[compress online Krull-v5] step=901120 kl=0.1280 ewc=0.0078 held_out_kl=0.0216 return(last 20)=7807.5
+[compress online Krull-v5] step=1001472 kl=0.1336 ewc=0.0072 held_out_kl=0.0147 return(last 20)=8480.0
+[compress online Krull-v5] step=1101824 kl=0.1661 ewc=0.0077 held_out_kl=0.0190 return(last 20)=8227.0
+[compress online Krull-v5] step=1200128 kl=0.1321 ewc=0.0074 held_out_kl=0.0286 return(last 20)=8743.5
+[compress online Krull-v5] step=1300480 kl=0.1382 ewc=0.0077 held_out_kl=0.0137 return(last 20)=8800.0
+[compress online Krull-v5] step=1400832 kl=0.1644 ewc=0.0067 held_out_kl=0.0267 return(last 20)=9373.0
+[compress online Krull-v5] step=1501184 kl=0.1439 ewc=0.0066 held_out_kl=0.0172 return(last 20)=8391.0
+[compress online Krull-v5] step=1601536 kl=0.1560 ewc=0.0069 held_out_kl=0.0118 return(last 20)=9065.5
+[compress online Krull-v5] step=1701888 kl=0.1311 ewc=0.0075 held_out_kl=0.0121 return(last 20)=8760.5
+[compress online Krull-v5] step=1800192 kl=0.1283 ewc=0.0072 held_out_kl=0.0153 return(last 20)=8647.5
+[compress online Krull-v5] step=1900544 kl=0.1244 ewc=0.0063 held_out_kl=0.0090 return(last 20)=8628.5
+[compress online Krull-v5] step=1998848 kl=0.1249 ewc=0.0057 held_out_kl=0.0190 return(last 20)=8984.5
+[Fisher T1] total_mass=2.154270e+02  per-param mean=1.279161e-04  max=1.000000e-03
+After T1: SpaceInvaders-v5: 740.0 (kl 0.026) | Krull-v5: 10299.0 (kl 0.019)
+[T2 BeamRider-v5] actions=9 random return=365.2
+[T2] active policy return=3548.2 ± 1640.0 (14 s)
+[compress] epoch 0 kl=0.5859 ewc=0.0025
+[compress] epoch 1 kl=0.4839 ewc=0.0038
+[compress] epoch 2 kl=0.4523 ewc=0.0042
+[compress] epoch 3 kl=0.4335 ewc=0.0044
+[compress] epoch 4 kl=0.4133 ewc=0.0047
+[compress] epoch 5 kl=0.3972 ewc=0.0050
+[compress] epoch 6 kl=0.3834 ewc=0.0053
+[compress] epoch 7 kl=0.3715 ewc=0.0057
+[compress] epoch 8 kl=0.3605 ewc=0.0058
+[compress] epoch 9 kl=0.3510 ewc=0.0060
+[compress online BeamRider-v5] step=100352 kl=0.4039 ewc=0.0083 held_out_kl=0.1985 return(last 20)=665.8
+[compress online BeamRider-v5] step=200704 kl=0.3785 ewc=0.0086 held_out_kl=0.1947 return(last 20)=676.6
+[compress online BeamRider-v5] step=301056 kl=0.3100 ewc=0.0076 held_out_kl=0.1671 return(last 20)=637.0
+[compress online BeamRider-v5] step=401408 kl=0.2430 ewc=0.0080 held_out_kl=0.1365 return(last 20)=666.2
+[compress online BeamRider-v5] step=501760 kl=0.3039 ewc=0.0089 held_out_kl=0.1512 return(last 20)=797.4
+[compress online BeamRider-v5] step=600064 kl=0.2483 ewc=0.0076 held_out_kl=0.1141 return(last 20)=817.2
+[compress online BeamRider-v5] step=700416 kl=0.2539 ewc=0.0071 held_out_kl=0.1149 return(last 20)=823.6
+[compress online BeamRider-v5] step=800768 kl=0.2212 ewc=0.0072 held_out_kl=0.1046 return(last 20)=869.4
+[compress online BeamRider-v5] step=901120 kl=0.2615 ewc=0.0072 held_out_kl=0.1002 return(last 20)=908.2
+[compress online BeamRider-v5] step=1001472 kl=0.2290 ewc=0.0068 held_out_kl=0.0998 return(last 20)=958.6
+[compress online BeamRider-v5] step=1101824 kl=0.2324 ewc=0.0071 held_out_kl=0.1064 return(last 20)=1002.2
+[compress online BeamRider-v5] step=1200128 kl=0.2406 ewc=0.0076 held_out_kl=0.0880 return(last 20)=1247.2
+[compress online BeamRider-v5] step=1300480 kl=0.2279 ewc=0.0079 held_out_kl=0.0897 return(last 20)=1172.4
+[compress online BeamRider-v5] step=1400832 kl=0.2119 ewc=0.0065 held_out_kl=0.0961 return(last 20)=1172.0
+[compress online BeamRider-v5] step=1501184 kl=0.2183 ewc=0.0065 held_out_kl=0.0840 return(last 20)=1103.4
+[compress online BeamRider-v5] step=1601536 kl=0.2201 ewc=0.0075 held_out_kl=0.0868 return(last 20)=943.4
+[compress online BeamRider-v5] step=1701888 kl=0.2002 ewc=0.0063 held_out_kl=0.0817 return(last 20)=1255.8
+[compress online BeamRider-v5] step=1800192 kl=0.1781 ewc=0.0066 held_out_kl=0.0824 return(last 20)=1085.4
+[compress online BeamRider-v5] step=1900544 kl=0.1807 ewc=0.0061 held_out_kl=0.0802 return(last 20)=1297.8
+[compress online BeamRider-v5] step=1998848 kl=0.2123 ewc=0.0068 held_out_kl=0.0874 return(last 20)=1124.0
+[Fisher T2] total_mass=4.509880e+02  per-param mean=2.677873e-04  max=1.000000e-03
+After T2: SpaceInvaders-v5: 665.0 (kl 0.046) | Krull-v5: 7320.0 (kl 0.134) | BeamRider-v5: 2079.0 (kl 0.087)
+[T3 Hero-v5] actions=18 random return=37.5
+[T3] active policy return=19974.0 ± 247.7 (18 s)
+[compress] epoch 0 kl=0.6403 ewc=0.0024
+[compress] epoch 1 kl=0.4680 ewc=0.0038
+[compress] epoch 2 kl=0.4080 ewc=0.0051
+[compress] epoch 3 kl=0.3712 ewc=0.0059
+[compress] epoch 4 kl=0.3421 ewc=0.0064
+[compress] epoch 5 kl=0.3240 ewc=0.0069
+[compress] epoch 6 kl=0.3063 ewc=0.0070
+[compress] epoch 7 kl=0.2899 ewc=0.0077
+[compress] epoch 8 kl=0.2778 ewc=0.0075
+[compress] epoch 9 kl=0.2701 ewc=0.0077
+[compress online Hero-v5] step=100352 kl=0.3201 ewc=0.0131 held_out_kl=0.1835 return(last 20)=4833.2
+[compress online Hero-v5] step=200704 kl=0.2740 ewc=0.0108 held_out_kl=0.1920 return(last 20)=6222.2
+[compress online Hero-v5] step=301056 kl=0.2157 ewc=0.0120 held_out_kl=0.1625 return(last 20)=6422.2
+[compress online Hero-v5] step=401408 kl=0.2878 ewc=0.0109 held_out_kl=0.2380 return(last 20)=6355.0
+[compress online Hero-v5] step=501760 kl=0.2805 ewc=0.0143 held_out_kl=0.1510 return(last 20)=8159.0
+[compress online Hero-v5] step=600064 kl=0.2128 ewc=0.0107 held_out_kl=0.1133 return(last 20)=8342.5
+[compress online Hero-v5] step=700416 kl=0.2272 ewc=0.0114 held_out_kl=0.1161 return(last 20)=7699.5
+[compress online Hero-v5] step=800768 kl=0.1700 ewc=0.0092 held_out_kl=0.1345 return(last 20)=7795.8
+[compress online Hero-v5] step=901120 kl=0.2307 ewc=0.0108 held_out_kl=0.1847 return(last 20)=8329.5
+[compress online Hero-v5] step=1001472 kl=0.2003 ewc=0.0102 held_out_kl=0.0933 return(last 20)=8232.5
+[compress online Hero-v5] step=1101824 kl=0.1143 ewc=0.0107 held_out_kl=0.0913 return(last 20)=8373.2
+[compress online Hero-v5] step=1200128 kl=0.2158 ewc=0.0096 held_out_kl=0.1089 return(last 20)=8556.5
+[compress online Hero-v5] step=1300480 kl=0.2146 ewc=0.0079 held_out_kl=0.1093 return(last 20)=8500.5
+[compress online Hero-v5] step=1400832 kl=0.1829 ewc=0.0085 held_out_kl=0.0903 return(last 20)=8677.0
+[compress online Hero-v5] step=1501184 kl=0.1679 ewc=0.0079 held_out_kl=0.0753 return(last 20)=10130.0
+[compress online Hero-v5] step=1601536 kl=0.1554 ewc=0.0094 held_out_kl=0.0895 return(last 20)=9378.5
+[compress online Hero-v5] step=1701888 kl=0.1307 ewc=0.0087 held_out_kl=0.0698 return(last 20)=8806.5
+[compress online Hero-v5] step=1800192 kl=0.2336 ewc=0.0114 held_out_kl=0.0740 return(last 20)=9856.2
+[compress online Hero-v5] step=1900544 kl=0.1724 ewc=0.0091 held_out_kl=0.0926 return(last 20)=8757.8
+[compress online Hero-v5] step=1998848 kl=0.1651 ewc=0.0093 held_out_kl=0.0674 return(last 20)=9668.2
+[Fisher T3] total_mass=4.693980e+02  per-param mean=2.787187e-04  max=1.000000e-03
+After T3: SpaceInvaders-v5: 570.5 (kl 0.047) | Krull-v5: 9027.0 (kl 0.138) | BeamRider-v5: 1674.0 (kl 0.084) | Hero-v5: 11629.0 (kl 0.067)
+[T4 StarGunner-v5] actions=18 random return=740.0
+[T4] active policy return=48430.0 ± 4559.2 (10 s)
+[compress] epoch 0 kl=1.1334 ewc=0.0007
+[compress] epoch 1 kl=1.0416 ewc=0.0010
+[compress] epoch 2 kl=0.9838 ewc=0.0022
+[compress] epoch 3 kl=0.9431 ewc=0.0032
+[compress] epoch 4 kl=0.9134 ewc=0.0037
+[compress] epoch 5 kl=0.8919 ewc=0.0046
+[compress] epoch 6 kl=0.8732 ewc=0.0046
+[compress] epoch 7 kl=0.8608 ewc=0.0049
+[compress] epoch 8 kl=0.8460 ewc=0.0051
+[compress] epoch 9 kl=0.8340 ewc=0.0054
+[compress online StarGunner-v5] step=100352 kl=0.9262 ewc=0.0121 held_out_kl=0.5498 return(last 20)=720.0
+[compress online StarGunner-v5] step=200704 kl=0.8996 ewc=0.0143 held_out_kl=0.5412 return(last 20)=1060.0
+[compress online StarGunner-v5] step=301056 kl=0.8635 ewc=0.0149 held_out_kl=0.5273 return(last 20)=1105.0
+[compress online StarGunner-v5] step=401408 kl=0.8608 ewc=0.0129 held_out_kl=0.4911 return(last 20)=1365.0
+[compress online StarGunner-v5] step=501760 kl=0.9078 ewc=0.0167 held_out_kl=0.4898 return(last 20)=1025.0
+[compress online StarGunner-v5] step=600064 kl=0.9775 ewc=0.0166 held_out_kl=0.5015 return(last 20)=1360.0
+[compress online StarGunner-v5] step=700416 kl=0.9023 ewc=0.0158 held_out_kl=0.6608 return(last 20)=1340.0
+[compress online StarGunner-v5] step=800768 kl=0.6765 ewc=0.0140 held_out_kl=0.5121 return(last 20)=1545.0
+[compress online StarGunner-v5] step=901120 kl=0.8188 ewc=0.0146 held_out_kl=0.4778 return(last 20)=2130.0
+[compress online StarGunner-v5] step=1001472 kl=0.8079 ewc=0.0128 held_out_kl=0.4538 return(last 20)=2130.0
+[compress online StarGunner-v5] step=1101824 kl=0.7840 ewc=0.0135 held_out_kl=0.4366 return(last 20)=2945.0
+[compress online StarGunner-v5] step=1200128 kl=0.7095 ewc=0.0127 held_out_kl=0.4238 return(last 20)=2360.0
+[compress online StarGunner-v5] step=1300480 kl=0.7687 ewc=0.0208 held_out_kl=0.6567 return(last 20)=2870.0
+[compress online StarGunner-v5] step=1400832 kl=0.8494 ewc=0.0145 held_out_kl=0.4641 return(last 20)=1580.0
+[compress online StarGunner-v5] step=1501184 kl=0.7497 ewc=0.0170 held_out_kl=0.5140 return(last 20)=1780.0
+[compress online StarGunner-v5] step=1601536 kl=0.7240 ewc=0.0152 held_out_kl=0.4878 return(last 20)=1845.0
+[compress online StarGunner-v5] step=1701888 kl=0.8782 ewc=0.0149 held_out_kl=0.5042 return(last 20)=2505.0
+[compress online StarGunner-v5] step=1800192 kl=0.7296 ewc=0.0118 held_out_kl=0.4073 return(last 20)=3300.0
+[compress online StarGunner-v5] step=1900544 kl=0.7405 ewc=0.0151 held_out_kl=0.5810 return(last 20)=2270.0
+[compress online StarGunner-v5] step=1998848 kl=0.7865 ewc=0.0161 held_out_kl=0.6058 return(last 20)=2210.0
+[Fisher T4] total_mass=2.151698e+02  per-param mean=1.277633e-04  max=1.000000e-03
+After T4: SpaceInvaders-v5: 708.0 (kl 0.038) | Krull-v5: 9565.0 (kl 0.106) | BeamRider-v5: 2287.2 (kl 0.083) | Hero-v5: 11560.0 (kl 0.073) | StarGunner-v5: 280.0 (kl 0.606)
+[T5 MsPacman-v5] actions=9 random return=243.0
+[T5] active policy return=2218.0 ± 18.3 (4 s)
+[compress] epoch 0 kl=0.9025 ewc=0.0037
+[compress] epoch 1 kl=0.7483 ewc=0.0059
+[compress] epoch 2 kl=0.7064 ewc=0.0062
+[compress] epoch 3 kl=0.6866 ewc=0.0071
+[compress] epoch 4 kl=0.6643 ewc=0.0070
+[compress] epoch 5 kl=0.6504 ewc=0.0076
+[compress] epoch 6 kl=0.6351 ewc=0.0078
+[compress] epoch 7 kl=0.6292 ewc=0.0082
+[compress] epoch 8 kl=0.6111 ewc=0.0085
+[compress] epoch 9 kl=0.6023 ewc=0.0094
+[compress online MsPacman-v5] step=100352 kl=0.5583 ewc=0.0254 held_out_kl=0.3752 return(last 20)=474.5
+[compress online MsPacman-v5] step=200704 kl=0.5459 ewc=0.0313 held_out_kl=0.4605 return(last 20)=732.5
+[compress online MsPacman-v5] step=301056 kl=0.5015 ewc=0.0297 held_out_kl=0.3434 return(last 20)=650.5
+[compress online MsPacman-v5] step=401408 kl=0.5671 ewc=0.0204 held_out_kl=0.2643 return(last 20)=778.0
+[compress online MsPacman-v5] step=501760 kl=0.5287 ewc=0.0266 held_out_kl=0.4128 return(last 20)=669.5
+[compress online MsPacman-v5] step=600064 kl=0.3804 ewc=0.0247 held_out_kl=0.3484 return(last 20)=527.0
+[compress online MsPacman-v5] step=700416 kl=0.4827 ewc=0.0233 held_out_kl=0.2538 return(last 20)=462.5
+[compress online MsPacman-v5] step=800768 kl=0.5144 ewc=0.0261 held_out_kl=0.2264 return(last 20)=750.0
+[compress online MsPacman-v5] step=901120 kl=0.5195 ewc=0.0268 held_out_kl=0.3739 return(last 20)=646.0
+[compress online MsPacman-v5] step=1001472 kl=0.4444 ewc=0.0202 held_out_kl=0.3601 return(last 20)=505.5
+[compress online MsPacman-v5] step=1101824 kl=0.5167 ewc=0.0236 held_out_kl=0.2491 return(last 20)=509.0
+[compress online MsPacman-v5] step=1200128 kl=0.4248 ewc=0.0229 held_out_kl=0.3173 return(last 20)=515.0
+[compress online MsPacman-v5] step=1300480 kl=0.5662 ewc=0.0304 held_out_kl=0.3157 return(last 20)=694.0
+[compress online MsPacman-v5] step=1400832 kl=0.4503 ewc=0.0275 held_out_kl=0.5196 return(last 20)=722.0
+[compress online MsPacman-v5] step=1501184 kl=0.4045 ewc=0.0331 held_out_kl=0.1817 return(last 20)=684.0
+[compress online MsPacman-v5] step=1601536 kl=0.6666 ewc=0.0298 held_out_kl=0.3673 return(last 20)=568.0
+[compress online MsPacman-v5] step=1701888 kl=0.4227 ewc=0.0237 held_out_kl=0.1758 return(last 20)=654.0
+[compress online MsPacman-v5] step=1800192 kl=0.3843 ewc=0.0280 held_out_kl=0.3021 return(last 20)=653.0
+[compress online MsPacman-v5] step=1900544 kl=0.3597 ewc=0.0283 held_out_kl=0.2117 return(last 20)=679.0
+[compress online MsPacman-v5] step=1998848 kl=0.4977 ewc=0.0347 held_out_kl=0.2345 return(last 20)=802.0
+[Fisher T5] total_mass=2.534411e+02  per-param mean=1.504880e-04  max=1.000000e-03
+After T5: SpaceInvaders-v5: 936.5 (kl 0.039) | Krull-v5: 8211.0 (kl 0.115) | BeamRider-v5: 1351.2 (kl 0.089) | Hero-v5: 9373.0 (kl 0.076) | StarGunner-v5: 270.0 (kl 0.605) | MsPacman-v5: 934.0 (kl 0.235)
+[T6 SpaceInvaders-v5] actions=6 random return=129.0 (re-visit)
+[T6] active policy return=1708.5 ± 267.7 (4 s)
+[compress] epoch 0 kl=0.9090 ewc=0.1599
+[compress] epoch 1 kl=0.6072 ewc=0.0979
+[compress] epoch 2 kl=0.5096 ewc=0.0673
+[compress] epoch 3 kl=0.4542 ewc=0.0490
+[compress] epoch 4 kl=0.4161 ewc=0.0399
+[compress] epoch 5 kl=0.3879 ewc=0.0334
+[compress] epoch 6 kl=0.3662 ewc=0.0297
+[compress] epoch 7 kl=0.3477 ewc=0.0264
+[compress] epoch 8 kl=0.3324 ewc=0.0245
+[compress] epoch 9 kl=0.3203 ewc=0.0227
+[compress online SpaceInvaders-v5] step=100352 kl=0.3813 ewc=0.0421 held_out_kl=0.2266 return(last 20)=485.5
+[compress online SpaceInvaders-v5] step=200704 kl=0.3024 ewc=0.0310 held_out_kl=0.1927 return(last 20)=501.2
+[compress online SpaceInvaders-v5] step=301056 kl=0.2873 ewc=0.0308 held_out_kl=0.1804 return(last 20)=451.0
+[compress online SpaceInvaders-v5] step=401408 kl=0.2650 ewc=0.0302 held_out_kl=0.1715 return(last 20)=516.2
+[compress online SpaceInvaders-v5] step=501760 kl=0.2743 ewc=0.0390 held_out_kl=0.1650 return(last 20)=503.2
+[compress online SpaceInvaders-v5] step=600064 kl=0.2513 ewc=0.0279 held_out_kl=0.1591 return(last 20)=474.8
+[compress online SpaceInvaders-v5] step=700416 kl=0.2486 ewc=0.0277 held_out_kl=0.1606 return(last 20)=548.2
+[compress online SpaceInvaders-v5] step=800768 kl=0.2560 ewc=0.0259 held_out_kl=0.1531 return(last 20)=501.5
+[compress online SpaceInvaders-v5] step=901120 kl=0.2024 ewc=0.0249 held_out_kl=0.1488 return(last 20)=584.0
+[compress online SpaceInvaders-v5] step=1001472 kl=0.2506 ewc=0.0286 held_out_kl=0.1416 return(last 20)=514.2
+[compress online SpaceInvaders-v5] step=1101824 kl=0.2447 ewc=0.0315 held_out_kl=0.1411 return(last 20)=562.2
+[compress online SpaceInvaders-v5] step=1200128 kl=0.2024 ewc=0.0237 held_out_kl=0.1273 return(last 20)=580.8
+[compress online SpaceInvaders-v5] step=1300480 kl=0.2516 ewc=0.0268 held_out_kl=0.1240 return(last 20)=552.5
+[compress online SpaceInvaders-v5] step=1400832 kl=0.2627 ewc=0.0277 held_out_kl=0.1237 return(last 20)=545.5
+[compress online SpaceInvaders-v5] step=1501184 kl=0.2132 ewc=0.0224 held_out_kl=0.1186 return(last 20)=607.0
+[compress online SpaceInvaders-v5] step=1601536 kl=0.2117 ewc=0.0234 held_out_kl=0.1232 return(last 20)=620.5
+[compress online SpaceInvaders-v5] step=1701888 kl=0.2221 ewc=0.0264 held_out_kl=0.1129 return(last 20)=584.2
+[compress online SpaceInvaders-v5] step=1800192 kl=0.2283 ewc=0.0256 held_out_kl=0.1105 return(last 20)=675.8
+[compress online SpaceInvaders-v5] step=1900544 kl=0.1766 ewc=0.0224 held_out_kl=0.1311 return(last 20)=611.0
+[compress online SpaceInvaders-v5] step=1998848 kl=0.2023 ewc=0.0254 held_out_kl=0.1085 return(last 20)=612.2
+[Fisher T6] total_mass=3.318914e+02  per-param mean=1.970702e-04  max=1.000000e-03
+After T6: SpaceInvaders-v5: 874.5 (kl 0.109) | Krull-v5: 8596.0 (kl 0.118) | BeamRider-v5: 1660.8 (kl 0.087) | Hero-v5: 11285.0 (kl 0.081) | StarGunner-v5: 330.0 (kl 0.603) | MsPacman-v5: 833.0 (kl 0.236)
+[T7 Krull-v5] actions=18 random return=1614.0 (re-visit)
+[T7] active policy return=10829.0 ± 1232.0 (4 s)
+[compress] epoch 0 kl=0.8400 ewc=0.1476
+[compress] epoch 1 kl=0.4294 ewc=0.0631
+[compress] epoch 2 kl=0.3571 ewc=0.0515
+[compress] epoch 3 kl=0.3171 ewc=0.0437
+[compress] epoch 4 kl=0.2929 ewc=0.0385
+[compress] epoch 5 kl=0.2694 ewc=0.0328
+[compress] epoch 6 kl=0.2533 ewc=0.0286
+[compress] epoch 7 kl=0.2378 ewc=0.0253
+[compress] epoch 8 kl=0.2256 ewc=0.0237
+[compress] epoch 9 kl=0.2148 ewc=0.0211
+[compress online Krull-v5] step=100352 kl=0.2259 ewc=0.0168 held_out_kl=0.0331 return(last 20)=7091.5
+[compress online Krull-v5] step=200704 kl=0.2360 ewc=0.0149 held_out_kl=0.0323 return(last 20)=7427.0
+[compress online Krull-v5] step=301056 kl=0.2041 ewc=0.0134 held_out_kl=0.0378 return(last 20)=8010.0
+[compress online Krull-v5] step=401408 kl=0.1683 ewc=0.0113 held_out_kl=0.0293 return(last 20)=7906.0
+[compress online Krull-v5] step=501760 kl=0.2010 ewc=0.0135 held_out_kl=0.0262 return(last 20)=7490.5
+[compress online Krull-v5] step=600064 kl=0.1655 ewc=0.0113 held_out_kl=0.0222 return(last 20)=7403.0
+[compress online Krull-v5] step=700416 kl=0.1891 ewc=0.0096 held_out_kl=0.0299 return(last 20)=7333.0
+[compress online Krull-v5] step=800768 kl=0.1538 ewc=0.0084 held_out_kl=0.0250 return(last 20)=8005.5
+[compress online Krull-v5] step=901120 kl=0.1526 ewc=0.0086 held_out_kl=0.0357 return(last 20)=7838.0
+[compress online Krull-v5] step=1001472 kl=0.1770 ewc=0.0084 held_out_kl=0.0243 return(last 20)=8565.0
+[compress online Krull-v5] step=1101824 kl=0.1547 ewc=0.0094 held_out_kl=0.0235 return(last 20)=7392.5
+[compress online Krull-v5] step=1200128 kl=0.1599 ewc=0.0080 held_out_kl=0.0214 return(last 20)=7516.5
+[compress online Krull-v5] step=1300480 kl=0.1758 ewc=0.0097 held_out_kl=0.0207 return(last 20)=7937.5
+[compress online Krull-v5] step=1400832 kl=0.1556 ewc=0.0070 held_out_kl=0.0234 return(last 20)=7522.0
+[compress online Krull-v5] step=1501184 kl=0.1850 ewc=0.0086 held_out_kl=0.0206 return(last 20)=7683.0
+[compress online Krull-v5] step=1601536 kl=0.1562 ewc=0.0090 held_out_kl=0.0321 return(last 20)=8032.5
+[compress online Krull-v5] step=1701888 kl=0.1699 ewc=0.0080 held_out_kl=0.0481 return(last 20)=7724.0
+[compress online Krull-v5] step=1800192 kl=0.1324 ewc=0.0091 held_out_kl=0.0199 return(last 20)=8055.0
+[compress online Krull-v5] step=1900544 kl=0.1331 ewc=0.0099 held_out_kl=0.0235 return(last 20)=7909.5
+[compress online Krull-v5] step=1998848 kl=0.1539 ewc=0.0090 held_out_kl=0.0251 return(last 20)=8611.0
+[Fisher T7] total_mass=3.112347e+02  per-param mean=1.848046e-04  max=1.000000e-03
+After T7: SpaceInvaders-v5: 519.0 (kl 0.109) | Krull-v5: 8558.0 (kl 0.025) | BeamRider-v5: 1880.0 (kl 0.085) | Hero-v5: 11529.0 (kl 0.081) | StarGunner-v5: 350.0 (kl 0.605) | MsPacman-v5: 869.0 (kl 0.236)
+[T8 BeamRider-v5] actions=9 random return=365.2 (re-visit)
+[T8] active policy return=2572.4 ± 971.5 (59 s)
+[compress] epoch 0 kl=0.7559 ewc=0.0575
+[compress] epoch 1 kl=0.6707 ewc=0.0404
+[compress] epoch 2 kl=0.6375 ewc=0.0347
+[compress] epoch 3 kl=0.6056 ewc=0.0303
+[compress] epoch 4 kl=0.5810 ewc=0.0278
+[compress] epoch 5 kl=0.5609 ewc=0.0256
+[compress] epoch 6 kl=0.5376 ewc=0.0229
+[compress] epoch 7 kl=0.5230 ewc=0.0208
+[compress] epoch 8 kl=0.5064 ewc=0.0190
+[compress] epoch 9 kl=0.4922 ewc=0.0184
+[compress online BeamRider-v5] step=100352 kl=0.4772 ewc=0.0142 held_out_kl=0.3441 return(last 20)=1119.0
+[compress online BeamRider-v5] step=200704 kl=0.3962 ewc=0.0129 held_out_kl=0.2882 return(last 20)=893.0
+[compress online BeamRider-v5] step=301056 kl=0.4073 ewc=0.0105 held_out_kl=0.2821 return(last 20)=1145.6
+[compress online BeamRider-v5] step=401408 kl=0.3381 ewc=0.0114 held_out_kl=0.2523 return(last 20)=1241.6
+[compress online BeamRider-v5] step=501760 kl=0.3655 ewc=0.0120 held_out_kl=0.2437 return(last 20)=1201.6
+[compress online BeamRider-v5] step=600064 kl=0.3350 ewc=0.0108 held_out_kl=0.2320 return(last 20)=1240.0
+[compress online BeamRider-v5] step=700416 kl=0.3534 ewc=0.0096 held_out_kl=0.2195 return(last 20)=1134.6
+[compress online BeamRider-v5] step=800768 kl=0.2994 ewc=0.0092 held_out_kl=0.2169 return(last 20)=1132.8
+[compress online BeamRider-v5] step=901120 kl=0.3420 ewc=0.0104 held_out_kl=0.2253 return(last 20)=1244.8
+[compress online BeamRider-v5] step=1001472 kl=0.3242 ewc=0.0109 held_out_kl=0.2196 return(last 20)=1039.8
+[compress online BeamRider-v5] step=1101824 kl=0.2781 ewc=0.0088 held_out_kl=0.2202 return(last 20)=1115.0
+[compress online BeamRider-v5] step=1200128 kl=0.3157 ewc=0.0096 held_out_kl=0.2140 return(last 20)=1115.0
+[compress online BeamRider-v5] step=1300480 kl=0.3347 ewc=0.0113 held_out_kl=0.2130 return(last 20)=1000.6
+[compress online BeamRider-v5] step=1400832 kl=0.2977 ewc=0.0095 held_out_kl=0.2116 return(last 20)=1063.6
+[compress online BeamRider-v5] step=1501184 kl=0.3077 ewc=0.0082 held_out_kl=0.1958 return(last 20)=1084.4
+[compress online BeamRider-v5] step=1601536 kl=0.3103 ewc=0.0104 held_out_kl=0.1986 return(last 20)=1180.8
+[compress online BeamRider-v5] step=1701888 kl=0.3528 ewc=0.0108 held_out_kl=0.1991 return(last 20)=1169.2
+[compress online BeamRider-v5] step=1800192 kl=0.2980 ewc=0.0099 held_out_kl=0.1937 return(last 20)=1188.6
+[compress online BeamRider-v5] step=1900544 kl=0.3088 ewc=0.0098 held_out_kl=0.1788 return(last 20)=1117.4
+[compress online BeamRider-v5] step=1998848 kl=0.2639 ewc=0.0109 held_out_kl=0.1879 return(last 20)=1032.6
+[Fisher T8] total_mass=5.077076e+02  per-param mean=3.014661e-04  max=1.000000e-03
+After T8: SpaceInvaders-v5: 721.5 (kl 0.107) | Krull-v5: 9240.0 (kl 0.022) | BeamRider-v5: 1682.4 (kl 0.188) | Hero-v5: 8210.0 (kl 0.087) | StarGunner-v5: 380.0 (kl 0.600) | MsPacman-v5: 970.0 (kl 0.231)
+[T9 Hero-v5] actions=18 random return=37.5 (re-visit)
+[T9] active policy return=13294.0 ± 25.9 (3 s)
+[compress] epoch 0 kl=0.5002 ewc=0.0501
+[compress] epoch 1 kl=0.3735 ewc=0.0250
+[compress] epoch 2 kl=0.3267 ewc=0.0184
+[compress] epoch 3 kl=0.2997 ewc=0.0148
+[compress] epoch 4 kl=0.2826 ewc=0.0135
+[compress] epoch 5 kl=0.2623 ewc=0.0131
+[compress] epoch 6 kl=0.2510 ewc=0.0117
+[compress] epoch 7 kl=0.2394 ewc=0.0107
+[compress] epoch 8 kl=0.2274 ewc=0.0106
+[compress] epoch 9 kl=0.2224 ewc=0.0097
+[compress online Hero-v5] step=100352 kl=0.2110 ewc=0.0187 held_out_kl=0.1487 return(last 20)=7257.8
+[compress online Hero-v5] step=200704 kl=0.2407 ewc=0.0191 held_out_kl=0.1032 return(last 20)=9052.8
+[compress online Hero-v5] step=301056 kl=0.2406 ewc=0.0175 held_out_kl=0.0855 return(last 20)=9183.8
+[compress online Hero-v5] step=401408 kl=0.1966 ewc=0.0162 held_out_kl=0.0822 return(last 20)=8366.0
+[compress online Hero-v5] step=501760 kl=0.2122 ewc=0.0254 held_out_kl=0.1092 return(last 20)=8833.0
+[compress online Hero-v5] step=600064 kl=0.1496 ewc=0.0124 held_out_kl=0.0818 return(last 20)=8099.5
+[compress online Hero-v5] step=700416 kl=0.1617 ewc=0.0112 held_out_kl=0.0855 return(last 20)=7318.0
+[compress online Hero-v5] step=800768 kl=0.1559 ewc=0.0133 held_out_kl=0.0813 return(last 20)=9698.0
+[compress online Hero-v5] step=901120 kl=0.1691 ewc=0.0107 held_out_kl=0.0814 return(last 20)=9133.8
+[compress online Hero-v5] step=1001472 kl=0.1512 ewc=0.0130 held_out_kl=0.0817 return(last 20)=8587.0
+[compress online Hero-v5] step=1101824 kl=0.1835 ewc=0.0143 held_out_kl=0.0877 return(last 20)=8948.8
+[compress online Hero-v5] step=1200128 kl=0.1702 ewc=0.0128 held_out_kl=0.0689 return(last 20)=8504.2
+[compress online Hero-v5] step=1300480 kl=0.1585 ewc=0.0151 held_out_kl=0.0772 return(last 20)=9210.0
+[compress online Hero-v5] step=1400832 kl=0.1440 ewc=0.0103 held_out_kl=0.0761 return(last 20)=9333.8
+[compress online Hero-v5] step=1501184 kl=0.1392 ewc=0.0121 held_out_kl=0.0685 return(last 20)=9948.8
+[compress online Hero-v5] step=1601536 kl=0.1202 ewc=0.0091 held_out_kl=0.0721 return(last 20)=9550.2
+[compress online Hero-v5] step=1701888 kl=0.1254 ewc=0.0088 held_out_kl=0.0774 return(last 20)=9606.0
+[compress online Hero-v5] step=1800192 kl=0.1344 ewc=0.0095 held_out_kl=0.0874 return(last 20)=8811.5
+[compress online Hero-v5] step=1900544 kl=0.1171 ewc=0.0072 held_out_kl=0.0646 return(last 20)=9732.5
+[compress online Hero-v5] step=1998848 kl=0.1097 ewc=0.0107 held_out_kl=0.0558 return(last 20)=10349.2
+[Fisher T9] total_mass=5.046237e+02  per-param mean=2.996350e-04  max=1.000000e-03
+After T9: SpaceInvaders-v5: 727.0 (kl 0.108) | Krull-v5: 9860.0 (kl 0.022) | BeamRider-v5: 2132.4 (kl 0.190) | Hero-v5: 13217.5 (kl 0.056) | StarGunner-v5: 380.0 (kl 0.602) | MsPacman-v5: 797.0 (kl 0.224)
+[T10 StarGunner-v5] actions=18 random return=740.0 (re-visit)
+[T10] active policy return=45290.0 ± 10730.1 (7 s)
+[compress] epoch 0 kl=0.9961 ewc=0.0199
+[compress] epoch 1 kl=0.9304 ewc=0.0129
+[compress] epoch 2 kl=0.8953 ewc=0.0128
+[compress] epoch 3 kl=0.8737 ewc=0.0122
+[compress] epoch 4 kl=0.8515 ewc=0.0125
+[compress] epoch 5 kl=0.8320 ewc=0.0119
+[compress] epoch 6 kl=0.8173 ewc=0.0114
+[compress] epoch 7 kl=0.8039 ewc=0.0111
+[compress] epoch 8 kl=0.7944 ewc=0.0104
+[compress] epoch 9 kl=0.7853 ewc=0.0107
+[compress online StarGunner-v5] step=100352 kl=0.8589 ewc=0.0290 held_out_kl=0.5796 return(last 20)=1580.0
+[compress online StarGunner-v5] step=200704 kl=0.9330 ewc=0.0256 held_out_kl=0.5400 return(last 20)=1495.0
+[compress online StarGunner-v5] step=301056 kl=0.8283 ewc=0.0183 held_out_kl=0.4791 return(last 20)=1555.0
+[compress online StarGunner-v5] step=401408 kl=0.8571 ewc=0.0194 held_out_kl=0.5437 return(last 20)=2270.0
+[compress online StarGunner-v5] step=501760 kl=0.8247 ewc=0.0245 held_out_kl=0.4748 return(last 20)=3360.0
+[compress online StarGunner-v5] step=600064 kl=0.7128 ewc=0.0231 held_out_kl=0.4670 return(last 20)=2460.0
+[compress online StarGunner-v5] step=700416 kl=0.8682 ewc=0.0297 held_out_kl=0.4750 return(last 20)=3120.0
+[compress online StarGunner-v5] step=800768 kl=0.7522 ewc=0.0180 held_out_kl=0.4426 return(last 20)=3110.0
+[compress online StarGunner-v5] step=901120 kl=0.8281 ewc=0.0206 held_out_kl=0.4548 return(last 20)=2125.0
+[compress online StarGunner-v5] step=1001472 kl=0.8378 ewc=0.0199 held_out_kl=0.4307 return(last 20)=3185.0
+[compress online StarGunner-v5] step=1101824 kl=0.7765 ewc=0.0349 held_out_kl=0.4673 return(last 20)=2830.0
+[compress online StarGunner-v5] step=1200128 kl=0.8164 ewc=0.0221 held_out_kl=0.5037 return(last 20)=1665.0
+[compress online StarGunner-v5] step=1300480 kl=0.7291 ewc=0.0249 held_out_kl=0.4530 return(last 20)=3640.0
+[compress online StarGunner-v5] step=1400832 kl=0.8334 ewc=0.0267 held_out_kl=0.4720 return(last 20)=2955.0
+[compress online StarGunner-v5] step=1501184 kl=0.7718 ewc=0.0212 held_out_kl=0.4405 return(last 20)=2480.0
+[compress online StarGunner-v5] step=1601536 kl=0.6996 ewc=0.0170 held_out_kl=0.4146 return(last 20)=2720.0
+[compress online StarGunner-v5] step=1701888 kl=0.8855 ewc=0.0305 held_out_kl=0.5480 return(last 20)=2515.0
+[compress online StarGunner-v5] step=1800192 kl=0.7790 ewc=0.0229 held_out_kl=0.4084 return(last 20)=2670.0
+[compress online StarGunner-v5] step=1900544 kl=0.7583 ewc=0.0196 held_out_kl=0.4205 return(last 20)=2450.0
+[compress online StarGunner-v5] step=1998848 kl=0.8073 ewc=0.0223 held_out_kl=0.4339 return(last 20)=2640.0
+[Fisher T10] total_mass=2.583796e+02  per-param mean=1.534204e-04  max=1.000000e-03
+After T10: SpaceInvaders-v5: 829.5 (kl 0.111) | Krull-v5: 9948.0 (kl 0.024) | BeamRider-v5: 1250.4 (kl 0.188) | Hero-v5: 13335.0 (kl 0.056) | StarGunner-v5: 3970.0 (kl 0.434) | MsPacman-v5: 824.0 (kl 0.223)
+[T11 MsPacman-v5] actions=9 random return=243.0 (re-visit)
+[T11] active policy return=2133.0 ± 556.3 (3 s)
+[compress] epoch 0 kl=1.1742 ewc=0.1086
+[compress] epoch 1 kl=0.9970 ewc=0.1139
+[compress] epoch 2 kl=0.9629 ewc=0.1016
+[compress] epoch 3 kl=0.9286 ewc=0.0960
+[compress] epoch 4 kl=0.8921 ewc=0.0885
+[compress] epoch 5 kl=0.8678 ewc=0.0810
+[compress] epoch 6 kl=0.8865 ewc=0.0777
+[compress] epoch 7 kl=0.8880 ewc=0.0753
+[compress] epoch 8 kl=0.8128 ewc=0.0700
+[compress] epoch 9 kl=0.7817 ewc=0.0620
+[compress online MsPacman-v5] step=100352 kl=0.6006 ewc=0.0902 held_out_kl=0.6934 return(last 20)=494.5
+[compress online MsPacman-v5] step=200704 kl=0.6836 ewc=0.0890 held_out_kl=0.5533 return(last 20)=738.5
+[compress online MsPacman-v5] step=301056 kl=0.6614 ewc=0.0710 held_out_kl=0.3914 return(last 20)=619.0
+[compress online MsPacman-v5] step=401408 kl=0.6129 ewc=0.0607 held_out_kl=0.6551 return(last 20)=636.0
+[compress online MsPacman-v5] step=501760 kl=0.5617 ewc=0.0630 held_out_kl=0.3613 return(last 20)=592.0
+[compress online MsPacman-v5] step=600064 kl=0.5226 ewc=0.0639 held_out_kl=0.6218 return(last 20)=821.5
+[compress online MsPacman-v5] step=700416 kl=0.6605 ewc=0.0651 held_out_kl=0.6308 return(last 20)=687.5
+[compress online MsPacman-v5] step=800768 kl=0.6556 ewc=0.0582 held_out_kl=0.3391 return(last 20)=492.5
+[compress online MsPacman-v5] step=901120 kl=0.4581 ewc=0.0520 held_out_kl=0.3539 return(last 20)=655.0
+[compress online MsPacman-v5] step=1001472 kl=0.5629 ewc=0.0742 held_out_kl=0.3883 return(last 20)=664.5
+[compress online MsPacman-v5] step=1101824 kl=0.5854 ewc=0.0475 held_out_kl=0.5847 return(last 20)=526.0
+[compress online MsPacman-v5] step=1200128 kl=0.5194 ewc=0.0416 held_out_kl=0.3849 return(last 20)=728.0
+[compress online MsPacman-v5] step=1300480 kl=0.4694 ewc=0.0552 held_out_kl=0.3688 return(last 20)=836.0
+[compress online MsPacman-v5] step=1400832 kl=0.4753 ewc=0.0497 held_out_kl=0.3133 return(last 20)=762.0
+[compress online MsPacman-v5] step=1501184 kl=0.5745 ewc=0.0465 held_out_kl=0.2913 return(last 20)=677.5
+[compress online MsPacman-v5] step=1601536 kl=0.5110 ewc=0.0394 held_out_kl=0.4116 return(last 20)=741.0
+[compress online MsPacman-v5] step=1701888 kl=0.5812 ewc=0.0361 held_out_kl=0.3684 return(last 20)=704.0
+[compress online MsPacman-v5] step=1800192 kl=0.6137 ewc=0.0433 held_out_kl=0.2882 return(last 20)=656.0
+[compress online MsPacman-v5] step=1900544 kl=0.5082 ewc=0.0473 held_out_kl=0.2723 return(last 20)=788.5
+[compress online MsPacman-v5] step=1998848 kl=0.5501 ewc=0.0554 held_out_kl=0.4428 return(last 20)=738.5
+[Fisher T11] total_mass=2.900007e+02  per-param mean=1.721964e-04  max=1.000000e-03
+After T11: SpaceInvaders-v5: 480.0 (kl 0.113) | Krull-v5: 8362.0 (kl 0.031) | BeamRider-v5: 1826.4 (kl 0.196) | Hero-v5: 13187.5 (kl 0.060) | StarGunner-v5: 4150.0 (kl 0.434) | MsPacman-v5: 650.0 (kl 0.443)
+Results saved to /root/progress-compress/outputs/atari/paper3/on2M_lam1e4_s0/results.json
+wandb: WARNING Symlinked 1 file into the W&B run directory; call wandb.save again to sync new files.
+wandb: updating run metadata
+wandb: 
+wandb: Run history:
+wandb:                compress/epoch ▁▂▂▂▂▃▃▃▃▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇▇███
+wandb:                  compress/ewc ▁▁▁▁▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▆▄▃▂█▂▄▂▂▃▂▂▂▁▂▂▂▂▄
+wandb:                   compress/kl ▆▂▂▂▁▃▃▂▂▄▂▂▁█▇▆▅▄▄▄▂▃▂▂▁▁▅▄▂▁▁▁▆▆▆▅▅▆▆▆
+wandb:                compress/total ▃▂▂▃▂▁▃▂▂▂▁▁█▇▆▆▅▄▄▄▄▂▂▇▃▂▁▁▅▄▄▄▃▃▁▁▆▆█▆
+wandb:           compress_online/ewc ▁▁▁▁▂▂▂▂▂▂▂▂▂▂▃▄▄▄▄▃▂▂▂▂▂▂▂▂▂▂▂▂▂▃▃▃▇█▆▅
+wandb:   compress_online/held_out_kl ▃▃▂▁▁▁▂▂▂▂▃▃▂▂▂▇██▄▅▃▂▂▁▁▁▁▁▁▅▃▃▃▂▆▆▆▅▄▅
+wandb:            compress_online/kl ▁▂▂▂▂▂▁▂▁██▆▇▇▄▄▅▅▄▂▂▂▂▁▃▂▃▃▃▁▁▇█▇▆▅▆▅▅▅
+wandb: compress_online/return_last20 ▁▁▁▇▆▇▁▁▇▇▁▃▂▂▁▁▁▁▁▁▁▁▆▆▆▆▆▂▁▂▆▇▇█▂▂▃▂▃▁
+wandb:          compress_online/step ▁▁▁▁▂▂▂▂▃▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▆▆▆▆▆▆▆▇▇▇▇▇███
+wandb:          eval/BeamRider-v5/kl ▁▁▁▁▁▁▇███
+wandb:                           +25 ...
+wandb: 
+wandb: Run summary:
+wandb:                compress/epoch 120
+wandb:                  compress/ewc 0.06196
+wandb:                   compress/kl 0.78174
+wandb:                compress/total 0.8437
+wandb:           compress_online/ewc 0.05538
+wandb:   compress_online/held_out_kl 0.44285
+wandb:            compress_online/kl 0.55013
+wandb: compress_online/return_last20 738.5
+wandb:          compress_online/step 23986176
+wandb:          eval/BeamRider-v5/kl 0.19608
+wandb:                           +25 ...
+wandb: 
+wandb: 🚀 View run on2M_lam1e4_s0 at: https://forge.coreweave.com/wandb/tg-2746-n-a/progress-compress/runs/zasronca
+wandb: ⭐️ View project at: https://forge.coreweave.com/wandb/tg-2746-n-a/progress-compress
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 1 other file(s)
+wandb: Find logs at: ./outputs/atari/paper3/on2M_lam1e4_s0/wandb/run-20261021_073438-zasronca/logs
+[W1021 09:43:06.285827842 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())

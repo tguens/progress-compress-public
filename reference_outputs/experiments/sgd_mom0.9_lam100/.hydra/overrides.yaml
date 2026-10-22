@@ -1,0 +1,13 @@
+- max_n_tasks=5
+- seed=0
+- multi_head=true
+- reinit=true
+- data_augmentation=true
+- compress_teacher=frozen_teacher
+- normalize_fisher=false
+- progress_optimizer=adam
+- compress_optimizer=sgd
+- sgd_momentum=0.9
+- progress_lr=1e-3
+- compress_lr=0.01
+- ewc_lambda=100

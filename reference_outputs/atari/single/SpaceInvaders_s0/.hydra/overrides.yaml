@@ -1,0 +1,9 @@
+- mode=finetune
+- max_n_tasks=1
+- total_timesteps=[10000000]
+- num_envs=16
+- eval_mode=greedy
+- compress_n_states=16384
+- fisher_n_samples=1024
+- games=[SpaceInvaders-v5]
+- seed=0

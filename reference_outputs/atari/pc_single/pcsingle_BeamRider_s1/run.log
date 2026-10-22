@@ -1,0 +1,188 @@
+Using device: cuda
+wandb: [wandb.login()] Loaded credentials for https://api.forge.coreweave.com from /root/.netrc.
+wandb: Currently logged in as: tg-2746 (tg-2746-n-a) to https://api.forge.coreweave.com. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.31.0
+wandb: Run data is saved locally in /root/pc-cleanup/outputs/atari/pc_single/pcsingle_BeamRider_s1/wandb/run-20261022_131043-mhneyvyx
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run pcsingle_BeamRider_s1
+wandb: ⭐️ View project at https://forge.coreweave.com/wandb/tg-2746-n-a/progress-compress
+wandb: 🚀 View run at https://forge.coreweave.com/wandb/tg-2746-n-a/progress-compress/runs/mhneyvyx
+[T0 BeamRider-v5] actions=9 random return=422.8
+[progress BeamRider-v5] step=102400 SPS=1833 return(last 20)=447.2 entropy=2.067
+[progress BeamRider-v5] step=204800 SPS=1854 return(last 20)=385.0 entropy=1.873
+[progress BeamRider-v5] step=307200 SPS=1859 return(last 20)=471.2 entropy=1.634
+[progress BeamRider-v5] step=409600 SPS=1864 return(last 20)=526.6 entropy=1.305
+[progress BeamRider-v5] step=512000 SPS=1872 return(last 20)=602.0 entropy=1.136
+[progress BeamRider-v5] step=614400 SPS=1876 return(last 20)=592.0 entropy=1.063
+[progress BeamRider-v5] step=716800 SPS=1883 return(last 20)=730.4 entropy=1.105
+[progress BeamRider-v5] step=819200 SPS=1887 return(last 20)=713.4 entropy=0.981
+[progress BeamRider-v5] step=921600 SPS=1887 return(last 20)=666.8 entropy=1.122
+[progress BeamRider-v5] step=1024000 SPS=1888 return(last 20)=681.0 entropy=1.127
+[progress BeamRider-v5] step=1126400 SPS=1889 return(last 20)=651.0 entropy=0.835
+[progress BeamRider-v5] step=1228800 SPS=1888 return(last 20)=708.4 entropy=0.809
+[progress BeamRider-v5] step=1331200 SPS=1886 return(last 20)=732.2 entropy=0.746
+[progress BeamRider-v5] step=1433600 SPS=1886 return(last 20)=657.4 entropy=0.817
+[progress BeamRider-v5] step=1536000 SPS=1877 return(last 20)=691.2 entropy=0.643
+[progress BeamRider-v5] step=1638400 SPS=1884 return(last 20)=745.0 entropy=0.772
+[progress BeamRider-v5] step=1740800 SPS=1889 return(last 20)=667.4 entropy=0.831
+[progress BeamRider-v5] step=1843200 SPS=1890 return(last 20)=638.6 entropy=0.920
+[progress BeamRider-v5] step=1945600 SPS=1891 return(last 20)=639.0 entropy=0.897
+[progress BeamRider-v5] step=2048000 SPS=1887 return(last 20)=588.6 entropy=1.242
+[progress BeamRider-v5] step=2150400 SPS=1886 return(last 20)=699.6 entropy=1.074
+[progress BeamRider-v5] step=2252800 SPS=1878 return(last 20)=622.4 entropy=1.102
+[progress BeamRider-v5] step=2355200 SPS=1878 return(last 20)=723.2 entropy=1.054
+[progress BeamRider-v5] step=2457600 SPS=1876 return(last 20)=735.8 entropy=1.108
+[progress BeamRider-v5] step=2560000 SPS=1873 return(last 20)=706.4 entropy=1.085
+[progress BeamRider-v5] step=2662400 SPS=1876 return(last 20)=778.2 entropy=1.104
+[progress BeamRider-v5] step=2764800 SPS=1875 return(last 20)=809.8 entropy=1.138
+[progress BeamRider-v5] step=2867200 SPS=1869 return(last 20)=848.4 entropy=1.158
+[progress BeamRider-v5] step=2969600 SPS=1868 return(last 20)=1026.8 entropy=1.228
+[progress BeamRider-v5] step=3072000 SPS=1867 return(last 20)=1052.2 entropy=1.313
+[progress BeamRider-v5] step=3174400 SPS=1864 return(last 20)=1145.2 entropy=1.334
+[progress BeamRider-v5] step=3276800 SPS=1861 return(last 20)=1060.6 entropy=1.329
+[progress BeamRider-v5] step=3379200 SPS=1859 return(last 20)=1135.8 entropy=1.350
+[progress BeamRider-v5] step=3481600 SPS=1858 return(last 20)=1222.0 entropy=1.298
+[progress BeamRider-v5] step=3584000 SPS=1856 return(last 20)=1243.6 entropy=1.354
+[progress BeamRider-v5] step=3686400 SPS=1854 return(last 20)=1691.4 entropy=1.375
+[progress BeamRider-v5] step=3788800 SPS=1853 return(last 20)=1527.6 entropy=1.199
+[progress BeamRider-v5] step=3891200 SPS=1851 return(last 20)=1557.0 entropy=1.289
+[progress BeamRider-v5] step=3993600 SPS=1849 return(last 20)=1706.8 entropy=1.209
+[progress BeamRider-v5] step=4096000 SPS=1846 return(last 20)=1960.5 entropy=1.263
+[progress BeamRider-v5] step=4198400 SPS=1845 return(last 20)=1751.2 entropy=1.193
+[progress BeamRider-v5] step=4300800 SPS=1843 return(last 20)=2374.0 entropy=1.123
+[progress BeamRider-v5] step=4403200 SPS=1841 return(last 20)=2400.9 entropy=1.280
+[progress BeamRider-v5] step=4505600 SPS=1840 return(last 20)=2101.5 entropy=1.213
+[progress BeamRider-v5] step=4608000 SPS=1839 return(last 20)=2085.3 entropy=1.263
+[progress BeamRider-v5] step=4710400 SPS=1839 return(last 20)=2187.9 entropy=1.207
+[progress BeamRider-v5] step=4812800 SPS=1838 return(last 20)=1969.5 entropy=1.372
+[progress BeamRider-v5] step=4915200 SPS=1837 return(last 20)=2448.7 entropy=1.302
+[progress BeamRider-v5] step=5017600 SPS=1836 return(last 20)=1847.8 entropy=1.192
+[progress BeamRider-v5] step=5120000 SPS=1835 return(last 20)=1979.7 entropy=1.167
+[progress BeamRider-v5] step=5222400 SPS=1834 return(last 20)=1805.4 entropy=1.271
+[progress BeamRider-v5] step=5324800 SPS=1834 return(last 20)=2152.5 entropy=1.228
+[progress BeamRider-v5] step=5427200 SPS=1835 return(last 20)=3003.8 entropy=1.230
+[progress BeamRider-v5] step=5529600 SPS=1835 return(last 20)=2307.6 entropy=1.233
+[progress BeamRider-v5] step=5632000 SPS=1835 return(last 20)=2280.1 entropy=1.404
+[progress BeamRider-v5] step=5734400 SPS=1836 return(last 20)=2657.1 entropy=1.175
+[progress BeamRider-v5] step=5836800 SPS=1836 return(last 20)=2212.1 entropy=1.352
+[progress BeamRider-v5] step=5939200 SPS=1837 return(last 20)=2947.8 entropy=1.089
+[progress BeamRider-v5] step=6041600 SPS=1838 return(last 20)=3496.4 entropy=1.263
+[progress BeamRider-v5] step=6144000 SPS=1838 return(last 20)=2675.3 entropy=1.205
+[progress BeamRider-v5] step=6246400 SPS=1839 return(last 20)=2841.9 entropy=1.323
+[progress BeamRider-v5] step=6348800 SPS=1839 return(last 20)=3130.8 entropy=1.202
+[progress BeamRider-v5] step=6451200 SPS=1840 return(last 20)=3162.1 entropy=1.176
+[progress BeamRider-v5] step=6553600 SPS=1840 return(last 20)=2702.5 entropy=1.469
+[progress BeamRider-v5] step=6656000 SPS=1841 return(last 20)=2665.3 entropy=1.357
+[progress BeamRider-v5] step=6758400 SPS=1841 return(last 20)=2566.4 entropy=1.368
+[progress BeamRider-v5] step=6860800 SPS=1842 return(last 20)=2969.8 entropy=1.246
+[progress BeamRider-v5] step=6963200 SPS=1842 return(last 20)=2948.5 entropy=1.388
+[progress BeamRider-v5] step=7065600 SPS=1843 return(last 20)=2909.5 entropy=1.366
+[progress BeamRider-v5] step=7168000 SPS=1845 return(last 20)=2885.4 entropy=1.205
+[progress BeamRider-v5] step=7270400 SPS=1845 return(last 20)=3409.4 entropy=1.202
+[progress BeamRider-v5] step=7372800 SPS=1846 return(last 20)=3268.8 entropy=1.371
+[progress BeamRider-v5] step=7475200 SPS=1847 return(last 20)=2950.8 entropy=1.216
+[progress BeamRider-v5] step=7577600 SPS=1847 return(last 20)=3286.8 entropy=1.498
+[progress BeamRider-v5] step=7680000 SPS=1847 return(last 20)=3188.5 entropy=1.313
+[progress BeamRider-v5] step=7782400 SPS=1847 return(last 20)=2893.5 entropy=1.295
+[progress BeamRider-v5] step=7884800 SPS=1848 return(last 20)=2836.8 entropy=1.220
+[progress BeamRider-v5] step=7987200 SPS=1848 return(last 20)=3019.2 entropy=1.170
+[progress BeamRider-v5] step=8089600 SPS=1849 return(last 20)=3052.5 entropy=1.171
+[progress BeamRider-v5] step=8192000 SPS=1849 return(last 20)=3134.5 entropy=1.210
+[progress BeamRider-v5] step=8294400 SPS=1850 return(last 20)=3104.0 entropy=1.268
+[progress BeamRider-v5] step=8396800 SPS=1850 return(last 20)=3506.0 entropy=1.243
+[progress BeamRider-v5] step=8499200 SPS=1850 return(last 20)=3349.0 entropy=1.252
+[progress BeamRider-v5] step=8601600 SPS=1850 return(last 20)=2962.0 entropy=1.331
+[progress BeamRider-v5] step=8704000 SPS=1848 return(last 20)=3395.0 entropy=1.262
+[progress BeamRider-v5] step=8806400 SPS=1846 return(last 20)=3491.7 entropy=1.265
+[progress BeamRider-v5] step=8908800 SPS=1844 return(last 20)=3236.0 entropy=1.272
+[progress BeamRider-v5] step=9011200 SPS=1842 return(last 20)=3809.1 entropy=1.391
+[progress BeamRider-v5] step=9113600 SPS=1840 return(last 20)=3607.6 entropy=1.273
+[progress BeamRider-v5] step=9216000 SPS=1838 return(last 20)=3328.5 entropy=1.203
+[progress BeamRider-v5] step=9318400 SPS=1836 return(last 20)=4051.3 entropy=1.290
+[progress BeamRider-v5] step=9420800 SPS=1834 return(last 20)=3545.0 entropy=1.242
+[progress BeamRider-v5] step=9523200 SPS=1833 return(last 20)=3350.9 entropy=1.219
+[progress BeamRider-v5] step=9625600 SPS=1831 return(last 20)=3770.3 entropy=1.351
+[progress BeamRider-v5] step=9728000 SPS=1829 return(last 20)=3504.0 entropy=1.282
+[progress BeamRider-v5] step=9830400 SPS=1827 return(last 20)=3641.3 entropy=1.276
+[progress BeamRider-v5] step=9932800 SPS=1825 return(last 20)=3967.8 entropy=1.337
+[progress BeamRider-v5] step=9998336 SPS=1825 return(last 20)=3576.0 entropy=1.278
+[T0] active policy return=4357.8 ± 2405.2 (5495 s)
+[compress] epoch 0 kl=0.8352 ewc=0.0000
+[compress] epoch 1 kl=0.7424 ewc=0.0000
+[compress] epoch 2 kl=0.6089 ewc=0.0000
+[compress] epoch 3 kl=0.5328 ewc=0.0000
+[compress] epoch 4 kl=0.4732 ewc=0.0000
+[compress] epoch 5 kl=0.4228 ewc=0.0000
+[compress] epoch 6 kl=0.3791 ewc=0.0000
+[compress] epoch 7 kl=0.3429 ewc=0.0000
+[compress] epoch 8 kl=0.3112 ewc=0.0000
+[compress] epoch 9 kl=0.2878 ewc=0.0000
+[compress] epoch 0 kl=0.2940 ewc=0.0000
+[compress] epoch 1 kl=0.2431 ewc=0.0000
+[compress] epoch 2 kl=0.2038 ewc=0.0000
+[compress] epoch 3 kl=0.1715 ewc=0.0000
+[compress] epoch 4 kl=0.1470 ewc=0.0000
+[compress] epoch 5 kl=0.1309 ewc=0.0000
+[compress] epoch 6 kl=0.1148 ewc=0.0000
+[compress] epoch 7 kl=0.1083 ewc=0.0000
+[compress] epoch 8 kl=0.1002 ewc=0.0000
+[compress] epoch 9 kl=0.0922 ewc=0.0000
+[compress] epoch 0 kl=0.0897 ewc=0.0000
+[compress] epoch 1 kl=0.0828 ewc=0.0000
+[compress] epoch 2 kl=0.0749 ewc=0.0000
+[compress] epoch 3 kl=0.0703 ewc=0.0000
+[compress] epoch 4 kl=0.0663 ewc=0.0000
+[compress] epoch 5 kl=0.0629 ewc=0.0000
+[compress] epoch 6 kl=0.0597 ewc=0.0000
+[compress] epoch 7 kl=0.0573 ewc=0.0000
+[compress] epoch 8 kl=0.0545 ewc=0.0000
+[compress] epoch 9 kl=0.0523 ewc=0.0000
+[compress] epoch 0 kl=0.0541 ewc=0.0000
+[compress] epoch 1 kl=0.0525 ewc=0.0000
+[compress] epoch 2 kl=0.0491 ewc=0.0000
+[compress] epoch 3 kl=0.0472 ewc=0.0000
+[compress] epoch 4 kl=0.0462 ewc=0.0000
+[compress] epoch 5 kl=0.0439 ewc=0.0000
+[compress] epoch 6 kl=0.0428 ewc=0.0000
+[compress] epoch 7 kl=0.0414 ewc=0.0000
+[compress] epoch 8 kl=0.0399 ewc=0.0000
+[compress] epoch 9 kl=0.0383 ewc=0.0000
+Computing Fisher matrix for task 0
+[Fisher T0] total_mass=7.478770e+02  per-param mean=4.440737e-04  max=1.000000e-02
+After T0: BeamRider-v5: 3520.2 (kl 0.020)
+Results saved to /root/pc-cleanup/outputs/atari/pc_single/pcsingle_BeamRider_s1/results.json
+wandb: WARNING Symlinked 1 file into the W&B run directory; call wandb.save again to sync new files.
+wandb: updating run metadata
+wandb: uploading history steps 4922-4922, summary, console lines 142-144
+wandb: 
+wandb: Run history:
+wandb:           compress/epoch ▁▁▁▂▂▂▂▂▂▃▃▃▃▃▄▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇███
+wandb:             compress/ewc ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:              compress/kl █▇▆▅▅▄▄▄▃▃▃▃▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            compress/loss █▇▆▅▅▄▄▄▃▃▃▃▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     eval/BeamRider-v5/kl ▁
+wandb:   eval/BeamRider-v5/norm ▁
+wandb: eval/BeamRider-v5/return ▁
+wandb:        eval/all_avg_norm ▁
+wandb:              global_step ▁▁▁▁▂▂▂▂▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▄▅▅▅▆▆▆▇▇▇▇█████
+wandb:         progress/entropy ██▆▅▂▁▂▂▁▂▂▂▂▃▂▄▄▄▄▄▃▃▄▃▄▄▃▄▃▃▃▃▄▃▃▃▃▃▄▄
+wandb:                      +11 ...
+wandb: 
+wandb: Run summary:
+wandb:           compress/epoch 39
+wandb:             compress/ewc 0
+wandb:              compress/kl 0.03834
+wandb:            compress/loss 0.03834
+wandb:     eval/BeamRider-v5/kl 0.02019
+wandb:   eval/BeamRider-v5/norm 0.78714
+wandb: eval/BeamRider-v5/return 3520.2
+wandb:        eval/all_avg_norm 0.78714
+wandb:       eval/prev_avg_norm nan
+wandb:              global_step 10000000
+wandb:                      +11 ...
+wandb: 
+wandb: 🚀 View run pcsingle_BeamRider_s1 at: https://forge.coreweave.com/wandb/tg-2746-n-a/progress-compress/runs/mhneyvyx
+wandb: ⭐️ View project at: https://forge.coreweave.com/wandb/tg-2746-n-a/progress-compress
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 1 other file(s)
+wandb: Find logs at: ./outputs/atari/pc_single/pcsingle_BeamRider_s1/wandb/run-20261022_131043-mhneyvyx/logs
+[W1022 14:43:06.262125696 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())

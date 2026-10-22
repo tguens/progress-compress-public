@@ -1,0 +1,1742 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Progress and Compress</title>
+<link rel="icon" href="data:,">
+<style>
+  :root {
+    color-scheme: light;
+    --bg: rgb(249, 249, 247);
+    --text: rgb(11, 11, 11);
+    --muted: rgb(82, 81, 78);
+    --rule: rgb(225, 224, 217);
+    --panel: rgb(252, 252, 251);
+    --white: rgb(255, 255, 255);
+    --kb: rgb(28, 92, 171);
+    --act: rgb(235, 104, 52);
+    --ad: rgb(14, 122, 87);
+    --tch: rgb(137, 135, 129);
+    --ewc: rgb(109, 40, 217);
+    --ft: rgb(173, 47, 47);
+    --hl: rgba(11, 11, 11, 0.05);
+    --serif: Charter, "Iowan Old Style", Palatino, Georgia, serif;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+  html, body { margin: 0; background: var(--bg); color: var(--text); }
+  body { font: 17px/1.55 var(--serif); -webkit-text-size-adjust: 100%; }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  .page {
+    max-width: 1280px; margin: 0 auto;
+    padding-block: 10px 14px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+  .hdr { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 16px; }
+  .hdr h1 { font-size: 22px; line-height: 1.3; font-weight: 600; margin: 0; }
+  .hdr p { margin: 0; color: var(--muted); font-size: 15.5px; line-height: 1.4; }
+  .hdr a { color: var(--kb); text-decoration: none; border-bottom: 1px solid var(--rule); }
+  .hdr a:hover, .hdr a:focus { border-bottom-color: var(--kb); }
+  .foot { margin: 6px 0 0; font: 12px var(--sans); color: var(--muted); }
+
+  .stage { display: grid; grid-template-columns: minmax(0, 1.04fr) minmax(0, 1fr); gap: 14px; margin-top: 8px; }
+  .panel { background: var(--panel); border: 1px solid var(--rule); border-radius: 4px; padding: 7px 12px 9px; margin: 0; min-width: 0; }
+  .panel-h { font: 12px/1.4 var(--sans); color: var(--muted); letter-spacing: 0.02em; margin: 0 0 3px; }
+  #model { display: block; width: 100%; height: auto; }
+
+  /* results */
+  .rgrid, .rrow, .grph { display: grid; grid-template-columns: 30px 14px repeat(3, minmax(0, 1fr)); column-gap: 10px; align-items: center; }
+  .rgrid { font: 12px/1.3 var(--sans); }
+  .colh { font: 600 12px/1.25 var(--sans); min-height: 34px; display: flex; align-items: flex-end; padding-bottom: 3px; border-bottom: 1px solid var(--rule); }
+  .colh.c-act { color: var(--act); } .colh.c-tch { color: var(--tch); } .colh.c-kb { color: var(--kb); } .colh.c-gh { color: var(--ft); }
+  .colh .lv { font-weight: 400; color: var(--ewc); white-space: nowrap; }
+  .gtitle { font: 600 13.5px/1.3 var(--serif); margin-top: 7px; }
+  .gtitle span { font: 400 11.5px var(--sans); color: var(--muted); }
+  .grph { min-height: 19px; margin-bottom: 1px; }
+  .rleg { font: 11.5px/1.35 var(--sans); color: var(--muted); margin-top: 6px; }
+  .acc { font: 12px/1.25 var(--sans); color: var(--muted); }
+  .acc b { font: 600 13px var(--mono); color: var(--text); }
+  .acc .note { font-style: italic; }
+  .rrow { height: 27px; border-radius: 3px; transition: background-color 0.25s; }
+  .rrow.on { background: var(--hl); }
+  .ex { width: 26px; height: 26px; display: block; border: 1px solid var(--rule); background: var(--white); margin-left: 2px; }
+  .tl { font: 12px var(--mono); color: var(--muted); text-align: center; }
+  .cell { display: flex; align-items: center; gap: 6px; min-width: 0; }
+  .cell svg { width: 62px; height: 24px; flex: none; overflow: visible; }
+  .cell .base { stroke: var(--rule); stroke-width: 1; }
+  .cell .tru { fill: var(--text); }
+  .cell rect.b { stroke-width: 1; }
+  .k-act rect.b { fill: var(--act); } .k-tch rect.b { fill: var(--tch); } .k-kb rect.b { fill: var(--kb); }
+  .k-gh rect.b { fill: rgba(173, 47, 47, 0.08); stroke: var(--ft); }
+  .k-none rect.b, .k-none .tru { visibility: hidden; }
+  .pred { font: 12px var(--mono); color: var(--text); white-space: nowrap; }
+  .pred i { font-style: normal; color: var(--muted); }
+  .k-none .pred { color: var(--rule); }
+
+  /* right panel: predictions, or the landscape of segments 3 and 5 */
+  .rp-h { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 2px 10px; }
+  .vsw { display: inline-flex; flex: none; margin: -4px 0 -3px; border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; }
+  .vsw.off { display: none; }
+  .vsw button { font: 11.5px/1.2 var(--sans); color: var(--muted); background: var(--panel); border: 0; border-radius: 0; padding: 3px 9px; cursor: pointer; }
+  .vsw button + button { border-left: 1px solid var(--rule); }
+  .vsw button:hover { color: var(--text); }
+  .vsw button[aria-pressed="true"] { color: var(--text); background: var(--hl); font-weight: 600; }
+  .rp-body > .vh { display: none; }
+  @media (min-width: 861px) {
+    .rp-body { display: grid; }
+    .rp-body > * { grid-area: 1 / 1; min-width: 0; }
+    .rp-body > .vh { display: block; visibility: hidden; }
+  }
+  #landView { container-type: inline-size; }
+  .land { display: grid; grid-template-columns: minmax(0, 1fr) 196px; gap: 12px; align-items: start; margin-top: 2px; }
+  #landCv { display: block; width: 100%; max-width: 480px; height: auto; aspect-ratio: 372 / 330; }
+  .lnote { margin: 1px 0 0; font: 11.5px/1.35 var(--sans); color: var(--muted); }
+  .spr { min-width: 0; }
+  #springs { display: block; width: 100%; max-width: 260px; height: auto; overflow: visible; }
+  #springs text { font: 11px var(--sans); fill: var(--muted); }
+  #springs .sph { font-weight: 600; fill: var(--text); }
+  .spr-s { margin: 6px 0 0; font-size: 14.5px; line-height: 1.4; }
+  .cmp { margin-top: 5px; padding-top: 3px; border-top: 1px solid var(--rule); font: 12px/1.3 var(--sans); }
+  .cgrid { display: grid; grid-template-columns: 160px repeat(3, minmax(0, 1fr)); column-gap: 10px; align-items: center; }
+  .chead { min-height: 18px; font-size: 11px; color: var(--muted); }
+  .ch { font: 600 11.5px/1.25 var(--sans); }
+  .ch.c-act { color: var(--act); } .ch.c-tch { color: var(--tch); } .ch.c-kb { color: var(--kb); } .ch.c-gh { color: var(--ft); }
+  .ch .lv { font-weight: 400; color: var(--ewc); white-space: nowrap; }
+  .crow { min-height: 28px; }
+  .cgl { display: flex; align-items: center; gap: 2px; }
+  .cgl b { font: 600 13px/1 var(--serif); width: 14px; flex: none; }
+  .cgl img { width: 22px; height: 22px; display: block; flex: none; border: 1px solid var(--rule); background: var(--white); }
+  .cm { font: 12.5px/1.2 var(--mono); white-space: nowrap; min-width: 0; }
+  .cm i { font-style: normal; color: var(--muted); }
+  .cm b { font-weight: 600; margin-left: 4px; }
+  .cm .note { font: italic 12px var(--sans); color: var(--muted); white-space: normal; }
+  @container (max-width: 560px) {
+    .land { grid-template-columns: minmax(0, 1fr); }
+    .spr { display: grid; grid-template-columns: minmax(0, 200px) minmax(0, 1fr); gap: 12px; align-items: center; }
+    .cgrid { grid-template-columns: 116px repeat(3, minmax(0, 1fr)); column-gap: 6px; }
+    .cgl img { width: 15px; height: 15px; }
+    .cgrid { grid-template-columns: 116px repeat(3, minmax(0, 1fr)); }
+    .cm { font-size: 11px; white-space: normal; }
+    .cm b { display: block; margin-left: 0; }
+  }
+
+  /* transport */
+  .transport { display: grid; grid-template-columns: auto auto minmax(0, 1fr) auto; gap: 6px 12px; align-items: start; margin-top: 9px; }
+  .btn { font: 13px/1 var(--sans); color: var(--text); background: var(--panel); border: 1px solid var(--rule); border-radius: 4px; padding: 6px 11px; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; justify-content: center; }
+  #play { min-width: 82px; }
+  .btn:hover { border-color: var(--muted); }
+  .btn svg { width: 10px; height: 10px; fill: var(--text); }
+  .btn:disabled { color: var(--muted); cursor: progress; }
+  .scrub { min-width: 0; }
+  .segs { display: flex; margin-top: 1px; }
+  .segs button { flex-basis: 0; min-width: 0; font: 11.5px/1.25 var(--sans); color: var(--muted); background: none; border: 0; border-left: 1px solid var(--rule); padding: 2px 5px; text-align: left; cursor: pointer; overflow-wrap: anywhere; }
+  .segs button:first-child { border-left-color: transparent; padding-left: 0; }
+  .segs button[aria-current="step"] { color: var(--text); font-weight: 600; }
+  .lam { display: flex; align-items: center; gap: 8px; font: 13px/1.2 var(--sans); color: var(--muted); padding-top: 4px; }
+  .lam label { white-space: nowrap; }
+  #lambda { width: 140px; }
+  #lambdaVal { font: 13px var(--mono); color: var(--ewc); min-width: 6.2em; white-space: nowrap; }
+  input[type=range] { -webkit-appearance: none; appearance: none; background: transparent; height: 22px; margin: 0; cursor: pointer; }
+  #scrubber { width: 100%; display: block; }
+  input[type=range]::-webkit-slider-runnable-track { height: 2px; background: var(--rule); border-radius: 1px; }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 14px; height: 14px; border-radius: 50%; background: var(--panel); border: 1px solid var(--text); margin-top: -6px; }
+  input[type=range]::-moz-range-track { height: 2px; background: var(--rule); border: 0; }
+  input[type=range]::-moz-range-thumb { width: 12px; height: 12px; border-radius: 50%; background: var(--panel); border: 1px solid var(--text); }
+  #lambda::-webkit-slider-thumb { border-color: var(--ewc); }
+  #lambda::-moz-range-thumb { border-color: var(--ewc); }
+  :focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
+  input[type=checkbox] { accent-color: var(--ewc); margin: 0 5px 0 0; vertical-align: -2px; }
+  .cap { margin: 5px 0 0; min-height: 1.5em; font-size: 16.5px; line-height: 1.45; max-width: 105ch; }
+
+  /* details */
+  details { margin-top: 6px; border-top: 1px solid var(--rule); padding-top: 5px; }
+  summary { font: 13px/1.6 var(--sans); color: var(--muted); cursor: pointer; }
+  .more { max-width: 72ch; font-size: 15.5px; line-height: 1.55; padding-bottom: 12px; }
+  .more h2 { font: 600 13px/1.4 var(--sans); color: var(--muted); letter-spacing: 0.03em; margin: 16px 0 4px; }
+  .more p { margin: 0 0 8px; }
+  .more .eq { margin: 4px 0 8px 1.2em; overflow-x: auto; }
+  .more sub, .more sup { font-size: 0.72em; line-height: 0; }
+  table.lt { border-collapse: collapse; font: 12.5px/1.35 var(--sans); margin: 4px 0 8px; }
+  table.lt th, table.lt td { padding: 3px 12px 3px 0; text-align: right; font-weight: 400; white-space: nowrap; }
+  table.lt th:first-child, table.lt td:first-child { text-align: left; }
+  table.lt thead th { color: var(--muted); border-bottom: 1px solid var(--rule); }
+  table.lt td { font-family: var(--mono); }
+  table.lt tr.cur td { color: var(--ewc); }
+
+  /* schematic */
+  #model text { font-family: var(--sans); font-size: 11px; fill: var(--muted); }
+  #model .ttl { font-size: 13px; font-weight: 600; }
+  #model .blbl { font-size: 12px; fill: var(--text); }
+  #model .hlbl { font-size: 11px; fill: var(--text); }
+  #model .val { font-family: var(--mono); font-size: 11px; fill: var(--text); }
+  #model .wire { fill: none; stroke-width: 1; }
+  #model .sig { fill: none; stroke-width: 2.4; stroke-dasharray: 0.1 7; stroke-linecap: round; }
+  #model .tagt { font-size: 10.5px; }
+  #model .note { font-size: 11px; fill: var(--muted); }
+  #model .fttl { font-size: 13px; font-weight: 600; fill: var(--ewc); }
+  #model .flbl { font-size: 11px; fill: var(--muted); }
+  #model .fcall { font-size: 11px; fill: var(--ewc); }
+  #model .fcell { shape-rendering: crispEdges; }
+
+  @media (max-width: 1100px) {
+    .transport { grid-template-columns: auto auto minmax(0, 1fr); }
+    .lam { grid-column: 1 / -1; }
+  }
+  @media (max-width: 860px) {
+    .stage { grid-template-columns: minmax(0, 1fr); }
+    .hdr h1 { font-size: 21px; }
+  }
+  @media (max-width: 520px) {
+    table.lt { display: block; overflow-x: auto; max-width: 100%; }
+    .transport { grid-template-columns: auto auto; justify-content: start; }
+    .transport .btn { justify-self: start; }
+    .scrub { grid-column: 1 / -1; grid-row: 2; }
+    .lam { grid-row: 3; flex-wrap: wrap; }
+    .segs button { font-size: 10.5px; padding: 2px 3px; }
+    .rgrid, .rrow, .grph { grid-template-columns: 26px 12px repeat(3, minmax(0, 1fr)); column-gap: 6px; }
+    .ex { width: 24px; height: 24px; }
+    .cell { gap: 3px; flex-wrap: nowrap; }
+    .cell svg { width: 50px; height: 22px; }
+    .colh { font-size: 11px; }
+    .acc .lg { display: none; }
+    .cap { font-size: 15.5px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="hdr">
+    <h1>Progress and Compress</h1>
+    <p>A simple example of Progress &amp; Compress (Schwarz et al., 2018), running in the browser. Can we learn task B without forgetting A? Code: <a href="https://github.com/tguens/progress-compress-public">github.com/tguens/progress-compress-public</a></p>
+  </header>
+
+  <main class="stage">
+    <figure class="panel" id="modelPanel">
+      <div class="panel-h">Model: knowledge base (KB), active column, adaptors</div>
+      <svg id="model" viewBox="0 0 600 432" role="img" aria-label="Two-column network. Knowledge base on the left, active column on the right, adaptors between them. During compress, a frozen copy of the whole network appears at the left as the teacher; after compress A, a note on the Fisher of the knowledge base appears there."></svg>
+    </figure>
+    <section class="panel" id="resPanel" aria-label="Predictions and the landscape of task A">
+      <div class="panel-h rp-h"><span id="rpTitle">Predictions on 12 fixed training images</span><span class="vsw off" id="vsw" role="group" aria-label="View of this panel"><button type="button" id="viewPred" aria-pressed="false">Predictions</button><button type="button" id="viewLand" aria-pressed="true">Landscape</button></span></div>
+      <div class="rp-body">
+      <div id="predView">
+        <div id="res"></div>
+        <div class="rleg">Bars: probability of classes 1 to 6. Black mark: the true class. Number: the predicted class, ✓ right, ✗ wrong.</div>
+      </div>
+      <div id="landView" class="vh" inert>
+        <div class="land">
+          <div>
+            <canvas id="landCv" width="372" height="330" role="img" aria-label="Loss of task A on a plane through the knowledge base after learning A, with the paths of compress B with and without EWC"></canvas>
+            <p class="lnote">Blue lines: the loss of task A on this slice of parameter space; higher is worse. Both axes have the same scale.</p>
+          </div>
+          <div class="spr">
+            <svg id="springs" viewBox="0 0 196 186" role="img" aria-label="Three weights of the knowledge base, each tied to its value after learning A by a spring of strength λF"></svg>
+            <p class="spr-s">EWC pulls important weights more strongly toward their previous values.</p>
+          </div>
+        </div>
+        <div class="cmp" id="cmp"></div>
+      </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="transport" role="group" aria-label="Timeline controls">
+    <button id="play" class="btn" type="button" disabled><svg id="playIcon" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 0L9.5 5L1 10z"/></svg><span id="playTxt">Play</span></button>
+    <button id="replay" class="btn" type="button" disabled>Replay</button>
+    <div class="scrub">
+      <input id="scrubber" type="range" min="0" max="36000" step="10" value="0" aria-label="Timeline position" disabled>
+      <div class="segs" id="segs"></div>
+    </div>
+    <div class="lam">
+      <label for="lambda">retention strength λ</label>
+      <input id="lambda" type="range" min="0" max="13" step="1" value="7" aria-describedby="lambdaVal" disabled>
+      <output id="lambdaVal" for="lambda">10 000</output>
+    </div>
+  </div>
+  <p class="cap" id="caption" aria-live="polite">Computing the toy run…</p>
+
+  <details id="more">
+    <summary>Equations and details</summary>
+    <div class="more">
+      <h2>The toy</h2>
+      <p>Task A is 6 characters of the Omniglot alphabet Oriya, task B is 6 characters of Keble. Each character has 2 handwritten samples, and each sample has 3 extra copies shifted by one pixel, so each task has 48 training images. Every image is averaged down from 40 × 40 to 12 × 12 pixels, inverted (ink = 1) and divided by its largest pixel; this was precomputed from the same PNG files that the page shows. The 12 images on the right are the unshifted first sample of each character. They are training images: the toy measures what the network keeps, not how it generalizes.</p>
+      <p>Each column is an MLP: x (144) → h<sub>1</sub> (16, tanh) → h<sub>2</sub> (8, tanh) → one linear head of 6 logits per task. Adaptors of width 8 run from KB h<sub>1</sub> into active h<sub>2</sub> and from KB h<sub>2</sub> into the active head. The network has <span id="nParams">about 5,400 parameters</span>.</p>
+      <div class="eq">h<sub>i</sub><sup>KB</sup> = σ(W<sub>i</sub><sup>KB</sup> h<sub>i−1</sub><sup>KB</sup> + b<sub>i</sub><sup>KB</sup>)</div>
+      <div class="eq">h<sub>i</sub><sup>A</sup> = σ(W<sub>i</sub><sup>A</sup> h<sub>i−1</sub><sup>A</sup> + b<sub>i</sub><sup>A</sup> + α<sub>i</sub> ⊙ U<sub>i</sub> σ(V<sub>i</sub> h<sub>i−1</sub><sup>KB</sup> + c<sub>i</sub>)), with σ = tanh and α initialized uniform in [0, 0.1]</div>
+      <h2>The five segments</h2>
+      <p><b>1. Progress on A.</b> Cross-entropy of the active logits on the labels of A. It trains θ<sup>A</sup> (active column and its head) and φ (adaptors); the KB is frozen at its random initialization.</p>
+      <p><b>2. Compress A.</b> The teacher is a frozen copy of the whole network after step 1. The student is the KB backbone with a new KB head for A. Loss:</p>
+      <div class="eq">τ² KL(softmax(z<sup>T</sup>/τ) ‖ softmax(z<sup>KB</sup>/τ)), τ = 1, mean over the 48 images of A</div>
+      <p>There is no penalty here, because no earlier task exists.</p>
+      <p><b>3. Fisher.</b> At the end of step 2, the diagonal empirical Fisher of the KB (backbone and head A) on the 48 images of A:</p>
+      <div class="eq">F<sub>j</sub> = (1/N) Σ<sub>n</sub> (∂ log p(y<sub>n</sub> | x<sub>n</sub>) / ∂θ<sub>j</sub>)²</div>
+      <p>It estimates the curvature of the loss of task A at θ*, the KB after step 2. The running Fisher F*<sub>k</sub> = γ F*<sub>k−1</sub> + F<sub>k</sub> reduces to F* = F<sub>A</sub>, because A is the only earlier task. Then the active column, its head and the adaptors are re-initialized.</p>
+      <p><b>4. Progress on B.</b> As step 1, on B. The KB is frozen at θ* and the new active column reads it through the adaptors.</p>
+      <p><b>5. Compress B.</b> The teacher is a frozen copy after step 4. The student is the KB backbone (starting at θ*) with a new KB head for B. Loss:</p>
+      <div class="eq">KL(softmax(z<sup>T</sup>) ‖ softmax(z<sup>KB</sup>)) on the images of B + (λ/2) Σ<sub>j</sub> F*<sub>j</sub> (θ<sub>j</sub> − θ*<sub>j</sub>)²</div>
+      <p>The sum runs over the KB backbone (W<sub>1</sub>, b<sub>1</sub>, W<sub>2</sub>, b<sub>2</sub>). The heads are not penalized, and head A does not train: it reads task A from the moving backbone. The same code runs twice, with the slider's λ and with λ = 0. The KB never sees task A in this step.</p>
+      <h2>The landscape and the springs</h2>
+      <p>In segments 3 and 5 the right panel shows the loss of task A on a plane through θ*, the KB backbone after compress A, which sits at the origin. Direction 1 is the unit vector along θ<sub>FT</sub> − θ*, where compress B ends without EWC. Direction 2 is the part of θ<sub>EWC</sub> − θ* at right angles to direction 1, at unit length (Gram–Schmidt), so both end points lie in the plane. At λ = 0 the two runs are the same; direction 2 is then the direction in which that path bends away from direction 1 (the first principal component of its parts at right angles to direction 1). The plane is rebuilt when λ changes, and both axes have the same scale.</p>
+      <p>The lines are the loss of task A (cross-entropy on its 48 images, head A fixed) at θ* + a d<sub>1</sub> + b d<sub>2</sub>, computed on a 67 × 59 grid; the shading is darker where the loss is lower. Between their ends the paths leave the plane: <span id="shareTxt">…</span> So the loss under a point of a path can differ from the true loss at that step. The accuracies at the heads of the paths are the true ones, the same as in the predictions.</p>
+      <p><label><input type="checkbox" id="ellipse">Draw the Fisher ellipse</label> in segment 5: the curve on the plane where the penalty (λ/2) Σ<sub>j</sub> F*<sub>j</sub> (θ<sub>j</sub> − θ*<sub>j</sub>)² has the value it has at the end of the path with EWC. It is a level line of the penalty, a different quantity from the loss of task A that the blue lines show.</p>
+      <p>The springs are three of the backbone weights, picked by a fixed rule from the runs at λ = 0 and λ = <span id="lamRefTxt">10 000</span>: <span id="springTxt">…</span>. The thickness of a spring is proportional to λF*<sub>j</sub>, clamped between 0.7 and 4.5 pixels. The three tracks have the same scale, and the anchor is the value after compress A.</p>
+      <h2>Optimizer</h2>
+      <p>Full-batch gradient descent with fixed step counts: <span id="optTxt">200 progress steps at learning rate 0.5, 300 compress A steps and 600 compress B steps at learning rate 0.15</span>, seed <span id="seedTxt">2</span>. In compress B, each step takes a gradient step on the KL and then takes the penalty part exactly (a proximal step): θ<sub>j</sub> ← θ*<sub>j</sub> + (θ<sub>j</sub> − θ*<sub>j</sub>) / (1 + η λ F*<sub>j</sub>). It has the same fixed points as gradient descent on the sum, and it stays stable for any λ. At λ = 0 the step is plain gradient descent. Everything is computed once at load and stored per step, so the scrubber shows recorded states. A new λ recomputes step 5 only.</p>
+      <h2>The trade-off, all 48 images per task, after compress B</h2>
+      <table class="lt" id="lamTable" aria-label="Accuracy after compress B for each λ">
+        <thead><tr><th>λ</th><th>task A</th><th>task B</th><th>KL to teacher</th><th>EWC term</th><th>plane holds,<br>without / with EWC</th></tr></thead>
+        <tbody id="lamBody"><tr><td colspan="6">Open this section to compute the table.</td></tr></tbody>
+      </table>
+      <h2>Limits of the toy</h2>
+      <p>The numbers come from one seeded run of a small network on 48 images per task. Seed 2 forgets the most at λ = 0 among seeds 1 to 6. The other seeds give the same trend: at λ = 0 the KB keeps 44 to 58% of task A, at λ = 5 000 to 10 000 it keeps 94 to 100% of A and learns 88 to 98% of B, and at λ = 1 000 000 it learns only 63 to 83% of B. With h<sub>2</sub> = 16 units the KB forgets less (it keeps 48% of A at λ = 0) and a high λ costs less on B, so this toy uses 8. The real model of the paper is a convolutional network trained with minibatches over many more tasks.</p>
+      <p>Reference: J. Schwarz, J. Luketina, W. M. Czarnecki, A. Grabska-Barwinska, Y. W. Teh, R. Pascanu, R. Hadsell. Progress &amp; Compress: A scalable framework for continual learning. ICML 2018. Glyphs: the Omniglot dataset (Lake et al., 2015).</p>
+    </div>
+  </details>
+  <p class="foot">Generated by Claude &amp; Astra, in collaboration with its human editor.</p>
+</div>
+
+<script>
+/* CORE-BEGIN */
+// Toy Progress & Compress on Omniglot glyphs. Pure functions, no DOM (the same code runs in node for the checks).
+// Each column is an MLP: x (144 = 12 x 12 pixels) -> h1 (16, tanh) -> h2 (16, tanh) -> one linear head per task (6 classes).
+// Adaptors feed KB layer i-1 into active layer i, for h2 and for the head: alpha ⊙ U tanh(V h^KB + c).
+// Training is full-batch gradient descent with fixed step counts, so every number on the page is a recorded step.
+const PC = (() => {
+  "use strict";
+
+  const CFG = {
+    D: 144, H1: 16, H2: 8, K: 8, C: 6,       // input, hidden 1, hidden 2, adaptor width, classes per task
+    classesA: [0, 1, 2, 3, 4, 5],            // Oriya characters used for task A (glyph index = 2 * class + sample)
+    classesB: [0, 1, 2, 3, 4, 5],            // Keble characters used for task B
+    shifts: [[0, 0], [0, 1], [1, 0], [0, -1]],   // [dy, dx]: the original and 3 copies shifted by one pixel
+    seed: 2,
+    lrP: 0.5, stepsP: 200,                   // progress: learning rate, steps
+    lrC: 0.15, stepsCA: 300, stepsCB: 600,   // compress: learning rate, steps for A and for B
+  };
+
+  // ---------- random numbers (mulberry32) ----------
+  function mulberry32(seed) {
+    let a = seed >>> 0;
+    return function () {
+      a = (a + 0x6d2b79f5) | 0;
+      let t = Math.imul(a ^ (a >>> 15), 1 | a);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+  function gauss(r) { let u = 0; while (u === 0) u = r(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * r()); }
+  const randn = (r, n, sd) => Float64Array.from({ length: n }, () => sd * gauss(r));
+
+  // ---------- data ----------
+  // pix[k] is a hex string of 144 bytes: the 12 x 12 ink image of glyph k (0 = paper, 255 = ink).
+  function hexToImage(h) { const x = new Float64Array(144); for (let i = 0; i < 144; i++) x[i] = parseInt(h.substr(2 * i, 2), 16) / 255; return x; }
+  function shift(x, dy, dx) {
+    const y = new Float64Array(144);
+    for (let r = 0; r < 12; r++) for (let c = 0; c < 12; c++) {
+      const r0 = r - dy, c0 = c - dx;
+      if (r0 >= 0 && r0 < 12 && c0 >= 0 && c0 < 12) y[r * 12 + c] = x[r0 * 12 + c0];
+    }
+    return y;
+  }
+  // A task: every (class, sample, shift) image with its label; `shown` holds the unshifted sample 0 of each class.
+  function makeTask(pix, classes, cfg) {
+    const X = [], Y = [], shown = [];
+    classes.forEach((ch, label) => {
+      for (let s = 0; s < 2; s++) {
+        const base = hexToImage(pix[2 * ch + s]);
+        for (const [dy, dx] of cfg.shifts) {
+          if (s === 0 && dy === 0 && dx === 0) shown.push(X.length);
+          X.push(shift(base, dy, dx)); Y.push(label);
+        }
+      }
+    });
+    const NZ = X.map((x) => Int32Array.from([...x.keys()].filter((i) => x[i] > 0)));   // nonzero pixels, for a sparse first layer
+    return { X, Y, NZ, N: X.length, shown, glyph: classes.map((ch) => 2 * ch) };
+  }
+
+  // ---------- parameters: dicts of named Float64Arrays ----------
+  const clone = (p) => { const q = {}; for (const k in p) q[k] = p[k] instanceof Float64Array ? Float64Array.from(p[k]) : clone(p[k]); return q; };
+  const zerosLike = (p) => { const q = {}; for (const k in p) q[k] = p[k] instanceof Float64Array ? new Float64Array(p[k].length) : zerosLike(p[k]); return q; };
+  function initColumn(r, cfg) {
+    const { D, H1, H2 } = cfg;
+    return { W1: randn(r, H1 * D, Math.sqrt(1 / D)), b1: new Float64Array(H1), W2: randn(r, H2 * H1, Math.sqrt(1 / H1)), b2: new Float64Array(H2) };
+  }
+  const initHead = (r, cfg) => ({ W: randn(r, cfg.C * cfg.H2, Math.sqrt(1 / cfg.H2)), b: new Float64Array(cfg.C) });
+  function initAdaptors(r, cfg) {
+    const { H1, H2, K, C } = cfg;
+    const alpha = (n) => Float64Array.from({ length: n }, () => 0.1 * r());   // α ~ U(0, 0.1)
+    return {
+      V2: randn(r, K * H1, Math.sqrt(1 / H1)), c2: new Float64Array(K), U2: randn(r, H2 * K, Math.sqrt(1 / K)), a2: alpha(H2),
+      V3: randn(r, K * H2, Math.sqrt(1 / H2)), c3: new Float64Array(K), U3: randn(r, C * K, Math.sqrt(1 / K)), a3: alpha(C),
+    };
+  }
+
+  // ---------- small dense helpers ----------
+  // out = W v + b, W is [n x m] row-major
+  function affine(W, b, v, n, m, out) {
+    for (let i = 0; i < n; i++) { let s = b ? b[i] : 0; const o = i * m; for (let j = 0; j < m; j++) s += W[o + j] * v[j]; out[i] = s; }
+    return out;
+  }
+  // out = W x + b for a sparse x (nz = indices of its nonzero entries)
+  function affineSparse(W, b, x, nz, n, m, out) {
+    for (let i = 0; i < n; i++) { let s = b[i]; const o = i * m; for (let q = 0; q < nz.length; q++) { const j = nz[q]; s += W[o + j] * x[j]; } out[i] = s; }
+    return out;
+  }
+  function outerSparse(gW, gb, g, x, nz, n, m) {
+    for (let i = 0; i < n; i++) { const gi = g[i]; if (gi === 0) continue; const o = i * m; for (let q = 0; q < nz.length; q++) { const j = nz[q]; gW[o + j] += gi * x[j]; } gb[i] += gi; }
+  }
+  // gW += g vᵀ, gb += g
+  function outer(gW, gb, g, v, n, m) {
+    for (let i = 0; i < n; i++) { const gi = g[i]; if (gi === 0) continue; const o = i * m; for (let j = 0; j < m; j++) gW[o + j] += gi * v[j]; if (gb) gb[i] += gi; }
+  }
+  // out = Wᵀ g
+  function backT(W, g, n, m, out) {
+    out.fill(0);
+    for (let i = 0; i < n; i++) { const gi = g[i]; if (gi === 0) continue; const o = i * m; for (let j = 0; j < m; j++) out[j] += W[o + j] * gi; }
+    return out;
+  }
+  const tanhArr = (a) => { for (let i = 0; i < a.length; i++) a[i] = Math.tanh(a[i]); return a; };
+  function softmax(z) { let m = -Infinity; for (const v of z) m = Math.max(m, v); const p = new Float64Array(z.length); let s = 0; for (let i = 0; i < z.length; i++) { p[i] = Math.exp(z[i] - m); s += p[i]; } for (let i = 0; i < z.length; i++) p[i] /= s; return p; }
+  function logSoftmax(z) { let m = -Infinity; for (const v of z) m = Math.max(m, v); let s = 0; for (const v of z) s += Math.exp(v - m); const l = Math.log(s) + m; return Float64Array.from(z, (v) => v - l); }
+
+  // ---------- forward passes ----------
+  // KB column: h1 = tanh(W1 x + b1), h2 = tanh(W2 h1 + b2), z = W h2 + b (head of one task)
+  function kbFeatures(kb, x, cfg, nz) {
+    const h1 = tanhArr(nz ? affineSparse(kb.W1, kb.b1, x, nz, cfg.H1, cfg.D, new Float64Array(cfg.H1)) : affine(kb.W1, kb.b1, x, cfg.H1, cfg.D, new Float64Array(cfg.H1)));
+    const h2 = tanhArr(affine(kb.W2, kb.b2, h1, cfg.H2, cfg.H1, new Float64Array(cfg.H2)));
+    return { h1, h2 };
+  }
+  const headLogits = (head, h2, cfg) => affine(head.W, head.b, h2, cfg.C, cfg.H2, new Float64Array(cfg.C));
+
+  // Active column, reading the KB features f = {h1, h2} through the adaptors:
+  // h2^A = tanh(W2 h1^A + b2 + a2 ⊙ U2 tanh(V2 h1^KB + c2)),  z^A = W h2^A + b + a3 ⊙ U3 tanh(V3 h2^KB + c3)
+  function activeForward(act, head, ad, f, x, cfg, nz) {
+    const { H1, H2, K, C, D } = cfg;
+    const s2 = tanhArr(affine(ad.V2, ad.c2, f.h1, K, H1, new Float64Array(K)));
+    const r2 = affine(ad.U2, null, s2, H2, K, new Float64Array(H2));
+    const s3 = tanhArr(affine(ad.V3, ad.c3, f.h2, K, H2, new Float64Array(K)));
+    const r3 = affine(ad.U3, null, s3, C, K, new Float64Array(C));
+    const h1 = tanhArr(nz ? affineSparse(act.W1, act.b1, x, nz, H1, D, new Float64Array(H1)) : affine(act.W1, act.b1, x, H1, D, new Float64Array(H1)));
+    const a2 = affine(act.W2, act.b2, h1, H2, H1, new Float64Array(H2));
+    for (let i = 0; i < H2; i++) a2[i] += ad.a2[i] * r2[i];
+    const h2 = tanhArr(a2);
+    const z = affine(head.W, head.b, h2, C, H2, new Float64Array(C));
+    for (let i = 0; i < C; i++) z[i] += ad.a3[i] * r3[i];
+    return { s2, r2, s3, r3, h1, h2, z };
+  }
+  // The whole network (what the teacher is): KB column, adaptors, active column. Returns the active logits.
+  const networkLogits = (net, x, cfg, nz) => activeForward(net.act, net.head, net.ad, kbFeatures(net.kb, x, cfg, nz), x, cfg, nz).z;
+
+  // ---------- gradients ----------
+  // Progress: mean cross-entropy of the active logits; gradients for θ^A (act, head) and φ (ad). KB frozen: F = its features.
+  function progressLossGrad(net, F, task, cfg, g) {
+    const { H1, H2, K, C, D } = cfg, N = task.N;
+    let L = 0;
+    const dh2 = new Float64Array(H2), dh1 = new Float64Array(H1), ds = new Float64Array(K), dr2 = new Float64Array(H2), dr3 = new Float64Array(C);
+    for (let n = 0; n < N; n++) {
+      const x = task.X[n], nz = task.NZ[n], f = F[n], o = activeForward(net.act, net.head, net.ad, f, x, cfg, nz);
+      const lp = logSoftmax(o.z); L -= lp[task.Y[n]];
+      const dz = Float64Array.from(lp, (v, c) => (Math.exp(v) - (c === task.Y[n] ? 1 : 0)) / N);   // softmax − onehot
+      outer(g.head.W, g.head.b, dz, o.h2, C, H2);
+      // adaptor into the head: z += a3 ⊙ U3 s3, s3 = tanh(V3 h2^KB + c3)
+      for (let i = 0; i < C; i++) { g.ad.a3[i] += dz[i] * o.r3[i]; dr3[i] = dz[i] * net.ad.a3[i]; }
+      outer(g.ad.U3, null, dr3, o.s3, C, K);
+      backT(net.ad.U3, dr3, C, K, ds); for (let k = 0; k < K; k++) ds[k] *= 1 - o.s3[k] * o.s3[k];
+      outer(g.ad.V3, g.ad.c3, ds, f.h2, K, H2);
+      // active h2
+      backT(net.head.W, dz, C, H2, dh2); for (let i = 0; i < H2; i++) dh2[i] *= 1 - o.h2[i] * o.h2[i];
+      outer(g.act.W2, g.act.b2, dh2, o.h1, H2, H1);
+      // adaptor into h2: a2 ⊙ U2 s2, s2 = tanh(V2 h1^KB + c2)
+      for (let i = 0; i < H2; i++) { g.ad.a2[i] += dh2[i] * o.r2[i]; dr2[i] = dh2[i] * net.ad.a2[i]; }
+      outer(g.ad.U2, null, dr2, o.s2, H2, K);
+      backT(net.ad.U2, dr2, H2, K, ds); for (let k = 0; k < K; k++) ds[k] *= 1 - o.s2[k] * o.s2[k];
+      outer(g.ad.V2, g.ad.c2, ds, f.h1, K, H1);
+      // active h1
+      backT(net.act.W2, dh2, H2, H1, dh1); for (let i = 0; i < H1; i++) dh1[i] *= 1 - o.h1[i] * o.h1[i];
+      outerSparse(g.act.W1, g.act.b1, dh1, x, nz, H1, D);
+    }
+    return L / N;
+  }
+  // Backward pass of the KB column for one sample, from dz (logit gradient) into g (backbone + head).
+  function kbBackward(kb, head, x, f, dz, cfg, g, nz) {
+    const { H1, H2, C, D } = cfg, dh2 = new Float64Array(H2), dh1 = new Float64Array(H1);
+    outer(g.head.W, g.head.b, dz, f.h2, C, H2);
+    backT(head.W, dz, C, H2, dh2); for (let i = 0; i < H2; i++) dh2[i] *= 1 - f.h2[i] * f.h2[i];
+    outer(g.kb.W2, g.kb.b2, dh2, f.h1, H2, H1);
+    backT(kb.W2, dh2, H2, H1, dh1); for (let i = 0; i < H1; i++) dh1[i] *= 1 - f.h1[i] * f.h1[i];
+    if (nz) outerSparse(g.kb.W1, g.kb.b1, dh1, x, nz, H1, D); else outer(g.kb.W1, g.kb.b1, dh1, x, H1, D);
+  }
+  // Compress: KL(softmax(z^T) ‖ softmax(z^KB)) at τ = 1, mean over the task; gradient for the KB backbone and its head.
+  // Also returns the KB's probabilities, accuracy and cross-entropy on the task at these parameters.
+  function compressLossGrad(kb, head, task, PT, cfg, g) {
+    const N = task.N, P = [];
+    let L = 0, acc = 0, ce = 0;
+    for (let n = 0; n < N; n++) {
+      const x = task.X[n], nz = task.NZ[n], f = kbFeatures(kb, x, cfg, nz), lq = logSoftmax(headLogits(head, f.h2, cfg)), pT = PT[n];
+      const dz = new Float64Array(cfg.C);
+      for (let c = 0; c < cfg.C; c++) { if (pT[c] > 0) L += pT[c] * (Math.log(pT[c]) - lq[c]); dz[c] = (Math.exp(lq[c]) - pT[c]) / N; }   // ∂KL/∂z = p^KB − p^T
+      kbBackward(kb, head, x, f, dz, cfg, g, nz);
+      let am = 0; for (let c = 1; c < cfg.C; c++) if (lq[c] > lq[am]) am = c;
+      if (am === task.Y[n]) acc++;
+      ce -= lq[task.Y[n]];
+      P.push(Float64Array.from(lq, Math.exp));
+    }
+    return { kl: L / N, acc: acc / N, loss: ce / N, P };
+  }
+  // Empirical diagonal Fisher of the KB (backbone + head) on a task: F_j = (1/N) Σ_n (∂ log p(y_n | x_n) / ∂θ_j)².
+  function fisherDiag(kb, head, task, cfg) {
+    const Fi = zerosLike({ kb, head });
+    for (let n = 0; n < task.N; n++) {
+      const x = task.X[n], nz = task.NZ[n], f = kbFeatures(kb, x, cfg, nz), p = softmax(headLogits(head, f.h2, cfg));
+      const dz = Float64Array.from(p, (v, c) => (c === task.Y[n] ? 1 : 0) - v);   // ∂ log p(y) / ∂z = onehot − p
+      const g = zerosLike({ kb, head });
+      kbBackward(kb, head, x, f, dz, cfg, g, nz);
+      for (const grp of ["kb", "head"]) for (const k in g[grp]) { const a = g[grp][k], s = Fi[grp][k]; for (let j = 0; j < a.length; j++) s[j] += (a[j] * a[j]) / task.N; }
+    }
+    return Fi;
+  }
+  // EWC term (λ/2) Σ_j F*_j (θ_j − θ*_j)² over the KB backbone.
+  function ewcTerm(kb, kbStar, Fs, lam) {
+    let s = 0;
+    for (const k in kb) { const a = kb[k], b = kbStar[k], f = Fs[k]; for (let j = 0; j < a.length; j++) { const d = a[j] - b[j]; s += f[j] * d * d; } }
+    return 0.5 * lam * s;
+  }
+
+  // ---------- evaluation ----------
+  function evalKB(kb, head, task, cfg) {
+    let L = 0, acc = 0;
+    const P = [];
+    for (let n = 0; n < task.N; n++) {
+      const lp = logSoftmax(headLogits(head, kbFeatures(kb, task.X[n], cfg, task.NZ[n]).h2, cfg));
+      L -= lp[task.Y[n]];
+      let am = 0; for (let c = 1; c < cfg.C; c++) if (lp[c] > lp[am]) am = c;
+      if (am === task.Y[n]) acc++;
+      P.push(Float64Array.from(lp, Math.exp));
+    }
+    return { loss: L / task.N, acc: acc / task.N, P };
+  }
+  function evalNet(net, task, cfg) {
+    let L = 0, acc = 0;
+    const P = [];
+    for (let n = 0; n < task.N; n++) {
+      const lp = logSoftmax(networkLogits(net, task.X[n], cfg, task.NZ[n]));
+      L -= lp[task.Y[n]];
+      let am = 0; for (let c = 1; c < cfg.C; c++) if (lp[c] > lp[am]) am = c;
+      if (am === task.Y[n]) acc++;
+      P.push(Float64Array.from(lp, Math.exp));
+    }
+    return { loss: L / task.N, acc: acc / task.N, P };
+  }
+  const pick = (P, idx) => idx.map((i) => Array.from(P[i]));   // probabilities of the shown examples
+
+  // θ ← θ − η g on every array of the dict
+  function sgd(p, g, lr) { for (const k in p) { if (p[k] instanceof Float64Array) { const a = p[k], b = g[k]; for (let j = 0; j < a.length; j++) a[j] -= lr * b[j]; } else sgd(p[k], g[k], lr); } }
+  // FNV-1a hash of the bytes of every array, in key order: used to check which parameters change.
+  function hash(p) {
+    let h = 0x811c9dc5;
+    const walk = (q) => { for (const k of Object.keys(q).sort()) { const v = q[k]; if (v instanceof Float64Array) { const u = new Uint8Array(v.buffer, v.byteOffset, v.byteLength); for (let i = 0; i < u.length; i++) { h ^= u[i]; h = Math.imul(h, 0x01000193); } } else if (v) walk(v); } };
+    walk(p);
+    return (h >>> 0).toString(16).padStart(8, "0");
+  }
+
+  // ---------- the phases ----------
+  // Progress: train the active column, its head and the adaptors on the task; the KB is frozen.
+  function progress(net, task, cfg, steps, lr, rec) {
+    const F = task.X.map((x, n) => kbFeatures(net.kb, x, cfg, task.NZ[n]));   // KB frozen: its features are fixed in this phase
+    for (let s = 0; s <= steps; s++) {
+      const g = { act: zerosLike(net.act), head: zerosLike(net.head), ad: zerosLike(net.ad) };
+      const L = progressLossGrad(net, F, task, cfg, g);
+      const ev = evalNet(net, task, cfg);
+      rec.push({ loss: L, acc: ev.acc, P: pick(ev.P, task.shown) });
+      if (s < steps) { sgd(net.act, g.act, lr); sgd(net.head, g.head, lr); sgd(net.ad, g.ad, lr); }
+    }
+  }
+  // Compress: train the KB backbone and its head for this task on KL(teacher ‖ KB) + (λ/2) Σ F*_j (θ_j − θ*_j)².
+  // The penalty part of each step is taken exactly (a proximal step): θ_j ← θ*_j + (θ_j − θ*_j) / (1 + η λ F*_j).
+  // It has the same minimum as gradient descent on the sum and stays stable for any λ; with λ = 0 it is skipped.
+  function compress(kb, head, task, PT, cfg, steps, lr, lam, Fs, kbStar, onStep) {
+    for (let s = 0; s <= steps; s++) {
+      const g = { kb: zerosLike(kb), head: zerosLike(head) };
+      const r = compressLossGrad(kb, head, task, PT, cfg, g);
+      onStep(s, r, lam > 0 ? ewcTerm(kb, kbStar, Fs, lam) : 0);
+      if (s === steps) break;
+      sgd(kb, g.kb, lr); sgd(head, g.head, lr);
+      if (lam > 0) for (const k in kb) { const a = kb[k], b = kbStar[k], f = Fs[k]; for (let j = 0; j < a.length; j++) a[j] = b[j] + (a[j] - b[j]) / (1 + lr * lam * f[j]); }
+    }
+  }
+
+  // Steps 1 to 4 (they do not depend on λ). Returns the recorded trajectory and the state compress B starts from.
+  function runAtoB(pix, cfg) {
+    cfg = Object.assign({}, CFG, cfg || {});
+    const A = makeTask(pix.A, cfg.classesA, cfg), B = makeTask(pix.B, cfg.classesB, cfg);
+    const R = (k) => mulberry32(cfg.seed * 7919 + k);
+    const snap = {};
+    // initial network: KB column (random), active column, its head for A, adaptors
+    const net = { kb: initColumn(R(1), cfg), act: initColumn(R(2), cfg), head: initHead(R(3), cfg), ad: initAdaptors(R(4), cfg) };
+    snap.init = { kb: hash(net.kb), act: hash(net.act), head: hash(net.head), ad: hash(net.ad) };
+    // 1. progress on A
+    const recPA = [];
+    progress(net, A, cfg, cfg.stepsP, cfg.lrP, recPA);
+    snap.afterPA = { kb: hash(net.kb), act: hash(net.act), head: hash(net.head), ad: hash(net.ad) };
+    // 2. compress A: the teacher is a frozen copy of the whole network after progress
+    const teacherA = clone(net);
+    snap.teacherA0 = hash(teacherA);
+    const evTA = evalNet(teacherA, A, cfg), PTA = evTA.P;
+    const kbHeadA = initHead(R(5), cfg);                    // the KB head of task A is created here
+    const recCA = [];
+    compress(net.kb, kbHeadA, A, PTA, cfg, cfg.stepsCA, cfg.lrC, 0, null, null, (s, r) => {
+      recCA.push({ kl: r.kl, acc: r.acc, loss: r.loss, P: pick(r.P, A.shown) });
+    });
+    snap.teacherA1 = hash(teacherA);
+    snap.afterCA = { kb: hash(net.kb), act: hash(net.act), head: hash(net.head), ad: hash(net.ad), kbHeadA: hash(kbHeadA) };
+    // 3. Fisher of the KB on task A at the end of compress A; running Fisher F* = F_A (one earlier task)
+    const FA = fisherDiag(net.kb, kbHeadA, A, cfg);
+    const kbStar = clone(net.kb);
+    // re-initialize the active column, its head (now for task B) and the adaptors
+    net.act = initColumn(R(6), cfg); net.head = initHead(R(7), cfg); net.ad = initAdaptors(R(8), cfg);
+    snap.reinit = { kb: hash(net.kb), act: hash(net.act), head: hash(net.head), ad: hash(net.ad), kbHeadA: hash(kbHeadA) };
+    // 4. progress on B: the active column reads the KB (which now holds A) through the adaptors
+    const recPB = [];
+    progress(net, B, cfg, cfg.stepsP, cfg.lrP, recPB);
+    snap.afterPB = { kb: hash(net.kb), act: hash(net.act), head: hash(net.head), ad: hash(net.ad), kbHeadA: hash(kbHeadA) };
+    const teacherB = clone(net);
+    snap.teacherB0 = hash(teacherB);
+    const evTB = evalNet(teacherB, B, cfg);
+    const evStarA = evalKB(kbStar, kbHeadA, A, cfg);
+    return { cfg, A, B, R, recPA, recCA, recPB, FA, kbStar, kbHeadA, teacherA, teacherB, PTA, PTB: evTB.P,
+      teacherAShown: pick(PTA, A.shown), teacherBShown: pick(evTB.P, B.shown), accTA: evTA.acc, accTB: evTB.acc, accStarA: evStarA.acc, snap };
+  }
+
+  // Step 5: compress B with retention strength λ. The KB starts at θ* (after compress A) and gets a new head for B.
+  function runCompressB(S, lam) {
+    const cfg = S.cfg, kb = clone(S.kbStar), headA = clone(S.kbHeadA);
+    const headB = initHead(S.R(9), cfg);                    // the KB head of task B is created here (same init for every λ)
+    const rec = [];
+    const t0 = hash(S.teacherB);
+    compress(kb, headB, S.B, S.PTB, cfg, cfg.stepsCB, cfg.lrC, lam, S.FA.kb, S.kbStar, (s, r, E) => {
+      const eA = evalKB(kb, headA, S.A, cfg);
+      rec.push({ kl: r.kl, ewc: E, accA: eA.acc, accB: r.acc, lossA: eA.loss, lossB: r.loss, PA: pick(eA.P, S.A.shown), PB: pick(r.P, S.B.shown) });
+    });
+    return { lam, rec, kb, headA, headB, teacherSame: t0 === hash(S.teacherB), headAHash: hash(headA) };
+  }
+
+  return { CFG, mulberry32, gauss, makeTask, hexToImage, shift, clone, zerosLike, initColumn, initHead, initAdaptors, kbFeatures, headLogits,
+    activeForward, networkLogits, progressLossGrad, compressLossGrad, kbBackward, fisherDiag, ewcTerm, evalKB, evalNet, softmax, logSoftmax,
+    sgd, hash, progress, compress, runAtoB, runCompressB };
+})();
+/* CORE-END */
+</script>
+<script>
+// 12 x 12 ink images (hex, one byte per pixel, 0 = paper, ff = ink) of characters 0..5, samples 0 and 1,
+// averaged from the 40 x 40 Omniglot PNGs below (precomputed, so every browser gets the same inputs).
+const PIX = {"A":["0000000000000000000000000000010422030000000000000024d0f4be952490010000000074689418b948a0010000000014c22818cd538b000000000000084ace3766740000000000005fb90c01b1680100000000019e230015ff67010000000001738c0bcd85650100000000000383bd54428500000000000000000000125600000000000000000000000000000000","00000000000000000000000000000052997643000000000000000acf4dd0c02450010000000003c06a7c7d52c9010000000000041607c521f00100000000000001956903f10100000000000057920102f10100000000000fc50d0002f101000000000020bd050119ff0100000000000167b990cbdb01000000000000011221091b000000000000000000000000000000","00000000000000010000000000000000000001603a52000000000000000001974385010000000000000001971aaf0000000000000000019715ae0000000000041a00019715ae0000000002966a00019715ae0000000050960200019726ae000000018c36010008be8a500000000032ff7e3ac3d9bf13000000000146467635aece1b0000000000000000003d494d0000","00000000000000000000000000000001000000000000000000000c69846e000000010000000029a6d5b807230584000000000ba87d9a16ca14a300000000000765bc38ff12a300000000028c7c0459e409a3000000003f85010181b309a101000001683a0104b0990fa40100000031bc849f6b7010a00400000000091e1d0101000f0000000000000000000000000000","000000000000000000000000000000010101010000000000000026d6c0ca810800000000000ed62901096ab60300000000577501000001ab38000000005f60010001006d5b0000000034d5ab88b320b254000000000178d7eebeabc503000000000030a6adac17ae5000000000002ddeffde110e220000000000036e682d000000000000000000000000000000000000","000000000001010000000000000000107787852a000000000000019f6f3a45d910000000000001a22300004ba10100000000017366010102bf2f000000000020c89cac6c4097010000000004f24adabf28c200000000000abc5ea6a547b7010000000009e6ffb1c87690010000000000080c962602cd4000000000000000010000205f00000000000000000000000000","00000000020702000000000000000019c1bdc45302000000000002ad3d0212b4670000000018b0ff5000000de30c000001ab5012d4230001844c000002ab11001f130001b233000001837a1b89110167ba0200000007f4fbcc9047f6120000000002c07852d00a79940100000001bf7e86b81201b23c00000001b0e7dfcb0b000c0900000000112e0604000000000000","0000000069b3a7a933000000000000018b1e0115ad3100000000000fa17001001e9601000000017a6d996f03019e0a000000006851054c2c02831f0000000012c2b3ffc005811e000000000025cbf59822b9150000000000579cd293845e00000000000056e8cdb1357f0100000000000209301801a02b00000000000000000000020200000000000000000000000000","000000000000000000000000000000000323543c0300000000000159d09f68ac6700000000005d9e1301000ac90300000001c20900000001873f00000001b40100004536675000000001b479a818d715b63e0000000018ff1bd5f682db09000000000baa22b714b8737d0000000007d01f021eb002ae100000000028bdb2cf410003000000000000030a180000000000","000000000000000000000000000000000d2737140000000000000046c08e7ec516000000000007cf0e0101577501000000000bae4f094e5d85010000000002dab44dff9a510000000000006b4a9298ddac21000000000047b686d2272d3c000000000002373a0d0000000000000000000000000000000000000000000000000000000000000000000000000000000000","0000000001040501000000000000001082c8b5b23800000000000ebb6314021dd90900000003c63d0000000175550000001fa502010000026c8201000023941c5a014586f35d0000000cc7dd4a29fd1d25e1040000000fc306cf9ec0ff3d0000000001966a4d04b94fa701000000000ab5b9b690015f01000000000001090a0200010000000000000000000000000000","0000010607070100000000000002a0c7bec4b01400000000000bca03020747e315000000000acd047714016a8a0100000001d0948b028a53c5090000000043ff14c6e81bd5540000000002d88977da26f321000000000186c12bce33c60100000000000247ab8203a843000000000000000201000dde3700000000000000000000121600000000000000000000000000"],"B":["000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003069010811110e01020100002bdec8ffbeb3b7c7c1720100000102ab291009020201000000000075b8b5bec0190000000000000102020100000000000000000000000000000000000000000000000000000000000000000000000000000000","000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000996020100000000000000000affa18868403e2d14020000000f54cc688c8ea4b8300000000021e5bcb4b489020000000000000511191913000000000000000000000000000000000000000000000000000000000000000000000000000000","000000000000000000000000000000000000000000000000000000000000000000000000000000010101010000000000000189bdbdbdb7a34f0000000004eb1f1e1e2443d80200000001de01000027d1db0100000043ff5a5c86adad8a37170000618283825630305fa24800000000000000000000010100000000000000000000000000000000000000000000000000","0000000000000000000000000000000000000000000000000000000000000000000000000000072e2e2e240000000000000173ccabb7ff00000000000002874b3ebdaf020101000023a1e5c6a1a1a1a1a17c0000092e2e2e2e2e2e2e2e240000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000","0000000000000000000000000000000000000000000000000000000000000000000000000000000001010000000000000000025373735e4b270d000000000eff60607c8db29a0100000410d9100f0f141f3b400115d2c9ddc3c2c2c3b8a55f02000002020202020201010000000000000000000000000000000000000000000000000000000000000000000000000000","000000000000000000000000000000000000000000000000000000000000000000000000000000010101020100000000000014c1bdc3c85a00000000000138b2201d110801010000016bc5ffa8a8a8a8a84d0100001e36433030303030140000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000","000000000000000000000000000000000000000000000000000000000000000000000000000000364a30201801000000000002f094adc3ff28000000000000200100028954000000000000000000006080000000000002030303116ba637321100019ad9d9d9cec4bea5ab8d000000000000010202010101000000000000000000000000000000000000000000000000","000000000000000000000000000000000000000000000000000000020202020200000000000022f0e2e2e2ed1e000000000017531f1f1fdd3900000000000000000000ce3900000019757575757575ffac7544001e8d8d8d8d8d8d8e8e8d5401000101010101010101010000000000000000000000000000000000000000000000000000000000000000000000000000","00000000000000000000000000000000000000000000000000000000000000000000000000002137494948361c0c0a0300017780c5896d819ba9ab490000000176470201010101010000000abdb98b714c02000000000013ff632a4963040000000000001203000000000000000000000000000000000000000000000000000000000000000000000000000000000000","0000000000000000000000000000000000000000000000000000000000000000000000000000010b18181818181501000015b6ceeaaaaaaaa9a01600000003bfffbdbdbd3c010000000001a96502020200000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000","000000000000000000000000000000000000000000000000000000000000000000000000000002020100000000000000000fa3af8b0201010100000000011cb7ffaaaa938342000000003fa2bc23e8ab9ac201000030bdd1ea739baec49d3600001f462a314b4b4b4b525000000000000000000000000000000000000000000000000000000000000000000000000000","000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002a9f9f2300000000000000001c57b267171616100000000097d5fee9c7ecd0ff02000006d152a48058fbddc01a150111a5a1a7a5a09dacb8baa309000101010101010202020100000000000000000000000000000000000000000000000000"]};
+// The shown example of each class: sample 0 of characters 0..5. A = Oriya, B = Keble (Omniglot, Lake et al. 2015).
+const IMG = {"A":["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAAAAACpleexAAACS0lEQVR42sWUTUhUURiG33PunWEcLBdOLZwWJuSiNi0qBHNCgiiIsk0QbSTsD0qtQCIMqUWEG6Wf2QQZ9EcQlAQuaxVJGBVYRmBhRIsCNX+Y8d5zvrfFHUNn7pVZBH27c3jue8533/c7iiivNP4b6C5bGUK54aAqNCNUoFYAqIK1EwpKcIUeItUuSoVJkiQtR3Y1N/VdBYBTNGLtycw3Wi4pkKSR3kJrNy+vxWn6/ASMloKGw0g2vG1wdB85Wo0X5Eflji0HNQDisTr6avMZq+pkflOrfg9YGhv2Hz9wo+cfbLVGO7JOKoCnWJ1kCaiQcbu0yg/smQL0AgTIYdt60cWgxvnU3D03gSe74Ugs2JYQC5VInz3S+YjxNKindXigSJKGD4Dt9KzHwUpkyW7spFnaNANnHTmk/FpAxd5cmNt/2I8RJlSRFJKGbNNVBwwXeAn7ihQXQfoLwsFGoNcTK7YJd+iHg5azV4DMEClCqY0EhWN1cNpJIzR8ncDtIrAQU6rJvV/q728JYsiRfFTCrXtxPPWs3jrBV89XmJm86q/3Ak5PDuto0GFNIf1WZ7+70aACggkQZ+JadQucKDCHIUMABFp+nWgsmWO9qNeECVcI+vr6u5qO2eijt+LlrbgC4uc6cHfNPBjltd8MnP3hSTaGY5QePIxyRn4eByrTaYVu5tiFG1FeC9nfvKoiWdWW8zwOYEdUeiiG/D0zM20pll9XAEkjBW3Lz/HEeOlc/zVHkSQVtN2QERP+mhXXlJdyygLLfnFJ4N8qltQf+Z8p2fvoI2YAAAAASUVORK5CYII=","data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAAAAACpleexAAAB/klEQVR42q1UPWhTURg9996X9McQiiWDDhIERRAHS8VBnWoQ4mCLOnSqDg51KIpCwaWOuiqiQwfBqUUX0apYBBsLVacWSoc4VAetQ6WxRELuz3FI33vJa0IetN92L4dzz3e+7x5BxCuJnQJpLEAXnMUOnyZ+PXxL3Olfgk/KpmX4EXnyAuZoajctNSa8HmCPSsRrpmIr8ezJ4gUYB3gO6y4OIzNdbzY9tge645l/IpZG50S8ZsRuLsUuAa1puUxeQ5MqHqOWz26uwrVltIlPo+V8lu0YrZo7Xx7qa7V4MsRN5f6eeN5bb3IzoMPa9erl2bqZ1W63M6qxP/sfp2Xjw0pGZ+3kynvxqNdEBC6VyAgQ9zfODprQAzoA6m7pSCK64R1i3IT6KFKwmJlVk91bqgNghUXP+gcjUQC5vHmp35+W9BdvAE+/JI0jADiPQ2MwIi1PhaFS+96WiwKpBZLamCqncwCG1w9hgnorEhBEw214YuLrBklOdaLrBq5+w4FlZyNA636mkAQyI68L88dwcX4R137IQT9QQiANC2mczNb05MpcwHAReR0AA+eUPf3qyYO9n4szgsl73XZFfLgibWhEXZrZujSrchT7XqJzklGNJGm1c8ZorbWz/N7T8XsEB8kmwMY6ipJOHw6OrWPv3WpS3SqhicZt5bh2JrDnP0/anS/Gbw6dAAAAAElFTkSuQmCC","data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAAAAACpleexAAACXUlEQVR42s2UT0hUURTGv3Pv/DFzMjIVVPpPBBEFpUaEUIi1yCIwahNlJQbRJlxYRAQRrdoUlAQtoo1SEIUpVFC7IgpqkVlhVIihCxGSxpn3zv1azDi+GV/iKjqr9+77nXPfPd93jxDzC4P/H4zMPNIBgBA2DJTcqV2uOBXG/BVU+/vcezjDTXsa89Jy6ZnwObJzemlH24VheswPTHNPVqL02uDAx8HWFQCW3GU6DFT9VIGax5kl7/nDXajup4aAPuvQOERPVVVJ8jhw3fmzQJ/d2DrO7Afnez5PoFydKwAddRn6gz/l1F8dO5t3IJD0+SKyfEqD+R5voGQoWDLTrim/KeYk0DTrjjZN9okWam1AydfBLWgWOy9TMMl4mCkyjgAIZGpLEl8ghRXFRA3VV1BE6AAIG9A3G0y63jdRG7EqGBsTQ8BJjUQLTeF0ZAOWjnceuE/dF48e+Zr2lJNrURtUESSp/FmJFgBv78CWYzvJR/VY+CHYR2T7ey8Gm0AiXtQ7gJKNm+uA2qd5tsjaLM0OQdd5YBHHy3B6Hcwx5tsnC7qU14HbyQZpSXGvfOdNs7iHee7JNlxMpBqTRYdZEYPPMZy8NNE+alyYMkzD8AH2A4II02eaJ3YrGQKKgFKKRPalqKvy3WXrwrWO6DA8KAEYv+oKLn4ObB4E4/YlutXGjABWD7ZtKQ6dFGIiw9al7esfzgPEFt8CAmLPgFPu6rMUXh3qwaoEBaAzQVMgd0u+rQfi24Cyrl90nBW5keLMaGeyvr216tQazD2kcpfBtzInCCrEhA2yQvBfj+Y/jdgIux8IUV0AAAAASUVORK5CYII=","data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAAAAACpleexAAADEklEQVR42o2VXWgUVxTH/2fu7iRGZE2Uxioq2NiWWotYajQIUiNCA1Ip9aNaKVooSFpQQXxpIFQaLEaf9KXQDx/8QiyCaNriQ0sftEUj0rpV1IimiYJfdJG6zr33/H3YndnZbCI9L8Mwv3vOvef873+E+H+RGfFOAhCpBaU6oystVA2C54IaFPMGbH4R0KCmVhJKfvMhAExcsCvPyDMdaTDix8CEjo7FAMJvSR0DdPwUZtvvJG+eWwd8dp5uVNDxjJn6C+mckjwyAZML6ZwJqPa/+ehl0ZP03nHgTbwbOa0B3VNyYu6R1WS/10O8nypeKf330dwk0ldO1olxNyvvIEn1/vCWF4Bg5aCPv6izb+OVh17ToGM3gFUtDVhNG6fwvNyMfJISJL3dBNNzivZQFl8wqrRhkexOFoL0vArZSnrlcYRdyQGc349Wpkpb7jPv0TqqZQ9m3Yu3pbyPluSsAQAYv4QwEOO3vzywN3CxDkKEI/X4RABAAvn5u3UwZSlhJ56MBEXLopvZDcQCM6fRmcgtAwCUukABgKrMBLGGj2uwIa1Hy68x95avlh8t+xqynzx26cm4xwsxVyNn3b99fUOlhjj+OQ3t97VqhJ6Xx5mfSHIn0KaWpOXdKZg9WBl1PMI9JrdpyQc/NjZOxh5aeg6uwku30spFeUOLSz3Z/j2mFVTd+RVh+/AoCld38XXpWgbp4Tz00vk6YNk151mb8SByd040Br+6H0xr5H3nmhYseBppLXhAdpBvYZg6EwP05O0m7KooqTxrAAHrqQ4RZJ70kj6avtd0H83apN8VP1AJBAJ8zrMiJrQffVlc/0fW14IEiSwxBXeHRJFxW1f6jSfLIkiDISSLh+Kb2u4MCyEmPPZafnNiVvFT8Q+HbmTbvmJDs4QAIC7ThXfgq0CD9roTcuaBFvKZYoGlchm/dsscsMrNlIXx9edasVxmdLwK9JdnorUG4IoL8UZu1pXxAJb+VtTkyo4EPfubgP28dOFSf8TRInZcypW/0FEfAIA3eI6Hl+6GjmH1aQ9XhZGx/x/PAMJlSgMMTiRdAAAAAElFTkSuQmCC","data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAAAAACpleexAAAC0ElEQVR42q2UbWiOURjH/+d+nsfzWN5jhq3Zshh5W2gpom3aF5EaIiWyT/JFSVG+KNnKN0kNHyhfhpCIoigR5qUeb/PSZjGjZmXZ7nOd6+/D8+x+7t3PVj44X073Ob9znevc1//6G+Lfhof/DcZHWlQCiA1fM9EcVREzACAmNjpINR6Ajveem1ANmlFAZQxIX4w/uTsAYN+CRg2/gMFwpH9g7VQA43furgNwgZLbzYHCj7erADSeP9dF8u5ezBfRfFD4dDowruk1SVrrKGU4GQqJ4N4nk1C5pY1Uax3JAZ7CuPd0EdBp5xTs6Sbd0I7K4A6zMRcyC1q2oJa0jqGc06jNA9Wf57U4n6Gh7mdF/HlAYuglZqZPDYO0PIaGIMnMLyVaWZ+QUCUUMFyMF4FqMrPBfWxFiKNHeGZlSBlDBxKYEwLVdBkAg+AIehzI1hOAeIdLr0HCVwR6VBQAWRG4+MPmybNo1CEqCmENakXY393zh+LaJqKZ1nHQzI+U0PFVEoeZrkjhLP9wPZb/Esf0LsyM1lp4HBUvqjBtbqvwsVfYS18/FqLohGqkMm6wHsDYNgrby0z1pm/sK0dRT54oKPwS88x1+vZ1MeLAoq88Pabwp80DnX5OjNlPq1yGJGatwYI0S7E+TxR07EQVRXirIIXyr7oJJXoNOKMyIujE1hgsfET+ThULD3pLgiTD4FLnRDaj4RdF+5Iljn1I3Rsic+AXs4Li+LJFKcre5Ax1/VtRcCebZg78hKL2zHGl1ctmiapyHVZFQNUflZj9Ta2KkpbbzVH6om+KcSVDBu2q/F2JbY4iIr7/fSpe0tHyBproDzcAx3elWP4s83EEq30h6fg2+5iQ96jXXtdh6hKctqHjkL1Z42JAyKgYbtAPu1PZ5b20gSNFIwLqob3fyKW+qzMeJIfpO+qPykw3DcQSUReOOq4CJOLDTXREa872eZTDX752Kbmf5/6wAAAAAElFTkSuQmCC","data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAAAAACpleexAAAC1UlEQVR42sWUXWiOYRjH//fz7pll+dp4l68VB75Sms8wc4C018eJrzhg4UQ+IitJsZSDxYEWciIUpoQoDqRETcQo8rXthNB8NKO9Zs99X9ffwZ53e56HlTPX2X1fv6774/pff0P8W+T9uaUAjEnummRF8Uw3rSnTNyhgHhpThqOLAagXzTESQvJeFQCkpy093UoXyUVBx+ur1pYACzMZH0D/Y1ESUe6aD6D8PMkP7y6Vp3A8QvaCXWzykbl/t5XWOZKsBm71kjlQhZ/nYPFPkpakiLWsxDyVBKhk7QhMyDJwuZRocwlu9JQMQencCGxqp0TeZrnX1NDGQCv1yD9Bauyz5JGZkXiM45q8av6KcVR+Nf6L3CHovs7DIXgtwni4jsU4mDvbAwAxl75tH0sv3nXawgrzIrcKk4Vmvh/rulM1BY+PcjpMDFRmAdA5zcnP89oOV36pqtZUQo8GgMmtJHW87OWeNq+0BowfbeCTzF698gQEgtTJbXun+AP13bJXKY3ILOA+r44dPAVkGNCxoaiggT8+nKvAzPeivd8TsAYDWtgwCjPqRRyfDcB6BiSbhuNi+D8gSXXfKlBxM42pb6nC9xOxlQE1yHK/X9neXRKhtJvnA0h/pFXXsQj5E87SkjxZijGfoiAd327c3G+YE7WsRQGAp3T1S4EVn8MeIjIuRYN/UqQtnY/lO1DSsAsYea5HKD0KF9tRVBTQ8ghwSLkdpeeHYrJTlxwFZedQ/zHlyyCUO3E6y9vxpBBl3zVZkeIWYJPIhbKVTeqsXDZLeKcYtWqToOUZoI5dJJUBt+CA8Er+qC7VP8d1JwbfIgMrVlon+c/pmM67HU5NBFTXXo7ixhaS5AYsoxOtwtywM1HvUS+buQd/Nmg6Hw18MB4G2D19XWhBce/5vnpKqKq6mPPEKwI04BsPAM049QBQTOqv/sicoBOe9xcjJWOK7hvsKzz8N/A3WXck7YGQb+MAAAAASUVORK5CYII="],"B":["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAAAAACpleexAAABKUlEQVR42u1UsUoDQRSc2dszMYKFh1qJhZXgFxiEpPIHLP0FP8Ne/AbBNpWdhYI/INiIsU5UBCFIYnI7FnuXuz1QrlTINLvszL43771lKdSDwUL4t4WqK2RNoXN1hILauyOf3aVzhG6sX/qvk6YztlqcTxSxELaWE7+5/7A+ErW3CmMqETXR6RLee8JjkTBZd1uHMjDHGyIoQGLnNqc3OyIAiDeD7Oj8ZGZBARDfLmNA3aS/373Or3yOOLijYI7WREABnnEwHU89QiYrRikAIPqaO6RxgFStmhYAHInY2tKwnKn0MYei4YUzAJW0QbVKdNlHqoeCaDSaK9s9Nws9ZvPUztlL7ACIwyu6ePzEvK/88X0pfFMVj5jlAzRRSPwesRSSi0/qvwu/AdTEn/rHrjsOAAAAAElFTkSuQmCC","data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAAAAACpleexAAABYElEQVR42u1UTytEURw9596ZULLA1BCyYEVRkoVQvoOdnQ1LX8DSmiI+h4USKwuJlA0jKxT5E2oI07x3j8W8N+/NY2Kl1JzV6/7OPefed06Xwu9gUCP+c2Iq/FBF6GSSyGCuxMSnKMMviuLDo1W0u73xe2tnLkev48ttvTJoXs2CFUTpZe66q7tsL+Z2AaBz2UtVKpq3PW72xRTzt77dmq+Lm0iSiprFulfwAvieJO1j8N05BQj+oyZwY2EDGCsAI8PH2/QTtyZ5LhvZ8OgAyKSZtHZ6qss4hT5FrZWGMyqG1qmycn0818nFtCB/PIqYAiDHfDZzQRGAgzHVsqZFA2iTNRHhEaApE+8KfDXuiqJ4v2P3TikA5NBSS7wUzvSfVOlW05isG1qgCYjTOesTpU6YqaaBHhEQnlc2rgD0H6ZtVLPv8XFGqLVDDG8dZ7vg9IBiEfygKAeqtI+1Z+9viZ/kOKsDCIrWAwAAAABJRU5ErkJggg==","data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAAAAACpleexAAABSklEQVR42u1UPUsDQRB9M7cm+AGCaGVhkRBbQS0EY62FCIII/hlr/4el/yBWCoJFGlFEAoogBAPBD0Tu9m73WRyXXE5FWzGvml3ezDDzHiPE76AYEv8L0fRDgj5LFwCQPFF67qEUiySQLCdPRBTeXQoBCBdnqRwPvmpNdFfbr73vMtRXV8q7hrXptFVW0ettRWvbaZHwKAblAQBQP0nM4DAlXWhm8QFAaT5dn5lkI1sMUzjeY4lRbK21NuZnZES6aG3shi59eO+9T5I4tpG1sSNJA4CApzOl95fE9ScVQGkGphYggMH6cWPZFFb53Ok0gr0qBQbAm9OrFqRrTg97Fb1enKuTVhvAfqtCES/h/KOE3ygsddmZHN0cERhAprzq+gzhVHPSTmwJUJ7La82iAXJwICTIKeO8FI6L6IANhel+5Cc/yvBI/XXiB8iKqLxNO3hsAAAAAElFTkSuQmCC","data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAAAAACpleexAAABT0lEQVR42u2UO0tDQRCFv9m98YGGQGJtLyjaCGJnCmNhob2drW0q/4U/wsbCSgS7gHW0EkTSqfhABJWIZu+ORW6SjbkJsbHKqYads/M6syvKcDCMiP9KjALbexADIL1E6UioHbcDMCY9osrNWcbPLqtgCgNSx/a8VE/s3LrBNnZLsU0hKnf14gan9+Ll+gigejEVVBM0MykrZcoAl3VRdmrfWU3tOtZ315gQYKl576kQREQTeH27elCvqqqxc19unwNtaBvtiEJ2rjVAA2pnyPRRRn3Xs/jA9iGKCSoS5jkOvf20Fla5HW4pPhkbjmjQVAm7Tr16E6Nx0p4iNhhPAAvkiWyK1rEL5iTVR3jO1DaTJdwuTBebposO9yLXIb72VFyJ0trQpTUVXH6rspBX5OWE3GJrw8PUMD7wKYRwiVNaE7Ftov4SZsiIo0/qj8Qfo+eDp1d/SNcAAAAASUVORK5CYII=","data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAAAAACpleexAAABXUlEQVR42u2Uv0oDQRCHf7OzCahEUhxRsBFsRQlqJ9HCQhu1sAw+hGLrE/gGlnkBCyuDFtpGFAWxECxjKrUIRvfPWOTuchcTSSUImeZ22G9+y353HAkGK4Uh+KegDp8CQHxyhwFKtPTbK7Qxy3HimxF6vQCsaAJAEqzISC4eEWonOi5d/czOb7ileSGQBEWJwHKNXbDl1fHzXiAEoZdT9V6PZy6Xu3PWzhuFaN2qqes7EpBMHuQgnfKmZUp4NJ/GGGMlXTppQBMbNLUP5YqHxBbTwgWbOIGLBpl1WB3hIeim4Z1TgErr7gYz0BhlbjdOQNwTFKrf1vBQtZpkMS+cykjqsXq3Eq1zeVmfcqslTT3BnZO5m+KCV0JnDWcBPM1ECrouQ7P324cA8NX6qAJ+Ir5SGhyzFYg1GSCbHS+3j+wBMo4yzcI+MwECOABMA32P/T2KS4b01TP8U/xL8ButXpV4l0DpHQAAAABJRU5ErkJggg==","data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAAAAACpleexAAABgElEQVR42u2UPWtUQRSGnzPn7uoSAxoUktgIQSuRrRQUm9gIAUX8aKwttLEJKAj5BQp2/oD0In4VgmAjWLgIWrigGMRAFFEIEWH3zsxrcTXclY24jSDkNMPAcx6Y9xzGxN9VYBP8z8GiOnIyASbfqNM0ijGHN4uVsTzXzhs4JamvK7+u51VqaBWVdn4/Sgqvb2xNyX4aAHCrG9frJZekPxhBkbX5Zf/Mvfc5SLim5mRYOTshGzCWuj70CYe+p1w3AtGvnnl+4dRC9C9nT1/Lj95aiix2ei3VAweFtLt9m8k2dNe6H3URgPu9MDgZCu7QTB1OprKxmp4eZpdr+jirDQ2AKfqrzvic72Qc8r7LX4snH8ifXkCRsoKtg+5478Tkt2dj293ZcbOSPC5Db89EbdY53O360q2x6f7SlpmjM7IIzYBtM6zfmtVUQwaS+joC0IBWc1hExxSreJyFdx73HlDIpIexzuSw8kAHsVHXjCSwAKD8O+EijLK4mz/FPwZ/AO2H2pmzebsMAAAAAElFTkSuQmCC"]};
+</script>
+<script>
+/* LS-BEGIN */
+// The landscape and the springs of segments 3 and 5. Pure functions on top of PC, no DOM (the same code runs in node for the checks).
+// Everything is built from the two compress B runs on screen: without EWC (λ = 0) and with the slider's λ.
+const LS = (() => {
+  "use strict";
+  const KEYS = ["W1", "b1", "W2", "b2"];   // the KB backbone: the parameters the EWC penalty covers
+  const LEVELS = [0.1, 0.5, 1, 2, 3];      // loss of task A at the contour lines
+
+  // ---------- the backbone as one vector ----------
+  function flat(kb) {
+    let n = 0; for (const k of KEYS) n += kb[k].length;
+    const v = new Float64Array(n); let o = 0;
+    for (const k of KEYS) { v.set(kb[k], o); o += kb[k].length; }
+    return v;
+  }
+  // views of a flat vector as a dict {W1, b1, W2, b2} (no copy)
+  function view(v, like) { const d = {}; let o = 0; for (const k of KEYS) { d[k] = v.subarray(o, o + like[k].length); o += like[k].length; } return d; }
+  const dot = (a, b) => { let s = 0; for (let j = 0; j < a.length; j++) s += a[j] * b[j]; return s; };
+  const norm = (a) => Math.sqrt(dot(a, a));
+  const scale = (a, c) => Float64Array.from(a, (x) => x * c);
+  const pick = (P, idx) => idx.map((i) => Array.from(P[i]));
+
+  // ---------- step 5, recorded ----------
+  // The same computation as PC.runCompressB(S, lam), plus the displacement θ − θ* of the backbone every `every` steps
+  // (float32 on the way, float64 at the end of the run, so the end point is exact).
+  function runB(S, lam, every) {
+    const cfg = S.cfg, kb = PC.clone(S.kbStar), headA = PC.clone(S.kbHeadA);
+    if (cfg.stepsCB % every !== 0) throw new Error("stepsCB must be a multiple of the snapshot period");
+    const headB = PC.initHead(S.R(9), cfg);                 // the KB head of task B is created here (same init for every λ)
+    const rec = [], snaps = [], th0 = flat(S.kbStar);
+    const t0 = PC.hash(S.teacherB);
+    PC.compress(kb, headB, S.B, S.PTB, cfg, cfg.stepsCB, cfg.lrC, lam, S.FA.kb, S.kbStar, (s, r, E) => {
+      const eA = PC.evalKB(kb, headA, S.A, cfg);
+      rec.push({ kl: r.kl, ewc: E, accA: eA.acc, accB: r.acc, lossA: eA.loss, lossB: r.loss, PA: pick(eA.P, S.A.shown), PB: pick(r.P, S.B.shown) });
+      if (s % every === 0 && s < cfg.stepsCB) { const v = flat(kb), d = new Float32Array(v.length); for (let j = 0; j < v.length; j++) d[j] = v[j] - th0[j]; snaps.push(d); }
+    });
+    const D = flat(kb); for (let j = 0; j < D.length; j++) D[j] -= th0[j];
+    snaps.push(D);
+    return { lam, every, rec, kb, headA, headB, D, snaps, teacherSame: t0 === PC.hash(S.teacherB), headAHash: PC.hash(headA) };
+  }
+
+  // ---------- the plane ----------
+  // Through θ*, at the origin. d1 = (θ_FT − θ*) / |θ_FT − θ*|: where compress B ends without EWC. d2 = the part of θ_EWC − θ* at
+  // right angles to d1, at unit length (Gram–Schmidt), so both end points lie in the plane. At λ = 0 the two runs are the same:
+  // d2 is then the direction in which that path bends away from d1 (first principal component of its parts at right angles to d1).
+  function plane(FT, R) {
+    const d1 = scale(FT.D, 1 / norm(FT.D)), a = dot(R.D, d1);
+    const r = Float64Array.from(R.D, (x, j) => x - a * d1[j]);
+    const same = R.lam === 0 || norm(r) <= 1e-9 * norm(R.D);
+    const d2 = same ? bend(FT.snaps, d1) : scale(r, 1 / norm(r));
+    // a path in plane coordinates, and the share of its squared displacement that the plane holds: Σ_s |P d_s|² / Σ_s |d_s|²
+    const proj = (run) => {
+      const n = run.snaps.length, pts = new Float64Array(2 * n);
+      let held = 0, tot = 0;
+      run.snaps.forEach((s, i) => { const x = dot(s, d1), y = dot(s, d2); pts[2 * i] = x; pts[2 * i + 1] = y; held += x * x + y * y; tot += dot(s, s); });
+      const x = pts[2 * n - 2], y = pts[2 * n - 1], e = dot(run.D, run.D);
+      return { pts, share: tot > 0 ? held / tot : 1, endShare: e > 0 ? (x * x + y * y) / e : 1 };
+    };
+    return { d1, d2, same, ft: proj(FT), ewc: same ? null : proj(R) };
+  }
+  // first principal direction of the snapshots' parts at right angles to d1 (power iteration), signed so that the path lies mostly at d2 > 0
+  function bend(snaps, d1) {
+    const n = d1.length, R = snaps.map((s) => { const a = dot(s, d1); return Float64Array.from(s, (x, j) => x - a * d1[j]); });
+    let v = R.reduce((m, r) => (norm(r) > norm(m) ? r : m), R[0]);
+    v = scale(v, 1 / norm(v));
+    for (let it = 0; it < 100; it++) {
+      const w = new Float64Array(n);
+      for (const r of R) { const c = dot(r, v); for (let j = 0; j < n; j++) w[j] += c * r[j]; }
+      const a = dot(w, d1); for (let j = 0; j < n; j++) w[j] -= a * d1[j];
+      v = scale(w, 1 / norm(w));
+    }
+    let s = 0; for (const r of R) s += dot(r, v);
+    return s < 0 ? scale(v, -1) : v;
+  }
+  // the penalty on the plane: (λ/2) Σ_j F_j (a d1_j + b d2_j)² = (λ/2) (q11 a² + 2 q12 a b + q22 b²)
+  function penaltyForm(F, d1, d2) {
+    let q11 = 0, q12 = 0, q22 = 0;
+    for (let j = 0; j < F.length; j++) { q11 += F[j] * d1[j] * d1[j]; q12 += F[j] * d1[j] * d2[j]; q22 += F[j] * d2[j] * d2[j]; }
+    return [q11, q12, q22];
+  }
+
+  // ---------- loss of task A on the plane ----------
+  // loss_A(θ* + Σ_k c_k d_k) on the 48 images of A, head A fixed. The first layer is linear in c, so its pre-activations
+  // W1 x + b1 are precomputed per image for θ* and for each direction; one call costs a few thousand operations.
+  function planeEval(S, dirs) {
+    const cfg = S.cfg, { D, H1, H2, C } = cfg, A = S.A, kb = S.kbStar, hd = S.kbHeadA;
+    const dv = dirs.map((d) => view(d, kb));
+    const pre = (W, b, x, nz) => { const o = new Float64Array(H1); for (let i = 0; i < H1; i++) { let s = b[i]; const r = i * D; for (const j of nz) s += W[r + j] * x[j]; o[i] = s; } return o; };
+    const P0 = A.X.map((x, n) => pre(kb.W1, kb.b1, x, A.NZ[n]));
+    const Pk = dv.map((d) => A.X.map((x, n) => pre(d.W1, d.b1, x, A.NZ[n])));
+    const W2 = new Float64Array(H2 * H1), b2 = new Float64Array(H2), h1 = new Float64Array(H1), h2 = new Float64Array(H2), z = new Float64Array(C);
+    return function (c) {
+      for (let i = 0; i < W2.length; i++) { let s = kb.W2[i]; for (let k = 0; k < dv.length; k++) s += c[k] * dv[k].W2[i]; W2[i] = s; }
+      for (let i = 0; i < H2; i++) { let s = kb.b2[i]; for (let k = 0; k < dv.length; k++) s += c[k] * dv[k].b2[i]; b2[i] = s; }
+      let L = 0, right = 0;
+      for (let n = 0; n < A.N; n++) {
+        const p0 = P0[n];
+        for (let i = 0; i < H1; i++) { let s = p0[i]; for (let k = 0; k < dv.length; k++) s += c[k] * Pk[k][n][i]; h1[i] = Math.tanh(s); }   // h1 = tanh(W1 x + b1)
+        for (let i = 0; i < H2; i++) { let s = b2[i]; const r = i * H1; for (let j = 0; j < H1; j++) s += W2[r + j] * h1[j]; h2[i] = Math.tanh(s); }   // h2 = tanh(W2 h1 + b2)
+        let m = -Infinity;
+        for (let i = 0; i < C; i++) { let s = hd.b[i]; const r = i * H2; for (let j = 0; j < H2; j++) s += hd.W[r + j] * h2[j]; z[i] = s; if (s > m) m = s; }   // z = head A
+        let se = 0; for (let i = 0; i < C; i++) se += Math.exp(z[i] - m);
+        const y = A.Y[n];
+        L += m + Math.log(se) - z[y];
+        let am = 0; for (let i = 1; i < C; i++) if (z[i] > z[am]) am = i;
+        if (am === y) right++;
+      }
+      return { loss: L / A.N, acc: right / A.N };
+    };
+  }
+  // loss_A on an nx × ny grid over the box [x0, x1] × [y0, y1] of the plane; row 0 at the top (y1)
+  function grid(S, P, box, nx, ny) {
+    const ev = planeEval(S, [P.d1, P.d2]), G = new Float64Array(nx * ny);
+    for (let r = 0; r < ny; r++) {
+      const y = box.y1 - (r / (ny - 1)) * (box.y1 - box.y0);
+      for (let c = 0; c < nx; c++) G[r * nx + c] = ev([box.x0 + (c / (nx - 1)) * (box.x1 - box.x0), y]).loss;
+    }
+    return { G, nx, ny, ev };
+  }
+  // marching squares: the segments of the level line G = L, in grid units [c0, r0, c1, r1, ...]
+  function contour(G, nx, ny, L) {
+    const segs = [], cross = (va, vb) => (L - va) / (vb - va);
+    for (let r = 0; r < ny - 1; r++) for (let c = 0; c < nx - 1; c++) {
+      const v0 = G[r * nx + c], v1 = G[r * nx + c + 1], v2 = G[(r + 1) * nx + c + 1], v3 = G[(r + 1) * nx + c];
+      const s0 = v0 > L, s1 = v1 > L, s2 = v2 > L, s3 = v3 > L;
+      if (s0 === s1 && s1 === s2 && s2 === s3) continue;
+      const p = [];
+      if (s0 !== s1) p.push([c + cross(v0, v1), r]);
+      if (s1 !== s2) p.push([c + 1, r + cross(v1, v2)]);
+      if (s3 !== s2) p.push([c + cross(v3, v2), r + 1]);
+      if (s0 !== s3) p.push([c, r + cross(v0, v3)]);
+      if (p.length === 2) segs.push(p[0][0], p[0][1], p[1][0], p[1][1]);
+      else if (p.length === 4) {
+        const centre = (v0 + v1 + v2 + v3) / 4 > L;
+        if (centre === s0) segs.push(p[0][0], p[0][1], p[1][0], p[1][1], p[2][0], p[2][1], p[3][0], p[3][1]);
+        else segs.push(p[0][0], p[0][1], p[3][0], p[3][1], p[1][0], p[1][1], p[2][0], p[2][1]);
+      }
+    }
+    return segs;
+  }
+
+  // ---------- the springs ----------
+  // Three backbone weights, by a fixed rule on the run without EWC (FT) and the run at the default λ (REF), ranked by F (rank 1 = largest):
+  // stiff = the one FT moves most among the 1% with the largest F; middle = the one both runs move most, max of min(|Δ_FT|, |Δ_REF|),
+  // among the middle fifth (40% to 60%); free = the one REF moves most among the quarter with the smallest F.
+  function springSet(Fs, FT, REF) {
+    const F = flat(Fs), N = F.length;
+    const order = Array.from({ length: N }, (_, j) => j).sort((a, b) => F[b] - F[a] || a - b);
+    const rank = new Int32Array(N); order.forEach((j, r) => (rank[j] = r));
+    const best = (lo, hi, score) => { let b = -1; for (let r = Math.floor(lo * N); r < Math.ceil(hi * N); r++) { const j = order[r]; if (b < 0 || score(j) > score(b)) b = j; } return b; };
+    const ft = (j) => Math.abs(FT.D[j]), ref = (j) => Math.abs(REF.D[j]);
+    const sel = [best(0, 0.01, ft), best(0.4, 0.6, (j) => Math.min(ft(j), ref(j))), best(0.75, 1, ref)];
+    return sel.map((j) => ({ j, rank: rank[j] + 1, F: F[j] }));
+  }
+  // the value θ_j − θ*_j of one weight at every snapshot of a run
+  const series = (run, j) => Float64Array.from(run.snaps, (s) => s[j]);
+
+  return { KEYS, LEVELS, flat, view, dot, norm, runB, plane, bend, penaltyForm, planeEval, grid, contour, springSet, series };
+})();
+/* LS-END */
+</script>
+<script>
+/* APP-BEGIN */
+// The page: one clock t drives every visual; the state at time t is a pure function of t and the recorded run.
+const APP = (() => {
+  "use strict";
+  const $ = (id) => document.getElementById(id);
+  const clamp = (x, a, b) => Math.min(b, Math.max(a, x));
+  const smooth = (x) => { x = clamp(x, 0, 1); return x * x * (3 - 2 * x); };
+  const lerp = (a, b, u) => a + (b - a) * u;
+  const argmax = (p) => { let m = 0; for (let i = 1; i < p.length; i++) if (p[i] > p[m]) m = i; return m; };
+  const nRight = (P) => P.reduce((n, p, c) => n + (argmax(p) === c ? 1 : 0), 0);
+  const pct = (x) => Math.round(100 * x) + "%";
+  const REDUCE = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  const NS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs, parent, text) {
+    const e = document.createElementNS(NS, tag);
+    if (attrs) for (const k in attrs) e.setAttribute(k, attrs[k]);
+    if (text != null) e.textContent = text;
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+  function h(tag, cls, parent, text) {
+    const e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text != null) e.textContent = text;
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+  const setA = (e, k, v) => { const s = String(v); if (e.getAttribute(k) !== s) e.setAttribute(k, s); };
+  const setOp = (e, v) => setA(e, "opacity", v < 0.004 ? 0 : v.toFixed(3));
+  const setText = (e, s) => { if (e.textContent !== s) e.textContent = s; };
+  const setHTML = (e, s) => { if (e._html !== s) { e.innerHTML = s; e._html = s; } };
+
+  // ---------- λ positions (1-2-5 steps) ----------
+  const LAMS = [0, 100, 200, 500, 1000, 2000, 5000, 10000, 20000, 50000, 100000, 200000, 500000, 1000000];
+  const LAM0 = 7;
+  const fmtLam = (l) => String(l).replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+
+  // ---------- timeline ----------
+  const SEGS = [
+    { label: "1 · Progress on A", dur: 6 },
+    { label: "2 · Compress A", dur: 7 },
+    { label: "3 · Fisher", dur: 5 },
+    { label: "4 · Progress on B", dur: 6 },
+    { label: "5 · Compress B, inspect", dur: 12 },
+  ];
+  const START = []; let acc0 = 0;
+  for (const s of SEGS) { START.push(acc0); acc0 += s.dur; }
+  const TOTAL = acc0, RESET = START[2] + 3.2;   // the active column is re-initialized at t = RESET
+  function segAt(t) {
+    for (let j = 0; j < SEGS.length; j++) if (t < START[j] + SEGS[j].dur || j === SEGS.length - 1) return { i: j, local: clamp(t - START[j], 0, SEGS[j].dur) };
+  }
+  const K = { P: PC.CFG.stepsP, CA: PC.CFG.stepsCA, CB: PC.CFG.stepsCB };
+  // recorded gradient step shown at local time `local` of segment i (faster early, where most of the change is)
+  function stepAt(i, local) {
+    const d = SEGS[i].dur;
+    if (i === 0 || i === 3) return Math.round(K.P * Math.pow(clamp(local / (d - 0.4), 0, 1), 1.5));
+    if (i === 1) return Math.round(K.CA * Math.pow(clamp((local - 0.8) / (d - 1.4), 0, 1), 2));
+    if (i === 4) return Math.round(K.CB * Math.pow(clamp((local - 0.8) / 9.2, 0, 1), 2));
+    return 0;
+  }
+
+  // ---------- component states over time ----------
+  // T training, F frozen (used, not trained), U not used in this phase, X does not exist yet
+  const S1 = START[1], S2 = START[2], S3 = START[3], S4 = START[4];
+  const CHG = {
+    kbBody: [[0, "F"], [S1, "T"], [S2, "F"], [S4, "T"]],
+    kbHeadA: [[0, "X"], [S1, "T"], [S2, "F"]],
+    kbHeadB: [[0, "X"], [S4, "T"]],
+    actBody: [[0, "T"], [S1, "U"], [S3, "T"], [S4, "U"]],
+    actHeadA: [[0, "T"], [S1, "U"], [RESET, "X"]],
+    actHeadB: [[0, "X"], [RESET, "U"], [S3, "T"], [S4, "U"]],
+    ad: [[0, "T"], [S1, "U"], [S3, "T"], [S4, "U"]],
+    adA: [[0, "T"], [S1, "U"], [RESET, "X"]],
+    adB: [[0, "X"], [RESET, "U"], [S3, "T"], [S4, "U"]],
+  };
+  const VIS = {
+    T: { op: 1, fill: 0.13, sw: 1.5, dash: "none" },
+    F: { op: 0.6, fill: 0.06, sw: 1, dash: "none" },
+    U: { op: 0.38, fill: 0, sw: 1, dash: "4 3" },
+    X: { op: 0.2, fill: 0, sw: 1, dash: "2 3" },
+  };
+  // the teacher copy is grey already: frozen parts stay at full opacity
+  const TVIS = { F: { op: 1, fill: 0.14, sw: 1, dash: "none" }, U: { op: 0.55, fill: 0, sw: 1, dash: "4 3" }, X: { op: 0, fill: 0, sw: 1, dash: "none" } };
+  function stateAt(list, t) {
+    let j = 0;
+    while (j + 1 < list.length && list[j + 1][0] <= t) j++;
+    const cur = list[j][1], prev = j > 0 ? list[j - 1][1] : cur;
+    return { prev, cur, u: j > 0 ? smooth((t - list[j][0]) / 0.5) : 1 };
+  }
+  function visAt(name, t) {
+    const s = stateAt(CHG[name], t), a = VIS[s.prev], b = VIS[s.cur];
+    const breathe = s.cur === "T" && !REDUCE ? 0.06 * Math.sin((2 * Math.PI * t) / 1.6) : 0;
+    return { op: lerp(a.op, b.op, s.u), fill: Math.max(0, lerp(a.fill, b.fill, s.u) + breathe * s.u), sw: lerp(a.sw, b.sw, s.u), dash: s.u < 0.5 ? a.dash : b.dash, state: s.u < 0.5 ? s.prev : s.cur };
+  }
+
+  // ---------- state ----------
+  const st = { t: 0, playing: false, raf: 0, last: 0, lamIdx: LAM0, S: null, ghost: null, runs: new Map(), run: null, ready: false, narrow: null, pending: null, view: "land", ellipse: false, shareKey: null };
+  const lam = () => LAMS[st.lamIdx];
+  function getRun(l) { if (!st.runs.has(l)) st.runs.set(l, LS.runB(st.S, l, EVERY)); return st.runs.get(l); }
+
+  // ---------- schematic ----------
+  const G = { kbX: 300, actX: 510, cw: 124, hw: 56, yHead: 72, hHead: 28, yH2: 150, yH1: 228, hBox: 30, slotX: 405, slotY: 344, slotS: 48, busY: 300, ad2Y: 204, ad3Y: 125 };
+  const svg = $("model");
+  const COLV = { kb: "var(--kb)", act: "var(--act)", ad: "var(--ad)", tch: "var(--tch)", muted: "var(--muted)", ewc: "var(--ewc)" };
+  const defs = el("defs", null, svg);
+  for (const k in COLV) {
+    const m = el("marker", { id: "ah-" + k, viewBox: "0 0 8 8", refX: "7", refY: "4", markerWidth: "6", markerHeight: "6", orient: "auto" }, defs);
+    el("path", { d: "M0 0.8 L7.5 4 L0 7.2 z", style: "fill:" + COLV[k] }, m);
+  }
+  const gSide = el("g", null, svg), gNet = el("g", null, svg);
+
+  function snowflake(parent, cx, cy, r, col) {
+    const g = el("g", { style: `stroke:${col};stroke-width:1;stroke-linecap:round;fill:none` }, parent);
+    for (let k = 0; k < 3; k++) {
+      const a = (k * Math.PI) / 3, dx = r * Math.cos(a), dy = r * Math.sin(a);
+      el("line", { x1: cx - dx, y1: cy - dy, x2: cx + dx, y2: cy + dy }, g);
+    }
+    return g;
+  }
+  // one box with a label; returns {g, r}
+  function box(parent, x, y, w, hh, col, label, cls) {
+    const g = el("g", null, parent);
+    const r = el("rect", { x, y, width: w, height: hh, rx: 3, style: `stroke:${col};fill:${col}`, "fill-opacity": 0.1 }, g);
+    if (label) el("text", { x: x + w / 2, y: y + hh / 2 + 4, "text-anchor": "middle", class: cls || "blbl" }, g, label);
+    return { g, r };
+  }
+  function line(parent, d, col, marker) {
+    const a = { d, class: "wire", style: `stroke:${col}` };
+    if (marker) a["marker-end"] = `url(#ah-${marker})`;
+    return el("path", a, parent);
+  }
+  // Draw one network. teacher = grey copy without labels.
+  function buildNet(parent, teacher) {
+    const c = teacher ? { kb: COLV.tch, act: COLV.tch, ad: COLV.tch, mk: "tch", mkK: "tch", mkA: "tch", mkD: "tch", in: COLV.tch } : { kb: COLV.kb, act: COLV.act, ad: COLV.ad, mkK: "kb", mkA: "act", mkD: "ad", in: COLV.muted };
+    const { kbX, actX, cw, hw, yHead, hHead, yH2, yH1, hBox, slotX, slotY, slotS, busY, ad2Y, ad3Y } = G;
+    const R = { groups: {}, rects: {} };
+    const gIn = el("g", null, parent);
+    // input bus: x feeds both columns
+    line(gIn, `M${slotX} ${slotY} V${busY} M${kbX} ${busY} H${actX}`, c.in);
+    line(gIn, `M${kbX} ${busY} V${yH1 + hBox + 1.5}`, c.in, teacher ? "tch" : "muted");
+    line(gIn, `M${actX} ${busY} V${yH1 + hBox + 1.5}`, c.in, teacher ? "tch" : "muted");
+    el("rect", { x: slotX - slotS / 2, y: slotY, width: slotS, height: slotS, rx: 2, style: `fill:var(--white);stroke:${c.in}` }, gIn);
+    R.pix = [];
+    const ps = (slotS - 6) / 12;
+    for (let p = 0; p < 144; p++) R.pix.push(el("rect", { x: slotX - slotS / 2 + 3 + (p % 12) * ps, y: slotY + 3 + Math.floor(p / 12) * ps, width: ps + 0.05, height: ps + 0.05, class: "fcell", style: "fill:var(--text)", "fill-opacity": 0 }, gIn));
+    for (const [key, x, col, mk] of [["kb", kbX, c.kb, c.mkK], ["act", actX, c.act, c.mkA]]) {
+      const body = el("g", null, parent);
+      const b1 = box(body, x - cw / 2, yH1, cw, hBox, col, teacher ? null : "h₁ · 16 units");
+      const b2 = box(body, x - cw / 2, yH2, cw, hBox, col, teacher ? null : "h₂ · 8 units");
+      line(body, `M${x} ${yH1} V${yH2 + hBox + 1.5}`, col, mk);
+      R.groups[key + "Body"] = body; R.rects[key + "Body"] = [b1.r, b2.r];
+      for (const [hk, hx] of [["A", x - cw / 2 + 2], ["B", x + cw / 2 - 2 - hw]]) {
+        const g = el("g", null, parent);
+        line(g, `M${x} ${yH2} L${hx + hw / 2} ${yHead + hHead + 1.5}`, col, mk);
+        const b = box(g, hx, yHead, hw, hHead, col, teacher ? null : "head " + hk, "hlbl");
+        R.groups[key + "Head" + hk] = g; R.rects[key + "Head" + hk] = [b.r];
+      }
+    }
+    // adaptors: KB h1 → active h2, KB h2 → active head (A or B)
+    const ad = el("g", null, parent), adA = el("g", null, parent), adB = el("g", null, parent);
+    const p2a = `M${kbX + cw / 2} ${yH1 + hBox / 2} L${slotX - 16} ${ad2Y}`, p2b = `M${slotX + 16} ${ad2Y} L${actX - cw / 2 - 1.5} ${yH2 + hBox / 2 + 1}`;
+    const p3a = `M${kbX + cw / 2} ${yH2 + hBox / 2} L${slotX - 16} ${ad3Y}`;
+    const p3A = `M${slotX + 16} ${ad3Y} L${actX - cw / 2 + 0.5} ${yHead + hHead / 2 + 3}`;
+    const p3B = `M${slotX + 16} ${ad3Y} L${actX + cw / 2 - 2 - hw + 12} ${yHead + hHead + 1.5}`;
+    line(ad, p2a, c.ad); line(ad, p2b, c.ad, c.mkD); line(ad, p3a, c.ad);
+    const blk2 = el("rect", { x: slotX - 16, y: ad2Y - 8, width: 32, height: 16, rx: 2, style: `stroke:${c.ad};fill:${c.ad}`, "fill-opacity": 0.12 }, ad);
+    const blk3 = el("rect", { x: slotX - 16, y: ad3Y - 8, width: 32, height: 16, rx: 2, style: `stroke:${c.ad};fill:${c.ad}`, "fill-opacity": 0.12 }, ad);
+    if (!teacher) { const t1 = el("title", null, blk2); t1.textContent = "adaptor into active h2: α ⊙ U σ(V h₁ᴷᴮ + c)"; const t2 = el("title", null, blk3); t2.textContent = "adaptor into the active head: α ⊙ U σ(V h₂ᴷᴮ + c)"; }
+    line(adA, p3A, c.ad, c.mkD); line(adB, p3B, c.ad, c.mkD);
+    R.groups.ad = ad; R.groups.adA = adA; R.groups.adB = adB; R.rects.ad = [blk2, blk3];
+    // signal: dots flowing from the KB into the active column while the adaptors carry it
+    R.sig = el("g", null, parent);
+    R.sigMain = [p2a, p2b, p3a].map((d) => el("path", { d, class: "sig", style: `stroke:${c.ad}` }, R.sig));
+    R.sigA = el("path", { d: p3A, class: "sig", style: `stroke:${c.ad}` }, R.sig);
+    R.sigB = el("path", { d: p3B, class: "sig", style: `stroke:${c.ad}` }, R.sig);
+    R.wires = {};
+    for (const k in R.groups) R.wires[k] = Array.from(R.groups[k].querySelectorAll("path.wire"));
+    return R;
+  }
+
+  // --- side area: teacher copy, Fisher, placeholder (local coordinates x 0..228, y 0..440)
+  const TS = 0.42, TX = 40 - (G.kbX - G.cw / 2) * TS, TY = 92 - G.yHead * TS;
+  const gTeach = el("g", { opacity: 0 }, gSide);
+  el("text", { x: 22, y: 22, class: "ttl", style: "fill:var(--tch)" }, gTeach, "teacher");
+  snowflake(gTeach, 12, 18, 5.5, COLV.tch);
+  const tSub1 = el("text", { x: 2, y: 38, class: "note" }, gTeach, "frozen copy of the whole network");
+  const tSub2 = el("text", { x: 2, y: 52, class: "note" }, gTeach, "after progress on A");
+  const tNet = buildNet(el("g", { transform: `translate(${TX.toFixed(2)} ${TY.toFixed(2)}) scale(${TS})` }, gTeach), true);
+  const tz = el("text", { x: TX + G.actX * TS, y: TY + G.yHead * TS - 6, "text-anchor": "middle", class: "note", style: "fill:var(--tch)" }, gTeach, "z");
+  el("tspan", { dy: -4, style: "font-size:8.5px" }, tz, "T");
+  const TNOTE = ["The active column was trained on top", "of this KB, through the adaptors, so", "the teacher needs both. Frozen, the", "copy keeps the target still while", "the live KB moves."];
+  el("text", { x: TX + (G.kbX - G.cw / 2) * TS - 4, y: TY + (G.yH1 + 18) * TS, "text-anchor": "end", class: "note", style: "fill:var(--tch)" }, gTeach, "KB");
+  el("text", { x: TX + (G.actX + G.cw / 2) * TS + 4, y: TY + (G.yH1 + 18) * TS, class: "note", style: "fill:var(--tch)" }, gTeach, "active");
+  TNOTE.forEach((s, j) => el("text", { x: 2, y: 254 + 14 * j, class: "note" }, gTeach, s));
+  el("text", { x: 176, y: 212, "text-anchor": "middle", class: "note" }, gTeach, "same x");
+
+  const gPlace = el("g", { opacity: 0 }, gSide);
+  el("rect", { x: 6, y: 70, width: 210, height: 200, rx: 4, style: "fill:none;stroke:var(--rule);stroke-dasharray:4 4" }, gPlace);
+  ["In compress, a frozen copy of the", "whole network appears here: the", "teacher."].forEach((s, j) => el("text", { x: 111, y: 156 + 15 * j, "text-anchor": "middle", class: "note" }, gPlace, s));
+
+  // Fisher view (built after the run, from the real F)
+  const gFish = el("g", { opacity: 0 }, gSide);
+
+  // --- live network, labels, tags, readouts
+  const net = buildNet(gNet, false);
+  el("text", { x: G.kbX, y: 18, "text-anchor": "middle", class: "ttl", style: "fill:var(--kb)" }, gNet, "knowledge base");
+  el("text", { x: G.actX, y: 18, "text-anchor": "middle", class: "ttl", style: "fill:var(--act)" }, gNet, "active column");
+  function tag(x) {
+    const g = el("g", { transform: `translate(${x} 27)` }, gNet);
+    const r = el("rect", { x: -42, y: 0, width: 84, height: 16, rx: 3, style: "fill:var(--panel)" }, g);
+    const t = el("text", { x: 0, y: 11.5, "text-anchor": "middle", class: "tagt" }, g, "");
+    const sf = snowflake(g, -33, 8, 4, COLV.muted);
+    return { g, r, t, sf };
+  }
+  const tagKB = tag(G.kbX), tagAct = tag(G.actX);
+  const roKB = el("text", { x: G.kbX, y: 58, "text-anchor": "middle", class: "val" }, gNet, "");
+  const roAct = el("text", { x: G.actX, y: 58, "text-anchor": "middle", class: "val" }, gNet, "");
+  // re-initialization flash on the active column
+  const flash = el("g", { opacity: 0 }, gNet);
+  for (const y of [G.yH1, G.yH2]) el("rect", { x: G.actX - G.cw / 2, y, width: G.cw, height: G.hBox, rx: 3, style: "fill:var(--act)" }, flash);
+  for (const x of [G.actX - G.cw / 2 + 2, G.actX + G.cw / 2 - 2 - G.hw]) el("rect", { x, y: G.yHead, width: G.hw, height: G.hHead, rx: 3, style: "fill:var(--act)" }, flash);
+  // F tags on the KB backbone (Fisher, then the penalty)
+  const fTags = el("g", { opacity: 0 }, gNet);
+  for (const y of [G.yH1, G.yH2]) {
+    el("rect", { x: G.kbX - G.cw / 2 + 4, y: y + G.hBox / 2 - 7, width: 14, height: 14, rx: 2, style: "fill:var(--panel);stroke:var(--ewc)" }, fTags);
+    el("text", { x: G.kbX - G.cw / 2 + 11, y: y + G.hBox / 2 + 4, "text-anchor": "middle", style: "fill:var(--ewc);font-family:var(--serif);font-style:italic;font-size:11px" }, fTags, "F");
+  }
+  // input label and the dashed "same x" link to the teacher
+  el("text", { x: G.slotX - G.slotS / 2 - 8, y: G.slotY + 20, "text-anchor": "end", class: "note", style: "fill:var(--text)" }, gNet, "input x");
+  el("text", { x: G.slotX - G.slotS / 2 - 8, y: G.slotY + 34, "text-anchor": "end", class: "note" }, gNet, "12 × 12 pixels");
+  const xLink = el("path", { d: "", class: "wire", style: "stroke:var(--tch);stroke-dasharray:3 3", opacity: 0 }, svg);
+  // legend
+  const gLeg = el("g", null, gNet);
+  {
+    let x = G.kbX - G.cw / 2;
+    const y = 410;
+    for (const [lbl, s] of [["training", "T"], ["frozen (used, not trained)", "F"], ["not used", "U"]]) {
+      const v = VIS[s];
+      el("rect", { x, y: y - 9, width: 16, height: 11, rx: 2, style: "stroke:var(--text);fill:var(--text)", "fill-opacity": v.fill, "stroke-dasharray": v.dash, "stroke-width": v.sw, opacity: v.op }, gLeg);
+      if (s === "F") snowflake(gLeg, x + 8, y - 3.5, 3.5, COLV.muted);
+      el("text", { x: x + 21, y, class: "note" }, gLeg, lbl);
+      x += 21 + lbl.length * 5.6 + 14;
+    }
+    const y2 = 426;
+    el("rect", { x: G.kbX - G.cw / 2, y: y2 - 9, width: 16, height: 11, rx: 2, style: "stroke:var(--ad);fill:var(--ad)", "fill-opacity": 0.12 }, gLeg);
+    el("text", { x: G.kbX - G.cw / 2 + 21, y: y2, class: "note" }, gLeg, "adaptor: α ⊙ U σ(V h + c), KB layer i − 1 → active layer i");
+  }
+
+  // ---------- Fisher note (segment 3, side area): the numbers of F, in words ----------
+  let FV = null;
+  function buildFisher(S) {
+    const F = S.FA;
+    let tot = 0, n = 0, zero = 0;
+    const all = [];
+    for (const k in F.kb) for (const v of F.kb[k]) { tot += v; n++; if (v === 0) zero++; all.push(v); }
+    all.sort((a, b) => b - a);
+    let half = 0, cum = 0; while (cum < tot / 2) cum += all[half++];
+    let y = 112;
+    el("text", { x: 2, y: y - 22, class: "fttl" }, gFish, "Fisher of the KB on task A");
+    const parts = [
+      ["One number per backbone weight: an", "estimate of the curvature of task A's", "loss at θ*, the KB after compress A.", "Where F is large, a small move of", "the weight already costs task A."],
+      [`Half of the total sits on ${half} of the`, `${n.toLocaleString("en-US")} weights. ${zero} have F = 0: they`, "read pixels that no image of A inks."],
+      ["In compress B, EWC ties each weight", "to θ* with a spring of strength λF.", "The landscape view shows three of", "them, and the loss of task A near θ*."],
+    ].map((rows) => { const g = el("g", { opacity: 0 }, gFish); rows.forEach((t) => { el("text", { x: 2, y, class: "flbl" }, g, t); y += 14; }); y += 10; return g; });
+    FV = { parts, half, n, zero };
+  }
+
+  // ---------- results panel ----------
+  const R = { col: [], grp: {}, rows: {} };
+  function buildResults(S) {
+    const root = $("res");
+    const top = h("div", "rgrid", root);
+    h("div", "", top); h("div", "", top);
+    for (let c = 0; c < 3; c++) R.col.push(h("div", "colh", top));
+    for (const g of ["A", "B"]) {
+      const gt = h("div", "gtitle", root, g === "A" ? "Task A · Oriya" : "Task B · Keble");
+      h("span", "", gt, " · 6 characters, one image each");
+      const gh = h("div", "grph", root);
+      h("div", "", gh); h("div", "", gh);
+      R.grp[g] = [0, 1, 2].map(() => h("div", "acc", gh));
+      R.rows[g] = [];
+      const imgs = g === "A" ? IMG.A : IMG.B;
+      for (let r = 0; r < 6; r++) {
+        const row = h("div", "rrow", root);
+        const im = h("img", "ex", row); im.src = imgs[r]; im.alt = `task ${g}, class ${r + 1}`;
+        h("div", "tl", row, String(r + 1));
+        const cells = [];
+        for (let c = 0; c < 3; c++) {
+          const cd = h("div", "cell k-none", row);
+          const s = el("svg", { viewBox: "0 0 62 24", "aria-hidden": "true" }, cd);
+          el("line", { x1: 0, x2: 61, y1: 20.5, y2: 20.5, class: "base" }, s);
+          const bars = [];
+          for (let k = 0; k < 6; k++) bars.push(el("rect", { x: 1 + k * 10, y: 20, width: 8, height: 0, class: "b" }, s));
+          el("rect", { x: 1 + r * 10, y: 22, width: 8, height: 2, class: "tru" }, s);
+          const pr = h("span", "pred", cd, "–");
+          cells.push({ cd, bars, pr, kind: "", key: "" });
+        }
+        R.rows[g].push({ row, cells });
+      }
+    }
+  }
+  const KIND = { act: "k-act", tch: "k-tch", kb: "k-kb", gh: "k-gh" };
+  function setCell(cell, entry, r) {
+    const kind = entry ? entry.kind : "none";
+    if (cell.kind !== kind) { cell.cd.className = "cell " + (KIND[kind] || "k-none"); cell.kind = kind; }
+    if (!entry) { setHTML(cell.pr, "–"); return; }
+    const p = entry.P[r];
+    for (let k = 0; k < 6; k++) { const hh = Math.max(0.5, 19 * p[k]); setA(cell.bars[k], "y", (20 - hh).toFixed(2)); setA(cell.bars[k], "height", hh.toFixed(2)); }
+    const am = argmax(p);
+    setHTML(cell.pr, `${am + 1} <i>${am === r ? "✓" : "✗"}</i>`);
+  }
+
+  // what each results column shows at time t
+  function cellsAt(t) {
+    const { i, local } = segAt(t), k = stepAt(i, local), S = st.S, run = st.run, gh = st.ghost;
+    const E = (kind, P, acc) => ({ kind, P, acc });
+    const C = { A: [null, null, null], B: [null, null, null] };
+    const N = { A: ["", "", ""], B: ["not seen yet", "", ""] };
+    const lastCA = S.recCA[S.recCA.length - 1];
+    if (i === 0) {
+      C.A[0] = E("act", S.recPA[k].P, S.recPA[k].acc); N.A[1] = "no head for A yet";
+    } else if (i === 1) {
+      C.A[0] = E("tch", S.teacherAShown, S.accTA); C.A[1] = E("kb", S.recCA[k].P, S.recCA[k].acc);
+    } else if (i === 2) {
+      if (t < RESET) C.A[0] = E("tch", S.teacherAShown, S.accTA); else N.A[0] = "re-initialized";
+      C.A[1] = E("kb", lastCA.P, lastCA.acc);
+    } else if (i === 3) {
+      N.A[0] = "re-initialized for B"; C.A[1] = E("kb", lastCA.P, lastCA.acc);
+      C.B[0] = E("act", S.recPB[k].P, S.recPB[k].acc); N.B[0] = ""; N.B[1] = "no head for B yet";
+    } else {
+      const e = run.rec[k], g = gh.rec[k];
+      N.A[0] = "no teacher for A";
+      C.A[1] = E("kb", e.PA, e.accA); C.A[2] = E("gh", g.PA, g.accA);
+      C.B[0] = E("tch", S.teacherBShown, S.accTB); C.B[1] = E("kb", e.PB, e.accB); C.B[2] = E("gh", g.PB, g.accB);
+      N.B[0] = "";
+    }
+    return { i, local, k, C, N };
+  }
+  function colHeads(i, t) {
+    const L = fmtLam(lam());
+    if (i === 0) return [["c-act", "active column"], ["c-kb", "knowledge base"], ["", ""]];
+    if (i === 1 || (i === 2 && t < RESET)) return [["c-tch", "teacher (frozen copy)"], ["c-kb", "knowledge base"], ["", ""]];
+    if (i === 2 || i === 3) return [["c-act", "active column"], ["c-kb", "knowledge base"], ["", ""]];
+    return [["c-tch", "teacher (frozen copy)"], ["c-kb", `<span>knowledge base<br><span class="lv">λ = ${L}</span></span>`], ["c-gh", `<span>knowledge base<br><span class="lv">λ = 0, no penalty</span></span>`]];
+  }
+  // index of the example in the input slot: the task being trained cycles through its 6 shown images
+  function inputAt(t) {
+    const { i, local } = segAt(t);
+    if (i === 2 && t >= RESET) return null;
+    return { g: i <= 2 ? "A" : "B", r: Math.floor(local / 0.8) % 6 };
+  }
+  function renderResults(t) {
+    const D = cellsAt(t), heads = colHeads(D.i, t), inp = inputAt(t);
+    heads.forEach(([cls, html], c) => { const e = R.col[c]; const cn = "colh " + cls; if (e.className !== cn) e.className = cn; setHTML(e, html); });
+    for (const g of ["A", "B"]) {
+      for (let c = 0; c < 3; c++) {
+        const e = D.C[g][c];
+        setHTML(R.grp[g][c], e ? `<b>${nRight(e.P)}/6</b> <span class="lg">· all 48: ${pct(e.acc)}</span>` : `<span class="note">${D.N[g][c]}</span>`);
+        for (let r = 0; r < 6; r++) setCell(R.rows[g][r].cells[c], e, r);
+      }
+      R.rows[g].forEach((row, r) => { const on = !!inp && inp.g === g && inp.r === r; if (row.on !== on) { row.row.classList.toggle("on", on); row.on = on; } });
+    }
+    return D;
+  }
+
+
+  // ---------- compact predictions (right panel, landscape view) ----------
+  const CP = { head: [], rows: {} };
+  function buildCompact() {
+    const root = $("cmp");
+    const top = h("div", "cgrid chead", root);
+    h("div", "", top, "✓✗ per image · % of 48");
+    for (let c = 0; c < 3; c++) CP.head.push(h("div", "ch", top));
+    for (const g of ["A", "B"]) {
+      const row = h("div", "cgrid crow", root);
+      const lab = h("div", "cgl", row);
+      h("b", "", lab, g);
+      (g === "A" ? IMG.A : IMG.B).forEach((src, r) => { const im = h("img", "", lab); im.src = src; im.alt = `task ${g}, class ${r + 1}`; });
+      CP.rows[g] = [0, 1, 2].map(() => h("div", "cm", row));
+    }
+  }
+  function compactHeads(i, t) {
+    if (i !== 4) return colHeads(i, t);
+    return [["c-tch", "teacher"], ["c-kb", `KB · <span class="lv">λ = ${fmtLam(lam())}</span>`], ["c-gh", `KB · <span class="lv">λ = 0</span>`]];
+  }
+  function renderCompact(D, t) {
+    compactHeads(D.i, t).forEach(([cls, html], c) => { const e = CP.head[c], cn = "ch " + cls; if (e.className !== cn) e.className = cn; setHTML(e, html); });
+    for (const g of ["A", "B"]) for (let c = 0; c < 3; c++) {
+      const e = D.C[g][c];
+      setHTML(CP.rows[g][c], e ? e.P.map((p, r) => (argmax(p) === r ? "✓" : "<i>✗</i>")).join("") + ` <b>${pct(e.acc)}</b>` : `<span class="note">${D.N[g][c]}</span>`);
+    }
+  }
+
+  // ---------- landscape: loss of task A on a plane through θ* (segments 3 and 5) ----------
+  const EVERY = 5;                                    // snapshot period of compress B, in steps
+  const LW = 372, LH = 330;                           // logical size of the canvas
+  const LB = { x0: 36, x1: 366, y0: 6, y1: 294 };     // plot box, in logical units
+  const NX = 67, NY = 59;                             // grid of loss_A over the plot box
+  const css = getComputedStyle(document.documentElement);
+  const CC = {};
+  for (const k of ["text", "muted", "rule", "panel", "white", "kb", "ewc", "ft"]) CC[k] = css.getPropertyValue("--" + k).trim();
+  const FONT = { sans: css.getPropertyValue("--sans").trim(), mono: css.getPropertyValue("--mono").trim() };
+  const rgbOf = (s) => s.match(/\d+(\.\d+)?/g).slice(0, 3).map(Number);
+  const rgba = (s, a) => { const [r, g, b] = rgbOf(s); return `rgba(${r}, ${g}, ${b}, ${a})`; };
+  const fL = (x) => x.toFixed(2);                     // a loss
+  const pct1 = (x) => (100 * x).toFixed(1) + "%";
+  let FLAT_F = null;                                  // F* of the backbone as one vector (for the ellipse)
+
+  // the plane of a λ: basis, paths in plane coordinates, shares (cheap)
+  function planeOf(l) {
+    const run = getRun(l);
+    if (!run.plane) run.plane = LS.plane(st.ghost, run);
+    return run.plane;
+  }
+  // what the canvas needs for a λ: the box, the grid, the contours and their labels (one grid of loss_A, about 3 600 points)
+  function viewOf(l) {
+    const P = planeOf(l);
+    if (P.view) return P.view;
+    const paths = P.ewc ? [P.ft.pts, P.ewc.pts] : [P.ft.pts];
+    let xa = 0, xb = 0, ya = 0, yb = 0;
+    for (const p of paths) for (let i = 0; i < p.length; i += 2) { xa = Math.min(xa, p[i]); xb = Math.max(xb, p[i]); ya = Math.min(ya, p[i + 1]); yb = Math.max(yb, p[i + 1]); }
+    const m = 0.6, W = LB.x1 - LB.x0, H = LB.y1 - LB.y0;
+    xa -= m; xb += m; ya -= m; yb += m;
+    const s = Math.min(W / (xb - xa), H / (yb - ya));   // one scale for both axes
+    const ex = W / s - (xb - xa), ey = H / s - (yb - ya);
+    const box = { x0: xa - ex / 2, x1: xb + ex / 2, y0: ya - 0.3 * ey, y1: yb + 0.7 * ey };
+    const X = (a) => LB.x0 + (a - box.x0) * s, Y = (b) => LB.y1 - (b - box.y0) * s;
+    const g = LS.grid(st.S, P, box, NX, NY);
+    // contour lines in canvas units, one label per level where nothing else is drawn
+    const gx = (c) => LB.x0 + (c * W) / (NX - 1), gy = (r) => LB.y0 + (r * H) / (NY - 1);
+    const obst = [];
+    for (const p of paths) {
+      for (let i = 0; i < p.length; i += 2) obst.push([X(p[i]), Y(p[i + 1]), 13]);
+      obst.push([X(p[p.length - 2]), Y(p[p.length - 1]), 50]);   // the end point and its label
+    }
+    obst.push([X(0), Y(0), 12]);                                   // the start point
+    const sb = startBoxOf({ X, Y });                               // and its label
+    const lines = [], labels = [];
+    for (const L of LS.LEVELS) {
+      const sg = LS.contour(g.G, NX, NY, L), seg = new Float64Array(sg.length);
+      for (let i = 0; i < sg.length; i += 2) { seg[i] = gx(sg[i]); seg[i + 1] = gy(sg[i + 1]); }
+      lines.push(seg);
+      let best = null;
+      for (let i = 0; i < seg.length; i += 4) {
+        const x = (seg[i] + seg[i + 2]) / 2, y = (seg[i + 1] + seg[i + 3]) / 2;
+        if (x < LB.x0 + 14 || x > LB.x1 - 14 || y < LB.y0 + 9 || y > LB.y1 - 9) continue;
+        let d = 60;
+        for (const [ox, oy, r] of obst) d = Math.min(d, Math.hypot(x - ox, y - oy) - r);
+        d = Math.min(d, rectDist(x, y, sb) - 13);
+        for (const q of labels) d = Math.min(d, Math.hypot(x - q.x, y - q.y) - 26);
+        const sc = d + 0.05 * y;   // prefer the lower part of the box, so the labels read as a scale
+        if (!best || sc > best.sc) best = { x, y, sc, L, a: box.x0 + (x - LB.x0) / s, b: box.y0 + (LB.y1 - y) / s };
+      }
+      if (best) labels.push(best);
+    }
+    const boxes = labels.map((q) => ({ x: q.x - 13, y: q.y - 8, w: 26, h: 16 }));
+    P.view = { box, s, X, Y, G: g.G, ev: g.ev, lines, labels, boxes, bg: null, bgKey: "" };
+    return P.view;
+  }
+  const levelText = (L) => String(L);
+  const MCTX = document.createElement("canvas").getContext("2d");
+  // the box of the "After learning A" label, under the start point
+  function startBoxOf(V) {
+    MCTX.font = `11.5px ${FONT.sans}`;
+    const w = MCTX.measureText("After learning A").width, sx = V.X(0), sy = V.Y(0);
+    return { x: Math.max(LB.x0 + 3, sx - w / 2), y: sy + 7, w, h: 14 };
+  }
+  const rectDist = (x, y, r) => Math.hypot(Math.max(r.x - x, 0, x - (r.x + r.w)), Math.max(r.y - y, 0, y - (r.y + r.h)));
+  // the static part: bands, contour lines and labels, frame, ticks, axis names (device pixels, k per logical unit)
+  function buildBg(V, P, Wd, Hd, k) {
+    const bg = document.createElement("canvas"); bg.width = Wd; bg.height = Hd;
+    const ctx = bg.getContext("2d");
+    const px0 = Math.round(LB.x0 * k), py0 = Math.round(LB.y0 * k), PW = Math.round((LB.x1 - LB.x0) * k), PH = Math.round((LB.y1 - LB.y0) * k);
+    const img = ctx.createImageData(PW, PH), d = img.data, G = V.G, nb = LS.LEVELS.length;
+    const [wr, wg, wb] = rgbOf(CC.white), [kr, kg, kb] = rgbOf(CC.kb);
+    const band = [];
+    for (let q = 0; q <= nb; q++) { const a = q < nb ? 0.15 * Math.pow(1 - q / nb, 1.3) : 0; band.push([wr + (kr - wr) * a, wg + (kg - wg) * a, wb + (kb - wb) * a]); }   // lighter where the loss is higher
+    for (let y = 0; y < PH; y++) {
+      const fy0 = ((y + 0.5) / PH) * (NY - 1), r0 = Math.min(NY - 2, fy0 | 0), fy = fy0 - r0;
+      for (let x = 0; x < PW; x++) {
+        const fx0 = ((x + 0.5) / PW) * (NX - 1), c0 = Math.min(NX - 2, fx0 | 0), fx = fx0 - c0, i = r0 * NX + c0;
+        const v = (G[i] * (1 - fx) + G[i + 1] * fx) * (1 - fy) + (G[i + NX] * (1 - fx) + G[i + NX + 1] * fx) * fy;
+        let q = 0; while (q < nb && v > LS.LEVELS[q]) q++;
+        const o = 4 * (y * PW + x), c = band[q];
+        d[o] = c[0]; d[o + 1] = c[1]; d[o + 2] = c[2]; d[o + 3] = 255;
+      }
+    }
+    ctx.putImageData(img, px0, py0);
+    ctx.setTransform(k, 0, 0, k, 0, 0);
+    // contour lines
+    ctx.save(); ctx.beginPath(); ctx.rect(LB.x0, LB.y0, LB.x1 - LB.x0, LB.y1 - LB.y0); ctx.clip();
+    ctx.strokeStyle = rgba(CC.kb, 0.85); ctx.lineWidth = 1; ctx.lineCap = "round";
+    for (const seg of V.lines) { ctx.beginPath(); for (let i = 0; i < seg.length; i += 4) { ctx.moveTo(seg[i], seg[i + 1]); ctx.lineTo(seg[i + 2], seg[i + 3]); } ctx.stroke(); }
+    ctx.restore();
+    // labels on the lines: the loss value
+    ctx.font = `10.5px ${FONT.mono}`; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.lineJoin = "round";
+    for (const q of V.labels) {
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.92)"; ctx.lineWidth = 3.5; ctx.strokeText(levelText(q.L), q.x, q.y);
+      ctx.fillStyle = CC.kb; ctx.fillText(levelText(q.L), q.x, q.y);
+    }
+    // frame, ticks every 1 (the same unit on both axes)
+    ctx.strokeStyle = CC.rule; ctx.lineWidth = 1;
+    ctx.strokeRect(LB.x0 + 0.5, LB.y0 + 0.5, LB.x1 - LB.x0 - 1, LB.y1 - LB.y0 - 1);
+    ctx.fillStyle = CC.muted; ctx.font = `9.5px ${FONT.mono}`;
+    const neg = (v) => (v < 0 ? "−" + -v : String(v));
+    ctx.textAlign = "center"; ctx.textBaseline = "top";
+    for (let a = Math.ceil(V.box.x0); a <= V.box.x1; a++) { const x = V.X(a); ctx.beginPath(); ctx.moveTo(x, LB.y1); ctx.lineTo(x, LB.y1 + 3); ctx.stroke(); ctx.fillText(neg(a), x, LB.y1 + 4); }
+    ctx.textAlign = "right"; ctx.textBaseline = "middle";
+    for (let b = Math.ceil(V.box.y0); b <= V.box.y1; b++) { const y = V.Y(b); ctx.beginPath(); ctx.moveTo(LB.x0, y); ctx.lineTo(LB.x0 - 3, y); ctx.stroke(); ctx.fillText(neg(b), LB.x0 - 5, y); }
+    ctx.font = `11px ${FONT.sans}`; ctx.textAlign = "center"; ctx.textBaseline = "alphabetic";
+    ctx.fillText("direction 1: the step without EWC →", (LB.x0 + LB.x1) / 2, LH - 6);
+    ctx.save(); ctx.translate(11, (LB.y0 + LB.y1) / 2); ctx.rotate(-Math.PI / 2); ctx.textBaseline = "middle";
+    ctx.fillText(P.same ? "direction 2: where that path bends →" : "direction 2: the rest of the step with EWC →", 0, 0);
+    ctx.restore();
+    return bg;
+  }
+  // a point of a path at step k (snapshots every EVERY steps, linear in between)
+  function pathAt(pts, k) {
+    const n = pts.length / 2, s = k / EVERY, i = Math.min(Math.floor(s), n - 1), j = Math.min(i + 1, n - 1), u = s - i;
+    return [pts[2 * i] + (pts[2 * j] - pts[2 * i]) * u, pts[2 * i + 1] + (pts[2 * j + 1] - pts[2 * i + 1]) * u];
+  }
+  const overlap = (a, b) => Math.max(0, Math.min(a.x + a.w, b.x + b.w) - Math.max(a.x, b.x)) * Math.max(0, Math.min(a.y + a.h, b.y + b.h) - Math.max(a.y, b.y));
+  // label positions around a point: [dx, dy of the box corner, right-aligned]
+  const CAND = [];
+  for (const dy of [-12, 6, -32, 26, -52, 46, -72, -92]) for (const [dx, right] of [[10, false], [-10, true], [26, false], [46, false]]) CAND.push([dx, dy, right]);
+  const LV = { prev: {}, last: null };
+  function placeLabel(id, hx, hy, w, hgt, obst) {
+    let best = null;
+    CAND.forEach(([dx, dy, right], c) => {
+      const b = { x: right ? hx + dx - w : hx + dx, y: hy + dy, w, h: hgt };
+      if (b.x < LB.x0 + 2 || b.x + b.w > LB.x1 - 2 || b.y < LB.y0 + 2 || b.y + b.h > LB.y1 - 2) return;
+      let o = 0; for (const q of obst) o += (q.wt || 3) * overlap(b, q);   // labels and dots weigh 3, points of the paths 1
+      const sc = o + 0.3 * Math.hypot(dx, dy + 12) + (c === LV.prev[id] ? -30 : 0);   // no overlap first, then near the point; keep the previous place unless another is clearly better
+      if (!best || sc < best.sc) best = { b, sc, c, right };
+    });
+    if (!best) best = { b: { x: Math.min(Math.max(hx + 10, LB.x0 + 2), LB.x1 - 2 - w), y: Math.min(Math.max(hy - 12, LB.y0 + 2), LB.y1 - 2 - hgt), w, h: hgt }, c: -1, right: false, sc: 1e9 };
+    return best;
+  }
+  function drawEllipse(ctx, V, P) {
+    if (!P.Q) P.Q = LS.penaltyForm(FLAT_F, P.d1, P.d2);
+    const [p, q, r] = P.Q, n = P.ewc.pts.length, a = P.ewc.pts[n - 2], b = P.ewc.pts[n - 1];
+    const c = p * a * a + 2 * q * a * b + r * b * b;
+    if (!(c > 0)) return;
+    const mid = (p + r) / 2, dd = Math.sqrt(((p - r) / 2) ** 2 + q * q), mu1 = mid + dd, mu2 = Math.max(mid - dd, 1e-30);
+    const th = 0.5 * Math.atan2(2 * q, p - r);   // direction of the eigenvector of the larger eigenvalue
+    const r1 = Math.min(Math.sqrt(c / mu1), 60), r2 = Math.min(Math.sqrt(c / mu2), 60);
+    ctx.beginPath(); ctx.ellipse(V.X(0), V.Y(0), r1 * V.s, r2 * V.s, -th, 0, 2 * Math.PI);
+    ctx.setLineDash([4, 3]); ctx.strokeStyle = CC.ewc; ctx.lineWidth = 1.2; ctx.stroke(); ctx.setLineDash([]);
+    ctx.font = `10.5px ${FONT.sans}`; ctx.fillStyle = CC.ewc; ctx.textAlign = "right"; ctx.textBaseline = "top";
+    ctx.fillText("dashed: Fisher ellipse (equal penalty)", LB.x1 - 5, LB.y0 + 4);
+  }
+  function drawLand(i, kStep) {
+    const cv = $("landCv"), cssW = cv.clientWidth;
+    if (!cssW) return;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2), Wd = Math.round(cssW * dpr), Hd = Math.round(((cssW * LH) / LW) * dpr);
+    if (cv.width !== Wd || cv.height !== Hd) { cv.width = Wd; cv.height = Hd; }
+    const k = Wd / LW, l = st.run.lam, P = planeOf(l), V = viewOf(l), key = `${Wd}x${Hd}`;
+    if (V.bgKey !== key) { V.bg = buildBg(V, P, Wd, Hd, k); V.bgKey = key; }
+    const ctx = cv.getContext("2d");
+    ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.clearRect(0, 0, Wd, Hd); ctx.drawImage(V.bg, 0, 0);
+    ctx.setTransform(k, 0, 0, k, 0, 0);
+    const X = V.X, Y = V.Y, sx = X(0), sy = Y(0);
+    ctx.font = `11.5px ${FONT.sans}`;
+    const startBox = startBoxOf(V);
+    const heads = [], drawn = [];   // drawn: points of the paths on screen, for the labels to avoid
+    ctx.save(); ctx.beginPath(); ctx.rect(LB.x0, LB.y0, LB.x1 - LB.x0, LB.y1 - LB.y0); ctx.clip();
+    if (i === 4) {
+      if (st.ellipse && P.ewc) drawEllipse(ctx, V, P);
+      // the paths up to step k: without EWC (red) under with EWC (purple); one path at λ = 0
+      const path = (pts, color, w) => {
+        const hd = pathAt(pts, kStep), ns = Math.floor(kStep / EVERY);
+        ctx.beginPath(); ctx.moveTo(X(pts[0]), Y(pts[1]));
+        for (let q = 1; q <= ns && 2 * q < pts.length; q++) { ctx.lineTo(X(pts[2 * q]), Y(pts[2 * q + 1])); drawn.push([X(pts[2 * q]), Y(pts[2 * q + 1])]); }
+        ctx.lineTo(X(hd[0]), Y(hd[1]));
+        ctx.strokeStyle = color; ctx.lineWidth = w; ctx.lineJoin = "round"; ctx.lineCap = "round"; ctx.stroke();
+        return [X(hd[0]), Y(hd[1])];
+      };
+      const e = st.run.rec[kStep], g = st.ghost.rec[kStep];
+      heads.push({ id: "ft", p: path(P.ft.pts, CC.ft, 1.8), color: CC.ft, name: P.ewc ? "Without EWC" : "Without EWC (λ = 0)", acc: `A ${pct(g.accA)} · B ${pct(g.accB)}` });
+      if (P.ewc) heads.push({ id: "ewc", p: path(P.ewc.pts, CC.ewc, 2.4), color: CC.ewc, name: "With EWC", acc: `A ${pct(e.accA)} · B ${pct(e.accB)}` });
+      for (const hd of heads) { ctx.beginPath(); ctx.arc(hd.p[0], hd.p[1], hd.id === "ewc" ? 4.6 : 4.1, 0, 2 * Math.PI); ctx.fillStyle = hd.color; ctx.fill(); ctx.strokeStyle = CC.white; ctx.lineWidth = 1.4; ctx.stroke(); }
+    }
+    ctx.beginPath(); ctx.arc(sx, sy, 3.8, 0, 2 * Math.PI); ctx.fillStyle = CC.text; ctx.fill(); ctx.strokeStyle = CC.white; ctx.lineWidth = 1.4; ctx.stroke();
+    ctx.restore();
+    // labels, with a halo; the head labels avoid each other, the start label and the contour labels
+    const halo = (txt, x, y, color, font) => { ctx.font = font; ctx.strokeStyle = "rgba(255, 255, 255, 0.92)"; ctx.lineWidth = 3.5; ctx.lineJoin = "round"; ctx.strokeText(txt, x, y); ctx.fillStyle = color; ctx.fillText(txt, x, y); };
+    ctx.textBaseline = "alphabetic"; ctx.textAlign = "left";
+    halo("After learning A", startBox.x, startBox.y + 11, CC.text, `11.5px ${FONT.sans}`);
+    const obst = V.boxes.concat([startBox]);
+    for (const hd of heads) obst.push({ x: hd.p[0] - 5, y: hd.p[1] - 5, w: 10, h: 10 });
+    for (const [x, y] of drawn) obst.push({ x: x - 2, y: y - 2, w: 4, h: 4, wt: 1 });
+    const out = [], todo = heads.filter((hd) => Math.hypot(hd.p[0] - sx, hd.p[1] - sy) >= 10);   // no label while a head is still at the start point
+    for (const hd of todo) {
+      ctx.font = `600 12px ${FONT.sans}`; const w1 = ctx.measureText(hd.name).width;
+      ctx.font = `11.5px ${FONT.sans}`; hd.w = Math.max(w1, ctx.measureText(hd.acc).width);
+    }
+    // place the labels in both orders and keep the one with the smaller total overlap
+    let plan = null;
+    for (const order of todo.length > 1 ? [todo, todo.slice().reverse()] : [todo]) {
+      const ob = obst.slice(), got = [];
+      let tot = 0;
+      for (const hd of order) { const r = placeLabel(hd.id, hd.p[0], hd.p[1], hd.w, 28, ob); ob.push(r.b); got.push([hd, r]); tot += r.sc; }
+      if (!plan || tot < plan.tot) plan = { tot, got };
+    }
+    for (const [hd, r] of plan ? plan.got : []) {
+      LV.prev[hd.id] = r.c;
+      const b = r.b;
+      ctx.textAlign = "left";
+      halo(hd.name, b.x, b.y + 11, hd.color, `600 12px ${FONT.sans}`);
+      halo(hd.acc, b.x, b.y + 25, hd.color, `11.5px ${FONT.sans}`);
+      out.push({ id: hd.id, name: hd.name, acc: hd.acc, box: b });
+    }
+    LV.last = { l, k: kStep, i, labels: out, startBox, heads: heads.map((hd) => ({ id: hd.id, far: Math.hypot(hd.p[0] - sx, hd.p[1] - sy) >= 10 })) };
+  }
+
+  // ---------- springs: three weights of the KB backbone ----------
+  const SP = { rows: [], cx: 98, half: 90, R: 1, c: 1 };
+  // a coil between x0 and x1 at height y: short straight ends, nz zigzags
+  function coil(x0, x1, y, amp, nz) {
+    if (!nz) nz = Math.max(2, Math.min(16, Math.round(Math.abs(x1 - x0) / 4)));
+    const lead = Math.min(3, Math.abs(x1 - x0) / 6) * Math.sign(x1 - x0 || 1), a = x0 + lead, b = x1 - lead;
+    let d = `M${x0.toFixed(2)} ${y}L${a.toFixed(2)} ${y}`;
+    for (let i = 1; i < nz; i++) d += `L${(a + ((b - a) * i) / nz).toFixed(2)} ${(y + (i % 2 ? -amp : amp)).toFixed(2)}`;
+    return d + `L${b.toFixed(2)} ${y}L${x1.toFixed(2)} ${y}`;
+  }
+  function buildSprings(sel, FT, REF, lamRef) {
+    const svg = $("springs"), { cx, half } = SP;
+    let mx = 0;
+    for (const w of sel) for (const run of [FT, REF]) for (const v of LS.series(run, w.j)) mx = Math.max(mx, Math.abs(v));
+    SP.R = 1.12 * mx;                       // one scale for the three tracks
+    SP.c = 2 / (lamRef * sel[1].F);         // thickness = c λ F_j: the middle spring is 2 px at the default λ
+    SP.X = (d) => cx + clamp(d / SP.R, -1, 1) * half;
+    el("text", { x: 0, y: 11, class: "sph" }, svg, "Three weights of the KB");
+    ["large F", "middle F", "small F"].forEach((name, i) => {
+      const y0 = 32 + i * 44, yt = y0 + 15;
+      el("text", { x: 0, y: y0 }, svg, name);
+      const icon = el("path", { d: coil(146, 190, y0 - 4, 3.5, 9), fill: "none", style: "stroke:var(--ewc)", "stroke-linejoin": "round" }, svg);
+      el("line", { x1: cx - half, x2: cx + half, y1: yt, y2: yt, style: "stroke:var(--rule)" }, svg);
+      const spring = el("path", { d: "", fill: "none", style: "stroke:var(--ewc)", "stroke-linejoin": "round" }, svg);
+      el("line", { x1: cx, x2: cx, y1: yt - 8, y2: yt + 8, style: "stroke:var(--text)", "stroke-width": 2 }, svg);
+      const ghost = el("circle", { cx, cy: yt, r: 4.5, style: "fill:var(--white);stroke:var(--ft)", "stroke-width": 1.4, opacity: 0.6 }, svg);
+      const bead = el("circle", { cx, cy: yt, r: 5, style: "fill:var(--ewc);stroke:var(--white)", "stroke-width": 1.2 }, svg);
+      SP.rows.push(Object.assign({ icon, spring, ghost, bead, yt }, sel[i]));
+    });
+    const ly = 32 + 3 * 44 - 2;
+    el("line", { x1: 4, x2: 4, y1: ly - 9, y2: ly + 1, style: "stroke:var(--text)", "stroke-width": 2 }, svg);
+    el("text", { x: 12, y: ly }, svg, "after learning A");
+    el("path", { d: coil(106, 124, ly - 4, 3, 6), fill: "none", style: "stroke:var(--ewc)", "stroke-width": 1.4, "stroke-linejoin": "round" }, svg);
+    el("text", { x: 129, y: ly }, svg, "spring λF");
+    el("circle", { cx: 5, cy: ly + 12, r: 4.5, style: "fill:var(--ewc);stroke:var(--white)", "stroke-width": 1.2 }, svg);
+    el("text", { x: 13, y: ly + 16 }, svg, "with EWC");
+    el("circle", { cx: 76, cy: ly + 12, r: 4, style: "fill:var(--white);stroke:var(--ft)", "stroke-width": 1.4, opacity: 0.6 }, svg);
+    el("text", { x: 84, y: ly + 16 }, svg, "without EWC");
+  }
+  function spOf(run) { if (!run.sp) run.sp = SP.rows.map((w) => LS.series(run, w.j)); return run.sp; }
+  function seriesAt(arr, k) { const s = k / EVERY, i = Math.min(Math.floor(s), arr.length - 1), j = Math.min(i + 1, arr.length - 1); return arr[i] + (arr[j] - arr[i]) * (s - i); }
+  function renderSprings(i, kStep) {
+    const l = st.run.lam, vE = spOf(st.run), vF = spOf(st.ghost);
+    SP.rows.forEach((w, q) => {
+      const dE = i === 4 ? seriesAt(vE[q], kStep) : 0, dF = i === 4 ? seriesAt(vF[q], kStep) : 0;
+      const xE = SP.X(dE), xF = SP.X(dF), wd = l > 0 ? clamp(SP.c * l * w.F, 0.7, 4.5) : 0;   // thickness ∝ λ F_j, clamped
+      setA(w.bead, "cx", xE.toFixed(2)); setA(w.ghost, "cx", xF.toFixed(2));
+      setA(w.spring, "d", l > 0 && Math.abs(xE - SP.cx) > 3 ? coil(SP.cx, xE, w.yt, 4) : "");
+      setA(w.spring, "stroke-width", wd.toFixed(2)); setA(w.icon, "stroke-width", wd.toFixed(2)); setOp(w.icon, l > 0 ? 1 : 0);
+      w.now = { dE, dF, wd };
+    });
+  }
+
+  // ---------- right panel: predictions, or the landscape in segments 3 and 5 ----------
+  const vsw = $("vsw"), predView = $("predView"), landView = $("landView"), rpTitle = $("rpTitle");
+  function renderRight(D) {
+    const seg = D.i === 2 || D.i === 4, land = seg && st.view === "land";
+    if (vsw.classList.contains("off") === seg) vsw.classList.toggle("off", !seg);
+    if (st.land !== land) {   // both views share one grid cell on wide screens, so the panel keeps its height
+      st.land = land;
+      predView.classList.toggle("vh", land); predView.inert = land;
+      landView.classList.toggle("vh", !land); landView.inert = !land;
+    }
+    setText(rpTitle, land ? "Loss of task A around the KB after learning A" : "Predictions on 12 fixed training images");
+    if (!land) return;
+    const k = D.i === 4 ? D.k : 0;
+    renderCompact(D, st.t);
+    drawLand(D.i, k);
+    renderSprings(D.i, k);
+  }
+  function setView(v) {
+    st.view = v;
+    $("viewPred").setAttribute("aria-pressed", String(v === "pred"));
+    $("viewLand").setAttribute("aria-pressed", String(v === "land"));
+    render();
+  }
+  $("viewPred").addEventListener("click", () => setView("pred"));
+  $("viewLand").addEventListener("click", () => setView("land"));
+  // details: the share of the paths that the plane holds, for the λ on screen
+  function renderShare() {
+    const l = st.run.lam, P = planeOf(l), L = fmtLam(l);
+    setHTML($("shareTxt"), P.ewc
+      ? `at λ = ${L} the plane holds ${pct1(P.ft.share)} of the squared displacement of the path without EWC and ${pct1(P.ewc.share)} of the path with EWC, and ${pct1(P.ft.endShare)} and ${pct1(P.ewc.endShare)} of their end points.`
+      : `at λ = 0 there is one path; the plane holds ${pct1(P.ft.share)} of its squared displacement and ${pct1(P.ft.endShare)} of its end point.`);
+  }
+
+  // ---------- schematic render ----------
+  function applyVis(grpName, refs, v, color) {
+    const g = refs.groups[grpName];
+    setOp(g, v.op);
+    for (const r of refs.rects[grpName] || []) { setA(r, "fill-opacity", v.fill.toFixed(3)); setA(r, "stroke-width", v.sw.toFixed(2)); setA(r, "stroke-dasharray", v.dash); }
+    for (const p of refs.wires[grpName]) setA(p, "stroke-dasharray", v.dash);
+  }
+  function tagStyle(tg, text, state, color) {
+    setText(tg.t, text);
+    const col = state === "T" ? color : state === "R" ? COLV.act : COLV.muted;
+    setA(tg.r, "style", `fill:var(--panel);stroke:${col}`);
+    setA(tg.r, "stroke-dasharray", state === "U" ? "3 2" : "none");
+    setA(tg.t, "style", `fill:${col}`);
+    setOp(tg.sf, state === "F" ? 1 : 0);
+  }
+  const fmt = (x, d) => (x == null || !isFinite(x) ? "–" : x.toFixed(d == null ? 3 : d));
+  function renderModel(t, D) {
+    const { i, local, k } = D, S = st.S;
+    for (const name of ["kbBody", "kbHeadA", "kbHeadB", "actBody", "actHeadA", "actHeadB", "ad", "adA", "adB"]) applyVis(name, net, visAt(name, t));
+    // adaptor signal (live): dots flow while the adaptors are used (progress)
+    const off = REDUCE ? "0" : (-(t * 18) % 7.1).toFixed(2), adv = visAt("ad", t);
+    const live = adv.state === "T" ? adv.op : 0;
+    setOp(net.sig, live);
+    net.sigMain.forEach((p) => setA(p, "stroke-dashoffset", off));
+    setA(net.sigA, "stroke-dashoffset", off); setA(net.sigB, "stroke-dashoffset", off);
+    setOp(net.sigA, t < S3 ? 1 : 0); setOp(net.sigB, t >= S3 ? 1 : 0);
+    // tags
+    const kbS = stateAt(CHG.kbBody, t).cur, actS = stateAt(CHG.actBody, t).cur;
+    const kbTxt = i === 0 ? "frozen" : i === 1 ? "training" : i === 2 ? "frozen" : i === 3 ? "frozen" : "training + EWC";
+    tagStyle(tagKB, kbTxt, kbS, COLV.kb);
+    const reinit = i === 2 && t >= RESET;
+    tagStyle(tagAct, reinit ? "re-initialized" : actS === "T" ? "training" : "not used", reinit ? "R" : actS, COLV.act);
+    setOp(flash, i === 2 ? 0.35 * clamp(1 - Math.abs(t - RESET - 0.2) / 0.45, 0, 1) : 0);
+    // readouts
+    let rk = "", ra = "";
+    if (i === 0) ra = `cross-entropy ${fmt(S.recPA[k].loss)}`;
+    if (i === 3) ra = `cross-entropy ${fmt(S.recPB[k].loss)}`;
+    if (i === 1) rk = `KL to teacher ${fmt(S.recCA[k].kl)}`;
+    if (i === 4) { const e = st.run.rec[k]; rk = `KL ${fmt(e.kl)} · EWC ${fmt(e.ewc)}`; }
+    setText(roKB, rk); setText(roAct, ra);
+    // F tags
+    setOp(fTags, i === 2 ? smooth((local - 1.0) / 0.5) : i === 3 ? 0.55 : i === 4 ? 1 : 0);
+    // input pixels (live and teacher)
+    const inp = inputAt(t);
+    const X = inp ? (inp.g === "A" ? S.A : S.B) : null, x = inp ? X.X[X.shown[inp.r]] : null;
+    for (let p = 0; p < 144; p++) {
+      const v = x ? x[p].toFixed(3) : "0";
+      setA(net.pix[p], "fill-opacity", v); setA(tNet.pix[p], "fill-opacity", v);
+    }
+    // side area
+    // one view at a time in the side area: the old view fades out before the new one fades in
+    const teachOp = i === 1 ? smooth(local / 0.6) : i === 2 ? 1 - smooth(local / 0.3) : i === 4 ? smooth((local - 0.3) / 0.5) : 0;
+    setOp(gTeach, teachOp);
+    setOp(xLink, st.narrow ? 0 : teachOp);
+    const tB = i >= 3;
+    setText(tSub2, tB ? "after progress on B" : "after progress on A");
+    for (const [name, s] of [["kbBody", "F"], ["kbHeadA", tB ? "U" : "X"], ["kbHeadB", "X"], ["actBody", "F"], ["actHeadA", tB ? "X" : "F"], ["actHeadB", tB ? "F" : "X"], ["ad", "F"], ["adA", tB ? "X" : "F"], ["adB", tB ? "F" : "X"]]) applyVis(name, tNet, TVIS[s]);
+    setOp(tNet.sig, 1);
+    tNet.sigMain.forEach((p) => setA(p, "stroke-dashoffset", off));
+    setA(tNet.sigA, "stroke-dashoffset", off); setA(tNet.sigB, "stroke-dashoffset", off);
+    setOp(tNet.sigA, tB ? 0 : 1); setOp(tNet.sigB, tB ? 1 : 0);
+    setOp(gPlace, i === 0 ? 1 : 0);
+    const fishOp = i === 2 ? smooth((local - 0.3) / 0.5) : i === 3 ? 1 - 0.6 * smooth(local / 0.6) : i === 4 ? 0.4 * (1 - smooth(local / 0.3)) : 0;
+    setOp(gFish, fishOp);
+    if (FV) FV.parts.forEach((p, j) => setOp(p, i === 2 ? smooth((local - 0.5 - 0.5 * j) / 0.4) : i > 2 ? (j < 2 ? 1 : 0) : 0));
+  }
+
+  // ---------- caption: one sentence from the live numbers ----------
+  function caption(D) {
+    const { i, k } = D, S = st.S, l = lam(), L = fmtLam(l);
+    if (i === 0) { const r = S.recPA[k]; return `Step ${k} of ${K.P}: the active column gets ${nRight(r.P)} of 6 task A examples right; the frozen knowledge base has no head for A yet.`; }
+    if (i === 1) { const r = S.recCA[k]; return `Step ${k} of ${K.CA}: the knowledge base gets ${nRight(r.P)} of 6 task A examples right; its outputs match the teacher's within KL ${fmt(r.kl)}.`; }
+    if (i === 2) {
+      if (st.t < RESET) return `The Fisher F estimates the curvature of task A's loss at θ*, one number per weight: half of its total sits on ${FV.half} of the ${FV.n.toLocaleString("en-US")} backbone weights. In compress B, EWC ties each weight to θ* with a spring of strength λF.`;
+      return `The active column, its heads and the adaptors are re-initialized for task B; the knowledge base keeps θ* and F*.`;
+    }
+    if (i === 3) { const r = S.recPB[k]; return `Step ${k} of ${K.P}: the new active column reads the frozen knowledge base through the adaptors and gets ${nRight(r.P)} of 6 task B examples right.`; }
+    const e = st.run.rec[k], g = st.ghost.rec[k], P = planeOf(st.run.lam), sh = P.ewc ? Math.min(P.ft.share, P.ewc.share) : P.ft.share;
+    const low = sh < 0.8 ? ` The plane holds only ${pct(sh)} of the paths' squared displacement, so the landscape is a rough guide here.` : "";
+    if (k < K.CB && l === 0) return `Step ${k} of ${K.CB}: without the penalty (λ = 0) the two runs are the same, so the landscape shows one path; the knowledge base gets ${nRight(e.PA)} of 6 task A and ${nRight(e.PB)} of 6 task B examples right.` + low;
+    if (k < K.CB) return `Step ${k} of ${K.CB}: with λ = ${L} the knowledge base gets ${nRight(e.PA)} of 6 task A and ${nRight(e.PB)} of 6 task B examples right; with λ = 0 it gets ${nRight(g.PA)} and ${nRight(g.PB)}.` + low;
+    const A = pct(e.accA), B = pct(e.accB), A0 = pct(g.accA), B0 = pct(g.accB), keepA = e.accA >= 0.85, learnB = e.accB >= 0.85;
+    if (l === 0) return `Without the penalty (λ = 0) the two runs are the same path: the knowledge base learns task B (${B} of its 48 images) and forgets most of task A (${A} right).` + low;
+    if (keepA && learnB) return `With λ = ${L} both runs learn task B (${B} with EWC, ${B0} without). Without EWC the knowledge base ends where the loss of task A is ${fL(g.lossA)} and keeps ${A0} of task A; with EWC the loss stays at ${fL(e.lossA)} and it keeps ${A}.` + low;
+    if (keepA) return `With λ = ${L} the penalty holds the knowledge base so tightly that it keeps task A (${A} of its 48 images) but learns task B poorly (${B}); without EWC it learns B (${B0}) and keeps ${A0} of A.` + low;
+    if (learnB) return `With λ = ${L} the penalty is too weak: both runs learn task B (${B} and ${B0}) and end where the loss of task A is ${fL(e.lossA)} and ${fL(g.lossA)}; the knowledge base keeps only ${A} of task A.` + low;
+    return `With λ = ${L} the knowledge base gets ${A} of task A and ${B} of task B right (48 images each); without EWC, ${A0} and ${B0}.` + low;
+  }
+
+  // ---------- transport ----------
+  const scrub = $("scrubber"), playBtn = $("play"), playTxt = $("playTxt"), playIcon = $("playIcon"), capEl = $("caption");
+  const segBtns = SEGS.map((s, j) => {
+    const b = h("button", "", $("segs"), s.label);
+    b.type = "button"; b.id = "seg" + (j + 1); b.style.flexGrow = String(s.dur);
+    b.addEventListener("click", () => { st.t = START[j]; render(); });
+    return b;
+  });
+  scrub.max = String(TOTAL * 1000);
+  function renderTransport(i) {
+    setA(scrub, "aria-valuetext", `${SEGS[i].label}, ${st.t.toFixed(1)} s`);
+    scrub.value = String(Math.round(st.t * 1000));
+    const label = st.playing ? "Pause" : "Play";
+    if (playTxt.textContent !== label) {
+      playTxt.textContent = label;
+      playIcon.innerHTML = st.playing ? '<path d="M1 0h3v10H1zM6 0h3v10H6z"/>' : '<path d="M1 0L9.5 5L1 10z"/>';
+    }
+    segBtns.forEach((b, j) => { if (j === i) b.setAttribute("aria-current", "step"); else b.removeAttribute("aria-current"); });
+  }
+  function render() {
+    if (!st.ready) return;
+    const D = renderResults(st.t);
+    renderModel(st.t, D);
+    renderRight(D);
+    if (st.shareKey !== st.run.lam) { st.shareKey = st.run.lam; renderShare(); }
+    setText(capEl, caption(D));
+    renderTransport(D.i);
+  }
+  function frame(now) {
+    if (!st.playing) { st.raf = 0; return; }
+    const dt = Math.min(0.1, (now - st.last) / 1000);
+    st.last = now;
+    st.t = Math.min(TOTAL, st.t + dt);
+    if (st.t >= TOTAL) st.playing = false;
+    render();
+    st.raf = st.playing ? requestAnimationFrame(frame) : 0;
+  }
+  function play() {
+    if (st.t >= TOTAL - 1e-6) st.t = 0;
+    st.playing = true; st.last = performance.now();
+    if (!st.raf) st.raf = requestAnimationFrame(frame);
+    render();
+  }
+  function pause() { st.playing = false; if (st.raf) cancelAnimationFrame(st.raf); st.raf = 0; render(); }
+  playBtn.addEventListener("click", () => (st.playing ? pause() : play()));
+  $("replay").addEventListener("click", () => { st.t = 0; play(); });
+  scrub.addEventListener("input", () => { st.t = clamp(Number(scrub.value) / 1000, 0, TOTAL); render(); });
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== " " || e.target.closest("button, input, select, label, a, summary")) return;
+    e.preventDefault(); st.playing ? pause() : play();
+  });
+
+  // λ: recompute step 5 only; the scrubber position stays
+  const lamIn = $("lambda"), lamOut = $("lambdaVal");
+  function setLam(idx) {
+    st.lamIdx = idx;
+    const l = LAMS[idx];
+    if (st.runs.has(l)) { st.run = st.runs.get(l); setText(lamOut, fmtLam(l)); markTable(); render(); return; }
+    setText(lamOut, fmtLam(l) + " …");
+    st.pending = idx;
+    setTimeout(() => {
+      if (st.pending !== idx) return;
+      st.pending = null;
+      st.run = getRun(l);
+      if (st.lamIdx === idx) { setText(lamOut, fmtLam(l)); fillTableRow(l); markTable(); render(); }
+    }, 20);
+  }
+  lamIn.addEventListener("input", () => setLam(Number(lamIn.value)));
+
+  // details table: every λ position, computed when the section is opened
+  const lamBody = $("lamBody");
+  let tableBuilt = false;
+  const rowsByLam = new Map();
+  function fillTableRow(l) {
+    const tr = rowsByLam.get(l); if (!tr || !st.runs.has(l)) return;
+    const e = st.runs.get(l).rec[K.CB], P = planeOf(l), sh = P.ewc ? `${pct1(P.ft.share)} / ${pct1(P.ewc.share)}` : `${pct1(P.ft.share)}, one path`;
+    tr.innerHTML = `<td>${fmtLam(l)}</td><td>${pct(e.accA)}</td><td>${pct(e.accB)}</td><td>${e.kl.toFixed(3)}</td><td>${e.ewc.toFixed(3)}</td><td>${sh}</td>`;
+  }
+  function markTable() { rowsByLam.forEach((tr, l) => tr.classList.toggle("cur", l === lam())); }
+  function buildTable() {
+    if (tableBuilt || !st.ready) return;
+    tableBuilt = true;
+    lamBody.innerHTML = "";
+    for (const l of LAMS) { const tr = document.createElement("tr"); tr.innerHTML = `<td>${fmtLam(l)}</td><td colspan="5">…</td>`; lamBody.appendChild(tr); rowsByLam.set(l, tr); fillTableRow(l); }
+    markTable();
+    const todo = LAMS.filter((l) => !st.runs.has(l));
+    const step = () => { const l = todo.shift(); if (l == null) return; getRun(l); fillTableRow(l); setTimeout(step, 30); };
+    setTimeout(step, 30);
+  }
+  $("more").addEventListener("toggle", () => { if ($("more").open) buildTable(); });
+  $("ellipse").addEventListener("change", () => { st.ellipse = $("ellipse").checked; render(); });
+  if (window.ResizeObserver) new ResizeObserver(() => render()).observe(landView);
+
+  // ---------- layout: wide (side area at the left) or narrow (side area below) ----------
+  function layout() {
+    const w = $("modelPanel").clientWidth, narrow = w < 560;
+    if (narrow === st.narrow) return;
+    st.narrow = narrow;
+    if (narrow) {
+      svg.setAttribute("viewBox", "0 0 380 872");
+      gNet.setAttribute("transform", "translate(-222 0)");
+      gSide.setAttribute("transform", "translate(76 440)");
+      xLink.setAttribute("d", "");
+    } else {
+      svg.setAttribute("viewBox", "0 0 600 432");
+      gNet.removeAttribute("transform");
+      gSide.removeAttribute("transform");
+      const tsx = TX + (G.slotX + G.slotS / 2) * TS, tsy = TY + (G.slotY + G.slotS / 2) * TS;
+      xLink.setAttribute("d", `M${G.slotX - G.slotS / 2} ${G.slotY + G.slotS / 2} H226 V${tsy.toFixed(1)} H${(tsx + 1).toFixed(1)}`);
+    }
+    render();
+  }
+  if (window.ResizeObserver) new ResizeObserver(() => layout()).observe($("modelPanel")); else window.addEventListener("resize", layout);
+
+  // ---------- start: compute the run, then show the resting state ----------
+  function start() {
+    const t0 = performance.now();
+    st.S = PC.runAtoB(PIX);
+    st.ghost = LS.runB(st.S, 0, EVERY); st.runs.set(0, st.ghost);   // compress B without EWC: the red path and the λ = 0 column
+    st.run = getRun(lam());
+    st.ms = Math.round(performance.now() - t0);
+    buildFisher(st.S);
+    buildResults(st.S);
+    buildCompact();
+    FLAT_F = LS.flat(st.S.FA.kb);
+    const lamRef = lam(), sel = LS.springSet(st.S.FA.kb, st.ghost, st.run);
+    buildSprings(sel, st.ghost, st.run, lamRef);
+    {
+      const f3 = (x) => (x < 0 ? "−" : "") + Math.abs(x).toFixed(3), nB = FV.n.toLocaleString("en-US");
+      $("lamRefTxt").textContent = fmtLam(lamRef);
+      $("springTxt").textContent = `among the 1% with the largest F, the one that the run without EWC moves most (F rank ${sel[0].rank} of ${nB}); among the middle fifth by F, the one that moves most in both runs (rank ${sel[1].rank.toLocaleString("en-US")}); among the quarter with the smallest F, the one that the run with EWC moves most (rank ${sel[2].rank.toLocaleString("en-US")}). By the end of compress B they move by ${sel.map((w) => f3(st.run.D[w.j])).join(", ")} with EWC at λ = ${fmtLam(lamRef)}, and by ${sel.map((w) => f3(st.ghost.D[w.j])).join(", ")} without EWC`;
+    }
+    const cfg = st.S.cfg;
+    const count = (...ps) => ps.reduce((n, p) => n + Object.values(p).reduce((m, a) => m + a.length, 0), 0);
+    const nKB = count(st.S.kbStar, st.S.kbHeadA, st.run.headB), nAct = count(st.S.teacherB.act, st.S.teacherB.head), nAd = count(st.S.teacherB.ad);
+    $("nParams").textContent = `${(nKB + nAct + nAd).toLocaleString("en-US")} parameters: the KB has ${nKB.toLocaleString("en-US")} (backbone and two heads), the active column ${nAct.toLocaleString("en-US")} (backbone and the head of the current task), the adaptors ${nAd}`;
+    $("optTxt").textContent = `${cfg.stepsP} progress steps at learning rate ${cfg.lrP}, ${cfg.stepsCA} compress A steps and ${cfg.stepsCB} compress B steps at learning rate ${cfg.lrC}`;
+    $("seedTxt").textContent = String(cfg.seed);
+    st.ready = true;
+    for (const id of ["play", "replay", "scrubber", "lambda"]) $(id).disabled = false;
+    lamIn.value = String(st.lamIdx); setText(lamOut, fmtLam(lam()));
+    st.narrow = null; layout();
+    if (REDUCE) { st.t = TOTAL; render(); } else { st.t = 0; render(); play(); }
+  }
+  setTimeout(start, 30);
+
+  return { st, LAMS, SEGS, START, TOTAL, RESET, segAt, stepAt, cellsAt, caption, setLam, getRun, render, pause, play, planeOf, viewOf, setView, LV, SP, CP, LB };
+})();
+/* APP-END */
+</script>
+</body>
+</html>

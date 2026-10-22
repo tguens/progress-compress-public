@@ -1,0 +1,1752 @@
+Using device: cuda
+Total number of model parameters: 5318701
+wandb: [wandb.login()] Loaded credentials for https://api.forge.coreweave.com from /root/.netrc.
+wandb: Currently logged in as: tg-2746 (tg-2746-n-a) to https://api.forge.coreweave.com. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.31.0
+wandb: Run data is saved locally in /root/progress-compress/outputs/atari/paper3/pc_s0/wandb/run-20261020_194635-wawbacqf
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run pc_s0
+wandb: ⭐️ View project at https://forge.coreweave.com/wandb/tg-2746-n-a/progress-compress
+wandb: 🚀 View run at https://forge.coreweave.com/wandb/tg-2746-n-a/progress-compress/runs/wawbacqf
+[T0 SpaceInvaders-v5] actions=6 random return=129.0
+[progress SpaceInvaders-v5] step=102400 SPS=2845 return(last 20)=130.5 entropy=1.646
+[progress SpaceInvaders-v5] step=204800 SPS=2933 return(last 20)=214.0 entropy=1.424
+[progress SpaceInvaders-v5] step=307200 SPS=2958 return(last 20)=276.2 entropy=1.421
+[progress SpaceInvaders-v5] step=409600 SPS=2967 return(last 20)=335.8 entropy=1.519
+[progress SpaceInvaders-v5] step=512000 SPS=2984 return(last 20)=312.5 entropy=1.255
+[progress SpaceInvaders-v5] step=614400 SPS=2992 return(last 20)=373.0 entropy=1.052
+[progress SpaceInvaders-v5] step=716800 SPS=3002 return(last 20)=410.0 entropy=1.272
+[progress SpaceInvaders-v5] step=819200 SPS=3010 return(last 20)=335.2 entropy=1.217
+[progress SpaceInvaders-v5] step=921600 SPS=3017 return(last 20)=447.5 entropy=1.142
+[progress SpaceInvaders-v5] step=1024000 SPS=3022 return(last 20)=389.0 entropy=1.272
+[progress SpaceInvaders-v5] step=1126400 SPS=3028 return(last 20)=430.0 entropy=1.097
+[progress SpaceInvaders-v5] step=1228800 SPS=3030 return(last 20)=414.2 entropy=1.236
+[progress SpaceInvaders-v5] step=1331200 SPS=3032 return(last 20)=401.2 entropy=1.119
+[progress SpaceInvaders-v5] step=1433600 SPS=3033 return(last 20)=493.5 entropy=1.304
+[progress SpaceInvaders-v5] step=1536000 SPS=3035 return(last 20)=407.8 entropy=1.280
+[progress SpaceInvaders-v5] step=1638400 SPS=3035 return(last 20)=428.5 entropy=1.208
+[progress SpaceInvaders-v5] step=1740800 SPS=3036 return(last 20)=442.8 entropy=1.260
+[progress SpaceInvaders-v5] step=1843200 SPS=3038 return(last 20)=410.0 entropy=1.174
+[progress SpaceInvaders-v5] step=1945600 SPS=3039 return(last 20)=424.5 entropy=1.296
+[progress SpaceInvaders-v5] step=2048000 SPS=3039 return(last 20)=419.2 entropy=1.160
+[progress SpaceInvaders-v5] step=2150400 SPS=3040 return(last 20)=366.8 entropy=1.117
+[progress SpaceInvaders-v5] step=2252800 SPS=3041 return(last 20)=395.2 entropy=1.031
+[progress SpaceInvaders-v5] step=2355200 SPS=3040 return(last 20)=486.8 entropy=1.027
+[progress SpaceInvaders-v5] step=2457600 SPS=3039 return(last 20)=491.2 entropy=1.039
+[progress SpaceInvaders-v5] step=2560000 SPS=3038 return(last 20)=427.8 entropy=1.070
+[progress SpaceInvaders-v5] step=2662400 SPS=3038 return(last 20)=436.8 entropy=1.105
+[progress SpaceInvaders-v5] step=2764800 SPS=3038 return(last 20)=380.8 entropy=0.929
+[progress SpaceInvaders-v5] step=2867200 SPS=3037 return(last 20)=454.2 entropy=0.951
+[progress SpaceInvaders-v5] step=2969600 SPS=3036 return(last 20)=503.5 entropy=0.951
+[progress SpaceInvaders-v5] step=3072000 SPS=3035 return(last 20)=467.8 entropy=0.834
+[progress SpaceInvaders-v5] step=3174400 SPS=3033 return(last 20)=482.8 entropy=0.900
+[progress SpaceInvaders-v5] step=3276800 SPS=3034 return(last 20)=492.2 entropy=0.854
+[progress SpaceInvaders-v5] step=3379200 SPS=3034 return(last 20)=503.8 entropy=0.901
+[progress SpaceInvaders-v5] step=3481600 SPS=3033 return(last 20)=589.0 entropy=0.990
+[progress SpaceInvaders-v5] step=3584000 SPS=3032 return(last 20)=459.5 entropy=0.867
+[progress SpaceInvaders-v5] step=3686400 SPS=3032 return(last 20)=472.5 entropy=0.710
+[progress SpaceInvaders-v5] step=3788800 SPS=3032 return(last 20)=507.5 entropy=0.629
+[progress SpaceInvaders-v5] step=3891200 SPS=3033 return(last 20)=569.8 entropy=0.723
+[progress SpaceInvaders-v5] step=3993600 SPS=3033 return(last 20)=550.5 entropy=0.917
+[progress SpaceInvaders-v5] step=4096000 SPS=3032 return(last 20)=515.2 entropy=0.987
+[progress SpaceInvaders-v5] step=4198400 SPS=3031 return(last 20)=568.0 entropy=0.828
+[progress SpaceInvaders-v5] step=4300800 SPS=3030 return(last 20)=582.0 entropy=0.794
+[progress SpaceInvaders-v5] step=4403200 SPS=3031 return(last 20)=541.8 entropy=0.809
+[progress SpaceInvaders-v5] step=4505600 SPS=3030 return(last 20)=533.2 entropy=0.874
+[progress SpaceInvaders-v5] step=4608000 SPS=3029 return(last 20)=560.2 entropy=0.771
+[progress SpaceInvaders-v5] step=4710400 SPS=3029 return(last 20)=600.0 entropy=0.815
+[progress SpaceInvaders-v5] step=4812800 SPS=3029 return(last 20)=578.2 entropy=0.791
+[progress SpaceInvaders-v5] step=4915200 SPS=3029 return(last 20)=519.8 entropy=0.856
+[progress SpaceInvaders-v5] step=5017600 SPS=3029 return(last 20)=529.5 entropy=0.859
+[progress SpaceInvaders-v5] step=5120000 SPS=3028 return(last 20)=604.0 entropy=0.859
+[progress SpaceInvaders-v5] step=5222400 SPS=3028 return(last 20)=585.2 entropy=0.844
+[progress SpaceInvaders-v5] step=5324800 SPS=3027 return(last 20)=668.2 entropy=0.789
+[progress SpaceInvaders-v5] step=5427200 SPS=3027 return(last 20)=650.0 entropy=0.855
+[progress SpaceInvaders-v5] step=5529600 SPS=3027 return(last 20)=621.2 entropy=0.810
+[progress SpaceInvaders-v5] step=5632000 SPS=3027 return(last 20)=601.5 entropy=0.948
+[progress SpaceInvaders-v5] step=5734400 SPS=3026 return(last 20)=665.0 entropy=0.847
+[progress SpaceInvaders-v5] step=5836800 SPS=3026 return(last 20)=581.0 entropy=0.847
+[progress SpaceInvaders-v5] step=5939200 SPS=3026 return(last 20)=647.5 entropy=0.978
+[progress SpaceInvaders-v5] step=6041600 SPS=3026 return(last 20)=629.5 entropy=0.743
+[progress SpaceInvaders-v5] step=6144000 SPS=3026 return(last 20)=657.2 entropy=0.894
+[progress SpaceInvaders-v5] step=6246400 SPS=3026 return(last 20)=649.8 entropy=0.805
+[progress SpaceInvaders-v5] step=6348800 SPS=3025 return(last 20)=643.5 entropy=0.715
+[progress SpaceInvaders-v5] step=6451200 SPS=3025 return(last 20)=682.2 entropy=0.881
+[progress SpaceInvaders-v5] step=6553600 SPS=3025 return(last 20)=635.2 entropy=0.879
+[progress SpaceInvaders-v5] step=6656000 SPS=3025 return(last 20)=566.0 entropy=0.784
+[progress SpaceInvaders-v5] step=6758400 SPS=3025 return(last 20)=714.5 entropy=0.864
+[progress SpaceInvaders-v5] step=6860800 SPS=3025 return(last 20)=670.2 entropy=0.848
+[progress SpaceInvaders-v5] step=6963200 SPS=3025 return(last 20)=729.5 entropy=0.714
+[progress SpaceInvaders-v5] step=7065600 SPS=3024 return(last 20)=769.8 entropy=0.691
+[progress SpaceInvaders-v5] step=7168000 SPS=3024 return(last 20)=706.0 entropy=0.848
+[progress SpaceInvaders-v5] step=7270400 SPS=3024 return(last 20)=744.2 entropy=1.035
+[progress SpaceInvaders-v5] step=7372800 SPS=3024 return(last 20)=655.0 entropy=0.931
+[progress SpaceInvaders-v5] step=7475200 SPS=3024 return(last 20)=728.5 entropy=0.784
+[progress SpaceInvaders-v5] step=7577600 SPS=3024 return(last 20)=837.5 entropy=0.807
+[progress SpaceInvaders-v5] step=7680000 SPS=3024 return(last 20)=796.2 entropy=0.623
+[progress SpaceInvaders-v5] step=7782400 SPS=3023 return(last 20)=805.2 entropy=0.732
+[progress SpaceInvaders-v5] step=7884800 SPS=3023 return(last 20)=768.8 entropy=0.958
+[progress SpaceInvaders-v5] step=7987200 SPS=3023 return(last 20)=719.0 entropy=0.910
+[progress SpaceInvaders-v5] step=8089600 SPS=3023 return(last 20)=746.0 entropy=0.893
+[progress SpaceInvaders-v5] step=8192000 SPS=3023 return(last 20)=856.2 entropy=0.664
+[progress SpaceInvaders-v5] step=8294400 SPS=3023 return(last 20)=823.5 entropy=0.702
+[progress SpaceInvaders-v5] step=8396800 SPS=3023 return(last 20)=852.8 entropy=0.741
+[progress SpaceInvaders-v5] step=8499200 SPS=3022 return(last 20)=828.2 entropy=0.903
+[progress SpaceInvaders-v5] step=8601600 SPS=3022 return(last 20)=788.5 entropy=0.839
+[progress SpaceInvaders-v5] step=8704000 SPS=3021 return(last 20)=937.2 entropy=0.714
+[progress SpaceInvaders-v5] step=8806400 SPS=3021 return(last 20)=968.5 entropy=0.738
+[progress SpaceInvaders-v5] step=8908800 SPS=3021 return(last 20)=874.0 entropy=0.814
+[progress SpaceInvaders-v5] step=9011200 SPS=3021 return(last 20)=886.5 entropy=0.757
+[progress SpaceInvaders-v5] step=9113600 SPS=3021 return(last 20)=927.8 entropy=0.709
+[progress SpaceInvaders-v5] step=9216000 SPS=3022 return(last 20)=677.0 entropy=0.927
+[progress SpaceInvaders-v5] step=9318400 SPS=3021 return(last 20)=784.5 entropy=0.792
+[progress SpaceInvaders-v5] step=9420800 SPS=3021 return(last 20)=980.8 entropy=0.788
+[progress SpaceInvaders-v5] step=9523200 SPS=3021 return(last 20)=751.2 entropy=0.867
+[progress SpaceInvaders-v5] step=9625600 SPS=3021 return(last 20)=869.0 entropy=0.817
+[progress SpaceInvaders-v5] step=9728000 SPS=3021 return(last 20)=891.5 entropy=0.866
+[progress SpaceInvaders-v5] step=9830400 SPS=3020 return(last 20)=843.5 entropy=0.778
+[progress SpaceInvaders-v5] step=9932800 SPS=3019 return(last 20)=993.0 entropy=0.900
+[progress SpaceInvaders-v5] step=9998336 SPS=3018 return(last 20)=945.5 entropy=0.880
+[T0] active policy return=843.5 ± 237.8 (3317 s)
+[compress] epoch 0 kl=0.9053 ewc=0.0000
+[compress] epoch 1 kl=0.7760 ewc=0.0000
+[compress] epoch 2 kl=0.6385 ewc=0.0000
+[compress] epoch 3 kl=0.5491 ewc=0.0000
+[compress] epoch 4 kl=0.4938 ewc=0.0000
+[compress] epoch 5 kl=0.4464 ewc=0.0000
+[compress] epoch 6 kl=0.4099 ewc=0.0000
+[compress] epoch 7 kl=0.3822 ewc=0.0000
+[compress] epoch 8 kl=0.3598 ewc=0.0000
+[compress] epoch 9 kl=0.3416 ewc=0.0000
+[compress] epoch 0 kl=0.3951 ewc=0.0000
+[compress] epoch 1 kl=0.3282 ewc=0.0000
+[compress] epoch 2 kl=0.3049 ewc=0.0000
+[compress] epoch 3 kl=0.2817 ewc=0.0000
+[compress] epoch 4 kl=0.2636 ewc=0.0000
+[compress] epoch 5 kl=0.2457 ewc=0.0000
+[compress] epoch 6 kl=0.2304 ewc=0.0000
+[compress] epoch 7 kl=0.2200 ewc=0.0000
+[compress] epoch 8 kl=0.2089 ewc=0.0000
+[compress] epoch 9 kl=0.1976 ewc=0.0000
+[compress] epoch 0 kl=0.2107 ewc=0.0000
+[compress] epoch 1 kl=0.1960 ewc=0.0000
+[compress] epoch 2 kl=0.1814 ewc=0.0000
+[compress] epoch 3 kl=0.1695 ewc=0.0000
+[compress] epoch 4 kl=0.1609 ewc=0.0000
+[compress] epoch 5 kl=0.1537 ewc=0.0000
+[compress] epoch 6 kl=0.1455 ewc=0.0000
+[compress] epoch 7 kl=0.1393 ewc=0.0000
+[compress] epoch 8 kl=0.1334 ewc=0.0000
+[compress] epoch 9 kl=0.1275 ewc=0.0000
+[compress] epoch 0 kl=0.1394 ewc=0.0000
+[compress] epoch 1 kl=0.1311 ewc=0.0000
+[compress] epoch 2 kl=0.1234 ewc=0.0000
+[compress] epoch 3 kl=0.1177 ewc=0.0000
+[compress] epoch 4 kl=0.1128 ewc=0.0000
+[compress] epoch 5 kl=0.1074 ewc=0.0000
+[compress] epoch 6 kl=0.1034 ewc=0.0000
+[compress] epoch 7 kl=0.0996 ewc=0.0000
+[compress] epoch 8 kl=0.0961 ewc=0.0000
+[compress] epoch 9 kl=0.0922 ewc=0.0000
+[Fisher T0] total_mass=4.601526e+02  per-param mean=2.732290e-04  max=1.000000e-03
+After T0: SpaceInvaders-v5: 582.0 (kl 0.034)
+[T1 Krull-v5] actions=18 random return=2073.0
+[progress Krull-v5] step=102400 SPS=2611 return(last 20)=3140.0 entropy=2.582
+[progress Krull-v5] step=204800 SPS=2713 return(last 20)=2953.0 entropy=2.566
+[progress Krull-v5] step=307200 SPS=2726 return(last 20)=3194.0 entropy=2.382
+[progress Krull-v5] step=409600 SPS=2746 return(last 20)=3389.0 entropy=2.087
+[progress Krull-v5] step=512000 SPS=2754 return(last 20)=3930.0 entropy=2.278
+[progress Krull-v5] step=614400 SPS=2761 return(last 20)=3667.5 entropy=2.084
+[progress Krull-v5] step=716800 SPS=2769 return(last 20)=3828.5 entropy=2.003
+[progress Krull-v5] step=819200 SPS=2776 return(last 20)=3874.5 entropy=2.013
+[progress Krull-v5] step=921600 SPS=2779 return(last 20)=4321.0 entropy=2.069
+[progress Krull-v5] step=1024000 SPS=2783 return(last 20)=4329.0 entropy=2.104
+[progress Krull-v5] step=1126400 SPS=2789 return(last 20)=4206.0 entropy=2.120
+[progress Krull-v5] step=1228800 SPS=2796 return(last 20)=3807.0 entropy=1.716
+[progress Krull-v5] step=1331200 SPS=2799 return(last 20)=4275.0 entropy=1.656
+[progress Krull-v5] step=1433600 SPS=2789 return(last 20)=4252.0 entropy=1.724
+[progress Krull-v5] step=1536000 SPS=2778 return(last 20)=4801.5 entropy=1.660
+[progress Krull-v5] step=1638400 SPS=2763 return(last 20)=4465.0 entropy=1.838
+[progress Krull-v5] step=1740800 SPS=2748 return(last 20)=5272.0 entropy=1.480
+[progress Krull-v5] step=1843200 SPS=2736 return(last 20)=4738.0 entropy=1.322
+[progress Krull-v5] step=1945600 SPS=2724 return(last 20)=4763.0 entropy=1.595
+[progress Krull-v5] step=2048000 SPS=2712 return(last 20)=4840.5 entropy=1.467
+[progress Krull-v5] step=2150400 SPS=2702 return(last 20)=5317.0 entropy=1.636
+[progress Krull-v5] step=2252800 SPS=2694 return(last 20)=5209.5 entropy=1.400
+[progress Krull-v5] step=2355200 SPS=2690 return(last 20)=5793.5 entropy=1.379
+[progress Krull-v5] step=2457600 SPS=2690 return(last 20)=5762.5 entropy=1.173
+[progress Krull-v5] step=2560000 SPS=2688 return(last 20)=5998.5 entropy=1.315
+[progress Krull-v5] step=2662400 SPS=2683 return(last 20)=6228.5 entropy=1.202
+[progress Krull-v5] step=2764800 SPS=2680 return(last 20)=6845.5 entropy=0.892
+[progress Krull-v5] step=2867200 SPS=2682 return(last 20)=6971.5 entropy=1.013
+[progress Krull-v5] step=2969600 SPS=2686 return(last 20)=6807.5 entropy=1.125
+[progress Krull-v5] step=3072000 SPS=2692 return(last 20)=7170.5 entropy=1.215
+[progress Krull-v5] step=3174400 SPS=2695 return(last 20)=6698.5 entropy=1.160
+[progress Krull-v5] step=3276800 SPS=2700 return(last 20)=6663.0 entropy=1.268
+[progress Krull-v5] step=3379200 SPS=2704 return(last 20)=7517.5 entropy=1.244
+[progress Krull-v5] step=3481600 SPS=2708 return(last 20)=8067.5 entropy=1.272
+[progress Krull-v5] step=3584000 SPS=2712 return(last 20)=7597.5 entropy=1.265
+[progress Krull-v5] step=3686400 SPS=2715 return(last 20)=8117.5 entropy=1.326
+[progress Krull-v5] step=3788800 SPS=2717 return(last 20)=8510.0 entropy=1.378
+[progress Krull-v5] step=3891200 SPS=2721 return(last 20)=7653.5 entropy=1.244
+[progress Krull-v5] step=3993600 SPS=2724 return(last 20)=8250.5 entropy=1.033
+[progress Krull-v5] step=4096000 SPS=2728 return(last 20)=7841.5 entropy=1.844
+[progress Krull-v5] step=4198400 SPS=2730 return(last 20)=7938.5 entropy=1.393
+[progress Krull-v5] step=4300800 SPS=2732 return(last 20)=8837.5 entropy=1.007
+[progress Krull-v5] step=4403200 SPS=2735 return(last 20)=8616.5 entropy=1.233
+[progress Krull-v5] step=4505600 SPS=2737 return(last 20)=7864.0 entropy=1.385
+[progress Krull-v5] step=4608000 SPS=2739 return(last 20)=8603.0 entropy=1.130
+[progress Krull-v5] step=4710400 SPS=2741 return(last 20)=8177.0 entropy=1.067
+[progress Krull-v5] step=4812800 SPS=2743 return(last 20)=8588.5 entropy=1.178
+[progress Krull-v5] step=4915200 SPS=2744 return(last 20)=8231.5 entropy=1.343
+[progress Krull-v5] step=5017600 SPS=2745 return(last 20)=8522.0 entropy=1.391
+[progress Krull-v5] step=5120000 SPS=2746 return(last 20)=8978.5 entropy=1.373
+[progress Krull-v5] step=5222400 SPS=2747 return(last 20)=9444.0 entropy=1.561
+[progress Krull-v5] step=5324800 SPS=2748 return(last 20)=8933.0 entropy=1.479
+[progress Krull-v5] step=5427200 SPS=2749 return(last 20)=8446.0 entropy=1.345
+[progress Krull-v5] step=5529600 SPS=2749 return(last 20)=9106.0 entropy=1.022
+[progress Krull-v5] step=5632000 SPS=2748 return(last 20)=8520.5 entropy=1.391
+[progress Krull-v5] step=5734400 SPS=2748 return(last 20)=7749.5 entropy=1.371
+[progress Krull-v5] step=5836800 SPS=2748 return(last 20)=9697.0 entropy=1.256
+[progress Krull-v5] step=5939200 SPS=2748 return(last 20)=8977.0 entropy=1.146
+[progress Krull-v5] step=6041600 SPS=2748 return(last 20)=9450.5 entropy=0.996
+[progress Krull-v5] step=6144000 SPS=2748 return(last 20)=9371.0 entropy=1.327
+[progress Krull-v5] step=6246400 SPS=2747 return(last 20)=9001.0 entropy=1.290
+[progress Krull-v5] step=6348800 SPS=2745 return(last 20)=9169.0 entropy=1.245
+[progress Krull-v5] step=6451200 SPS=2744 return(last 20)=9366.0 entropy=1.428
+[progress Krull-v5] step=6553600 SPS=2744 return(last 20)=8728.5 entropy=1.714
+[progress Krull-v5] step=6656000 SPS=2744 return(last 20)=8386.0 entropy=1.304
+[progress Krull-v5] step=6758400 SPS=2742 return(last 20)=9917.0 entropy=1.441
+[progress Krull-v5] step=6860800 SPS=2741 return(last 20)=8539.0 entropy=1.417
+[progress Krull-v5] step=6963200 SPS=2741 return(last 20)=8568.0 entropy=1.401
+[progress Krull-v5] step=7065600 SPS=2740 return(last 20)=9260.5 entropy=1.219
+[progress Krull-v5] step=7168000 SPS=2739 return(last 20)=9721.0 entropy=1.567
+[progress Krull-v5] step=7270400 SPS=2738 return(last 20)=8550.0 entropy=1.582
+[progress Krull-v5] step=7372800 SPS=2737 return(last 20)=9923.5 entropy=1.475
+[progress Krull-v5] step=7475200 SPS=2736 return(last 20)=9375.5 entropy=1.694
+[progress Krull-v5] step=7577600 SPS=2736 return(last 20)=9702.5 entropy=1.444
+[progress Krull-v5] step=7680000 SPS=2736 return(last 20)=9106.0 entropy=1.419
+[progress Krull-v5] step=7782400 SPS=2736 return(last 20)=8775.0 entropy=1.377
+[progress Krull-v5] step=7884800 SPS=2736 return(last 20)=9864.0 entropy=1.504
+[progress Krull-v5] step=7987200 SPS=2736 return(last 20)=9665.0 entropy=1.515
+[progress Krull-v5] step=8089600 SPS=2737 return(last 20)=8788.5 entropy=1.257
+[progress Krull-v5] step=8192000 SPS=2737 return(last 20)=8757.5 entropy=1.335
+[progress Krull-v5] step=8294400 SPS=2738 return(last 20)=9533.0 entropy=1.565
+[progress Krull-v5] step=8396800 SPS=2738 return(last 20)=9415.5 entropy=1.485
+[progress Krull-v5] step=8499200 SPS=2739 return(last 20)=9856.5 entropy=1.241
+[progress Krull-v5] step=8601600 SPS=2740 return(last 20)=9538.0 entropy=1.230
+[progress Krull-v5] step=8704000 SPS=2742 return(last 20)=9054.0 entropy=1.521
+[progress Krull-v5] step=8806400 SPS=2742 return(last 20)=9932.0 entropy=1.580
+[progress Krull-v5] step=8908800 SPS=2743 return(last 20)=9416.0 entropy=1.451
+[progress Krull-v5] step=9011200 SPS=2744 return(last 20)=9194.5 entropy=1.559
+[progress Krull-v5] step=9113600 SPS=2744 return(last 20)=8423.5 entropy=1.837
+[progress Krull-v5] step=9216000 SPS=2744 return(last 20)=9432.0 entropy=1.395
+[progress Krull-v5] step=9318400 SPS=2745 return(last 20)=9628.0 entropy=1.356
+[progress Krull-v5] step=9420800 SPS=2745 return(last 20)=9776.0 entropy=1.440
+[progress Krull-v5] step=9523200 SPS=2746 return(last 20)=9475.0 entropy=1.756
+[progress Krull-v5] step=9625600 SPS=2746 return(last 20)=9464.0 entropy=1.598
+[progress Krull-v5] step=9728000 SPS=2747 return(last 20)=9199.0 entropy=1.286
+[progress Krull-v5] step=9830400 SPS=2748 return(last 20)=9251.5 entropy=1.478
+[progress Krull-v5] step=9932800 SPS=2746 return(last 20)=8760.0 entropy=1.564
+[progress Krull-v5] step=9998336 SPS=2745 return(last 20)=9766.5 entropy=1.257
+[T1] active policy return=9968.0 ± 1453.7 (3647 s)
+[compress] epoch 0 kl=0.8306 ewc=0.0037
+[compress] epoch 1 kl=0.5795 ewc=0.0070
+[compress] epoch 2 kl=0.5015 ewc=0.0078
+[compress] epoch 3 kl=0.4570 ewc=0.0084
+[compress] epoch 4 kl=0.4191 ewc=0.0088
+[compress] epoch 5 kl=0.3924 ewc=0.0090
+[compress] epoch 6 kl=0.3665 ewc=0.0090
+[compress] epoch 7 kl=0.3461 ewc=0.0090
+[compress] epoch 8 kl=0.3329 ewc=0.0091
+[compress] epoch 9 kl=0.3191 ewc=0.0090
+[compress] epoch 0 kl=0.3412 ewc=0.0100
+[compress] epoch 1 kl=0.3182 ewc=0.0097
+[compress] epoch 2 kl=0.2964 ewc=0.0094
+[compress] epoch 3 kl=0.2888 ewc=0.0092
+[compress] epoch 4 kl=0.2690 ewc=0.0089
+[compress] epoch 5 kl=0.2547 ewc=0.0085
+[compress] epoch 6 kl=0.2448 ewc=0.0082
+[compress] epoch 7 kl=0.2350 ewc=0.0079
+[compress] epoch 8 kl=0.2251 ewc=0.0076
+[compress] epoch 9 kl=0.2172 ewc=0.0074
+[compress] epoch 0 kl=0.2130 ewc=0.0071
+[compress] epoch 1 kl=0.2049 ewc=0.0068
+[compress] epoch 2 kl=0.2048 ewc=0.0065
+[compress] epoch 3 kl=0.1943 ewc=0.0064
+[compress] epoch 4 kl=0.1856 ewc=0.0061
+[compress] epoch 5 kl=0.1878 ewc=0.0059
+[compress] epoch 6 kl=0.1808 ewc=0.0056
+[compress] epoch 7 kl=0.1773 ewc=0.0054
+[compress] epoch 8 kl=0.1694 ewc=0.0053
+[compress] epoch 9 kl=0.1759 ewc=0.0052
+[compress] epoch 0 kl=0.1627 ewc=0.0050
+[compress] epoch 1 kl=0.1604 ewc=0.0048
+[compress] epoch 2 kl=0.1690 ewc=0.0047
+[compress] epoch 3 kl=0.1616 ewc=0.0045
+[compress] epoch 4 kl=0.1592 ewc=0.0044
+[compress] epoch 5 kl=0.1515 ewc=0.0043
+[compress] epoch 6 kl=0.1501 ewc=0.0041
+[compress] epoch 7 kl=0.1491 ewc=0.0040
+[compress] epoch 8 kl=0.1427 ewc=0.0039
+[compress] epoch 9 kl=0.1407 ewc=0.0038
+[Fisher T1] total_mass=5.327228e+02  per-param mean=3.163197e-04  max=1.000000e-03
+After T1: SpaceInvaders-v5: 678.5 (kl 0.036) | Krull-v5: 8329.0 (kl 0.029)
+[T2 BeamRider-v5] actions=9 random return=396.0
+[progress BeamRider-v5] step=102400 SPS=2959 return(last 20)=468.8 entropy=2.037
+[progress BeamRider-v5] step=204800 SPS=2936 return(last 20)=452.0 entropy=1.856
+[progress BeamRider-v5] step=307200 SPS=2943 return(last 20)=556.4 entropy=1.730
+[progress BeamRider-v5] step=409600 SPS=2962 return(last 20)=548.0 entropy=1.650
+[progress BeamRider-v5] step=512000 SPS=2962 return(last 20)=550.2 entropy=1.080
+[progress BeamRider-v5] step=614400 SPS=2956 return(last 20)=493.4 entropy=1.080
+[progress BeamRider-v5] step=716800 SPS=2963 return(last 20)=622.8 entropy=1.127
+[progress BeamRider-v5] step=819200 SPS=2969 return(last 20)=612.0 entropy=1.180
+[progress BeamRider-v5] step=921600 SPS=2962 return(last 20)=608.2 entropy=1.038
+[progress BeamRider-v5] step=1024000 SPS=2963 return(last 20)=734.0 entropy=0.998
+[progress BeamRider-v5] step=1126400 SPS=2963 return(last 20)=598.4 entropy=1.084
+[progress BeamRider-v5] step=1228800 SPS=2963 return(last 20)=644.8 entropy=1.102
+[progress BeamRider-v5] step=1331200 SPS=2963 return(last 20)=729.2 entropy=1.096
+[progress BeamRider-v5] step=1433600 SPS=2966 return(last 20)=720.4 entropy=1.109
+[progress BeamRider-v5] step=1536000 SPS=2967 return(last 20)=688.0 entropy=1.033
+[progress BeamRider-v5] step=1638400 SPS=2969 return(last 20)=729.4 entropy=0.949
+[progress BeamRider-v5] step=1740800 SPS=2971 return(last 20)=700.2 entropy=1.217
+[progress BeamRider-v5] step=1843200 SPS=2967 return(last 20)=693.0 entropy=1.173
+[progress BeamRider-v5] step=1945600 SPS=2953 return(last 20)=769.6 entropy=1.310
+[progress BeamRider-v5] step=2048000 SPS=2949 return(last 20)=748.4 entropy=1.110
+[progress BeamRider-v5] step=2150400 SPS=2945 return(last 20)=878.6 entropy=1.232
+[progress BeamRider-v5] step=2252800 SPS=2946 return(last 20)=847.4 entropy=1.296
+[progress BeamRider-v5] step=2355200 SPS=2946 return(last 20)=850.4 entropy=1.242
+[progress BeamRider-v5] step=2457600 SPS=2949 return(last 20)=824.2 entropy=1.218
+[progress BeamRider-v5] step=2560000 SPS=2953 return(last 20)=996.0 entropy=1.174
+[progress BeamRider-v5] step=2662400 SPS=2956 return(last 20)=949.0 entropy=1.185
+[progress BeamRider-v5] step=2764800 SPS=2960 return(last 20)=982.8 entropy=1.267
+[progress BeamRider-v5] step=2867200 SPS=2962 return(last 20)=1125.4 entropy=1.163
+[progress BeamRider-v5] step=2969600 SPS=2964 return(last 20)=1300.0 entropy=1.052
+[progress BeamRider-v5] step=3072000 SPS=2965 return(last 20)=1435.4 entropy=1.166
+[progress BeamRider-v5] step=3174400 SPS=2967 return(last 20)=1301.2 entropy=1.079
+[progress BeamRider-v5] step=3276800 SPS=2967 return(last 20)=1177.0 entropy=1.107
+[progress BeamRider-v5] step=3379200 SPS=2967 return(last 20)=1475.7 entropy=0.962
+[progress BeamRider-v5] step=3481600 SPS=2968 return(last 20)=1352.2 entropy=1.085
+[progress BeamRider-v5] step=3584000 SPS=2967 return(last 20)=1336.4 entropy=1.185
+[progress BeamRider-v5] step=3686400 SPS=2968 return(last 20)=1326.4 entropy=1.233
+[progress BeamRider-v5] step=3788800 SPS=2969 return(last 20)=1781.8 entropy=1.189
+[progress BeamRider-v5] step=3891200 SPS=2970 return(last 20)=1821.8 entropy=1.140
+[progress BeamRider-v5] step=3993600 SPS=2969 return(last 20)=1693.0 entropy=1.147
+[progress BeamRider-v5] step=4096000 SPS=2970 return(last 20)=1647.2 entropy=1.048
+[progress BeamRider-v5] step=4198400 SPS=2969 return(last 20)=1594.2 entropy=1.122
+[progress BeamRider-v5] step=4300800 SPS=2970 return(last 20)=1711.4 entropy=1.093
+[progress BeamRider-v5] step=4403200 SPS=2969 return(last 20)=1537.0 entropy=1.157
+[progress BeamRider-v5] step=4505600 SPS=2969 return(last 20)=1421.2 entropy=1.190
+[progress BeamRider-v5] step=4608000 SPS=2968 return(last 20)=1583.4 entropy=1.054
+[progress BeamRider-v5] step=4710400 SPS=2969 return(last 20)=1510.0 entropy=0.972
+[progress BeamRider-v5] step=4812800 SPS=2969 return(last 20)=1758.8 entropy=1.035
+[progress BeamRider-v5] step=4915200 SPS=2970 return(last 20)=2035.5 entropy=1.066
+[progress BeamRider-v5] step=5017600 SPS=2970 return(last 20)=1638.8 entropy=1.077
+[progress BeamRider-v5] step=5120000 SPS=2971 return(last 20)=2266.3 entropy=1.008
+[progress BeamRider-v5] step=5222400 SPS=2972 return(last 20)=2130.4 entropy=1.090
+[progress BeamRider-v5] step=5324800 SPS=2972 return(last 20)=1918.4 entropy=1.305
+[progress BeamRider-v5] step=5427200 SPS=2972 return(last 20)=2109.7 entropy=1.205
+[progress BeamRider-v5] step=5529600 SPS=2972 return(last 20)=1914.9 entropy=1.214
+[progress BeamRider-v5] step=5632000 SPS=2972 return(last 20)=1868.4 entropy=0.979
+[progress BeamRider-v5] step=5734400 SPS=2973 return(last 20)=1657.2 entropy=1.106
+[progress BeamRider-v5] step=5836800 SPS=2973 return(last 20)=1873.8 entropy=1.004
+[progress BeamRider-v5] step=5939200 SPS=2974 return(last 20)=2396.6 entropy=1.036
+[progress BeamRider-v5] step=6041600 SPS=2974 return(last 20)=1876.2 entropy=0.863
+[progress BeamRider-v5] step=6144000 SPS=2975 return(last 20)=2188.0 entropy=1.132
+[progress BeamRider-v5] step=6246400 SPS=2976 return(last 20)=2160.8 entropy=1.147
+[progress BeamRider-v5] step=6348800 SPS=2977 return(last 20)=2232.4 entropy=1.120
+[progress BeamRider-v5] step=6451200 SPS=2977 return(last 20)=2010.4 entropy=1.139
+[progress BeamRider-v5] step=6553600 SPS=2977 return(last 20)=1890.2 entropy=1.027
+[progress BeamRider-v5] step=6656000 SPS=2978 return(last 20)=2031.2 entropy=1.216
+[progress BeamRider-v5] step=6758400 SPS=2978 return(last 20)=2067.2 entropy=1.110
+[progress BeamRider-v5] step=6860800 SPS=2978 return(last 20)=1909.8 entropy=1.133
+[progress BeamRider-v5] step=6963200 SPS=2978 return(last 20)=2189.4 entropy=1.134
+[progress BeamRider-v5] step=7065600 SPS=2979 return(last 20)=1793.8 entropy=1.267
+[progress BeamRider-v5] step=7168000 SPS=2980 return(last 20)=2488.3 entropy=1.168
+[progress BeamRider-v5] step=7270400 SPS=2981 return(last 20)=2325.1 entropy=1.206
+[progress BeamRider-v5] step=7372800 SPS=2981 return(last 20)=2097.8 entropy=1.352
+[progress BeamRider-v5] step=7475200 SPS=2982 return(last 20)=1981.6 entropy=1.166
+[progress BeamRider-v5] step=7577600 SPS=2982 return(last 20)=2134.6 entropy=1.254
+[progress BeamRider-v5] step=7680000 SPS=2982 return(last 20)=2109.4 entropy=1.222
+[progress BeamRider-v5] step=7782400 SPS=2982 return(last 20)=2549.8 entropy=1.145
+[progress BeamRider-v5] step=7884800 SPS=2983 return(last 20)=2661.0 entropy=1.317
+[progress BeamRider-v5] step=7987200 SPS=2982 return(last 20)=1653.8 entropy=1.253
+[progress BeamRider-v5] step=8089600 SPS=2983 return(last 20)=2063.1 entropy=1.281
+[progress BeamRider-v5] step=8192000 SPS=2983 return(last 20)=1996.8 entropy=1.257
+[progress BeamRider-v5] step=8294400 SPS=2983 return(last 20)=1904.4 entropy=1.398
+[progress BeamRider-v5] step=8396800 SPS=2984 return(last 20)=1921.9 entropy=1.307
+[progress BeamRider-v5] step=8499200 SPS=2983 return(last 20)=2173.0 entropy=1.401
+[progress BeamRider-v5] step=8601600 SPS=2983 return(last 20)=2228.2 entropy=1.407
+[progress BeamRider-v5] step=8704000 SPS=2983 return(last 20)=1956.9 entropy=1.439
+[progress BeamRider-v5] step=8806400 SPS=2983 return(last 20)=2459.9 entropy=1.380
+[progress BeamRider-v5] step=8908800 SPS=2984 return(last 20)=1862.6 entropy=1.446
+[progress BeamRider-v5] step=9011200 SPS=2984 return(last 20)=2161.2 entropy=1.407
+[progress BeamRider-v5] step=9113600 SPS=2984 return(last 20)=2308.8 entropy=1.394
+[progress BeamRider-v5] step=9216000 SPS=2984 return(last 20)=2538.4 entropy=1.341
+[progress BeamRider-v5] step=9318400 SPS=2985 return(last 20)=2156.7 entropy=1.249
+[progress BeamRider-v5] step=9420800 SPS=2985 return(last 20)=2352.1 entropy=1.330
+[progress BeamRider-v5] step=9523200 SPS=2986 return(last 20)=2363.4 entropy=1.367
+[progress BeamRider-v5] step=9625600 SPS=2986 return(last 20)=2279.0 entropy=1.299
+[progress BeamRider-v5] step=9728000 SPS=2987 return(last 20)=2450.3 entropy=1.350
+[progress BeamRider-v5] step=9830400 SPS=2987 return(last 20)=2352.1 entropy=1.426
+[progress BeamRider-v5] step=9932800 SPS=2989 return(last 20)=2927.5 entropy=1.437
+[progress BeamRider-v5] step=9998336 SPS=2987 return(last 20)=2561.7 entropy=1.299
+[T2] active policy return=3548.2 ± 1640.0 (3360 s)
+[compress] epoch 0 kl=0.6316 ewc=0.0010
+[compress] epoch 1 kl=0.5437 ewc=0.0017
+[compress] epoch 2 kl=0.5127 ewc=0.0023
+[compress] epoch 3 kl=0.4944 ewc=0.0025
+[compress] epoch 4 kl=0.4796 ewc=0.0026
+[compress] epoch 5 kl=0.4666 ewc=0.0028
+[compress] epoch 6 kl=0.4524 ewc=0.0029
+[compress] epoch 7 kl=0.4441 ewc=0.0031
+[compress] epoch 8 kl=0.4323 ewc=0.0036
+[compress] epoch 9 kl=0.4235 ewc=0.0035
+[compress] epoch 0 kl=0.4350 ewc=0.0038
+[compress] epoch 1 kl=0.4147 ewc=0.0038
+[compress] epoch 2 kl=0.4015 ewc=0.0039
+[compress] epoch 3 kl=0.3869 ewc=0.0039
+[compress] epoch 4 kl=0.3721 ewc=0.0040
+[compress] epoch 5 kl=0.3618 ewc=0.0039
+[compress] epoch 6 kl=0.3554 ewc=0.0039
+[compress] epoch 7 kl=0.3457 ewc=0.0038
+[compress] epoch 8 kl=0.3381 ewc=0.0037
+[compress] epoch 9 kl=0.3287 ewc=0.0038
+[compress] epoch 0 kl=0.3256 ewc=0.0038
+[compress] epoch 1 kl=0.3205 ewc=0.0037
+[compress] epoch 2 kl=0.3087 ewc=0.0037
+[compress] epoch 3 kl=0.2993 ewc=0.0036
+[compress] epoch 4 kl=0.2947 ewc=0.0036
+[compress] epoch 5 kl=0.2874 ewc=0.0037
+[compress] epoch 6 kl=0.2841 ewc=0.0035
+[compress] epoch 7 kl=0.2766 ewc=0.0036
+[compress] epoch 8 kl=0.2699 ewc=0.0034
+[compress] epoch 9 kl=0.2660 ewc=0.0035
+[compress] epoch 0 kl=0.2636 ewc=0.0033
+[compress] epoch 1 kl=0.2587 ewc=0.0034
+[compress] epoch 2 kl=0.2514 ewc=0.0033
+[compress] epoch 3 kl=0.2481 ewc=0.0032
+[compress] epoch 4 kl=0.2429 ewc=0.0033
+[compress] epoch 5 kl=0.2395 ewc=0.0032
+[compress] epoch 6 kl=0.2334 ewc=0.0031
+[compress] epoch 7 kl=0.2325 ewc=0.0031
+[compress] epoch 8 kl=0.2270 ewc=0.0030
+[compress] epoch 9 kl=0.2241 ewc=0.0030
+[Fisher T2] total_mass=7.606933e+02  per-param mean=4.516838e-04  max=1.000000e-03
+After T2: SpaceInvaders-v5: 559.5 (kl 0.115) | Krull-v5: 8793.0 (kl 0.629) | BeamRider-v5: 1561.2 (kl 0.089)
+[T3 Hero-v5] actions=18 random return=577.5
+[progress Hero-v5] step=102400 SPS=2805 return(last 20)=2707.8 entropy=2.508
+[progress Hero-v5] step=204800 SPS=2819 return(last 20)=3573.0 entropy=2.455
+[progress Hero-v5] step=307200 SPS=2848 return(last 20)=4065.0 entropy=2.548
+[progress Hero-v5] step=409600 SPS=2850 return(last 20)=3677.8 entropy=2.335
+[progress Hero-v5] step=512000 SPS=2856 return(last 20)=4266.8 entropy=2.281
+[progress Hero-v5] step=614400 SPS=2866 return(last 20)=4032.0 entropy=2.154
+[progress Hero-v5] step=716800 SPS=2867 return(last 20)=4924.5 entropy=2.320
+[progress Hero-v5] step=819200 SPS=2867 return(last 20)=5030.5 entropy=2.284
+[progress Hero-v5] step=921600 SPS=2864 return(last 20)=5537.0 entropy=2.411
+[progress Hero-v5] step=1024000 SPS=2858 return(last 20)=4559.5 entropy=2.345
+[progress Hero-v5] step=1126400 SPS=2855 return(last 20)=7413.8 entropy=2.298
+[progress Hero-v5] step=1228800 SPS=2853 return(last 20)=8199.8 entropy=2.279
+[progress Hero-v5] step=1331200 SPS=2845 return(last 20)=9083.2 entropy=2.131
+[progress Hero-v5] step=1433600 SPS=2844 return(last 20)=7564.0 entropy=2.272
+[progress Hero-v5] step=1536000 SPS=2841 return(last 20)=7552.5 entropy=2.222
+[progress Hero-v5] step=1638400 SPS=2827 return(last 20)=6697.2 entropy=2.150
+[progress Hero-v5] step=1740800 SPS=2819 return(last 20)=7733.8 entropy=2.097
+[progress Hero-v5] step=1843200 SPS=2818 return(last 20)=6744.5 entropy=2.336
+[progress Hero-v5] step=1945600 SPS=2817 return(last 20)=7510.8 entropy=2.284
+[progress Hero-v5] step=2048000 SPS=2815 return(last 20)=11055.2 entropy=1.865
+[progress Hero-v5] step=2150400 SPS=2813 return(last 20)=7861.5 entropy=1.937
+[progress Hero-v5] step=2252800 SPS=2811 return(last 20)=9437.5 entropy=2.033
+[progress Hero-v5] step=2355200 SPS=2811 return(last 20)=10242.5 entropy=1.989
+[progress Hero-v5] step=2457600 SPS=2807 return(last 20)=10289.5 entropy=2.059
+[progress Hero-v5] step=2560000 SPS=2802 return(last 20)=11529.0 entropy=1.926
+[progress Hero-v5] step=2662400 SPS=2802 return(last 20)=12054.8 entropy=1.971
+[progress Hero-v5] step=2764800 SPS=2801 return(last 20)=11036.5 entropy=2.073
+[progress Hero-v5] step=2867200 SPS=2798 return(last 20)=12192.5 entropy=1.966
+[progress Hero-v5] step=2969600 SPS=2795 return(last 20)=12569.0 entropy=1.875
+[progress Hero-v5] step=3072000 SPS=2793 return(last 20)=11769.8 entropy=2.054
+[progress Hero-v5] step=3174400 SPS=2793 return(last 20)=12721.8 entropy=2.078
+[progress Hero-v5] step=3276800 SPS=2794 return(last 20)=11641.5 entropy=2.222
+[progress Hero-v5] step=3379200 SPS=2795 return(last 20)=13254.5 entropy=2.052
+[progress Hero-v5] step=3481600 SPS=2796 return(last 20)=12976.0 entropy=2.047
+[progress Hero-v5] step=3584000 SPS=2799 return(last 20)=12618.8 entropy=2.181
+[progress Hero-v5] step=3686400 SPS=2800 return(last 20)=12990.8 entropy=2.200
+[progress Hero-v5] step=3788800 SPS=2802 return(last 20)=12750.2 entropy=2.265
+[progress Hero-v5] step=3891200 SPS=2805 return(last 20)=13775.8 entropy=2.226
+[progress Hero-v5] step=3993600 SPS=2807 return(last 20)=13549.2 entropy=2.179
+[progress Hero-v5] step=4096000 SPS=2807 return(last 20)=12654.8 entropy=2.122
+[progress Hero-v5] step=4198400 SPS=2807 return(last 20)=12935.8 entropy=2.174
+[progress Hero-v5] step=4300800 SPS=2805 return(last 20)=13556.8 entropy=2.113
+[progress Hero-v5] step=4403200 SPS=2805 return(last 20)=13346.2 entropy=2.034
+[progress Hero-v5] step=4505600 SPS=2805 return(last 20)=12646.2 entropy=2.122
+[progress Hero-v5] step=4608000 SPS=2806 return(last 20)=13482.8 entropy=2.269
+[progress Hero-v5] step=4710400 SPS=2807 return(last 20)=13273.0 entropy=2.210
+[progress Hero-v5] step=4812800 SPS=2808 return(last 20)=13839.0 entropy=2.292
+[progress Hero-v5] step=4915200 SPS=2806 return(last 20)=12971.5 entropy=2.146
+[progress Hero-v5] step=5017600 SPS=2803 return(last 20)=13269.8 entropy=2.178
+[progress Hero-v5] step=5120000 SPS=2801 return(last 20)=13681.0 entropy=2.257
+[progress Hero-v5] step=5222400 SPS=2799 return(last 20)=13352.8 entropy=2.201
+[progress Hero-v5] step=5324800 SPS=2799 return(last 20)=13378.0 entropy=2.327
+[progress Hero-v5] step=5427200 SPS=2799 return(last 20)=12414.0 entropy=2.295
+[progress Hero-v5] step=5529600 SPS=2800 return(last 20)=13901.8 entropy=2.135
+[progress Hero-v5] step=5632000 SPS=2800 return(last 20)=13416.2 entropy=2.223
+[progress Hero-v5] step=5734400 SPS=2801 return(last 20)=14016.5 entropy=2.404
+[progress Hero-v5] step=5836800 SPS=2801 return(last 20)=14388.8 entropy=1.985
+[progress Hero-v5] step=5939200 SPS=2802 return(last 20)=15109.2 entropy=2.179
+[progress Hero-v5] step=6041600 SPS=2802 return(last 20)=15811.0 entropy=2.280
+[progress Hero-v5] step=6144000 SPS=2802 return(last 20)=15558.0 entropy=2.026
+[progress Hero-v5] step=6246400 SPS=2802 return(last 20)=14665.0 entropy=2.110
+[progress Hero-v5] step=6348800 SPS=2803 return(last 20)=13897.8 entropy=2.187
+[progress Hero-v5] step=6451200 SPS=2803 return(last 20)=14452.0 entropy=2.060
+[progress Hero-v5] step=6553600 SPS=2804 return(last 20)=13967.5 entropy=2.072
+[progress Hero-v5] step=6656000 SPS=2804 return(last 20)=14620.2 entropy=2.077
+[progress Hero-v5] step=6758400 SPS=2803 return(last 20)=14769.8 entropy=1.935
+[progress Hero-v5] step=6860800 SPS=2805 return(last 20)=14531.8 entropy=1.961
+[progress Hero-v5] step=6963200 SPS=2804 return(last 20)=13988.0 entropy=2.036
+[2026-10-20 23:22:20,830][opentelemetry.exporter.otlp.proto.http.metric_exporter][WARNING] - Transient error Service Unavailable encountered while exporting metrics batch, retrying in 1.18s.
+[2026-10-20 23:22:22,063][opentelemetry.exporter.otlp.proto.http.metric_exporter][WARNING] - Transient error Service Unavailable encountered while exporting metrics batch, retrying in 1.61s.
+[progress Hero-v5] step=7065600 SPS=2804 return(last 20)=14800.8 entropy=2.028
+[progress Hero-v5] step=7168000 SPS=2806 return(last 20)=16036.0 entropy=1.857
+[progress Hero-v5] step=7270400 SPS=2806 return(last 20)=14576.2 entropy=2.215
+[progress Hero-v5] step=7372800 SPS=2807 return(last 20)=14503.2 entropy=1.891
+[progress Hero-v5] step=7475200 SPS=2806 return(last 20)=14534.5 entropy=1.968
+[progress Hero-v5] step=7577600 SPS=2806 return(last 20)=14531.8 entropy=2.093
+[progress Hero-v5] step=7680000 SPS=2806 return(last 20)=14952.5 entropy=1.982
+[progress Hero-v5] step=7782400 SPS=2806 return(last 20)=15319.8 entropy=2.049
+[progress Hero-v5] step=7884800 SPS=2806 return(last 20)=15385.0 entropy=2.051
+[progress Hero-v5] step=7987200 SPS=2807 return(last 20)=14933.5 entropy=2.161
+[progress Hero-v5] step=8089600 SPS=2807 return(last 20)=16303.8 entropy=1.896
+[progress Hero-v5] step=8192000 SPS=2806 return(last 20)=16833.2 entropy=1.962
+[progress Hero-v5] step=8294400 SPS=2804 return(last 20)=17416.2 entropy=1.957
+[progress Hero-v5] step=8396800 SPS=2802 return(last 20)=16601.0 entropy=1.948
+[progress Hero-v5] step=8499200 SPS=2802 return(last 20)=16552.8 entropy=1.998
+[progress Hero-v5] step=8601600 SPS=2801 return(last 20)=17047.5 entropy=2.011
+[progress Hero-v5] step=8704000 SPS=2799 return(last 20)=18215.8 entropy=2.013
+[progress Hero-v5] step=8806400 SPS=2797 return(last 20)=18025.0 entropy=1.902
+[progress Hero-v5] step=8908800 SPS=2796 return(last 20)=18158.2 entropy=1.884
+[progress Hero-v5] step=9011200 SPS=2795 return(last 20)=17788.8 entropy=2.009
+[progress Hero-v5] step=9113600 SPS=2794 return(last 20)=19030.2 entropy=2.019
+[progress Hero-v5] step=9216000 SPS=2792 return(last 20)=17928.8 entropy=2.118
+[progress Hero-v5] step=9318400 SPS=2791 return(last 20)=18797.2 entropy=2.024
+[progress Hero-v5] step=9420800 SPS=2791 return(last 20)=20368.8 entropy=1.900
+[progress Hero-v5] step=9523200 SPS=2789 return(last 20)=19455.2 entropy=1.976
+[progress Hero-v5] step=9625600 SPS=2789 return(last 20)=20415.5 entropy=1.853
+[progress Hero-v5] step=9728000 SPS=2789 return(last 20)=19741.5 entropy=2.058
+[progress Hero-v5] step=9830400 SPS=2789 return(last 20)=20056.0 entropy=1.927
+[progress Hero-v5] step=9932800 SPS=2789 return(last 20)=20313.2 entropy=2.031
+[progress Hero-v5] step=9998336 SPS=2789 return(last 20)=19593.5 entropy=1.875
+[T3] active policy return=19974.0 ± 247.7 (3600 s)
+[compress] epoch 0 kl=0.6474 ewc=0.0014
+[compress] epoch 1 kl=0.4997 ewc=0.0020
+[compress] epoch 2 kl=0.4549 ewc=0.0022
+[compress] epoch 3 kl=0.4196 ewc=0.0025
+[compress] epoch 4 kl=0.4065 ewc=0.0027
+[compress] epoch 5 kl=0.3866 ewc=0.0029
+[compress] epoch 6 kl=0.3709 ewc=0.0031
+[compress] epoch 7 kl=0.3629 ewc=0.0031
+[compress] epoch 8 kl=0.3620 ewc=0.0033
+[compress] epoch 9 kl=0.3400 ewc=0.0033
+[compress] epoch 0 kl=0.3928 ewc=0.0042
+[compress] epoch 1 kl=0.3675 ewc=0.0042
+[compress] epoch 2 kl=0.3580 ewc=0.0044
+[compress] epoch 3 kl=0.3362 ewc=0.0043
+[compress] epoch 4 kl=0.3308 ewc=0.0044
+[compress] epoch 5 kl=0.3118 ewc=0.0044
+[compress] epoch 6 kl=0.3071 ewc=0.0044
+[compress] epoch 7 kl=0.3089 ewc=0.0046
+[compress] epoch 8 kl=0.2944 ewc=0.0046
+[compress] epoch 9 kl=0.2853 ewc=0.0046
+[compress] epoch 0 kl=0.2974 ewc=0.0046
+[compress] epoch 1 kl=0.2961 ewc=0.0046
+[compress] epoch 2 kl=0.2876 ewc=0.0047
+[compress] epoch 3 kl=0.2892 ewc=0.0046
+[compress] epoch 4 kl=0.2767 ewc=0.0044
+[compress] epoch 5 kl=0.2736 ewc=0.0044
+[compress] epoch 6 kl=0.2763 ewc=0.0046
+[compress] epoch 7 kl=0.2700 ewc=0.0045
+[compress] epoch 8 kl=0.2638 ewc=0.0044
+[compress] epoch 9 kl=0.2559 ewc=0.0044
+[compress] epoch 0 kl=0.2610 ewc=0.0043
+[compress] epoch 1 kl=0.2609 ewc=0.0044
+[compress] epoch 2 kl=0.2942 ewc=0.0050
+[compress] epoch 3 kl=0.2746 ewc=0.0048
+[compress] epoch 4 kl=0.2488 ewc=0.0043
+[compress] epoch 5 kl=0.2428 ewc=0.0043
+[compress] epoch 6 kl=0.2570 ewc=0.0045
+[compress] epoch 7 kl=0.2845 ewc=0.0050
+[compress] epoch 8 kl=0.2733 ewc=0.0049
+[compress] epoch 9 kl=0.2417 ewc=0.0045
+[Fisher T3] total_mass=7.379509e+02  per-param mean=4.381798e-04  max=1.000000e-03
+After T3: SpaceInvaders-v5: 552.5 (kl 0.103) | Krull-v5: 10599.0 (kl 0.663) | BeamRider-v5: 871.2 (kl 0.090) | Hero-v5: 7689.0 (kl 0.168)
+[T4 StarGunner-v5] actions=18 random return=790.0
+[progress StarGunner-v5] step=102400 SPS=2925 return(last 20)=975.0 entropy=2.748
+[progress StarGunner-v5] step=204800 SPS=3033 return(last 20)=1175.0 entropy=2.503
+[progress StarGunner-v5] step=307200 SPS=3064 return(last 20)=1745.0 entropy=2.388
+[progress StarGunner-v5] step=409600 SPS=3076 return(last 20)=1645.0 entropy=2.392
+[progress StarGunner-v5] step=512000 SPS=3081 return(last 20)=1435.0 entropy=2.277
+[progress StarGunner-v5] step=614400 SPS=3089 return(last 20)=1725.0 entropy=2.173
+[progress StarGunner-v5] step=716800 SPS=3092 return(last 20)=1925.0 entropy=2.134
+[progress StarGunner-v5] step=819200 SPS=3100 return(last 20)=1590.0 entropy=2.001
+[progress StarGunner-v5] step=921600 SPS=3101 return(last 20)=2125.0 entropy=1.986
+[progress StarGunner-v5] step=1024000 SPS=3103 return(last 20)=2105.0 entropy=1.971
+[progress StarGunner-v5] step=1126400 SPS=3108 return(last 20)=2355.0 entropy=1.867
+[progress StarGunner-v5] step=1228800 SPS=3107 return(last 20)=2235.0 entropy=1.839
+[progress StarGunner-v5] step=1331200 SPS=3108 return(last 20)=2890.0 entropy=1.805
+[progress StarGunner-v5] step=1433600 SPS=3110 return(last 20)=2340.0 entropy=1.731
+[progress StarGunner-v5] step=1536000 SPS=3108 return(last 20)=2670.0 entropy=1.639
+[progress StarGunner-v5] step=1638400 SPS=3100 return(last 20)=2670.0 entropy=1.720
+[progress StarGunner-v5] step=1740800 SPS=3088 return(last 20)=2790.0 entropy=1.722
+[progress StarGunner-v5] step=1843200 SPS=3091 return(last 20)=3260.0 entropy=1.604
+[progress StarGunner-v5] step=1945600 SPS=3086 return(last 20)=3065.0 entropy=1.716
+[progress StarGunner-v5] step=2048000 SPS=3082 return(last 20)=3380.0 entropy=1.564
+[progress StarGunner-v5] step=2150400 SPS=3079 return(last 20)=4725.0 entropy=1.548
+[progress StarGunner-v5] step=2252800 SPS=3079 return(last 20)=4220.0 entropy=1.643
+[progress StarGunner-v5] step=2355200 SPS=3078 return(last 20)=6890.0 entropy=1.552
+[progress StarGunner-v5] step=2457600 SPS=3079 return(last 20)=6765.0 entropy=1.609
+[progress StarGunner-v5] step=2560000 SPS=3079 return(last 20)=9150.0 entropy=1.478
+[progress StarGunner-v5] step=2662400 SPS=3078 return(last 20)=7135.0 entropy=1.572
+[progress StarGunner-v5] step=2764800 SPS=3079 return(last 20)=8375.0 entropy=1.562
+[progress StarGunner-v5] step=2867200 SPS=3079 return(last 20)=8875.0 entropy=1.669
+[progress StarGunner-v5] step=2969600 SPS=3079 return(last 20)=8735.0 entropy=1.693
+[progress StarGunner-v5] step=3072000 SPS=3078 return(last 20)=11565.0 entropy=1.592
+[progress StarGunner-v5] step=3174400 SPS=3079 return(last 20)=12695.0 entropy=1.628
+[progress StarGunner-v5] step=3276800 SPS=3079 return(last 20)=14495.0 entropy=1.611
+[progress StarGunner-v5] step=3379200 SPS=3080 return(last 20)=12125.0 entropy=1.623
+[progress StarGunner-v5] step=3481600 SPS=3081 return(last 20)=13895.0 entropy=1.622
+[progress StarGunner-v5] step=3584000 SPS=3082 return(last 20)=18840.0 entropy=1.590
+[progress StarGunner-v5] step=3686400 SPS=3082 return(last 20)=12760.0 entropy=1.574
+[progress StarGunner-v5] step=3788800 SPS=3082 return(last 20)=15680.0 entropy=1.619
+[progress StarGunner-v5] step=3891200 SPS=3081 return(last 20)=16185.0 entropy=1.556
+[progress StarGunner-v5] step=3993600 SPS=3082 return(last 20)=13880.0 entropy=1.682
+[progress StarGunner-v5] step=4096000 SPS=3082 return(last 20)=15730.0 entropy=1.535
+[progress StarGunner-v5] step=4198400 SPS=3083 return(last 20)=13705.0 entropy=1.612
+[progress StarGunner-v5] step=4300800 SPS=3086 return(last 20)=18365.0 entropy=1.567
+[progress StarGunner-v5] step=4403200 SPS=3088 return(last 20)=14400.0 entropy=1.620
+[progress StarGunner-v5] step=4505600 SPS=3089 return(last 20)=16400.0 entropy=1.497
+[progress StarGunner-v5] step=4608000 SPS=3090 return(last 20)=17400.0 entropy=1.488
+[progress StarGunner-v5] step=4710400 SPS=3091 return(last 20)=19270.0 entropy=1.501
+[progress StarGunner-v5] step=4812800 SPS=3092 return(last 20)=19405.0 entropy=1.635
+[progress StarGunner-v5] step=4915200 SPS=3095 return(last 20)=20205.0 entropy=1.569
+[progress StarGunner-v5] step=5017600 SPS=3094 return(last 20)=18800.0 entropy=1.555
+[progress StarGunner-v5] step=5120000 SPS=3092 return(last 20)=16730.0 entropy=1.615
+[progress StarGunner-v5] step=5222400 SPS=3090 return(last 20)=19980.0 entropy=1.675
+[progress StarGunner-v5] step=5324800 SPS=3088 return(last 20)=17580.0 entropy=1.621
+[progress StarGunner-v5] step=5427200 SPS=3085 return(last 20)=21630.0 entropy=1.541
+[progress StarGunner-v5] step=5529600 SPS=3081 return(last 20)=21700.0 entropy=1.722
+[progress StarGunner-v5] step=5632000 SPS=3079 return(last 20)=18960.0 entropy=1.591
+[progress StarGunner-v5] step=5734400 SPS=3077 return(last 20)=21955.0 entropy=1.581
+[progress StarGunner-v5] step=5836800 SPS=3075 return(last 20)=19525.0 entropy=1.658
+[progress StarGunner-v5] step=5939200 SPS=3073 return(last 20)=21425.0 entropy=1.699
+[progress StarGunner-v5] step=6041600 SPS=3072 return(last 20)=24225.0 entropy=1.559
+[progress StarGunner-v5] step=6144000 SPS=3070 return(last 20)=20740.0 entropy=1.784
+[progress StarGunner-v5] step=6246400 SPS=3068 return(last 20)=25440.0 entropy=1.621
+[progress StarGunner-v5] step=6348800 SPS=3066 return(last 20)=22765.0 entropy=1.661
+[progress StarGunner-v5] step=6451200 SPS=3065 return(last 20)=22645.0 entropy=1.757
+[progress StarGunner-v5] step=6553600 SPS=3063 return(last 20)=23975.0 entropy=1.634
+[progress StarGunner-v5] step=6656000 SPS=3051 return(last 20)=22730.0 entropy=1.672
+[progress StarGunner-v5] step=6758400 SPS=3041 return(last 20)=22270.0 entropy=1.568
+[progress StarGunner-v5] step=6860800 SPS=3026 return(last 20)=27420.0 entropy=1.731
+[progress StarGunner-v5] step=6963200 SPS=3006 return(last 20)=26460.0 entropy=1.560
+[progress StarGunner-v5] step=7065600 SPS=2995 return(last 20)=24640.0 entropy=1.511
+[progress StarGunner-v5] step=7168000 SPS=2987 return(last 20)=29405.0 entropy=1.600
+[progress StarGunner-v5] step=7270400 SPS=2978 return(last 20)=24300.0 entropy=1.607
+[progress StarGunner-v5] step=7372800 SPS=2970 return(last 20)=23695.0 entropy=1.587
+[progress StarGunner-v5] step=7475200 SPS=2962 return(last 20)=27600.0 entropy=1.503
+[progress StarGunner-v5] step=7577600 SPS=2954 return(last 20)=25845.0 entropy=1.632
+[progress StarGunner-v5] step=7680000 SPS=2947 return(last 20)=29105.0 entropy=1.550
+[progress StarGunner-v5] step=7782400 SPS=2939 return(last 20)=33720.0 entropy=1.625
+[progress StarGunner-v5] step=7884800 SPS=2932 return(last 20)=33980.0 entropy=1.631
+[progress StarGunner-v5] step=7987200 SPS=2925 return(last 20)=29395.0 entropy=1.626
+[progress StarGunner-v5] step=8089600 SPS=2917 return(last 20)=32375.0 entropy=1.728
+[progress StarGunner-v5] step=8192000 SPS=2909 return(last 20)=33980.0 entropy=1.686
+[progress StarGunner-v5] step=8294400 SPS=2901 return(last 20)=31395.0 entropy=1.653
+[progress StarGunner-v5] step=8396800 SPS=2895 return(last 20)=24540.0 entropy=1.716
+[progress StarGunner-v5] step=8499200 SPS=2888 return(last 20)=29520.0 entropy=1.610
+[progress StarGunner-v5] step=8601600 SPS=2882 return(last 20)=31315.0 entropy=1.532
+[progress StarGunner-v5] step=8704000 SPS=2873 return(last 20)=32510.0 entropy=1.559
+[progress StarGunner-v5] step=8806400 SPS=2867 return(last 20)=27305.0 entropy=1.609
+[progress StarGunner-v5] step=8908800 SPS=2864 return(last 20)=28415.0 entropy=1.394
+[progress StarGunner-v5] step=9011200 SPS=2859 return(last 20)=35195.0 entropy=1.644
+[progress StarGunner-v5] step=9113600 SPS=2855 return(last 20)=34745.0 entropy=1.625
+[progress StarGunner-v5] step=9216000 SPS=2850 return(last 20)=34440.0 entropy=1.533
+[progress StarGunner-v5] step=9318400 SPS=2846 return(last 20)=36055.0 entropy=1.539
+[progress StarGunner-v5] step=9420800 SPS=2841 return(last 20)=42715.0 entropy=1.631
+[progress StarGunner-v5] step=9523200 SPS=2837 return(last 20)=35565.0 entropy=1.559
+[progress StarGunner-v5] step=9625600 SPS=2834 return(last 20)=41790.0 entropy=1.500
+[progress StarGunner-v5] step=9728000 SPS=2831 return(last 20)=40435.0 entropy=1.506
+[progress StarGunner-v5] step=9830400 SPS=2828 return(last 20)=36525.0 entropy=1.373
+[progress StarGunner-v5] step=9932800 SPS=2825 return(last 20)=34260.0 entropy=1.507
+[progress StarGunner-v5] step=9998336 SPS=2824 return(last 20)=39200.0 entropy=1.491
+[T4] active policy return=48430.0 ± 4559.2 (3549 s)
+[compress] epoch 0 kl=1.0992 ewc=0.0012
+[compress] epoch 1 kl=0.9950 ewc=0.0015
+[compress] epoch 2 kl=0.9384 ewc=0.0026
+[compress] epoch 3 kl=0.9022 ewc=0.0030
+[compress] epoch 4 kl=0.8757 ewc=0.0035
+[compress] epoch 5 kl=0.8553 ewc=0.0036
+[compress] epoch 6 kl=0.8426 ewc=0.0040
+[compress] epoch 7 kl=0.8314 ewc=0.0041
+[compress] epoch 8 kl=0.8157 ewc=0.0043
+[compress] epoch 9 kl=0.8060 ewc=0.0041
+[compress] epoch 0 kl=0.8495 ewc=0.0052
+[compress] epoch 1 kl=0.8039 ewc=0.0056
+[compress] epoch 2 kl=0.7753 ewc=0.0056
+[compress] epoch 3 kl=0.7520 ewc=0.0057
+[compress] epoch 4 kl=0.7310 ewc=0.0055
+[compress] epoch 5 kl=0.7145 ewc=0.0057
+[compress] epoch 6 kl=0.6994 ewc=0.0052
+[compress] epoch 7 kl=0.6891 ewc=0.0053
+[compress] epoch 8 kl=0.6792 ewc=0.0052
+[compress] epoch 9 kl=0.6675 ewc=0.0052
+[compress] epoch 0 kl=0.7108 ewc=0.0055
+[compress] epoch 1 kl=0.6942 ewc=0.0052
+[compress] epoch 2 kl=0.6830 ewc=0.0052
+[compress] epoch 3 kl=0.6738 ewc=0.0053
+[compress] epoch 4 kl=0.6624 ewc=0.0052
+[compress] epoch 5 kl=0.6538 ewc=0.0052
+[compress] epoch 6 kl=0.6462 ewc=0.0051
+[compress] epoch 7 kl=0.6381 ewc=0.0052
+[compress] epoch 8 kl=0.6320 ewc=0.0052
+[compress] epoch 9 kl=0.6260 ewc=0.0053
+[compress] epoch 0 kl=0.6447 ewc=0.0053
+[compress] epoch 1 kl=0.6363 ewc=0.0053
+[compress] epoch 2 kl=0.6283 ewc=0.0054
+[compress] epoch 3 kl=0.6197 ewc=0.0053
+[compress] epoch 4 kl=0.6143 ewc=0.0053
+[compress] epoch 5 kl=0.6076 ewc=0.0052
+[compress] epoch 6 kl=0.6024 ewc=0.0052
+[compress] epoch 7 kl=0.5970 ewc=0.0052
+[compress] epoch 8 kl=0.5904 ewc=0.0053
+[compress] epoch 9 kl=0.5847 ewc=0.0054
+[Fisher T4] total_mass=3.605669e+02  per-param mean=2.140971e-04  max=1.000000e-03
+After T4: SpaceInvaders-v5: 473.0 (kl 0.114) | Krull-v5: 10027.0 (kl 0.653) | BeamRider-v5: 1164.0 (kl 0.090) | Hero-v5: 7755.0 (kl 0.199) | StarGunner-v5: 5740.0 (kl 0.330)
+[T5 MsPacman-v5] actions=9 random return=210.0
+[progress MsPacman-v5] step=102400 SPS=1848 return(last 20)=653.0 entropy=1.882
+[progress MsPacman-v5] step=204800 SPS=2195 return(last 20)=774.5 entropy=1.689
+[progress MsPacman-v5] step=307200 SPS=2299 return(last 20)=765.5 entropy=1.547
+[progress MsPacman-v5] step=409600 SPS=2334 return(last 20)=654.5 entropy=1.690
+[progress MsPacman-v5] step=512000 SPS=2365 return(last 20)=662.0 entropy=1.581
+[progress MsPacman-v5] step=614400 SPS=2381 return(last 20)=693.5 entropy=1.828
+[progress MsPacman-v5] step=716800 SPS=2395 return(last 20)=671.5 entropy=1.554
+[progress MsPacman-v5] step=819200 SPS=2394 return(last 20)=551.0 entropy=1.661
+[progress MsPacman-v5] step=921600 SPS=2389 return(last 20)=646.5 entropy=1.291
+[progress MsPacman-v5] step=1024000 SPS=2409 return(last 20)=862.0 entropy=1.426
+[progress MsPacman-v5] step=1126400 SPS=2422 return(last 20)=973.5 entropy=1.270
+[progress MsPacman-v5] step=1228800 SPS=2436 return(last 20)=713.5 entropy=1.280
+[progress MsPacman-v5] step=1331200 SPS=2466 return(last 20)=1092.0 entropy=1.333
+[progress MsPacman-v5] step=1433600 SPS=2497 return(last 20)=977.0 entropy=1.472
+[progress MsPacman-v5] step=1536000 SPS=2522 return(last 20)=1308.5 entropy=1.270
+[progress MsPacman-v5] step=1638400 SPS=2544 return(last 20)=1284.0 entropy=1.150
+[progress MsPacman-v5] step=1740800 SPS=2567 return(last 20)=1367.5 entropy=1.110
+[progress MsPacman-v5] step=1843200 SPS=2586 return(last 20)=1155.0 entropy=1.304
+[progress MsPacman-v5] step=1945600 SPS=2605 return(last 20)=1112.0 entropy=1.236
+[progress MsPacman-v5] step=2048000 SPS=2622 return(last 20)=1135.0 entropy=1.405
+[progress MsPacman-v5] step=2150400 SPS=2639 return(last 20)=946.5 entropy=1.246
+[progress MsPacman-v5] step=2252800 SPS=2654 return(last 20)=1293.0 entropy=1.325
+[progress MsPacman-v5] step=2355200 SPS=2667 return(last 20)=1188.5 entropy=1.130
+[progress MsPacman-v5] step=2457600 SPS=2680 return(last 20)=1191.0 entropy=0.837
+[progress MsPacman-v5] step=2560000 SPS=2693 return(last 20)=1188.5 entropy=0.960
+[progress MsPacman-v5] step=2662400 SPS=2706 return(last 20)=1251.5 entropy=1.222
+[progress MsPacman-v5] step=2764800 SPS=2717 return(last 20)=1181.5 entropy=1.181
+[progress MsPacman-v5] step=2867200 SPS=2726 return(last 20)=1358.0 entropy=1.036
+[progress MsPacman-v5] step=2969600 SPS=2737 return(last 20)=1296.5 entropy=0.841
+[progress MsPacman-v5] step=3072000 SPS=2747 return(last 20)=1213.5 entropy=1.018
+[progress MsPacman-v5] step=3174400 SPS=2756 return(last 20)=1162.5 entropy=0.708
+[progress MsPacman-v5] step=3276800 SPS=2767 return(last 20)=1340.5 entropy=0.877
+[progress MsPacman-v5] step=3379200 SPS=2774 return(last 20)=1372.0 entropy=1.047
+[progress MsPacman-v5] step=3481600 SPS=2783 return(last 20)=1360.5 entropy=0.884
+[progress MsPacman-v5] step=3584000 SPS=2790 return(last 20)=1168.0 entropy=0.898
+[progress MsPacman-v5] step=3686400 SPS=2798 return(last 20)=1272.0 entropy=1.045
+[progress MsPacman-v5] step=3788800 SPS=2804 return(last 20)=1377.5 entropy=0.839
+[progress MsPacman-v5] step=3891200 SPS=2809 return(last 20)=1454.5 entropy=0.941
+[progress MsPacman-v5] step=3993600 SPS=2815 return(last 20)=1275.5 entropy=0.977
+[progress MsPacman-v5] step=4096000 SPS=2819 return(last 20)=1305.5 entropy=1.093
+[progress MsPacman-v5] step=4198400 SPS=2822 return(last 20)=1351.5 entropy=0.996
+[progress MsPacman-v5] step=4300800 SPS=2824 return(last 20)=1741.5 entropy=1.190
+[progress MsPacman-v5] step=4403200 SPS=2827 return(last 20)=1706.0 entropy=1.017
+[progress MsPacman-v5] step=4505600 SPS=2830 return(last 20)=1517.5 entropy=1.081
+[progress MsPacman-v5] step=4608000 SPS=2832 return(last 20)=1875.5 entropy=0.892
+[progress MsPacman-v5] step=4710400 SPS=2836 return(last 20)=1634.5 entropy=0.978
+[progress MsPacman-v5] step=4812800 SPS=2840 return(last 20)=1722.5 entropy=0.981
+[progress MsPacman-v5] step=4915200 SPS=2845 return(last 20)=1794.0 entropy=0.995
+[progress MsPacman-v5] step=5017600 SPS=2848 return(last 20)=1699.5 entropy=0.953
+[progress MsPacman-v5] step=5120000 SPS=2850 return(last 20)=1669.5 entropy=0.879
+[progress MsPacman-v5] step=5222400 SPS=2849 return(last 20)=1611.5 entropy=0.941
+[progress MsPacman-v5] step=5324800 SPS=2850 return(last 20)=1731.5 entropy=0.837
+[progress MsPacman-v5] step=5427200 SPS=2848 return(last 20)=1649.5 entropy=0.913
+[progress MsPacman-v5] step=5529600 SPS=2851 return(last 20)=1669.0 entropy=0.914
+[progress MsPacman-v5] step=5632000 SPS=2853 return(last 20)=1714.5 entropy=0.797
+[progress MsPacman-v5] step=5734400 SPS=2853 return(last 20)=1766.0 entropy=0.796
+[progress MsPacman-v5] step=5836800 SPS=2855 return(last 20)=1804.5 entropy=0.618
+[progress MsPacman-v5] step=5939200 SPS=2857 return(last 20)=1886.5 entropy=0.755
+[progress MsPacman-v5] step=6041600 SPS=2857 return(last 20)=1886.5 entropy=0.915
+[progress MsPacman-v5] step=6144000 SPS=2859 return(last 20)=1701.0 entropy=1.002
+[progress MsPacman-v5] step=6246400 SPS=2860 return(last 20)=1662.0 entropy=0.857
+[progress MsPacman-v5] step=6348800 SPS=2862 return(last 20)=1787.0 entropy=0.823
+[progress MsPacman-v5] step=6451200 SPS=2862 return(last 20)=1776.5 entropy=0.834
+[progress MsPacman-v5] step=6553600 SPS=2864 return(last 20)=2018.0 entropy=0.832
+[progress MsPacman-v5] step=6656000 SPS=2867 return(last 20)=1682.5 entropy=0.742
+[progress MsPacman-v5] step=6758400 SPS=2868 return(last 20)=1719.5 entropy=0.922
+[progress MsPacman-v5] step=6860800 SPS=2867 return(last 20)=1655.5 entropy=1.006
+[progress MsPacman-v5] step=6963200 SPS=2869 return(last 20)=1746.0 entropy=1.090
+[progress MsPacman-v5] step=7065600 SPS=2869 return(last 20)=1769.5 entropy=0.916
+[progress MsPacman-v5] step=7168000 SPS=2870 return(last 20)=1888.5 entropy=0.935
+[progress MsPacman-v5] step=7270400 SPS=2870 return(last 20)=1876.5 entropy=0.874
+[progress MsPacman-v5] step=7372800 SPS=2871 return(last 20)=1629.5 entropy=0.852
+[progress MsPacman-v5] step=7475200 SPS=2872 return(last 20)=2087.5 entropy=0.868
+[progress MsPacman-v5] step=7577600 SPS=2873 return(last 20)=1948.0 entropy=0.813
+[progress MsPacman-v5] step=7680000 SPS=2874 return(last 20)=2055.0 entropy=0.852
+[progress MsPacman-v5] step=7782400 SPS=2875 return(last 20)=2067.0 entropy=1.054
+[progress MsPacman-v5] step=7884800 SPS=2876 return(last 20)=1906.5 entropy=0.923
+[progress MsPacman-v5] step=7987200 SPS=2877 return(last 20)=2015.0 entropy=1.001
+[progress MsPacman-v5] step=8089600 SPS=2879 return(last 20)=1846.0 entropy=1.138
+[progress MsPacman-v5] step=8192000 SPS=2880 return(last 20)=1836.0 entropy=1.002
+[progress MsPacman-v5] step=8294400 SPS=2881 return(last 20)=2156.5 entropy=1.096
+[progress MsPacman-v5] step=8396800 SPS=2882 return(last 20)=1733.0 entropy=1.072
+[progress MsPacman-v5] step=8499200 SPS=2882 return(last 20)=2028.0 entropy=1.068
+[progress MsPacman-v5] step=8601600 SPS=2883 return(last 20)=1741.5 entropy=1.065
+[progress MsPacman-v5] step=8704000 SPS=2883 return(last 20)=1995.5 entropy=1.044
+[progress MsPacman-v5] step=8806400 SPS=2883 return(last 20)=1911.0 entropy=1.012
+[progress MsPacman-v5] step=8908800 SPS=2884 return(last 20)=1993.0 entropy=1.137
+[progress MsPacman-v5] step=9011200 SPS=2884 return(last 20)=2125.0 entropy=0.977
+[progress MsPacman-v5] step=9113600 SPS=2884 return(last 20)=2011.0 entropy=1.251
+[progress MsPacman-v5] step=9216000 SPS=2884 return(last 20)=2039.5 entropy=1.278
+[progress MsPacman-v5] step=9318400 SPS=2885 return(last 20)=1905.0 entropy=1.120
+[progress MsPacman-v5] step=9420800 SPS=2884 return(last 20)=2100.5 entropy=1.408
+[progress MsPacman-v5] step=9523200 SPS=2884 return(last 20)=2000.0 entropy=1.104
+[progress MsPacman-v5] step=9625600 SPS=2884 return(last 20)=1774.0 entropy=1.205
+[progress MsPacman-v5] step=9728000 SPS=2883 return(last 20)=1900.5 entropy=1.049
+[progress MsPacman-v5] step=9830400 SPS=2884 return(last 20)=1831.0 entropy=1.026
+[progress MsPacman-v5] step=9932800 SPS=2883 return(last 20)=1965.5 entropy=0.989
+[progress MsPacman-v5] step=9998336 SPS=2883 return(last 20)=2068.5 entropy=1.204
+[T5] active policy return=2218.0 ± 18.3 (3471 s)
+[compress] epoch 0 kl=0.8796 ewc=0.0018
+[compress] epoch 1 kl=0.7367 ewc=0.0022
+[compress] epoch 2 kl=0.7033 ewc=0.0025
+[compress] epoch 3 kl=0.6616 ewc=0.0023
+[compress] epoch 4 kl=0.6341 ewc=0.0027
+[compress] epoch 5 kl=0.6292 ewc=0.0030
+[compress] epoch 6 kl=0.6175 ewc=0.0032
+[compress] epoch 7 kl=0.5895 ewc=0.0032
+[compress] epoch 8 kl=0.6012 ewc=0.0035
+[compress] epoch 9 kl=0.5639 ewc=0.0035
+[compress] epoch 0 kl=0.6740 ewc=0.0073
+[compress] epoch 1 kl=0.6351 ewc=0.0075
+[compress] epoch 2 kl=0.5912 ewc=0.0074
+[compress] epoch 3 kl=0.5836 ewc=0.0074
+[compress] epoch 4 kl=0.5460 ewc=0.0072
+[compress] epoch 5 kl=0.5562 ewc=0.0073
+[compress] epoch 6 kl=0.5415 ewc=0.0075
+[compress] epoch 7 kl=0.5123 ewc=0.0073
+[compress] epoch 8 kl=0.5405 ewc=0.0078
+[compress] epoch 9 kl=0.5286 ewc=0.0077
+[compress] epoch 0 kl=0.5079 ewc=0.0067
+[compress] epoch 1 kl=0.5055 ewc=0.0066
+[compress] epoch 2 kl=0.5222 ewc=0.0069
+[compress] epoch 3 kl=0.4979 ewc=0.0067
+[compress] epoch 4 kl=0.5148 ewc=0.0071
+[compress] epoch 5 kl=0.5006 ewc=0.0069
+[compress] epoch 6 kl=0.5386 ewc=0.0079
+[compress] epoch 7 kl=0.4937 ewc=0.0069
+[compress] epoch 8 kl=0.5073 ewc=0.0073
+[compress] epoch 9 kl=0.5019 ewc=0.0072
+[compress] epoch 0 kl=0.5129 ewc=0.0078
+[compress] epoch 1 kl=0.5138 ewc=0.0082
+[compress] epoch 2 kl=0.4903 ewc=0.0075
+[compress] epoch 3 kl=0.5290 ewc=0.0082
+[compress] epoch 4 kl=0.4943 ewc=0.0076
+[compress] epoch 5 kl=0.4863 ewc=0.0076
+[compress] epoch 6 kl=0.4951 ewc=0.0079
+[compress] epoch 7 kl=0.5025 ewc=0.0080
+[compress] epoch 8 kl=0.4985 ewc=0.0080
+[compress] epoch 9 kl=0.4668 ewc=0.0077
+[Fisher T5] total_mass=5.491824e+02  per-param mean=3.260930e-04  max=1.000000e-03
+After T5: SpaceInvaders-v5: 660.0 (kl 0.118) | Krull-v5: 10070.0 (kl 0.705) | BeamRider-v5: 1113.6 (kl 0.091) | Hero-v5: 7682.5 (kl 0.186) | StarGunner-v5: 6010.0 (kl 0.331) | MsPacman-v5: 852.0 (kl 0.339)
+[T6 SpaceInvaders-v5] actions=6 random return=129.0 (re-visit)
+[progress SpaceInvaders-v5] step=102400 SPS=2454 return(last 20)=175.5 entropy=1.661
+[progress SpaceInvaders-v5] step=204800 SPS=2725 return(last 20)=245.5 entropy=1.651
+[progress SpaceInvaders-v5] step=307200 SPS=2792 return(last 20)=205.0 entropy=1.537
+[progress SpaceInvaders-v5] step=409600 SPS=2821 return(last 20)=285.0 entropy=1.520
+[progress SpaceInvaders-v5] step=512000 SPS=2840 return(last 20)=320.5 entropy=1.278
+[progress SpaceInvaders-v5] step=614400 SPS=2853 return(last 20)=306.5 entropy=1.347
+[progress SpaceInvaders-v5] step=716800 SPS=2865 return(last 20)=267.2 entropy=1.423
+[progress SpaceInvaders-v5] step=819200 SPS=2876 return(last 20)=378.0 entropy=1.294
+[progress SpaceInvaders-v5] step=921600 SPS=2882 return(last 20)=342.2 entropy=1.364
+[progress SpaceInvaders-v5] step=1024000 SPS=2887 return(last 20)=439.5 entropy=1.425
+[progress SpaceInvaders-v5] step=1126400 SPS=2895 return(last 20)=436.8 entropy=1.329
+[progress SpaceInvaders-v5] step=1228800 SPS=2901 return(last 20)=421.5 entropy=1.318
+[progress SpaceInvaders-v5] step=1331200 SPS=2904 return(last 20)=390.8 entropy=1.310
+[progress SpaceInvaders-v5] step=1433600 SPS=2908 return(last 20)=471.0 entropy=1.457
+[progress SpaceInvaders-v5] step=1536000 SPS=2909 return(last 20)=502.0 entropy=1.208
+[progress SpaceInvaders-v5] step=1638400 SPS=2911 return(last 20)=414.5 entropy=1.337
+[progress SpaceInvaders-v5] step=1740800 SPS=2914 return(last 20)=435.2 entropy=1.199
+[progress SpaceInvaders-v5] step=1843200 SPS=2914 return(last 20)=493.5 entropy=1.223
+[progress SpaceInvaders-v5] step=1945600 SPS=2916 return(last 20)=498.8 entropy=1.067
+[progress SpaceInvaders-v5] step=2048000 SPS=2917 return(last 20)=501.0 entropy=1.096
+[progress SpaceInvaders-v5] step=2150400 SPS=2919 return(last 20)=540.2 entropy=0.816
+[progress SpaceInvaders-v5] step=2252800 SPS=2921 return(last 20)=500.5 entropy=0.958
+[progress SpaceInvaders-v5] step=2355200 SPS=2922 return(last 20)=609.5 entropy=1.184
+[progress SpaceInvaders-v5] step=2457600 SPS=2923 return(last 20)=507.0 entropy=1.030
+[progress SpaceInvaders-v5] step=2560000 SPS=2923 return(last 20)=461.2 entropy=0.985
+[progress SpaceInvaders-v5] step=2662400 SPS=2923 return(last 20)=544.5 entropy=0.982
+[progress SpaceInvaders-v5] step=2764800 SPS=2926 return(last 20)=588.0 entropy=0.827
+[progress SpaceInvaders-v5] step=2867200 SPS=2928 return(last 20)=545.2 entropy=0.967
+[progress SpaceInvaders-v5] step=2969600 SPS=2927 return(last 20)=538.5 entropy=1.051
+[progress SpaceInvaders-v5] step=3072000 SPS=2928 return(last 20)=576.5 entropy=1.036
+[progress SpaceInvaders-v5] step=3174400 SPS=2929 return(last 20)=492.5 entropy=1.013
+[progress SpaceInvaders-v5] step=3276800 SPS=2930 return(last 20)=562.8 entropy=0.885
+[progress SpaceInvaders-v5] step=3379200 SPS=2931 return(last 20)=583.2 entropy=1.018
+[progress SpaceInvaders-v5] step=3481600 SPS=2931 return(last 20)=609.8 entropy=0.954
+[progress SpaceInvaders-v5] step=3584000 SPS=2932 return(last 20)=546.0 entropy=0.889
+[progress SpaceInvaders-v5] step=3686400 SPS=2933 return(last 20)=580.2 entropy=0.940
+[progress SpaceInvaders-v5] step=3788800 SPS=2934 return(last 20)=581.2 entropy=1.067
+[progress SpaceInvaders-v5] step=3891200 SPS=2935 return(last 20)=607.0 entropy=1.020
+[progress SpaceInvaders-v5] step=3993600 SPS=2936 return(last 20)=581.0 entropy=0.954
+[progress SpaceInvaders-v5] step=4096000 SPS=2936 return(last 20)=636.2 entropy=0.885
+[progress SpaceInvaders-v5] step=4198400 SPS=2936 return(last 20)=579.0 entropy=0.909
+[progress SpaceInvaders-v5] step=4300800 SPS=2936 return(last 20)=606.5 entropy=0.876
+[progress SpaceInvaders-v5] step=4403200 SPS=2936 return(last 20)=621.8 entropy=0.891
+[progress SpaceInvaders-v5] step=4505600 SPS=2937 return(last 20)=590.5 entropy=0.800
+[progress SpaceInvaders-v5] step=4608000 SPS=2937 return(last 20)=570.0 entropy=0.961
+[progress SpaceInvaders-v5] step=4710400 SPS=2937 return(last 20)=626.0 entropy=0.909
+[progress SpaceInvaders-v5] step=4812800 SPS=2937 return(last 20)=745.8 entropy=0.926
+[progress SpaceInvaders-v5] step=4915200 SPS=2937 return(last 20)=764.2 entropy=0.829
+[progress SpaceInvaders-v5] step=5017600 SPS=2938 return(last 20)=561.0 entropy=0.920
+[progress SpaceInvaders-v5] step=5120000 SPS=2937 return(last 20)=682.5 entropy=0.868
+[progress SpaceInvaders-v5] step=5222400 SPS=2937 return(last 20)=650.2 entropy=1.028
+[progress SpaceInvaders-v5] step=5324800 SPS=2939 return(last 20)=697.0 entropy=0.818
+[progress SpaceInvaders-v5] step=5427200 SPS=2938 return(last 20)=726.2 entropy=0.928
+[progress SpaceInvaders-v5] step=5529600 SPS=2938 return(last 20)=724.5 entropy=0.897
+[progress SpaceInvaders-v5] step=5632000 SPS=2938 return(last 20)=747.8 entropy=0.769
+[progress SpaceInvaders-v5] step=5734400 SPS=2936 return(last 20)=846.5 entropy=0.873
+[progress SpaceInvaders-v5] step=5836800 SPS=2936 return(last 20)=758.2 entropy=0.964
+[progress SpaceInvaders-v5] step=5939200 SPS=2935 return(last 20)=648.2 entropy=0.825
+[progress SpaceInvaders-v5] step=6041600 SPS=2935 return(last 20)=876.8 entropy=0.933
+[progress SpaceInvaders-v5] step=6144000 SPS=2934 return(last 20)=921.5 entropy=0.777
+[progress SpaceInvaders-v5] step=6246400 SPS=2933 return(last 20)=773.0 entropy=0.877
+[progress SpaceInvaders-v5] step=6348800 SPS=2932 return(last 20)=798.2 entropy=0.921
+[progress SpaceInvaders-v5] step=6451200 SPS=2933 return(last 20)=798.0 entropy=0.874
+[progress SpaceInvaders-v5] step=6553600 SPS=2932 return(last 20)=745.5 entropy=0.925
+[progress SpaceInvaders-v5] step=6656000 SPS=2929 return(last 20)=950.8 entropy=0.788
+[progress SpaceInvaders-v5] step=6758400 SPS=2927 return(last 20)=884.2 entropy=0.941
+[progress SpaceInvaders-v5] step=6860800 SPS=2926 return(last 20)=803.5 entropy=0.894
+[progress SpaceInvaders-v5] step=6963200 SPS=2927 return(last 20)=983.2 entropy=0.769
+[progress SpaceInvaders-v5] step=7065600 SPS=2927 return(last 20)=775.0 entropy=0.975
+[progress SpaceInvaders-v5] step=7168000 SPS=2927 return(last 20)=888.2 entropy=0.971
+[progress SpaceInvaders-v5] step=7270400 SPS=2927 return(last 20)=935.2 entropy=0.879
+[progress SpaceInvaders-v5] step=7372800 SPS=2928 return(last 20)=780.0 entropy=0.881
+[progress SpaceInvaders-v5] step=7475200 SPS=2930 return(last 20)=1002.0 entropy=0.830
+[progress SpaceInvaders-v5] step=7577600 SPS=2932 return(last 20)=870.0 entropy=0.807
+[progress SpaceInvaders-v5] step=7680000 SPS=2933 return(last 20)=704.8 entropy=0.828
+[progress SpaceInvaders-v5] step=7782400 SPS=2933 return(last 20)=879.2 entropy=0.867
+[progress SpaceInvaders-v5] step=7884800 SPS=2933 return(last 20)=1008.5 entropy=0.786
+[progress SpaceInvaders-v5] step=7987200 SPS=2933 return(last 20)=885.0 entropy=0.866
+[progress SpaceInvaders-v5] step=8089600 SPS=2934 return(last 20)=1132.5 entropy=0.727
+[progress SpaceInvaders-v5] step=8192000 SPS=2935 return(last 20)=922.0 entropy=0.836
+[progress SpaceInvaders-v5] step=8294400 SPS=2935 return(last 20)=933.0 entropy=0.886
+[progress SpaceInvaders-v5] step=8396800 SPS=2936 return(last 20)=986.0 entropy=0.790
+[progress SpaceInvaders-v5] step=8499200 SPS=2938 return(last 20)=967.8 entropy=0.896
+[progress SpaceInvaders-v5] step=8601600 SPS=2939 return(last 20)=939.8 entropy=0.726
+[progress SpaceInvaders-v5] step=8704000 SPS=2940 return(last 20)=1128.8 entropy=0.889
+[progress SpaceInvaders-v5] step=8806400 SPS=2940 return(last 20)=949.5 entropy=0.994
+[progress SpaceInvaders-v5] step=8908800 SPS=2940 return(last 20)=1034.8 entropy=0.818
+[progress SpaceInvaders-v5] step=9011200 SPS=2941 return(last 20)=1078.0 entropy=0.944
+[progress SpaceInvaders-v5] step=9113600 SPS=2942 return(last 20)=1087.2 entropy=0.883
+[progress SpaceInvaders-v5] step=9216000 SPS=2942 return(last 20)=965.5 entropy=0.992
+[progress SpaceInvaders-v5] step=9318400 SPS=2942 return(last 20)=1036.5 entropy=0.926
+[progress SpaceInvaders-v5] step=9420800 SPS=2943 return(last 20)=836.0 entropy=0.792
+[progress SpaceInvaders-v5] step=9523200 SPS=2943 return(last 20)=1115.5 entropy=0.951
+[progress SpaceInvaders-v5] step=9625600 SPS=2943 return(last 20)=1100.8 entropy=0.899
+[progress SpaceInvaders-v5] step=9728000 SPS=2944 return(last 20)=1008.5 entropy=0.961
+[progress SpaceInvaders-v5] step=9830400 SPS=2945 return(last 20)=1171.5 entropy=0.909
+[progress SpaceInvaders-v5] step=9932800 SPS=2945 return(last 20)=1164.8 entropy=0.941
+[progress SpaceInvaders-v5] step=9998336 SPS=2945 return(last 20)=1113.2 entropy=0.947
+[T6] active policy return=1708.5 ± 267.7 (3400 s)
+[compress] epoch 0 kl=0.8989 ewc=0.1403
+[compress] epoch 1 kl=0.6677 ewc=0.0868
+[compress] epoch 2 kl=0.5843 ewc=0.0559
+[compress] epoch 3 kl=0.5348 ewc=0.0404
+[compress] epoch 4 kl=0.4994 ewc=0.0317
+[compress] epoch 5 kl=0.4652 ewc=0.0266
+[compress] epoch 6 kl=0.4441 ewc=0.0233
+[compress] epoch 7 kl=0.4270 ewc=0.0205
+[compress] epoch 8 kl=0.4105 ewc=0.0188
+[compress] epoch 9 kl=0.3986 ewc=0.0173
+[compress] epoch 0 kl=0.4039 ewc=0.0192
+[compress] epoch 1 kl=0.3740 ewc=0.0169
+[compress] epoch 2 kl=0.3588 ewc=0.0148
+[compress] epoch 3 kl=0.3456 ewc=0.0140
+[compress] epoch 4 kl=0.3334 ewc=0.0131
+[compress] epoch 5 kl=0.3278 ewc=0.0124
+[compress] epoch 6 kl=0.3186 ewc=0.0121
+[compress] epoch 7 kl=0.3130 ewc=0.0113
+[compress] epoch 8 kl=0.3077 ewc=0.0118
+[compress] epoch 9 kl=0.3004 ewc=0.0116
+[compress] epoch 0 kl=0.3123 ewc=0.0116
+[compress] epoch 1 kl=0.3043 ewc=0.0111
+[compress] epoch 2 kl=0.2971 ewc=0.0109
+[compress] epoch 3 kl=0.2926 ewc=0.0105
+[compress] epoch 4 kl=0.2867 ewc=0.0102
+[compress] epoch 5 kl=0.2805 ewc=0.0097
+[compress] epoch 6 kl=0.2756 ewc=0.0099
+[compress] epoch 7 kl=0.2711 ewc=0.0094
+[compress] epoch 8 kl=0.2692 ewc=0.0094
+[compress] epoch 9 kl=0.2655 ewc=0.0092
+[compress] epoch 0 kl=0.2731 ewc=0.0092
+[compress] epoch 1 kl=0.2651 ewc=0.0094
+[compress] epoch 2 kl=0.2606 ewc=0.0090
+[compress] epoch 3 kl=0.2567 ewc=0.0087
+[compress] epoch 4 kl=0.2510 ewc=0.0089
+[compress] epoch 5 kl=0.2488 ewc=0.0087
+[compress] epoch 6 kl=0.2455 ewc=0.0084
+[compress] epoch 7 kl=0.2421 ewc=0.0086
+[compress] epoch 8 kl=0.2395 ewc=0.0082
+[compress] epoch 9 kl=0.2365 ewc=0.0084
+[Fisher T6] total_mass=6.246396e+02  per-param mean=3.708979e-04  max=1.000000e-03
+After T6: SpaceInvaders-v5: 707.5 (kl 0.159) | Krull-v5: 9072.0 (kl 0.671) | BeamRider-v5: 1068.0 (kl 0.092) | Hero-v5: 3335.0 (kl 0.194) | StarGunner-v5: 7780.0 (kl 0.329) | MsPacman-v5: 874.0 (kl 0.392)
+[T7 Krull-v5] actions=18 random return=2073.0 (re-visit)
+[progress Krull-v5] step=102400 SPS=2351 return(last 20)=3329.5 entropy=2.617
+[progress Krull-v5] step=204800 SPS=2579 return(last 20)=3120.0 entropy=2.605
+[progress Krull-v5] step=307200 SPS=2666 return(last 20)=3283.5 entropy=2.449
+[progress Krull-v5] step=409600 SPS=2706 return(last 20)=3355.5 entropy=2.466
+[progress Krull-v5] step=512000 SPS=2741 return(last 20)=3449.5 entropy=2.429
+[progress Krull-v5] step=614400 SPS=2763 return(last 20)=3264.5 entropy=2.380
+[progress Krull-v5] step=716800 SPS=2777 return(last 20)=3504.0 entropy=2.416
+[progress Krull-v5] step=819200 SPS=2788 return(last 20)=4327.5 entropy=2.078
+[progress Krull-v5] step=921600 SPS=2799 return(last 20)=4475.0 entropy=2.133
+[progress Krull-v5] step=1024000 SPS=2806 return(last 20)=4822.0 entropy=2.180
+[progress Krull-v5] step=1126400 SPS=2813 return(last 20)=4798.5 entropy=2.101
+[progress Krull-v5] step=1228800 SPS=2820 return(last 20)=4853.5 entropy=2.145
+[progress Krull-v5] step=1331200 SPS=2824 return(last 20)=5560.5 entropy=2.085
+[progress Krull-v5] step=1433600 SPS=2829 return(last 20)=5014.0 entropy=2.066
+[progress Krull-v5] step=1536000 SPS=2829 return(last 20)=4510.0 entropy=1.935
+[progress Krull-v5] step=1638400 SPS=2834 return(last 20)=5583.0 entropy=2.076
+[progress Krull-v5] step=1740800 SPS=2834 return(last 20)=6036.0 entropy=1.789
+[progress Krull-v5] step=1843200 SPS=2836 return(last 20)=6441.5 entropy=1.425
+[progress Krull-v5] step=1945600 SPS=2837 return(last 20)=6649.0 entropy=1.470
+[progress Krull-v5] step=2048000 SPS=2837 return(last 20)=6138.0 entropy=1.353
+[progress Krull-v5] step=2150400 SPS=2840 return(last 20)=6467.0 entropy=1.365
+[progress Krull-v5] step=2252800 SPS=2841 return(last 20)=6124.5 entropy=1.175
+[progress Krull-v5] step=2355200 SPS=2842 return(last 20)=6966.0 entropy=1.516
+[progress Krull-v5] step=2457600 SPS=2843 return(last 20)=6938.0 entropy=1.354
+[progress Krull-v5] step=2560000 SPS=2844 return(last 20)=6618.5 entropy=1.473
+[progress Krull-v5] step=2662400 SPS=2845 return(last 20)=5271.5 entropy=1.912
+[progress Krull-v5] step=2764800 SPS=2844 return(last 20)=7389.0 entropy=1.281
+[progress Krull-v5] step=2867200 SPS=2843 return(last 20)=6516.5 entropy=1.275
+[progress Krull-v5] step=2969600 SPS=2843 return(last 20)=6488.5 entropy=1.338
+[progress Krull-v5] step=3072000 SPS=2841 return(last 20)=7610.5 entropy=1.287
+[progress Krull-v5] step=3174400 SPS=2840 return(last 20)=7238.5 entropy=1.184
+[progress Krull-v5] step=3276800 SPS=2840 return(last 20)=7420.0 entropy=0.875
+[progress Krull-v5] step=3379200 SPS=2840 return(last 20)=7937.5 entropy=1.085
+[progress Krull-v5] step=3481600 SPS=2840 return(last 20)=8024.5 entropy=0.736
+[progress Krull-v5] step=3584000 SPS=2841 return(last 20)=8421.5 entropy=0.840
+[progress Krull-v5] step=3686400 SPS=2841 return(last 20)=8438.0 entropy=0.977
+[progress Krull-v5] step=3788800 SPS=2842 return(last 20)=8285.5 entropy=1.467
+[progress Krull-v5] step=3891200 SPS=2843 return(last 20)=8582.0 entropy=1.334
+[progress Krull-v5] step=3993600 SPS=2842 return(last 20)=7999.5 entropy=1.112
+[progress Krull-v5] step=4096000 SPS=2841 return(last 20)=8401.0 entropy=1.285
+[progress Krull-v5] step=4198400 SPS=2841 return(last 20)=8355.5 entropy=1.086
+[progress Krull-v5] step=4300800 SPS=2842 return(last 20)=8304.5 entropy=1.299
+[progress Krull-v5] step=4403200 SPS=2843 return(last 20)=7847.0 entropy=1.064
+[progress Krull-v5] step=4505600 SPS=2844 return(last 20)=8101.0 entropy=1.172
+[progress Krull-v5] step=4608000 SPS=2844 return(last 20)=8825.0 entropy=1.058
+[progress Krull-v5] step=4710400 SPS=2845 return(last 20)=8527.0 entropy=1.311
+[progress Krull-v5] step=4812800 SPS=2845 return(last 20)=9215.5 entropy=1.166
+[progress Krull-v5] step=4915200 SPS=2846 return(last 20)=9375.0 entropy=1.102
+[progress Krull-v5] step=5017600 SPS=2846 return(last 20)=9295.5 entropy=1.437
+[progress Krull-v5] step=5120000 SPS=2847 return(last 20)=9021.5 entropy=0.935
+[progress Krull-v5] step=5222400 SPS=2847 return(last 20)=8753.5 entropy=1.160
+[progress Krull-v5] step=5324800 SPS=2847 return(last 20)=8406.0 entropy=1.415
+[progress Krull-v5] step=5427200 SPS=2847 return(last 20)=8492.0 entropy=1.402
+[progress Krull-v5] step=5529600 SPS=2846 return(last 20)=8206.0 entropy=1.313
+[progress Krull-v5] step=5632000 SPS=2846 return(last 20)=8494.5 entropy=1.184
+[progress Krull-v5] step=5734400 SPS=2846 return(last 20)=8287.0 entropy=1.032
+[progress Krull-v5] step=5836800 SPS=2846 return(last 20)=9095.0 entropy=1.217
+[progress Krull-v5] step=5939200 SPS=2847 return(last 20)=9106.0 entropy=1.346
+[progress Krull-v5] step=6041600 SPS=2847 return(last 20)=9402.5 entropy=1.281
+[progress Krull-v5] step=6144000 SPS=2848 return(last 20)=9764.5 entropy=1.322
+[progress Krull-v5] step=6246400 SPS=2848 return(last 20)=8830.0 entropy=1.526
+[progress Krull-v5] step=6348800 SPS=2848 return(last 20)=9922.0 entropy=1.142
+[progress Krull-v5] step=6451200 SPS=2848 return(last 20)=9455.0 entropy=1.488
+[progress Krull-v5] step=6553600 SPS=2849 return(last 20)=8848.5 entropy=1.402
+[progress Krull-v5] step=6656000 SPS=2849 return(last 20)=8975.5 entropy=1.481
+[progress Krull-v5] step=6758400 SPS=2848 return(last 20)=8427.5 entropy=1.132
+[progress Krull-v5] step=6860800 SPS=2848 return(last 20)=8071.0 entropy=1.559
+[progress Krull-v5] step=6963200 SPS=2847 return(last 20)=8878.0 entropy=1.655
+[progress Krull-v5] step=7065600 SPS=2847 return(last 20)=9627.0 entropy=1.262
+[progress Krull-v5] step=7168000 SPS=2847 return(last 20)=9462.0 entropy=1.233
+[progress Krull-v5] step=7270400 SPS=2847 return(last 20)=9535.5 entropy=1.492
+[progress Krull-v5] step=7372800 SPS=2847 return(last 20)=9697.5 entropy=1.429
+[progress Krull-v5] step=7475200 SPS=2847 return(last 20)=9132.0 entropy=1.304
+[progress Krull-v5] step=7577600 SPS=2847 return(last 20)=9374.5 entropy=1.370
+[progress Krull-v5] step=7680000 SPS=2848 return(last 20)=9978.0 entropy=1.696
+[progress Krull-v5] step=7782400 SPS=2848 return(last 20)=9930.5 entropy=1.621
+[progress Krull-v5] step=7884800 SPS=2849 return(last 20)=8863.0 entropy=1.154
+[progress Krull-v5] step=7987200 SPS=2850 return(last 20)=9158.0 entropy=1.415
+[progress Krull-v5] step=8089600 SPS=2850 return(last 20)=9601.5 entropy=1.595
+[progress Krull-v5] step=8192000 SPS=2851 return(last 20)=9583.0 entropy=1.222
+[progress Krull-v5] step=8294400 SPS=2851 return(last 20)=9359.5 entropy=1.219
+[progress Krull-v5] step=8396800 SPS=2851 return(last 20)=9437.5 entropy=1.269
+[progress Krull-v5] step=8499200 SPS=2850 return(last 20)=9496.5 entropy=1.350
+[progress Krull-v5] step=8601600 SPS=2851 return(last 20)=9028.5 entropy=1.504
+[progress Krull-v5] step=8704000 SPS=2850 return(last 20)=9165.5 entropy=1.356
+[progress Krull-v5] step=8806400 SPS=2849 return(last 20)=9517.0 entropy=1.425
+[progress Krull-v5] step=8908800 SPS=2849 return(last 20)=9629.5 entropy=1.395
+[progress Krull-v5] step=9011200 SPS=2848 return(last 20)=9730.0 entropy=1.473
+[progress Krull-v5] step=9113600 SPS=2847 return(last 20)=9985.0 entropy=1.594
+[progress Krull-v5] step=9216000 SPS=2846 return(last 20)=9481.5 entropy=1.566
+[progress Krull-v5] step=9318400 SPS=2844 return(last 20)=9350.0 entropy=1.480
+[progress Krull-v5] step=9420800 SPS=2844 return(last 20)=10140.0 entropy=1.323
+[progress Krull-v5] step=9523200 SPS=2843 return(last 20)=9878.5 entropy=1.575
+[progress Krull-v5] step=9625600 SPS=2842 return(last 20)=9506.5 entropy=1.603
+[progress Krull-v5] step=9728000 SPS=2841 return(last 20)=9720.5 entropy=1.410
+[progress Krull-v5] step=9830400 SPS=2839 return(last 20)=8515.0 entropy=1.587
+[progress Krull-v5] step=9932800 SPS=2838 return(last 20)=9834.5 entropy=1.305
+[progress Krull-v5] step=9998336 SPS=2837 return(last 20)=9420.0 entropy=1.447
+[T7] active policy return=10829.0 ± 1232.0 (3528 s)
+[compress] epoch 0 kl=0.7822 ewc=0.0716
+[compress] epoch 1 kl=0.4830 ewc=0.0344
+[compress] epoch 2 kl=0.4294 ewc=0.0276
+[compress] epoch 3 kl=0.3840 ewc=0.0223
+[compress] epoch 4 kl=0.3514 ewc=0.0187
+[compress] epoch 5 kl=0.3338 ewc=0.0170
+[compress] epoch 6 kl=0.3176 ewc=0.0148
+[compress] epoch 7 kl=0.2959 ewc=0.0138
+[compress] epoch 8 kl=0.2827 ewc=0.0126
+[compress] epoch 9 kl=0.2609 ewc=0.0108
+[compress] epoch 0 kl=0.2635 ewc=0.0092
+[compress] epoch 1 kl=0.2465 ewc=0.0079
+[compress] epoch 2 kl=0.2423 ewc=0.0073
+[compress] epoch 3 kl=0.2291 ewc=0.0066
+[compress] epoch 4 kl=0.2209 ewc=0.0062
+[compress] epoch 5 kl=0.2187 ewc=0.0059
+[compress] epoch 6 kl=0.2128 ewc=0.0055
+[compress] epoch 7 kl=0.2101 ewc=0.0052
+[compress] epoch 8 kl=0.2055 ewc=0.0050
+[compress] epoch 9 kl=0.2064 ewc=0.0049
+[compress] epoch 0 kl=0.1971 ewc=0.0045
+[compress] epoch 1 kl=0.2009 ewc=0.0045
+[compress] epoch 2 kl=0.1919 ewc=0.0041
+[compress] epoch 3 kl=0.1904 ewc=0.0040
+[compress] epoch 4 kl=0.1883 ewc=0.0040
+[compress] epoch 5 kl=0.1882 ewc=0.0037
+[compress] epoch 6 kl=0.1843 ewc=0.0039
+[compress] epoch 7 kl=0.1753 ewc=0.0035
+[compress] epoch 8 kl=0.1796 ewc=0.0037
+[compress] epoch 9 kl=0.1766 ewc=0.0036
+[compress] epoch 0 kl=0.1846 ewc=0.0036
+[compress] epoch 1 kl=0.1826 ewc=0.0036
+[compress] epoch 2 kl=0.1847 ewc=0.0036
+[compress] epoch 3 kl=0.1733 ewc=0.0034
+[compress] epoch 4 kl=0.1758 ewc=0.0033
+[compress] epoch 5 kl=0.1699 ewc=0.0032
+[compress] epoch 6 kl=0.1691 ewc=0.0032
+[compress] epoch 7 kl=0.1660 ewc=0.0029
+[compress] epoch 8 kl=0.1688 ewc=0.0031
+[compress] epoch 9 kl=0.1654 ewc=0.0030
+[Fisher T7] total_mass=6.687734e+02  per-param mean=3.971037e-04  max=1.000000e-03
+After T7: SpaceInvaders-v5: 740.0 (kl 0.161) | Krull-v5: 8772.0 (kl 0.036) | BeamRider-v5: 796.4 (kl 0.094) | Hero-v5: 3335.0 (kl 0.238) | StarGunner-v5: 3310.0 (kl 0.329) | MsPacman-v5: 1283.0 (kl 0.410)
+[T8 BeamRider-v5] actions=9 random return=396.0 (re-visit)
+[progress BeamRider-v5] step=102400 SPS=2700 return(last 20)=420.2 entropy=2.014
+[progress BeamRider-v5] step=204800 SPS=2722 return(last 20)=506.2 entropy=1.672
+[progress BeamRider-v5] step=307200 SPS=2773 return(last 20)=570.6 entropy=1.505
+[progress BeamRider-v5] step=409600 SPS=2773 return(last 20)=648.4 entropy=1.312
+[progress BeamRider-v5] step=512000 SPS=2768 return(last 20)=570.6 entropy=1.056
+[progress BeamRider-v5] step=614400 SPS=2769 return(last 20)=615.2 entropy=1.116
+[progress BeamRider-v5] step=716800 SPS=2767 return(last 20)=610.8 entropy=1.073
+[progress BeamRider-v5] step=819200 SPS=2768 return(last 20)=642.6 entropy=0.917
+[progress BeamRider-v5] step=921600 SPS=2768 return(last 20)=521.4 entropy=0.898
+[progress BeamRider-v5] step=1024000 SPS=2772 return(last 20)=561.0 entropy=1.074
+[progress BeamRider-v5] step=1126400 SPS=2774 return(last 20)=638.8 entropy=0.952
+[progress BeamRider-v5] step=1228800 SPS=2777 return(last 20)=661.0 entropy=1.163
+[progress BeamRider-v5] step=1331200 SPS=2779 return(last 20)=671.2 entropy=0.969
+[progress BeamRider-v5] step=1433600 SPS=2782 return(last 20)=626.8 entropy=1.115
+[progress BeamRider-v5] step=1536000 SPS=2781 return(last 20)=613.4 entropy=1.093
+[progress BeamRider-v5] step=1638400 SPS=2785 return(last 20)=592.0 entropy=1.042
+[progress BeamRider-v5] step=1740800 SPS=2782 return(last 20)=608.2 entropy=1.022
+[progress BeamRider-v5] step=1843200 SPS=2779 return(last 20)=611.6 entropy=0.939
+[progress BeamRider-v5] step=1945600 SPS=2777 return(last 20)=624.0 entropy=1.130
+[progress BeamRider-v5] step=2048000 SPS=2776 return(last 20)=708.6 entropy=1.107
+[progress BeamRider-v5] step=2150400 SPS=2775 return(last 20)=733.8 entropy=1.170
+[progress BeamRider-v5] step=2252800 SPS=2775 return(last 20)=802.6 entropy=1.152
+[progress BeamRider-v5] step=2355200 SPS=2776 return(last 20)=864.6 entropy=1.038
+[progress BeamRider-v5] step=2457600 SPS=2777 return(last 20)=958.8 entropy=0.953
+[progress BeamRider-v5] step=2560000 SPS=2777 return(last 20)=765.0 entropy=0.930
+[progress BeamRider-v5] step=2662400 SPS=2778 return(last 20)=801.6 entropy=0.952
+[progress BeamRider-v5] step=2764800 SPS=2779 return(last 20)=1052.8 entropy=0.962
+[progress BeamRider-v5] step=2867200 SPS=2783 return(last 20)=982.4 entropy=1.167
+[progress BeamRider-v5] step=2969600 SPS=2787 return(last 20)=990.8 entropy=1.197
+[progress BeamRider-v5] step=3072000 SPS=2791 return(last 20)=1077.0 entropy=1.208
+[progress BeamRider-v5] step=3174400 SPS=2794 return(last 20)=1122.6 entropy=1.146
+[progress BeamRider-v5] step=3276800 SPS=2797 return(last 20)=1174.2 entropy=1.118
+[progress BeamRider-v5] step=3379200 SPS=2800 return(last 20)=1145.4 entropy=1.077
+[progress BeamRider-v5] step=3481600 SPS=2802 return(last 20)=1274.2 entropy=1.208
+[progress BeamRider-v5] step=3584000 SPS=2804 return(last 20)=1265.8 entropy=1.041
+[progress BeamRider-v5] step=3686400 SPS=2806 return(last 20)=1129.6 entropy=1.120
+[progress BeamRider-v5] step=3788800 SPS=2808 return(last 20)=1344.8 entropy=1.190
+[progress BeamRider-v5] step=3891200 SPS=2808 return(last 20)=1330.2 entropy=0.968
+[progress BeamRider-v5] step=3993600 SPS=2807 return(last 20)=1488.0 entropy=1.149
+[progress BeamRider-v5] step=4096000 SPS=2808 return(last 20)=1518.2 entropy=1.121
+[progress BeamRider-v5] step=4198400 SPS=2809 return(last 20)=1857.2 entropy=1.117
+[progress BeamRider-v5] step=4300800 SPS=2809 return(last 20)=1908.4 entropy=1.054
+[progress BeamRider-v5] step=4403200 SPS=2811 return(last 20)=2071.9 entropy=1.121
+[progress BeamRider-v5] step=4505600 SPS=2812 return(last 20)=2261.6 entropy=1.040
+[progress BeamRider-v5] step=4608000 SPS=2812 return(last 20)=1639.6 entropy=1.043
+[progress BeamRider-v5] step=4710400 SPS=2813 return(last 20)=2275.2 entropy=1.152
+[progress BeamRider-v5] step=4812800 SPS=2814 return(last 20)=2011.5 entropy=1.082
+[progress BeamRider-v5] step=4915200 SPS=2814 return(last 20)=1525.2 entropy=0.946
+[progress BeamRider-v5] step=5017600 SPS=2813 return(last 20)=2226.8 entropy=0.991
+[progress BeamRider-v5] step=5120000 SPS=2811 return(last 20)=2186.3 entropy=0.874
+[progress BeamRider-v5] step=5222400 SPS=2812 return(last 20)=1687.0 entropy=0.969
+[progress BeamRider-v5] step=5324800 SPS=2813 return(last 20)=2020.0 entropy=1.066
+[progress BeamRider-v5] step=5427200 SPS=2815 return(last 20)=2374.5 entropy=1.080
+[progress BeamRider-v5] step=5529600 SPS=2816 return(last 20)=1988.8 entropy=1.021
+[progress BeamRider-v5] step=5632000 SPS=2817 return(last 20)=2397.5 entropy=1.120
+[progress BeamRider-v5] step=5734400 SPS=2818 return(last 20)=2403.9 entropy=1.091
+[progress BeamRider-v5] step=5836800 SPS=2818 return(last 20)=2132.5 entropy=0.963
+[progress BeamRider-v5] step=5939200 SPS=2819 return(last 20)=1977.0 entropy=0.793
+[progress BeamRider-v5] step=6041600 SPS=2819 return(last 20)=2147.5 entropy=1.066
+[progress BeamRider-v5] step=6144000 SPS=2819 return(last 20)=2545.5 entropy=1.104
+[progress BeamRider-v5] step=6246400 SPS=2820 return(last 20)=1544.4 entropy=1.170
+[progress BeamRider-v5] step=6348800 SPS=2820 return(last 20)=2020.9 entropy=0.988
+[progress BeamRider-v5] step=6451200 SPS=2821 return(last 20)=2467.8 entropy=1.008
+[progress BeamRider-v5] step=6553600 SPS=2822 return(last 20)=2143.0 entropy=1.125
+[progress BeamRider-v5] step=6656000 SPS=2822 return(last 20)=2171.4 entropy=1.149
+[progress BeamRider-v5] step=6758400 SPS=2822 return(last 20)=2276.0 entropy=0.963
+[progress BeamRider-v5] step=6860800 SPS=2822 return(last 20)=2715.2 entropy=0.966
+[progress BeamRider-v5] step=6963200 SPS=2822 return(last 20)=1931.3 entropy=1.053
+[progress BeamRider-v5] step=7065600 SPS=2823 return(last 20)=2338.6 entropy=1.055
+[progress BeamRider-v5] step=7168000 SPS=2823 return(last 20)=2307.6 entropy=1.034
+[progress BeamRider-v5] step=7270400 SPS=2824 return(last 20)=1880.8 entropy=1.023
+[progress BeamRider-v5] step=7372800 SPS=2825 return(last 20)=2223.9 entropy=1.141
+[progress BeamRider-v5] step=7475200 SPS=2826 return(last 20)=2057.2 entropy=0.996
+[progress BeamRider-v5] step=7577600 SPS=2826 return(last 20)=1996.8 entropy=1.052
+[progress BeamRider-v5] step=7680000 SPS=2827 return(last 20)=2232.6 entropy=0.860
+[progress BeamRider-v5] step=7782400 SPS=2828 return(last 20)=2313.2 entropy=0.916
+[progress BeamRider-v5] step=7884800 SPS=2830 return(last 20)=2527.0 entropy=1.003
+[progress BeamRider-v5] step=7987200 SPS=2830 return(last 20)=1927.7 entropy=1.139
+[progress BeamRider-v5] step=8089600 SPS=2831 return(last 20)=2051.3 entropy=1.110
+[progress BeamRider-v5] step=8192000 SPS=2831 return(last 20)=1713.4 entropy=1.056
+[progress BeamRider-v5] step=8294400 SPS=2832 return(last 20)=1885.2 entropy=1.031
+[progress BeamRider-v5] step=8396800 SPS=2833 return(last 20)=1870.4 entropy=1.231
+[progress BeamRider-v5] step=8499200 SPS=2833 return(last 20)=2246.3 entropy=1.159
+[progress BeamRider-v5] step=8601600 SPS=2823 return(last 20)=2120.0 entropy=1.288
+[progress BeamRider-v5] step=8704000 SPS=2807 return(last 20)=1937.2 entropy=1.181
+[progress BeamRider-v5] step=8806400 SPS=2792 return(last 20)=2523.6 entropy=1.184
+[progress BeamRider-v5] step=8908800 SPS=2778 return(last 20)=2696.0 entropy=1.277
+[progress BeamRider-v5] step=9011200 SPS=2764 return(last 20)=2033.8 entropy=1.211
+[progress BeamRider-v5] step=9113600 SPS=2751 return(last 20)=2551.3 entropy=1.209
+[progress BeamRider-v5] step=9216000 SPS=2737 return(last 20)=2846.7 entropy=1.362
+[progress BeamRider-v5] step=9318400 SPS=2732 return(last 20)=2861.4 entropy=1.297
+[progress BeamRider-v5] step=9420800 SPS=2734 return(last 20)=2202.9 entropy=1.409
+[progress BeamRider-v5] step=9523200 SPS=2736 return(last 20)=2056.3 entropy=1.371
+[progress BeamRider-v5] step=9625600 SPS=2737 return(last 20)=2495.1 entropy=1.410
+[progress BeamRider-v5] step=9728000 SPS=2739 return(last 20)=2091.1 entropy=1.368
+[progress BeamRider-v5] step=9830400 SPS=2740 return(last 20)=2050.8 entropy=1.414
+[progress BeamRider-v5] step=9932800 SPS=2741 return(last 20)=2231.9 entropy=1.306
+[progress BeamRider-v5] step=9998336 SPS=2743 return(last 20)=2398.9 entropy=1.440
+[T8] active policy return=2572.4 ± 971.5 (3696 s)
+[compress] epoch 0 kl=0.7512 ewc=0.0452
+[compress] epoch 1 kl=0.6825 ewc=0.0303
+[compress] epoch 2 kl=0.6549 ewc=0.0241
+[compress] epoch 3 kl=0.6140 ewc=0.0196
+[compress] epoch 4 kl=0.5987 ewc=0.0168
+[compress] epoch 5 kl=0.5745 ewc=0.0149
+[compress] epoch 6 kl=0.5578 ewc=0.0153
+[compress] epoch 7 kl=0.5461 ewc=0.0130
+[compress] epoch 8 kl=0.5319 ewc=0.0123
+[compress] epoch 9 kl=0.5213 ewc=0.0113
+[compress] epoch 0 kl=0.5161 ewc=0.0105
+[compress] epoch 1 kl=0.4955 ewc=0.0093
+[compress] epoch 2 kl=0.4735 ewc=0.0088
+[compress] epoch 3 kl=0.4557 ewc=0.0082
+[compress] epoch 4 kl=0.4494 ewc=0.0075
+[compress] epoch 5 kl=0.4319 ewc=0.0072
+[compress] epoch 6 kl=0.4187 ewc=0.0069
+[compress] epoch 7 kl=0.4173 ewc=0.0067
+[compress] epoch 8 kl=0.4078 ewc=0.0066
+[compress] epoch 9 kl=0.4007 ewc=0.0063
+[compress] epoch 0 kl=0.3979 ewc=0.0061
+[compress] epoch 1 kl=0.3903 ewc=0.0059
+[compress] epoch 2 kl=0.3853 ewc=0.0056
+[compress] epoch 3 kl=0.3760 ewc=0.0056
+[compress] epoch 4 kl=0.3728 ewc=0.0056
+[compress] epoch 5 kl=0.3695 ewc=0.0056
+[compress] epoch 6 kl=0.3661 ewc=0.0057
+[compress] epoch 7 kl=0.3618 ewc=0.0055
+[compress] epoch 8 kl=0.3603 ewc=0.0056
+[compress] epoch 9 kl=0.3554 ewc=0.0051
+[compress] epoch 0 kl=0.3584 ewc=0.0054
+[compress] epoch 1 kl=0.3563 ewc=0.0054
+[compress] epoch 2 kl=0.3525 ewc=0.0054
+[compress] epoch 3 kl=0.3467 ewc=0.0054
+[compress] epoch 4 kl=0.3472 ewc=0.0051
+[compress] epoch 5 kl=0.3447 ewc=0.0051
+[compress] epoch 6 kl=0.3422 ewc=0.0056
+[compress] epoch 7 kl=0.3421 ewc=0.0052
+[compress] epoch 8 kl=0.3363 ewc=0.0055
+[compress] epoch 9 kl=0.3337 ewc=0.0054
+[Fisher T8] total_mass=8.075714e+02  per-param mean=4.795190e-04  max=1.000000e-03
+After T8: SpaceInvaders-v5: 939.5 (kl 0.149) | Krull-v5: 7862.0 (kl 0.082) | BeamRider-v5: 1802.0 (kl 0.185) | Hero-v5: 3335.0 (kl 0.268) | StarGunner-v5: 3020.0 (kl 0.329) | MsPacman-v5: 629.0 (kl 0.371)
+[T9 Hero-v5] actions=18 random return=577.5 (re-visit)
+[progress Hero-v5] step=102400 SPS=2599 return(last 20)=2126.8 entropy=2.710
+[progress Hero-v5] step=204800 SPS=2583 return(last 20)=2792.2 entropy=2.520
+[progress Hero-v5] step=307200 SPS=2682 return(last 20)=3941.2 entropy=2.475
+[progress Hero-v5] step=409600 SPS=2705 return(last 20)=5196.5 entropy=2.280
+[progress Hero-v5] step=512000 SPS=2719 return(last 20)=3551.8 entropy=2.426
+[progress Hero-v5] step=614400 SPS=2741 return(last 20)=5247.8 entropy=2.239
+[progress Hero-v5] step=716800 SPS=2751 return(last 20)=4942.2 entropy=2.152
+[progress Hero-v5] step=819200 SPS=2744 return(last 20)=5160.5 entropy=2.072
+[progress Hero-v5] step=921600 SPS=2745 return(last 20)=4979.2 entropy=2.184
+[progress Hero-v5] step=1024000 SPS=2753 return(last 20)=6905.2 entropy=1.977
+[progress Hero-v5] step=1126400 SPS=2761 return(last 20)=7509.2 entropy=2.402
+[progress Hero-v5] step=1228800 SPS=2766 return(last 20)=7429.5 entropy=2.264
+[progress Hero-v5] step=1331200 SPS=2771 return(last 20)=9492.5 entropy=2.188
+[progress Hero-v5] step=1433600 SPS=2778 return(last 20)=8647.2 entropy=2.063
+[progress Hero-v5] step=1536000 SPS=2788 return(last 20)=9224.8 entropy=2.012
+[progress Hero-v5] step=1638400 SPS=2793 return(last 20)=9463.2 entropy=2.069
+[progress Hero-v5] step=1740800 SPS=2798 return(last 20)=10245.2 entropy=1.958
+[progress Hero-v5] step=1843200 SPS=2803 return(last 20)=12453.0 entropy=1.961
+[progress Hero-v5] step=1945600 SPS=2808 return(last 20)=11524.5 entropy=2.049
+[progress Hero-v5] step=2048000 SPS=2814 return(last 20)=9017.5 entropy=2.286
+[progress Hero-v5] step=2150400 SPS=2817 return(last 20)=11361.0 entropy=2.005
+[progress Hero-v5] step=2252800 SPS=2820 return(last 20)=9976.5 entropy=2.012
+[progress Hero-v5] step=2355200 SPS=2820 return(last 20)=9189.8 entropy=2.068
+[progress Hero-v5] step=2457600 SPS=2816 return(last 20)=11088.0 entropy=2.013
+[progress Hero-v5] step=2560000 SPS=2814 return(last 20)=11704.5 entropy=1.909
+[progress Hero-v5] step=2662400 SPS=2809 return(last 20)=12297.8 entropy=1.867
+[progress Hero-v5] step=2764800 SPS=2802 return(last 20)=12190.0 entropy=2.086
+[progress Hero-v5] step=2867200 SPS=2799 return(last 20)=11438.2 entropy=1.984
+[progress Hero-v5] step=2969600 SPS=2793 return(last 20)=12083.0 entropy=1.968
+[progress Hero-v5] step=3072000 SPS=2788 return(last 20)=12527.0 entropy=2.129
+[progress Hero-v5] step=3174400 SPS=2784 return(last 20)=11044.5 entropy=2.102
+[progress Hero-v5] step=3276800 SPS=2777 return(last 20)=11934.8 entropy=2.096
+[progress Hero-v5] step=3379200 SPS=2773 return(last 20)=12263.5 entropy=2.155
+[progress Hero-v5] step=3481600 SPS=2770 return(last 20)=11175.5 entropy=2.222
+[progress Hero-v5] step=3584000 SPS=2767 return(last 20)=12063.0 entropy=1.863
+[progress Hero-v5] step=3686400 SPS=2759 return(last 20)=11764.5 entropy=1.969
+[progress Hero-v5] step=3788800 SPS=2751 return(last 20)=12564.0 entropy=2.148
+[progress Hero-v5] step=3891200 SPS=2743 return(last 20)=12169.8 entropy=1.970
+[progress Hero-v5] step=3993600 SPS=2738 return(last 20)=12669.2 entropy=2.027
+[progress Hero-v5] step=4096000 SPS=2734 return(last 20)=12167.5 entropy=1.865
+[progress Hero-v5] step=4198400 SPS=2726 return(last 20)=12599.0 entropy=2.001
+[progress Hero-v5] step=4300800 SPS=2714 return(last 20)=12450.0 entropy=2.058
+[progress Hero-v5] step=4403200 SPS=2705 return(last 20)=12793.5 entropy=2.024
+[progress Hero-v5] step=4505600 SPS=2701 return(last 20)=12769.2 entropy=2.244
+[progress Hero-v5] step=4608000 SPS=2704 return(last 20)=12765.0 entropy=2.263
+[progress Hero-v5] step=4710400 SPS=2705 return(last 20)=12016.8 entropy=2.036
+[progress Hero-v5] step=4812800 SPS=2706 return(last 20)=12761.5 entropy=2.045
+[progress Hero-v5] step=4915200 SPS=2708 return(last 20)=12655.0 entropy=2.239
+[progress Hero-v5] step=5017600 SPS=2709 return(last 20)=12244.8 entropy=2.107
+[progress Hero-v5] step=5120000 SPS=2710 return(last 20)=12529.5 entropy=2.292
+[progress Hero-v5] step=5222400 SPS=2712 return(last 20)=12248.2 entropy=2.137
+[progress Hero-v5] step=5324800 SPS=2713 return(last 20)=11572.0 entropy=2.206
+[progress Hero-v5] step=5427200 SPS=2714 return(last 20)=12477.8 entropy=2.226
+[progress Hero-v5] step=5529600 SPS=2715 return(last 20)=12679.5 entropy=2.056
+[progress Hero-v5] step=5632000 SPS=2718 return(last 20)=12696.8 entropy=1.999
+[progress Hero-v5] step=5734400 SPS=2721 return(last 20)=12753.0 entropy=2.168
+[progress Hero-v5] step=5836800 SPS=2724 return(last 20)=12102.0 entropy=2.172
+[progress Hero-v5] step=5939200 SPS=2726 return(last 20)=11662.2 entropy=1.915
+[progress Hero-v5] step=6041600 SPS=2727 return(last 20)=12432.5 entropy=1.990
+[progress Hero-v5] step=6144000 SPS=2728 return(last 20)=12494.8 entropy=1.985
+[progress Hero-v5] step=6246400 SPS=2729 return(last 20)=12598.0 entropy=2.238
+[progress Hero-v5] step=6348800 SPS=2729 return(last 20)=12739.2 entropy=1.843
+[progress Hero-v5] step=6451200 SPS=2730 return(last 20)=12765.0 entropy=1.901
+[progress Hero-v5] step=6553600 SPS=2731 return(last 20)=12800.5 entropy=2.125
+[progress Hero-v5] step=6656000 SPS=2732 return(last 20)=13003.5 entropy=1.959
+[progress Hero-v5] step=6758400 SPS=2732 return(last 20)=12977.8 entropy=1.917
+[progress Hero-v5] step=6860800 SPS=2733 return(last 20)=13059.0 entropy=1.976
+[progress Hero-v5] step=6963200 SPS=2733 return(last 20)=13007.0 entropy=1.999
+[progress Hero-v5] step=7065600 SPS=2734 return(last 20)=12883.5 entropy=1.957
+[progress Hero-v5] step=7168000 SPS=2734 return(last 20)=12817.8 entropy=2.118
+[progress Hero-v5] step=7270400 SPS=2735 return(last 20)=12886.2 entropy=1.916
+[progress Hero-v5] step=7372800 SPS=2736 return(last 20)=12881.8 entropy=2.007
+[progress Hero-v5] step=7475200 SPS=2736 return(last 20)=12769.0 entropy=2.036
+[progress Hero-v5] step=7577600 SPS=2737 return(last 20)=12755.5 entropy=1.885
+[progress Hero-v5] step=7680000 SPS=2738 return(last 20)=12542.2 entropy=2.096
+[progress Hero-v5] step=7782400 SPS=2740 return(last 20)=12392.5 entropy=2.195
+[progress Hero-v5] step=7884800 SPS=2741 return(last 20)=12658.8 entropy=2.146
+[progress Hero-v5] step=7987200 SPS=2743 return(last 20)=12768.5 entropy=1.995
+[progress Hero-v5] step=8089600 SPS=2744 return(last 20)=12649.0 entropy=2.081
+[progress Hero-v5] step=8192000 SPS=2746 return(last 20)=12591.0 entropy=2.172
+[progress Hero-v5] step=8294400 SPS=2747 return(last 20)=12720.2 entropy=2.197
+[progress Hero-v5] step=8396800 SPS=2747 return(last 20)=12789.0 entropy=1.832
+[progress Hero-v5] step=8499200 SPS=2748 return(last 20)=12806.5 entropy=2.107
+[progress Hero-v5] step=8601600 SPS=2749 return(last 20)=12874.2 entropy=1.850
+[progress Hero-v5] step=8704000 SPS=2748 return(last 20)=12845.5 entropy=2.097
+[progress Hero-v5] step=8806400 SPS=2748 return(last 20)=12815.5 entropy=2.044
+[progress Hero-v5] step=8908800 SPS=2750 return(last 20)=12898.0 entropy=2.286
+[progress Hero-v5] step=9011200 SPS=2752 return(last 20)=12933.0 entropy=2.092
+[progress Hero-v5] step=9113600 SPS=2753 return(last 20)=13062.8 entropy=2.117
+[progress Hero-v5] step=9216000 SPS=2755 return(last 20)=12903.8 entropy=2.109
+[progress Hero-v5] step=9318400 SPS=2756 return(last 20)=12840.2 entropy=2.267
+[progress Hero-v5] step=9420800 SPS=2757 return(last 20)=12881.0 entropy=2.087
+[progress Hero-v5] step=9523200 SPS=2759 return(last 20)=12918.8 entropy=2.037
+[progress Hero-v5] step=9625600 SPS=2759 return(last 20)=13039.8 entropy=2.111
+[progress Hero-v5] step=9728000 SPS=2760 return(last 20)=13038.2 entropy=2.160
+[progress Hero-v5] step=9830400 SPS=2761 return(last 20)=13044.0 entropy=2.162
+[progress Hero-v5] step=9932800 SPS=2762 return(last 20)=13058.5 entropy=2.067
+[progress Hero-v5] step=9998336 SPS=2763 return(last 20)=13056.5 entropy=2.162
+[T9] active policy return=13294.0 ± 25.9 (3621 s)
+[compress] epoch 0 kl=0.5122 ewc=0.0315
+[compress] epoch 1 kl=0.3904 ewc=0.0166
+[compress] epoch 2 kl=0.3602 ewc=0.0121
+[compress] epoch 3 kl=0.3698 ewc=0.0113
+[compress] epoch 4 kl=0.3609 ewc=0.0106
+[compress] epoch 5 kl=0.3437 ewc=0.0098
+[compress] epoch 6 kl=0.3007 ewc=0.0085
+[compress] epoch 7 kl=0.2898 ewc=0.0080
+[compress] epoch 8 kl=0.2756 ewc=0.0072
+[compress] epoch 9 kl=0.3122 ewc=0.0074
+[compress] epoch 0 kl=0.2823 ewc=0.0070
+[compress] epoch 1 kl=0.2701 ewc=0.0060
+[compress] epoch 2 kl=0.2594 ewc=0.0051
+[compress] epoch 3 kl=0.2609 ewc=0.0049
+[compress] epoch 4 kl=0.2508 ewc=0.0045
+[compress] epoch 5 kl=0.2436 ewc=0.0042
+[compress] epoch 6 kl=0.2396 ewc=0.0044
+[compress] epoch 7 kl=0.2330 ewc=0.0039
+[compress] epoch 8 kl=0.2392 ewc=0.0036
+[compress] epoch 9 kl=0.2271 ewc=0.0033
+[compress] epoch 0 kl=0.2308 ewc=0.0037
+[compress] epoch 1 kl=0.2720 ewc=0.0041
+[compress] epoch 2 kl=0.2738 ewc=0.0041
+[compress] epoch 3 kl=0.2564 ewc=0.0037
+[compress] epoch 4 kl=0.2226 ewc=0.0033
+[compress] epoch 5 kl=0.2162 ewc=0.0033
+[compress] epoch 6 kl=0.2142 ewc=0.0032
+[compress] epoch 7 kl=0.2160 ewc=0.0031
+[compress] epoch 8 kl=0.2336 ewc=0.0034
+[compress] epoch 9 kl=0.2525 ewc=0.0036
+[compress] epoch 0 kl=0.2110 ewc=0.0029
+[compress] epoch 1 kl=0.2103 ewc=0.0030
+[compress] epoch 2 kl=0.2212 ewc=0.0030
+[compress] epoch 3 kl=0.2066 ewc=0.0029
+[compress] epoch 4 kl=0.2032 ewc=0.0028
+[compress] epoch 5 kl=0.1992 ewc=0.0026
+[compress] epoch 6 kl=0.1994 ewc=0.0028
+[compress] epoch 7 kl=0.1972 ewc=0.0028
+[compress] epoch 8 kl=0.2011 ewc=0.0028
+[compress] epoch 9 kl=0.2005 ewc=0.0028
+[Fisher T9] total_mass=7.924619e+02  per-param mean=4.705473e-04  max=1.000000e-03
+After T9: SpaceInvaders-v5: 663.5 (kl 0.149) | Krull-v5: 8436.0 (kl 0.086) | BeamRider-v5: 1369.2 (kl 0.185) | Hero-v5: 3329.0 (kl 0.202) | StarGunner-v5: 3960.0 (kl 0.328) | MsPacman-v5: 616.0 (kl 0.353)
+[T10 StarGunner-v5] actions=18 random return=790.0 (re-visit)
+[progress StarGunner-v5] step=102400 SPS=3361 return(last 20)=960.0 entropy=2.761
+[progress StarGunner-v5] step=204800 SPS=3348 return(last 20)=1085.0 entropy=2.465
+[progress StarGunner-v5] step=307200 SPS=3471 return(last 20)=1215.0 entropy=2.403
+[progress StarGunner-v5] step=409600 SPS=3511 return(last 20)=1490.0 entropy=2.395
+[progress StarGunner-v5] step=512000 SPS=3419 return(last 20)=1600.0 entropy=2.170
+[progress StarGunner-v5] step=614400 SPS=3373 return(last 20)=1675.0 entropy=2.000
+[progress StarGunner-v5] step=716800 SPS=3341 return(last 20)=1685.0 entropy=2.001
+[progress StarGunner-v5] step=819200 SPS=3317 return(last 20)=1845.0 entropy=1.953
+[progress StarGunner-v5] step=921600 SPS=3302 return(last 20)=1985.0 entropy=1.940
+[progress StarGunner-v5] step=1024000 SPS=3287 return(last 20)=2090.0 entropy=1.959
+[progress StarGunner-v5] step=1126400 SPS=3274 return(last 20)=2215.0 entropy=1.933
+[progress StarGunner-v5] step=1228800 SPS=3263 return(last 20)=2370.0 entropy=1.814
+[progress StarGunner-v5] step=1331200 SPS=3252 return(last 20)=2265.0 entropy=1.851
+[progress StarGunner-v5] step=1433600 SPS=3242 return(last 20)=2500.0 entropy=1.755
+[progress StarGunner-v5] step=1536000 SPS=3231 return(last 20)=2340.0 entropy=1.769
+[progress StarGunner-v5] step=1638400 SPS=3226 return(last 20)=2675.0 entropy=1.703
+[progress StarGunner-v5] step=1740800 SPS=3224 return(last 20)=3175.0 entropy=1.646
+[progress StarGunner-v5] step=1843200 SPS=3221 return(last 20)=2665.0 entropy=1.691
+[progress StarGunner-v5] step=1945600 SPS=3218 return(last 20)=3160.0 entropy=1.808
+[progress StarGunner-v5] step=2048000 SPS=3216 return(last 20)=3030.0 entropy=1.747
+[progress StarGunner-v5] step=2150400 SPS=3212 return(last 20)=4005.0 entropy=1.746
+[progress StarGunner-v5] step=2252800 SPS=3208 return(last 20)=3300.0 entropy=1.642
+[progress StarGunner-v5] step=2355200 SPS=3206 return(last 20)=3580.0 entropy=1.652
+[progress StarGunner-v5] step=2457600 SPS=3205 return(last 20)=3925.0 entropy=1.745
+[progress StarGunner-v5] step=2560000 SPS=3205 return(last 20)=4490.0 entropy=1.617
+[progress StarGunner-v5] step=2662400 SPS=3203 return(last 20)=4065.0 entropy=1.686
+[progress StarGunner-v5] step=2764800 SPS=3202 return(last 20)=4930.0 entropy=1.580
+[progress StarGunner-v5] step=2867200 SPS=3199 return(last 20)=6630.0 entropy=1.566
+[progress StarGunner-v5] step=2969600 SPS=3199 return(last 20)=6860.0 entropy=1.674
+[progress StarGunner-v5] step=3072000 SPS=3199 return(last 20)=6450.0 entropy=1.578
+[progress StarGunner-v5] step=3174400 SPS=3198 return(last 20)=7650.0 entropy=1.551
+[progress StarGunner-v5] step=3276800 SPS=3198 return(last 20)=7875.0 entropy=1.501
+[progress StarGunner-v5] step=3379200 SPS=3198 return(last 20)=8210.0 entropy=1.514
+[progress StarGunner-v5] step=3481600 SPS=3197 return(last 20)=8405.0 entropy=1.438
+[progress StarGunner-v5] step=3584000 SPS=3195 return(last 20)=8325.0 entropy=1.586
+[progress StarGunner-v5] step=3686400 SPS=3191 return(last 20)=9240.0 entropy=1.535
+[progress StarGunner-v5] step=3788800 SPS=3190 return(last 20)=9520.0 entropy=1.502
+[progress StarGunner-v5] step=3891200 SPS=3189 return(last 20)=10055.0 entropy=1.500
+[progress StarGunner-v5] step=3993600 SPS=3187 return(last 20)=9615.0 entropy=1.546
+[progress StarGunner-v5] step=4096000 SPS=3187 return(last 20)=10625.0 entropy=1.459
+[progress StarGunner-v5] step=4198400 SPS=3187 return(last 20)=12390.0 entropy=1.392
+[progress StarGunner-v5] step=4300800 SPS=3186 return(last 20)=13970.0 entropy=1.424
+[progress StarGunner-v5] step=4403200 SPS=3185 return(last 20)=11570.0 entropy=1.444
+[progress StarGunner-v5] step=4505600 SPS=3184 return(last 20)=14960.0 entropy=1.644
+[progress StarGunner-v5] step=4608000 SPS=3184 return(last 20)=13980.0 entropy=1.642
+[progress StarGunner-v5] step=4710400 SPS=3185 return(last 20)=15415.0 entropy=1.612
+[progress StarGunner-v5] step=4812800 SPS=3183 return(last 20)=14385.0 entropy=1.602
+[progress StarGunner-v5] step=4915200 SPS=3181 return(last 20)=12560.0 entropy=1.607
+[progress StarGunner-v5] step=5017600 SPS=3179 return(last 20)=16995.0 entropy=1.483
+[progress StarGunner-v5] step=5120000 SPS=3178 return(last 20)=17575.0 entropy=1.506
+[progress StarGunner-v5] step=5222400 SPS=3177 return(last 20)=15250.0 entropy=1.469
+[progress StarGunner-v5] step=5324800 SPS=3176 return(last 20)=17650.0 entropy=1.552
+[progress StarGunner-v5] step=5427200 SPS=3175 return(last 20)=17730.0 entropy=1.569
+[progress StarGunner-v5] step=5529600 SPS=3174 return(last 20)=16135.0 entropy=1.545
+[progress StarGunner-v5] step=5632000 SPS=3176 return(last 20)=17225.0 entropy=1.658
+[progress StarGunner-v5] step=5734400 SPS=3176 return(last 20)=18090.0 entropy=1.643
+[progress StarGunner-v5] step=5836800 SPS=3173 return(last 20)=24235.0 entropy=1.595
+[progress StarGunner-v5] step=5939200 SPS=3172 return(last 20)=20415.0 entropy=1.618
+[progress StarGunner-v5] step=6041600 SPS=3173 return(last 20)=21305.0 entropy=1.571
+[progress StarGunner-v5] step=6144000 SPS=3173 return(last 20)=18690.0 entropy=1.739
+[progress StarGunner-v5] step=6246400 SPS=3173 return(last 20)=22515.0 entropy=1.680
+[progress StarGunner-v5] step=6348800 SPS=3172 return(last 20)=19420.0 entropy=1.673
+[progress StarGunner-v5] step=6451200 SPS=3172 return(last 20)=22315.0 entropy=1.618
+[progress StarGunner-v5] step=6553600 SPS=3172 return(last 20)=24640.0 entropy=1.577
+[progress StarGunner-v5] step=6656000 SPS=3171 return(last 20)=23840.0 entropy=1.549
+[progress StarGunner-v5] step=6758400 SPS=3170 return(last 20)=20720.0 entropy=1.476
+[progress StarGunner-v5] step=6860800 SPS=3169 return(last 20)=26605.0 entropy=1.555
+[progress StarGunner-v5] step=6963200 SPS=3169 return(last 20)=21620.0 entropy=1.569
+[progress StarGunner-v5] step=7065600 SPS=3168 return(last 20)=22900.0 entropy=1.648
+[progress StarGunner-v5] step=7168000 SPS=3168 return(last 20)=28545.0 entropy=1.587
+[progress StarGunner-v5] step=7270400 SPS=3167 return(last 20)=22795.0 entropy=1.568
+[progress StarGunner-v5] step=7372800 SPS=3167 return(last 20)=26240.0 entropy=1.609
+[progress StarGunner-v5] step=7475200 SPS=3167 return(last 20)=27770.0 entropy=1.643
+[progress StarGunner-v5] step=7577600 SPS=3166 return(last 20)=26690.0 entropy=1.622
+[progress StarGunner-v5] step=7680000 SPS=3166 return(last 20)=28395.0 entropy=1.638
+[progress StarGunner-v5] step=7782400 SPS=3166 return(last 20)=31430.0 entropy=1.625
+[progress StarGunner-v5] step=7884800 SPS=3166 return(last 20)=31170.0 entropy=1.556
+[progress StarGunner-v5] step=7987200 SPS=3167 return(last 20)=32250.0 entropy=1.557
+[progress StarGunner-v5] step=8089600 SPS=3167 return(last 20)=31055.0 entropy=1.617
+[progress StarGunner-v5] step=8192000 SPS=3168 return(last 20)=27060.0 entropy=1.747
+[progress StarGunner-v5] step=8294400 SPS=3168 return(last 20)=32160.0 entropy=1.673
+[progress StarGunner-v5] step=8396800 SPS=3168 return(last 20)=30615.0 entropy=1.639
+[progress StarGunner-v5] step=8499200 SPS=3169 return(last 20)=29135.0 entropy=1.715
+[progress StarGunner-v5] step=8601600 SPS=3170 return(last 20)=23860.0 entropy=1.641
+[progress StarGunner-v5] step=8704000 SPS=3171 return(last 20)=26280.0 entropy=1.581
+[progress StarGunner-v5] step=8806400 SPS=3171 return(last 20)=24085.0 entropy=1.702
+[progress StarGunner-v5] step=8908800 SPS=3172 return(last 20)=34595.0 entropy=1.625
+[progress StarGunner-v5] step=9011200 SPS=3171 return(last 20)=30820.0 entropy=1.676
+[progress StarGunner-v5] step=9113600 SPS=3171 return(last 20)=35655.0 entropy=1.697
+[progress StarGunner-v5] step=9216000 SPS=3171 return(last 20)=33850.0 entropy=1.590
+[progress StarGunner-v5] step=9318400 SPS=3171 return(last 20)=29610.0 entropy=1.578
+[progress StarGunner-v5] step=9420800 SPS=3171 return(last 20)=36385.0 entropy=1.700
+[progress StarGunner-v5] step=9523200 SPS=3171 return(last 20)=36815.0 entropy=1.515
+[progress StarGunner-v5] step=9625600 SPS=3170 return(last 20)=34460.0 entropy=1.554
+[progress StarGunner-v5] step=9728000 SPS=3171 return(last 20)=33825.0 entropy=1.614
+[progress StarGunner-v5] step=9830400 SPS=3171 return(last 20)=35425.0 entropy=1.480
+[progress StarGunner-v5] step=9932800 SPS=3170 return(last 20)=35900.0 entropy=1.583
+[progress StarGunner-v5] step=9998336 SPS=3170 return(last 20)=41645.0 entropy=1.557
+[T10] active policy return=45290.0 ± 10730.1 (3159 s)
+[compress] epoch 0 kl=0.9616 ewc=0.0160
+[compress] epoch 1 kl=0.9150 ewc=0.0157
+[compress] epoch 2 kl=0.8923 ewc=0.0154
+[compress] epoch 3 kl=0.8729 ewc=0.0153
+[compress] epoch 4 kl=0.8593 ewc=0.0141
+[compress] epoch 5 kl=0.8465 ewc=0.0127
+[compress] epoch 6 kl=0.8352 ewc=0.0125
+[compress] epoch 7 kl=0.8265 ewc=0.0123
+[compress] epoch 8 kl=0.8166 ewc=0.0116
+[compress] epoch 9 kl=0.8096 ewc=0.0113
+[compress] epoch 0 kl=0.8572 ewc=0.0127
+[compress] epoch 1 kl=0.8376 ewc=0.0123
+[compress] epoch 2 kl=0.8184 ewc=0.0112
+[compress] epoch 3 kl=0.8052 ewc=0.0108
+[compress] epoch 4 kl=0.7939 ewc=0.0109
+[compress] epoch 5 kl=0.7823 ewc=0.0109
+[compress] epoch 6 kl=0.7750 ewc=0.0104
+[compress] epoch 7 kl=0.7659 ewc=0.0104
+[compress] epoch 8 kl=0.7616 ewc=0.0099
+[compress] epoch 9 kl=0.7538 ewc=0.0099
+[compress] epoch 0 kl=0.7705 ewc=0.0099
+[compress] epoch 1 kl=0.7609 ewc=0.0100
+[compress] epoch 2 kl=0.7525 ewc=0.0097
+[compress] epoch 3 kl=0.7461 ewc=0.0095
+[compress] epoch 4 kl=0.7403 ewc=0.0098
+[compress] epoch 5 kl=0.7332 ewc=0.0096
+[compress] epoch 6 kl=0.7296 ewc=0.0095
+[compress] epoch 7 kl=0.7222 ewc=0.0094
+[compress] epoch 8 kl=0.7173 ewc=0.0093
+[compress] epoch 9 kl=0.7142 ewc=0.0096
+[compress] epoch 0 kl=0.7131 ewc=0.0092
+[compress] epoch 1 kl=0.7081 ewc=0.0097
+[compress] epoch 2 kl=0.7042 ewc=0.0097
+[compress] epoch 3 kl=0.6986 ewc=0.0093
+[compress] epoch 4 kl=0.6951 ewc=0.0094
+[compress] epoch 5 kl=0.6893 ewc=0.0097
+[compress] epoch 6 kl=0.6869 ewc=0.0095
+[compress] epoch 7 kl=0.6832 ewc=0.0095
+[compress] epoch 8 kl=0.6810 ewc=0.0097
+[compress] epoch 9 kl=0.6793 ewc=0.0094
+[Fisher T10] total_mass=4.072144e+02  per-param mean=2.417954e-04  max=1.000000e-03
+After T10: SpaceInvaders-v5: 757.5 (kl 0.150) | Krull-v5: 10800.0 (kl 0.086) | BeamRider-v5: 1334.4 (kl 0.185) | Hero-v5: 3329.0 (kl 0.198) | StarGunner-v5: 3830.0 (kl 0.375) | MsPacman-v5: 555.0 (kl 0.345)
+[T11 MsPacman-v5] actions=9 random return=210.0 (re-visit)
+[progress MsPacman-v5] step=102400 SPS=3107 return(last 20)=566.5 entropy=1.953
+[progress MsPacman-v5] step=204800 SPS=2897 return(last 20)=616.5 entropy=1.886
+[progress MsPacman-v5] step=307200 SPS=2987 return(last 20)=661.5 entropy=1.788
+[progress MsPacman-v5] step=409600 SPS=2993 return(last 20)=706.5 entropy=1.858
+[progress MsPacman-v5] step=512000 SPS=3013 return(last 20)=596.5 entropy=1.372
+[progress MsPacman-v5] step=614400 SPS=3004 return(last 20)=813.0 entropy=1.671
+[progress MsPacman-v5] step=716800 SPS=3008 return(last 20)=720.5 entropy=1.729
+[progress MsPacman-v5] step=819200 SPS=3014 return(last 20)=681.5 entropy=1.491
+[progress MsPacman-v5] step=921600 SPS=3022 return(last 20)=585.5 entropy=1.540
+[progress MsPacman-v5] step=1024000 SPS=3028 return(last 20)=740.0 entropy=1.516
+[progress MsPacman-v5] step=1126400 SPS=3030 return(last 20)=658.5 entropy=1.264
+[progress MsPacman-v5] step=1228800 SPS=3031 return(last 20)=731.5 entropy=1.557
+[progress MsPacman-v5] step=1331200 SPS=3032 return(last 20)=631.0 entropy=1.532
+[progress MsPacman-v5] step=1433600 SPS=3030 return(last 20)=549.0 entropy=1.459
+[progress MsPacman-v5] step=1536000 SPS=3030 return(last 20)=637.0 entropy=1.273
+[progress MsPacman-v5] step=1638400 SPS=3029 return(last 20)=801.0 entropy=1.253
+[progress MsPacman-v5] step=1740800 SPS=3030 return(last 20)=805.0 entropy=1.295
+[progress MsPacman-v5] step=1843200 SPS=3030 return(last 20)=929.0 entropy=1.081
+[progress MsPacman-v5] step=1945600 SPS=3029 return(last 20)=896.5 entropy=1.146
+[progress MsPacman-v5] step=2048000 SPS=3029 return(last 20)=913.0 entropy=0.871
+[progress MsPacman-v5] step=2150400 SPS=3027 return(last 20)=857.0 entropy=1.199
+[progress MsPacman-v5] step=2252800 SPS=3026 return(last 20)=932.5 entropy=1.290
+[progress MsPacman-v5] step=2355200 SPS=3024 return(last 20)=893.0 entropy=1.303
+[progress MsPacman-v5] step=2457600 SPS=3027 return(last 20)=1123.5 entropy=1.279
+[progress MsPacman-v5] step=2560000 SPS=3026 return(last 20)=822.5 entropy=1.348
+[progress MsPacman-v5] step=2662400 SPS=3024 return(last 20)=969.0 entropy=1.341
+[progress MsPacman-v5] step=2764800 SPS=3025 return(last 20)=1171.0 entropy=1.213
+[progress MsPacman-v5] step=2867200 SPS=3022 return(last 20)=1101.0 entropy=1.348
+[progress MsPacman-v5] step=2969600 SPS=3021 return(last 20)=1290.5 entropy=1.299
+[progress MsPacman-v5] step=3072000 SPS=3018 return(last 20)=1381.5 entropy=1.187
+[progress MsPacman-v5] step=3174400 SPS=3018 return(last 20)=1277.5 entropy=1.134
+[progress MsPacman-v5] step=3276800 SPS=3018 return(last 20)=1277.5 entropy=1.101
+[progress MsPacman-v5] step=3379200 SPS=3018 return(last 20)=1138.0 entropy=0.997
+[progress MsPacman-v5] step=3481600 SPS=3018 return(last 20)=993.5 entropy=1.279
+[progress MsPacman-v5] step=3584000 SPS=3017 return(last 20)=1471.5 entropy=1.164
+[progress MsPacman-v5] step=3686400 SPS=3016 return(last 20)=1325.0 entropy=1.237
+[progress MsPacman-v5] step=3788800 SPS=3016 return(last 20)=1374.0 entropy=1.192
+[progress MsPacman-v5] step=3891200 SPS=3016 return(last 20)=1380.5 entropy=1.158
+[progress MsPacman-v5] step=3993600 SPS=3016 return(last 20)=1210.5 entropy=1.291
+[progress MsPacman-v5] step=4096000 SPS=3016 return(last 20)=1488.5 entropy=1.056
+[progress MsPacman-v5] step=4198400 SPS=3016 return(last 20)=1312.0 entropy=0.957
+[progress MsPacman-v5] step=4300800 SPS=3017 return(last 20)=1225.5 entropy=1.044
+[progress MsPacman-v5] step=4403200 SPS=3017 return(last 20)=1131.5 entropy=0.929
+[progress MsPacman-v5] step=4505600 SPS=3016 return(last 20)=1098.0 entropy=1.109
+[progress MsPacman-v5] step=4608000 SPS=3016 return(last 20)=1342.5 entropy=1.103
+[progress MsPacman-v5] step=4710400 SPS=3016 return(last 20)=1398.5 entropy=0.847
+[progress MsPacman-v5] step=4812800 SPS=3017 return(last 20)=1660.5 entropy=0.803
+[progress MsPacman-v5] step=4915200 SPS=3017 return(last 20)=1549.5 entropy=0.940
+[progress MsPacman-v5] step=5017600 SPS=3016 return(last 20)=1841.0 entropy=0.871
+[progress MsPacman-v5] step=5120000 SPS=3017 return(last 20)=1503.0 entropy=0.998
+[progress MsPacman-v5] step=5222400 SPS=3018 return(last 20)=1390.0 entropy=0.758
+[progress MsPacman-v5] step=5324800 SPS=3018 return(last 20)=1541.5 entropy=0.806
+[progress MsPacman-v5] step=5427200 SPS=3017 return(last 20)=1719.0 entropy=0.995
+[progress MsPacman-v5] step=5529600 SPS=3017 return(last 20)=1872.5 entropy=0.937
+[progress MsPacman-v5] step=5632000 SPS=3017 return(last 20)=1885.5 entropy=0.987
+[progress MsPacman-v5] step=5734400 SPS=3018 return(last 20)=1794.0 entropy=0.810
+[progress MsPacman-v5] step=5836800 SPS=3018 return(last 20)=1868.0 entropy=1.096
+[progress MsPacman-v5] step=5939200 SPS=3017 return(last 20)=1720.0 entropy=1.025
+[progress MsPacman-v5] step=6041600 SPS=3017 return(last 20)=1863.5 entropy=1.104
+[progress MsPacman-v5] step=6144000 SPS=3017 return(last 20)=1720.5 entropy=1.121
+[progress MsPacman-v5] step=6246400 SPS=3018 return(last 20)=1671.5 entropy=0.973
+[progress MsPacman-v5] step=6348800 SPS=3017 return(last 20)=1665.0 entropy=0.955
+[progress MsPacman-v5] step=6451200 SPS=3016 return(last 20)=2015.5 entropy=0.944
+[progress MsPacman-v5] step=6553600 SPS=3016 return(last 20)=1984.0 entropy=1.073
+[progress MsPacman-v5] step=6656000 SPS=3016 return(last 20)=2010.0 entropy=0.966
+[progress MsPacman-v5] step=6758400 SPS=3016 return(last 20)=2384.0 entropy=0.998
+[progress MsPacman-v5] step=6860800 SPS=3018 return(last 20)=1814.0 entropy=1.145
+[progress MsPacman-v5] step=6963200 SPS=3019 return(last 20)=1944.0 entropy=1.045
+[progress MsPacman-v5] step=7065600 SPS=3018 return(last 20)=1841.0 entropy=0.973
+[progress MsPacman-v5] step=7168000 SPS=3018 return(last 20)=1924.5 entropy=0.874
+[progress MsPacman-v5] step=7270400 SPS=3018 return(last 20)=2041.5 entropy=1.071
+[progress MsPacman-v5] step=7372800 SPS=3018 return(last 20)=2248.5 entropy=0.962
+[progress MsPacman-v5] step=7475200 SPS=3018 return(last 20)=1794.5 entropy=1.107
+[progress MsPacman-v5] step=7577600 SPS=3018 return(last 20)=1762.0 entropy=1.067
+[progress MsPacman-v5] step=7680000 SPS=3018 return(last 20)=1983.0 entropy=0.957
+[progress MsPacman-v5] step=7782400 SPS=3019 return(last 20)=1886.0 entropy=0.898
+[progress MsPacman-v5] step=7884800 SPS=3019 return(last 20)=1913.5 entropy=0.770
+[progress MsPacman-v5] step=7987200 SPS=3019 return(last 20)=2034.0 entropy=1.129
+[progress MsPacman-v5] step=8089600 SPS=3020 return(last 20)=1941.5 entropy=0.978
+[progress MsPacman-v5] step=8192000 SPS=3020 return(last 20)=1950.5 entropy=0.920
+[progress MsPacman-v5] step=8294400 SPS=3020 return(last 20)=2059.0 entropy=0.800
+[progress MsPacman-v5] step=8396800 SPS=3020 return(last 20)=2179.0 entropy=0.895
+[progress MsPacman-v5] step=8499200 SPS=3020 return(last 20)=1958.5 entropy=1.049
+[progress MsPacman-v5] step=8601600 SPS=3020 return(last 20)=2073.0 entropy=1.139
+[progress MsPacman-v5] step=8704000 SPS=3019 return(last 20)=2065.0 entropy=0.987
+[progress MsPacman-v5] step=8806400 SPS=3019 return(last 20)=1940.5 entropy=1.089
+[progress MsPacman-v5] step=8908800 SPS=3018 return(last 20)=1968.5 entropy=1.152
+[progress MsPacman-v5] step=9011200 SPS=3018 return(last 20)=2048.5 entropy=0.833
+[progress MsPacman-v5] step=9113600 SPS=3017 return(last 20)=2031.0 entropy=0.923
+[progress MsPacman-v5] step=9216000 SPS=3017 return(last 20)=2436.5 entropy=1.039
+[progress MsPacman-v5] step=9318400 SPS=3017 return(last 20)=2205.5 entropy=0.966
+[progress MsPacman-v5] step=9420800 SPS=3017 return(last 20)=2147.5 entropy=1.139
+[progress MsPacman-v5] step=9523200 SPS=3017 return(last 20)=2230.0 entropy=1.190
+[progress MsPacman-v5] step=9625600 SPS=3017 return(last 20)=2210.0 entropy=1.041
+[progress MsPacman-v5] step=9728000 SPS=3016 return(last 20)=2224.0 entropy=1.044
+[progress MsPacman-v5] step=9830400 SPS=3017 return(last 20)=2591.5 entropy=1.030
+[progress MsPacman-v5] step=9932800 SPS=3018 return(last 20)=2464.0 entropy=1.081
+[progress MsPacman-v5] step=9998336 SPS=3018 return(last 20)=2427.0 entropy=1.091
+[T11] active policy return=2133.0 ± 556.3 (3315 s)
+[compress] epoch 0 kl=1.1672 ewc=0.0722
+[compress] epoch 1 kl=1.0787 ewc=0.0654
+[compress] epoch 2 kl=0.9866 ewc=0.0583
+[compress] epoch 3 kl=0.9111 ewc=0.0520
+[compress] epoch 4 kl=0.8351 ewc=0.0444
+[compress] epoch 5 kl=0.8305 ewc=0.0400
+[compress] epoch 6 kl=0.7697 ewc=0.0351
+[compress] epoch 7 kl=0.7550 ewc=0.0311
+[compress] epoch 8 kl=0.7424 ewc=0.0288
+[compress] epoch 9 kl=0.6992 ewc=0.0264
+[compress] epoch 0 kl=0.8239 ewc=0.0322
+[compress] epoch 1 kl=0.7614 ewc=0.0285
+[compress] epoch 2 kl=0.7189 ewc=0.0243
+[compress] epoch 3 kl=0.7287 ewc=0.0234
+[compress] epoch 4 kl=0.7049 ewc=0.0209
+[compress] epoch 5 kl=0.6594 ewc=0.0179
+[compress] epoch 6 kl=0.6603 ewc=0.0181
+[compress] epoch 7 kl=0.6236 ewc=0.0160
+[compress] epoch 8 kl=0.6546 ewc=0.0161
+[compress] epoch 9 kl=0.6083 ewc=0.0144
+[compress] epoch 0 kl=0.6386 ewc=0.0164
+[compress] epoch 1 kl=0.6192 ewc=0.0162
+[compress] epoch 2 kl=0.5992 ewc=0.0145
+[compress] epoch 3 kl=0.6020 ewc=0.0135
+[compress] epoch 4 kl=0.5899 ewc=0.0130
+[compress] epoch 5 kl=0.5968 ewc=0.0131
+[compress] epoch 6 kl=0.6360 ewc=0.0143
+[compress] epoch 7 kl=0.5990 ewc=0.0132
+[compress] epoch 8 kl=0.5821 ewc=0.0117
+[compress] epoch 9 kl=0.5575 ewc=0.0105
+[compress] epoch 0 kl=0.6156 ewc=0.0110
+[compress] epoch 1 kl=0.5759 ewc=0.0095
+[compress] epoch 2 kl=0.5779 ewc=0.0093
+[compress] epoch 3 kl=0.5702 ewc=0.0088
+[compress] epoch 4 kl=0.5830 ewc=0.0095
+[compress] epoch 5 kl=0.6008 ewc=0.0105
+[compress] epoch 6 kl=0.5629 ewc=0.0086
+[compress] epoch 7 kl=0.5607 ewc=0.0084
+[compress] epoch 8 kl=0.5423 ewc=0.0078
+[compress] epoch 9 kl=0.5753 ewc=0.0090
+[Fisher T11] total_mass=5.027490e+02  per-param mean=2.985219e-04  max=1.000000e-03
+After T11: SpaceInvaders-v5: 675.0 (kl 0.150) | Krull-v5: 8222.0 (kl 0.086) | BeamRider-v5: 1359.6 (kl 0.187) | Hero-v5: 3329.0 (kl 0.205) | StarGunner-v5: 3860.0 (kl 0.374) | MsPacman-v5: 1060.0 (kl 0.292)
+Results saved to /root/progress-compress/outputs/atari/paper3/pc_s0/results.json
+wandb: WARNING Symlinked 1 file into the W&B run directory; call wandb.save again to sync new files.
+wandb: updating run metadata
+wandb: uploading results.json
+wandb: 
+wandb: Run history:
+wandb:           compress/epoch ▁▁▁▂▂▂▂▂▃▃▃▃▃▃▃▃▄▄▄▅▅▅▅▅▅▆▆▆▆▆▆▆▆▆▆▇▇▇▇█
+wandb:             compress/ewc ▁▁▁▁▁▂▂▂▂▁▁▂▂▂▁▂▁▂▂▃▃▂▂▂▁▃▂▂▂▂▂▁▃▂▂█▆▃▃▂
+wandb:              compress/kl █▇▃▃▁▃▂▂▂▄▃▂▇▆▆▅▄▄█▃▃▃▃▁▁▃▃▃▃▃▂▂▇▇▆▆▆▅▅▅
+wandb:           compress/total ▇▁▃▃▂▂▆▄▄▃▃▃███▇▆▅▅▄▄▄▄▄▃▃▂▃▂▂▃▃▂▂▂▇▇▆▅▆
+wandb:     eval/BeamRider-v5/kl ▁▁▁▁▁▁████
+wandb:   eval/BeamRider-v5/norm ▄▁▃▂▂▁█▅▅▅
+wandb: eval/BeamRider-v5/return ▆▂▄▃▃▁█▅▅▅
+wandb:          eval/Hero-v5/kl ▁▃▂▃▆█▃▃▄
+wandb:        eval/Hero-v5/norm ███▁▁▁▃▃▃
+wandb:      eval/Hero-v5/return ███▁▁▁▁▁▁
+wandb:                      +26 ...
+wandb: 
+wandb: Run summary:
+wandb:           compress/epoch 480
+wandb:             compress/ewc 0.00899
+wandb:              compress/kl 0.57529
+wandb:           compress/total 0.58428
+wandb:     eval/BeamRider-v5/kl 0.18718
+wandb:   eval/BeamRider-v5/norm 0.44275
+wandb: eval/BeamRider-v5/return 1359.6
+wandb:          eval/Hero-v5/kl 0.20467
+wandb:        eval/Hero-v5/norm 0.21637
+wandb:      eval/Hero-v5/return 3329
+wandb:                      +26 ...
+wandb: 
+wandb: 🚀 View run pc_s0 at: https://forge.coreweave.com/wandb/tg-2746-n-a/progress-compress/runs/wawbacqf
+wandb: ⭐️ View project at: https://forge.coreweave.com/wandb/tg-2746-n-a/progress-compress
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 1 other file(s)
+wandb: Find logs at: ./outputs/atari/paper3/pc_s0/wandb/run-20261020_194635-wawbacqf/logs
+[W1021 07:30:00.095919565 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())

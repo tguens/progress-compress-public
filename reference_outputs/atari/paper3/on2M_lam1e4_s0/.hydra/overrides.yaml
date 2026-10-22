@@ -1,0 +1,16 @@
+- mode=pc
+- games=[SpaceInvaders-v5,Krull-v5,BeamRider-v5,Hero-v5,StarGunner-v5,MsPacman-v5,SpaceInvaders-v5,Krull-v5,BeamRider-v5,Hero-v5,StarGunner-v5,MsPacman-v5]
+- max_n_tasks=12
+- total_timesteps=[10000000,10000000,10000000,10000000,10000000,10000000,10000000,10000000,10000000,10000000,10000000,10000000]
+- num_envs=16
+- compress_n_states=16384
+- compress_online=true
+- compress_online_epochs=1
+- compress_max_grad_norm=0.5
+- eval_mode=greedy
+- wandb=true
+- teachers_dir=outputs/atari/paper3/pc_s0
+- seed=0
+- compress_online_steps=2000000
+- ewc_lambda=10000
+- fisher_clip=1e-3

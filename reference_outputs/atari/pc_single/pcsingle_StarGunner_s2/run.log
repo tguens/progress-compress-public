@@ -1,0 +1,188 @@
+Using device: cuda
+wandb: [wandb.login()] Loaded credentials for https://api.forge.coreweave.com from /root/.netrc.
+wandb: Currently logged in as: tg-2746 (tg-2746-n-a) to https://api.forge.coreweave.com. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.31.0
+wandb: Run data is saved locally in /root/pc-cleanup/outputs/atari/pc_single/pcsingle_StarGunner_s2/wandb/run-20261022_155914-v30lzqwz
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run pcsingle_StarGunner_s2
+wandb: ⭐️ View project at https://forge.coreweave.com/wandb/tg-2746-n-a/progress-compress
+wandb: 🚀 View run at https://forge.coreweave.com/wandb/tg-2746-n-a/progress-compress/runs/v30lzqwz
+[T0 StarGunner-v5] actions=18 random return=650.0
+[progress StarGunner-v5] step=102400 SPS=2632 return(last 20)=885.0 entropy=2.745
+[progress StarGunner-v5] step=204800 SPS=2626 return(last 20)=1120.0 entropy=2.556
+[progress StarGunner-v5] step=307200 SPS=2626 return(last 20)=1305.0 entropy=2.403
+[progress StarGunner-v5] step=409600 SPS=2609 return(last 20)=1335.0 entropy=2.258
+[progress StarGunner-v5] step=512000 SPS=2609 return(last 20)=1380.0 entropy=2.159
+[progress StarGunner-v5] step=614400 SPS=2636 return(last 20)=1635.0 entropy=2.058
+[progress StarGunner-v5] step=716800 SPS=2655 return(last 20)=1710.0 entropy=2.137
+[progress StarGunner-v5] step=819200 SPS=2666 return(last 20)=2090.0 entropy=2.043
+[progress StarGunner-v5] step=921600 SPS=2673 return(last 20)=2105.0 entropy=2.031
+[progress StarGunner-v5] step=1024000 SPS=2678 return(last 20)=2380.0 entropy=1.972
+[progress StarGunner-v5] step=1126400 SPS=2683 return(last 20)=2290.0 entropy=1.925
+[progress StarGunner-v5] step=1228800 SPS=2686 return(last 20)=2230.0 entropy=1.913
+[progress StarGunner-v5] step=1331200 SPS=2688 return(last 20)=2575.0 entropy=1.904
+[progress StarGunner-v5] step=1433600 SPS=2689 return(last 20)=2645.0 entropy=1.798
+[progress StarGunner-v5] step=1536000 SPS=2694 return(last 20)=2950.0 entropy=1.764
+[progress StarGunner-v5] step=1638400 SPS=2698 return(last 20)=3115.0 entropy=1.837
+[progress StarGunner-v5] step=1740800 SPS=2699 return(last 20)=3510.0 entropy=1.792
+[progress StarGunner-v5] step=1843200 SPS=2701 return(last 20)=3570.0 entropy=1.776
+[progress StarGunner-v5] step=1945600 SPS=2703 return(last 20)=4870.0 entropy=1.830
+[progress StarGunner-v5] step=2048000 SPS=2701 return(last 20)=3420.0 entropy=1.768
+[progress StarGunner-v5] step=2150400 SPS=2700 return(last 20)=5525.0 entropy=1.686
+[progress StarGunner-v5] step=2252800 SPS=2698 return(last 20)=4710.0 entropy=1.762
+[progress StarGunner-v5] step=2355200 SPS=2696 return(last 20)=5710.0 entropy=1.771
+[progress StarGunner-v5] step=2457600 SPS=2695 return(last 20)=6255.0 entropy=1.808
+[progress StarGunner-v5] step=2560000 SPS=2694 return(last 20)=6610.0 entropy=1.788
+[progress StarGunner-v5] step=2662400 SPS=2674 return(last 20)=6660.0 entropy=1.694
+[progress StarGunner-v5] step=2764800 SPS=2688 return(last 20)=8945.0 entropy=1.728
+[progress StarGunner-v5] step=2867200 SPS=2707 return(last 20)=9600.0 entropy=1.733
+[progress StarGunner-v5] step=2969600 SPS=2729 return(last 20)=9540.0 entropy=1.736
+[progress StarGunner-v5] step=3072000 SPS=2748 return(last 20)=11460.0 entropy=1.697
+[progress StarGunner-v5] step=3174400 SPS=2766 return(last 20)=9755.0 entropy=1.652
+[progress StarGunner-v5] step=3276800 SPS=2780 return(last 20)=11460.0 entropy=1.685
+[progress StarGunner-v5] step=3379200 SPS=2796 return(last 20)=9895.0 entropy=1.666
+[progress StarGunner-v5] step=3481600 SPS=2809 return(last 20)=9995.0 entropy=1.639
+[progress StarGunner-v5] step=3584000 SPS=2823 return(last 20)=11955.0 entropy=1.664
+[progress StarGunner-v5] step=3686400 SPS=2837 return(last 20)=9710.0 entropy=1.779
+[progress StarGunner-v5] step=3788800 SPS=2841 return(last 20)=12575.0 entropy=1.648
+[progress StarGunner-v5] step=3891200 SPS=2827 return(last 20)=12655.0 entropy=1.695
+[progress StarGunner-v5] step=3993600 SPS=2815 return(last 20)=16330.0 entropy=1.575
+[progress StarGunner-v5] step=4096000 SPS=2802 return(last 20)=11910.0 entropy=1.575
+[progress StarGunner-v5] step=4198400 SPS=2790 return(last 20)=15775.0 entropy=1.579
+[progress StarGunner-v5] step=4300800 SPS=2779 return(last 20)=17430.0 entropy=1.621
+[progress StarGunner-v5] step=4403200 SPS=2768 return(last 20)=14535.0 entropy=1.653
+[progress StarGunner-v5] step=4505600 SPS=2757 return(last 20)=14140.0 entropy=1.648
+[progress StarGunner-v5] step=4608000 SPS=2748 return(last 20)=14920.0 entropy=1.745
+[progress StarGunner-v5] step=4710400 SPS=2738 return(last 20)=14910.0 entropy=1.726
+[progress StarGunner-v5] step=4812800 SPS=2743 return(last 20)=19065.0 entropy=1.687
+[progress StarGunner-v5] step=4915200 SPS=2745 return(last 20)=15290.0 entropy=1.767
+[progress StarGunner-v5] step=5017600 SPS=2748 return(last 20)=17390.0 entropy=1.661
+[progress StarGunner-v5] step=5120000 SPS=2751 return(last 20)=16295.0 entropy=1.659
+[progress StarGunner-v5] step=5222400 SPS=2754 return(last 20)=18155.0 entropy=1.597
+[progress StarGunner-v5] step=5324800 SPS=2757 return(last 20)=21330.0 entropy=1.568
+[progress StarGunner-v5] step=5427200 SPS=2760 return(last 20)=18600.0 entropy=1.591
+[progress StarGunner-v5] step=5529600 SPS=2761 return(last 20)=19205.0 entropy=1.705
+[progress StarGunner-v5] step=5632000 SPS=2765 return(last 20)=21365.0 entropy=1.632
+[progress StarGunner-v5] step=5734400 SPS=2768 return(last 20)=23155.0 entropy=1.647
+[progress StarGunner-v5] step=5836800 SPS=2772 return(last 20)=20205.0 entropy=1.658
+[progress StarGunner-v5] step=5939200 SPS=2775 return(last 20)=21285.0 entropy=1.729
+[progress StarGunner-v5] step=6041600 SPS=2778 return(last 20)=23675.0 entropy=1.790
+[progress StarGunner-v5] step=6144000 SPS=2781 return(last 20)=23755.0 entropy=1.735
+[progress StarGunner-v5] step=6246400 SPS=2783 return(last 20)=20095.0 entropy=1.759
+[progress StarGunner-v5] step=6348800 SPS=2785 return(last 20)=23405.0 entropy=1.657
+[progress StarGunner-v5] step=6451200 SPS=2787 return(last 20)=22630.0 entropy=1.798
+[progress StarGunner-v5] step=6553600 SPS=2791 return(last 20)=24270.0 entropy=1.725
+[progress StarGunner-v5] step=6656000 SPS=2794 return(last 20)=23910.0 entropy=1.756
+[progress StarGunner-v5] step=6758400 SPS=2797 return(last 20)=28165.0 entropy=1.591
+[progress StarGunner-v5] step=6860800 SPS=2799 return(last 20)=24615.0 entropy=1.634
+[progress StarGunner-v5] step=6963200 SPS=2802 return(last 20)=29560.0 entropy=1.656
+[progress StarGunner-v5] step=7065600 SPS=2805 return(last 20)=27080.0 entropy=1.737
+[progress StarGunner-v5] step=7168000 SPS=2807 return(last 20)=31840.0 entropy=1.597
+[progress StarGunner-v5] step=7270400 SPS=2810 return(last 20)=27100.0 entropy=1.617
+[progress StarGunner-v5] step=7372800 SPS=2812 return(last 20)=28950.0 entropy=1.544
+[progress StarGunner-v5] step=7475200 SPS=2815 return(last 20)=27065.0 entropy=1.671
+[progress StarGunner-v5] step=7577600 SPS=2818 return(last 20)=32035.0 entropy=1.525
+[progress StarGunner-v5] step=7680000 SPS=2820 return(last 20)=24910.0 entropy=1.605
+[progress StarGunner-v5] step=7782400 SPS=2822 return(last 20)=33550.0 entropy=1.622
+[progress StarGunner-v5] step=7884800 SPS=2824 return(last 20)=32990.0 entropy=1.605
+[progress StarGunner-v5] step=7987200 SPS=2825 return(last 20)=29460.0 entropy=1.693
+[progress StarGunner-v5] step=8089600 SPS=2825 return(last 20)=27610.0 entropy=1.680
+[progress StarGunner-v5] step=8192000 SPS=2826 return(last 20)=29575.0 entropy=1.685
+[progress StarGunner-v5] step=8294400 SPS=2827 return(last 20)=29790.0 entropy=1.669
+[progress StarGunner-v5] step=8396800 SPS=2829 return(last 20)=32195.0 entropy=1.598
+[progress StarGunner-v5] step=8499200 SPS=2831 return(last 20)=34535.0 entropy=1.540
+[progress StarGunner-v5] step=8601600 SPS=2832 return(last 20)=34080.0 entropy=1.557
+[progress StarGunner-v5] step=8704000 SPS=2834 return(last 20)=36590.0 entropy=1.663
+[progress StarGunner-v5] step=8806400 SPS=2836 return(last 20)=35165.0 entropy=1.711
+[progress StarGunner-v5] step=8908800 SPS=2837 return(last 20)=35645.0 entropy=1.713
+[progress StarGunner-v5] step=9011200 SPS=2839 return(last 20)=35860.0 entropy=1.614
+[progress StarGunner-v5] step=9113600 SPS=2841 return(last 20)=36880.0 entropy=1.556
+[progress StarGunner-v5] step=9216000 SPS=2843 return(last 20)=30940.0 entropy=1.713
+[progress StarGunner-v5] step=9318400 SPS=2844 return(last 20)=38040.0 entropy=1.653
+[progress StarGunner-v5] step=9420800 SPS=2842 return(last 20)=41980.0 entropy=1.500
+[progress StarGunner-v5] step=9523200 SPS=2842 return(last 20)=35420.0 entropy=1.659
+[progress StarGunner-v5] step=9625600 SPS=2844 return(last 20)=38545.0 entropy=1.573
+[progress StarGunner-v5] step=9728000 SPS=2845 return(last 20)=39400.0 entropy=1.583
+[progress StarGunner-v5] step=9830400 SPS=2847 return(last 20)=36950.0 entropy=1.523
+[progress StarGunner-v5] step=9932800 SPS=2849 return(last 20)=38275.0 entropy=1.550
+[progress StarGunner-v5] step=9998336 SPS=2850 return(last 20)=36055.0 entropy=1.543
+[T0] active policy return=45430.0 ± 7148.3 (3517 s)
+[compress] epoch 0 kl=1.2153 ewc=0.0000
+[compress] epoch 1 kl=1.1372 ewc=0.0000
+[compress] epoch 2 kl=1.1267 ewc=0.0000
+[compress] epoch 3 kl=1.0998 ewc=0.0000
+[compress] epoch 4 kl=1.0249 ewc=0.0000
+[compress] epoch 5 kl=0.9431 ewc=0.0000
+[compress] epoch 6 kl=0.8802 ewc=0.0000
+[compress] epoch 7 kl=0.8309 ewc=0.0000
+[compress] epoch 8 kl=0.7781 ewc=0.0000
+[compress] epoch 9 kl=0.7338 ewc=0.0000
+[compress] epoch 0 kl=0.6999 ewc=0.0000
+[compress] epoch 1 kl=0.5814 ewc=0.0000
+[compress] epoch 2 kl=0.5001 ewc=0.0000
+[compress] epoch 3 kl=0.4413 ewc=0.0000
+[compress] epoch 4 kl=0.3876 ewc=0.0000
+[compress] epoch 5 kl=0.3515 ewc=0.0000
+[compress] epoch 6 kl=0.3197 ewc=0.0000
+[compress] epoch 7 kl=0.2923 ewc=0.0000
+[compress] epoch 8 kl=0.2721 ewc=0.0000
+[compress] epoch 9 kl=0.2547 ewc=0.0000
+[compress] epoch 0 kl=0.2627 ewc=0.0000
+[compress] epoch 1 kl=0.2385 ewc=0.0000
+[compress] epoch 2 kl=0.2214 ewc=0.0000
+[compress] epoch 3 kl=0.2046 ewc=0.0000
+[compress] epoch 4 kl=0.1935 ewc=0.0000
+[compress] epoch 5 kl=0.1802 ewc=0.0000
+[compress] epoch 6 kl=0.1676 ewc=0.0000
+[compress] epoch 7 kl=0.1592 ewc=0.0000
+[compress] epoch 8 kl=0.1500 ewc=0.0000
+[compress] epoch 9 kl=0.1426 ewc=0.0000
+[compress] epoch 0 kl=0.1548 ewc=0.0000
+[compress] epoch 1 kl=0.1431 ewc=0.0000
+[compress] epoch 2 kl=0.1344 ewc=0.0000
+[compress] epoch 3 kl=0.1254 ewc=0.0000
+[compress] epoch 4 kl=0.1196 ewc=0.0000
+[compress] epoch 5 kl=0.1136 ewc=0.0000
+[compress] epoch 6 kl=0.1089 ewc=0.0000
+[compress] epoch 7 kl=0.1040 ewc=0.0000
+[compress] epoch 8 kl=0.0996 ewc=0.0000
+[compress] epoch 9 kl=0.0970 ewc=0.0000
+Computing Fisher matrix for task 0
+[Fisher T0] total_mass=7.831236e+02  per-param mean=4.650024e-04  max=1.000000e-02
+After T0: StarGunner-v5: 34540.0 (kl 0.047)
+Results saved to /root/pc-cleanup/outputs/atari/pc_single/pcsingle_StarGunner_s2/results.json
+wandb: WARNING Symlinked 1 file into the W&B run directory; call wandb.save again to sync new files.
+wandb: updating run metadata
+wandb: uploading history steps 4922-4922, summary, console lines 142-144
+wandb: 
+wandb: Run history:
+wandb:            compress/epoch ▁▁▁▂▂▂▂▂▂▃▃▃▃▃▄▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇███
+wandb:              compress/ewc ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:               compress/kl ██▇▇▇▆▆▆▅▅▅▄▄▃▃▃▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             compress/loss ██▇▇▇▆▆▆▅▅▅▄▄▃▃▃▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     eval/StarGunner-v5/kl ▁
+wandb:   eval/StarGunner-v5/norm ▁
+wandb: eval/StarGunner-v5/return ▁
+wandb:         eval/all_avg_norm ▁
+wandb:               global_step ▁▁▁▁▂▂▂▂▃▃▃▃▃▃▃▄▄▄▄▄▄▄▅▅▅▅▅▅▅▅▆▇▇▇▇█████
+wandb:          progress/entropy ██▅▄▃▃▃▂▂▃▂▂▂▂▂▂▂▂▂▂▃▂▂▂▂▂▂▂▂▂▁▁▁▁▁▂▁▁▂▁
+wandb:                       +11 ...
+wandb: 
+wandb: Run summary:
+wandb:            compress/epoch 39
+wandb:              compress/ewc 0
+wandb:               compress/kl 0.09701
+wandb:             compress/loss 0.09701
+wandb:     eval/StarGunner-v5/kl 0.04722
+wandb:   eval/StarGunner-v5/norm 0.75681
+wandb: eval/StarGunner-v5/return 34540
+wandb:         eval/all_avg_norm 0.75681
+wandb:        eval/prev_avg_norm nan
+wandb:               global_step 10000000
+wandb:                       +11 ...
+wandb: 
+wandb: 🚀 View run pcsingle_StarGunner_s2 at: https://forge.coreweave.com/wandb/tg-2746-n-a/progress-compress/runs/v30lzqwz
+wandb: ⭐️ View project at: https://forge.coreweave.com/wandb/tg-2746-n-a/progress-compress
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 1 other file(s)
+wandb: Find logs at: ./outputs/atari/pc_single/pcsingle_StarGunner_s2/wandb/run-20261022_155914-v30lzqwz/logs
+[W1022 16:58:22.044777121 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())

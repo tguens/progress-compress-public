@@ -1,0 +1,188 @@
+Using device: cuda
+wandb: [wandb.login()] Loaded credentials for https://api.forge.coreweave.com from /root/.netrc.
+wandb: Currently logged in as: tg-2746 (tg-2746-n-a) to https://api.forge.coreweave.com. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.31.0
+wandb: Run data is saved locally in /root/pc-cleanup/outputs/atari/pc_single/pcsingle_MsPacman_s2/wandb/run-20261022_161557-xdov2zal
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run pcsingle_MsPacman_s2
+wandb: ⭐️ View project at https://forge.coreweave.com/wandb/tg-2746-n-a/progress-compress
+wandb: 🚀 View run at https://forge.coreweave.com/wandb/tg-2746-n-a/progress-compress/runs/xdov2zal
+[T0 MsPacman-v5] actions=9 random return=262.0
+[progress MsPacman-v5] step=102400 SPS=2717 return(last 20)=555.5 entropy=2.058
+[progress MsPacman-v5] step=204800 SPS=2811 return(last 20)=887.0 entropy=1.872
+[progress MsPacman-v5] step=307200 SPS=2857 return(last 20)=723.5 entropy=1.784
+[progress MsPacman-v5] step=409600 SPS=2884 return(last 20)=738.5 entropy=1.598
+[progress MsPacman-v5] step=512000 SPS=2908 return(last 20)=696.5 entropy=1.663
+[progress MsPacman-v5] step=614400 SPS=2911 return(last 20)=679.5 entropy=1.621
+[progress MsPacman-v5] step=716800 SPS=2909 return(last 20)=766.5 entropy=1.747
+[progress MsPacman-v5] step=819200 SPS=2907 return(last 20)=804.0 entropy=1.731
+[progress MsPacman-v5] step=921600 SPS=2908 return(last 20)=837.0 entropy=1.531
+[progress MsPacman-v5] step=1024000 SPS=2825 return(last 20)=702.5 entropy=1.560
+[progress MsPacman-v5] step=1126400 SPS=2745 return(last 20)=852.0 entropy=1.582
+[progress MsPacman-v5] step=1228800 SPS=2687 return(last 20)=866.0 entropy=1.507
+[progress MsPacman-v5] step=1331200 SPS=2640 return(last 20)=935.0 entropy=1.464
+[progress MsPacman-v5] step=1433600 SPS=2599 return(last 20)=883.5 entropy=1.353
+[progress MsPacman-v5] step=1536000 SPS=2562 return(last 20)=916.5 entropy=1.398
+[progress MsPacman-v5] step=1638400 SPS=2535 return(last 20)=824.0 entropy=1.247
+[progress MsPacman-v5] step=1740800 SPS=2493 return(last 20)=1021.5 entropy=1.508
+[progress MsPacman-v5] step=1843200 SPS=2501 return(last 20)=1099.5 entropy=1.302
+[progress MsPacman-v5] step=1945600 SPS=2508 return(last 20)=1308.0 entropy=1.411
+[progress MsPacman-v5] step=2048000 SPS=2515 return(last 20)=1253.0 entropy=1.365
+[progress MsPacman-v5] step=2150400 SPS=2522 return(last 20)=1075.5 entropy=1.319
+[progress MsPacman-v5] step=2252800 SPS=2528 return(last 20)=1237.0 entropy=1.348
+[progress MsPacman-v5] step=2355200 SPS=2533 return(last 20)=1167.0 entropy=1.384
+[progress MsPacman-v5] step=2457600 SPS=2540 return(last 20)=971.0 entropy=1.175
+[progress MsPacman-v5] step=2560000 SPS=2545 return(last 20)=1229.5 entropy=1.342
+[progress MsPacman-v5] step=2662400 SPS=2547 return(last 20)=1045.5 entropy=1.432
+[progress MsPacman-v5] step=2764800 SPS=2548 return(last 20)=1191.0 entropy=1.408
+[progress MsPacman-v5] step=2867200 SPS=2550 return(last 20)=1007.0 entropy=1.257
+[progress MsPacman-v5] step=2969600 SPS=2552 return(last 20)=1139.0 entropy=1.349
+[progress MsPacman-v5] step=3072000 SPS=2554 return(last 20)=956.0 entropy=1.246
+[progress MsPacman-v5] step=3174400 SPS=2556 return(last 20)=1126.0 entropy=1.270
+[progress MsPacman-v5] step=3276800 SPS=2559 return(last 20)=1368.5 entropy=1.001
+[progress MsPacman-v5] step=3379200 SPS=2559 return(last 20)=1065.0 entropy=1.337
+[progress MsPacman-v5] step=3481600 SPS=2559 return(last 20)=1267.5 entropy=1.137
+[progress MsPacman-v5] step=3584000 SPS=2559 return(last 20)=1357.5 entropy=1.167
+[progress MsPacman-v5] step=3686400 SPS=2560 return(last 20)=1350.5 entropy=1.075
+[progress MsPacman-v5] step=3788800 SPS=2559 return(last 20)=1321.5 entropy=1.190
+[progress MsPacman-v5] step=3891200 SPS=2558 return(last 20)=1531.5 entropy=0.964
+[progress MsPacman-v5] step=3993600 SPS=2558 return(last 20)=1409.0 entropy=1.166
+[progress MsPacman-v5] step=4096000 SPS=2560 return(last 20)=1567.0 entropy=1.041
+[progress MsPacman-v5] step=4198400 SPS=2560 return(last 20)=1218.5 entropy=0.985
+[progress MsPacman-v5] step=4300800 SPS=2559 return(last 20)=1316.5 entropy=1.024
+[progress MsPacman-v5] step=4403200 SPS=2557 return(last 20)=1265.0 entropy=1.089
+[progress MsPacman-v5] step=4505600 SPS=2555 return(last 20)=1336.5 entropy=1.099
+[progress MsPacman-v5] step=4608000 SPS=2555 return(last 20)=1303.0 entropy=1.255
+[progress MsPacman-v5] step=4710400 SPS=2556 return(last 20)=1327.0 entropy=0.977
+[progress MsPacman-v5] step=4812800 SPS=2558 return(last 20)=1423.0 entropy=1.100
+[progress MsPacman-v5] step=4915200 SPS=2554 return(last 20)=1335.0 entropy=1.241
+[progress MsPacman-v5] step=5017600 SPS=2552 return(last 20)=1573.0 entropy=1.175
+[progress MsPacman-v5] step=5120000 SPS=2551 return(last 20)=1539.0 entropy=1.062
+[progress MsPacman-v5] step=5222400 SPS=2550 return(last 20)=1410.5 entropy=1.241
+[progress MsPacman-v5] step=5324800 SPS=2548 return(last 20)=1675.5 entropy=1.066
+[progress MsPacman-v5] step=5427200 SPS=2547 return(last 20)=1626.0 entropy=1.146
+[progress MsPacman-v5] step=5529600 SPS=2546 return(last 20)=1713.5 entropy=1.112
+[progress MsPacman-v5] step=5632000 SPS=2545 return(last 20)=1569.0 entropy=1.037
+[progress MsPacman-v5] step=5734400 SPS=2545 return(last 20)=1563.0 entropy=1.103
+[progress MsPacman-v5] step=5836800 SPS=2544 return(last 20)=1729.5 entropy=1.105
+[progress MsPacman-v5] step=5939200 SPS=2539 return(last 20)=1573.5 entropy=1.244
+[progress MsPacman-v5] step=6041600 SPS=2541 return(last 20)=1643.0 entropy=0.999
+[progress MsPacman-v5] step=6144000 SPS=2543 return(last 20)=1777.0 entropy=1.132
+[progress MsPacman-v5] step=6246400 SPS=2543 return(last 20)=1748.0 entropy=1.047
+[progress MsPacman-v5] step=6348800 SPS=2542 return(last 20)=2050.0 entropy=0.884
+[progress MsPacman-v5] step=6451200 SPS=2538 return(last 20)=1764.0 entropy=0.926
+[progress MsPacman-v5] step=6553600 SPS=2545 return(last 20)=1819.0 entropy=1.002
+[progress MsPacman-v5] step=6656000 SPS=2552 return(last 20)=1876.0 entropy=1.108
+[progress MsPacman-v5] step=6758400 SPS=2559 return(last 20)=1795.0 entropy=1.050
+[progress MsPacman-v5] step=6860800 SPS=2566 return(last 20)=1748.5 entropy=1.103
+[progress MsPacman-v5] step=6963200 SPS=2573 return(last 20)=1632.5 entropy=0.893
+[progress MsPacman-v5] step=7065600 SPS=2580 return(last 20)=1552.0 entropy=1.044
+[progress MsPacman-v5] step=7168000 SPS=2586 return(last 20)=1751.5 entropy=0.987
+[progress MsPacman-v5] step=7270400 SPS=2593 return(last 20)=1680.0 entropy=0.938
+[progress MsPacman-v5] step=7372800 SPS=2600 return(last 20)=1806.5 entropy=1.030
+[progress MsPacman-v5] step=7475200 SPS=2606 return(last 20)=1880.5 entropy=0.914
+[progress MsPacman-v5] step=7577600 SPS=2611 return(last 20)=1740.0 entropy=0.848
+[progress MsPacman-v5] step=7680000 SPS=2617 return(last 20)=1710.5 entropy=0.820
+[progress MsPacman-v5] step=7782400 SPS=2623 return(last 20)=1714.5 entropy=0.846
+[progress MsPacman-v5] step=7884800 SPS=2629 return(last 20)=1739.0 entropy=1.030
+[progress MsPacman-v5] step=7987200 SPS=2635 return(last 20)=1720.0 entropy=0.919
+[progress MsPacman-v5] step=8089600 SPS=2641 return(last 20)=1809.5 entropy=1.039
+[progress MsPacman-v5] step=8192000 SPS=2648 return(last 20)=1900.5 entropy=1.046
+[progress MsPacman-v5] step=8294400 SPS=2654 return(last 20)=1806.5 entropy=1.032
+[progress MsPacman-v5] step=8396800 SPS=2661 return(last 20)=1658.0 entropy=0.896
+[progress MsPacman-v5] step=8499200 SPS=2667 return(last 20)=1734.0 entropy=1.059
+[progress MsPacman-v5] step=8601600 SPS=2673 return(last 20)=1846.0 entropy=0.909
+[progress MsPacman-v5] step=8704000 SPS=2680 return(last 20)=1705.5 entropy=0.883
+[progress MsPacman-v5] step=8806400 SPS=2687 return(last 20)=1837.5 entropy=0.958
+[progress MsPacman-v5] step=8908800 SPS=2695 return(last 20)=1722.0 entropy=0.959
+[progress MsPacman-v5] step=9011200 SPS=2703 return(last 20)=1766.0 entropy=0.998
+[progress MsPacman-v5] step=9113600 SPS=2711 return(last 20)=1817.5 entropy=1.024
+[progress MsPacman-v5] step=9216000 SPS=2718 return(last 20)=1774.5 entropy=1.021
+[progress MsPacman-v5] step=9318400 SPS=2727 return(last 20)=1834.5 entropy=1.163
+[progress MsPacman-v5] step=9420800 SPS=2736 return(last 20)=1789.5 entropy=1.056
+[progress MsPacman-v5] step=9523200 SPS=2744 return(last 20)=1864.5 entropy=1.081
+[progress MsPacman-v5] step=9625600 SPS=2754 return(last 20)=1825.0 entropy=1.130
+[progress MsPacman-v5] step=9728000 SPS=2764 return(last 20)=1679.5 entropy=0.980
+[progress MsPacman-v5] step=9830400 SPS=2773 return(last 20)=1833.0 entropy=0.887
+[progress MsPacman-v5] step=9932800 SPS=2784 return(last 20)=1854.5 entropy=1.272
+[progress MsPacman-v5] step=9998336 SPS=2791 return(last 20)=1699.5 entropy=1.134
+[T0] active policy return=1648.0 ± 70.8 (3585 s)
+[compress] epoch 0 kl=0.9401 ewc=0.0000
+[compress] epoch 1 kl=0.7628 ewc=0.0000
+[compress] epoch 2 kl=0.5556 ewc=0.0000
+[compress] epoch 3 kl=0.3855 ewc=0.0000
+[compress] epoch 4 kl=0.2607 ewc=0.0000
+[compress] epoch 5 kl=0.1854 ewc=0.0000
+[compress] epoch 6 kl=0.1408 ewc=0.0000
+[compress] epoch 7 kl=0.1316 ewc=0.0000
+[compress] epoch 8 kl=0.1030 ewc=0.0000
+[compress] epoch 9 kl=0.0943 ewc=0.0000
+[compress] epoch 0 kl=0.1156 ewc=0.0000
+[compress] epoch 1 kl=0.0777 ewc=0.0000
+[compress] epoch 2 kl=0.0677 ewc=0.0000
+[compress] epoch 3 kl=0.0589 ewc=0.0000
+[compress] epoch 4 kl=0.0509 ewc=0.0000
+[compress] epoch 5 kl=0.0459 ewc=0.0000
+[compress] epoch 6 kl=0.0440 ewc=0.0000
+[compress] epoch 7 kl=0.0394 ewc=0.0000
+[compress] epoch 8 kl=0.0358 ewc=0.0000
+[compress] epoch 9 kl=0.0367 ewc=0.0000
+[compress] epoch 0 kl=0.0459 ewc=0.0000
+[compress] epoch 1 kl=0.0372 ewc=0.0000
+[compress] epoch 2 kl=0.0342 ewc=0.0000
+[compress] epoch 3 kl=0.0309 ewc=0.0000
+[compress] epoch 4 kl=0.0294 ewc=0.0000
+[compress] epoch 5 kl=0.0273 ewc=0.0000
+[compress] epoch 6 kl=0.0258 ewc=0.0000
+[compress] epoch 7 kl=0.0241 ewc=0.0000
+[compress] epoch 8 kl=0.0232 ewc=0.0000
+[compress] epoch 9 kl=0.0223 ewc=0.0000
+[compress] epoch 0 kl=0.0253 ewc=0.0000
+[compress] epoch 1 kl=0.0231 ewc=0.0000
+[compress] epoch 2 kl=0.0212 ewc=0.0000
+[compress] epoch 3 kl=0.0203 ewc=0.0000
+[compress] epoch 4 kl=0.0191 ewc=0.0000
+[compress] epoch 5 kl=0.0200 ewc=0.0000
+[compress] epoch 6 kl=0.0180 ewc=0.0000
+[compress] epoch 7 kl=0.0172 ewc=0.0000
+[compress] epoch 8 kl=0.0161 ewc=0.0000
+[compress] epoch 9 kl=0.0155 ewc=0.0000
+Computing Fisher matrix for task 0
+[Fisher T0] total_mass=2.635383e+01  per-param mean=1.564835e-05  max=1.000000e-02
+After T0: MsPacman-v5: 1643.0 (kl 0.003)
+Results saved to /root/pc-cleanup/outputs/atari/pc_single/pcsingle_MsPacman_s2/results.json
+wandb: WARNING Symlinked 1 file into the W&B run directory; call wandb.save again to sync new files.
+wandb: updating run metadata
+wandb: uploading results.json
+wandb: 
+wandb: Run history:
+wandb:          compress/epoch ▁▁▁▂▂▂▂▂▂▃▃▃▃▃▄▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇███
+wandb:            compress/ewc ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             compress/kl █▇▅▄▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:           compress/loss █▇▅▄▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     eval/MsPacman-v5/kl ▁
+wandb:   eval/MsPacman-v5/norm ▁
+wandb: eval/MsPacman-v5/return ▁
+wandb:       eval/all_avg_norm ▁
+wandb:             global_step ▁▁▁▁▁▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▄▄▄▅▅▆▆▆▆▆▆▆▇▇▇▇▇██
+wandb:        progress/entropy ▇▇▆▅█▆▆▆▆▄▅▅▅▅▄▅▅▄▃▂▂▂▄▃▃▄▄▃▃▃▂▂▁▁▂▂▂▃▄▃
+wandb:                     +11 ...
+wandb: 
+wandb: Run summary:
+wandb:          compress/epoch 39
+wandb:            compress/ewc 0
+wandb:             compress/kl 0.01547
+wandb:           compress/loss 0.01547
+wandb:     eval/MsPacman-v5/kl 0.00282
+wandb:   eval/MsPacman-v5/norm 0.99639
+wandb: eval/MsPacman-v5/return 1643
+wandb:       eval/all_avg_norm 0.99639
+wandb:      eval/prev_avg_norm nan
+wandb:             global_step 10000000
+wandb:                     +11 ...
+wandb: 
+wandb: 🚀 View run pcsingle_MsPacman_s2 at: https://forge.coreweave.com/wandb/tg-2746-n-a/progress-compress/runs/xdov2zal
+wandb: ⭐️ View project at: https://forge.coreweave.com/wandb/tg-2746-n-a/progress-compress
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 1 other file(s)
+wandb: Find logs at: ./outputs/atari/pc_single/pcsingle_MsPacman_s2/wandb/run-20261022_161557-xdov2zal/logs
+[W1022 17:16:07.227202788 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())

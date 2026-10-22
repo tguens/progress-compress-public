@@ -1,0 +1,1 @@
+[2026-10-21 16:47:22,484][opentelemetry.exporter.otlp.proto.http.metric_exporter][WARNING] - Transient error Service Unavailable encountered while exporting metrics batch, retrying in 0.95s.

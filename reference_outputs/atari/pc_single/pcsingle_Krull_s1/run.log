@@ -1,0 +1,189 @@
+Using device: cuda
+wandb: [wandb.login()] Loaded credentials for https://api.forge.coreweave.com from /root/.netrc.
+wandb: Currently logged in as: tg-2746 (tg-2746-n-a) to https://api.forge.coreweave.com. Use `wandb login --relogin` to force relogin
+wandb: setting up run s8ry82lj
+wandb: Tracking run with wandb version 0.31.0
+wandb: Run data is saved locally in /root/pc-cleanup/outputs/atari/pc_single/pcsingle_Krull_s1/wandb/run-20261022_115418-s8ry82lj
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run pcsingle_Krull_s1
+wandb: ⭐️ View project at https://forge.coreweave.com/wandb/tg-2746-n-a/progress-compress
+wandb: 🚀 View run at https://forge.coreweave.com/wandb/tg-2746-n-a/progress-compress/runs/s8ry82lj
+[T0 Krull-v5] actions=18 random return=1794.0
+[progress Krull-v5] step=102400 SPS=1712 return(last 20)=3158.0 entropy=2.667
+[progress Krull-v5] step=204800 SPS=1719 return(last 20)=3024.5 entropy=2.544
+[progress Krull-v5] step=307200 SPS=1686 return(last 20)=2965.5 entropy=2.198
+[progress Krull-v5] step=409600 SPS=1668 return(last 20)=3370.5 entropy=2.215
+[progress Krull-v5] step=512000 SPS=1654 return(last 20)=3439.5 entropy=2.298
+[progress Krull-v5] step=614400 SPS=1645 return(last 20)=3795.5 entropy=2.100
+[progress Krull-v5] step=716800 SPS=1638 return(last 20)=3418.5 entropy=2.263
+[progress Krull-v5] step=819200 SPS=1632 return(last 20)=3539.5 entropy=1.862
+[progress Krull-v5] step=921600 SPS=1627 return(last 20)=3905.0 entropy=1.871
+[progress Krull-v5] step=1024000 SPS=1624 return(last 20)=4313.5 entropy=2.167
+[progress Krull-v5] step=1126400 SPS=1621 return(last 20)=4377.0 entropy=1.936
+[progress Krull-v5] step=1228800 SPS=1619 return(last 20)=3792.0 entropy=2.017
+[progress Krull-v5] step=1331200 SPS=1616 return(last 20)=4852.5 entropy=2.062
+[progress Krull-v5] step=1433600 SPS=1615 return(last 20)=5152.0 entropy=1.842
+[progress Krull-v5] step=1536000 SPS=1613 return(last 20)=5475.5 entropy=1.793
+[progress Krull-v5] step=1638400 SPS=1611 return(last 20)=6077.5 entropy=1.851
+[progress Krull-v5] step=1740800 SPS=1610 return(last 20)=6447.5 entropy=1.530
+[progress Krull-v5] step=1843200 SPS=1610 return(last 20)=6710.0 entropy=1.288
+[progress Krull-v5] step=1945600 SPS=1608 return(last 20)=6827.0 entropy=1.396
+[progress Krull-v5] step=2048000 SPS=1607 return(last 20)=6756.5 entropy=1.502
+[progress Krull-v5] step=2150400 SPS=1606 return(last 20)=6439.5 entropy=1.346
+[progress Krull-v5] step=2252800 SPS=1606 return(last 20)=7018.0 entropy=1.320
+[progress Krull-v5] step=2355200 SPS=1607 return(last 20)=6677.0 entropy=1.615
+[progress Krull-v5] step=2457600 SPS=1610 return(last 20)=6639.0 entropy=1.803
+[progress Krull-v5] step=2560000 SPS=1611 return(last 20)=7141.5 entropy=1.691
+[progress Krull-v5] step=2662400 SPS=1612 return(last 20)=6583.5 entropy=1.701
+[progress Krull-v5] step=2764800 SPS=1614 return(last 20)=6617.5 entropy=1.453
+[progress Krull-v5] step=2867200 SPS=1615 return(last 20)=6951.5 entropy=1.317
+[progress Krull-v5] step=2969600 SPS=1616 return(last 20)=7705.5 entropy=1.508
+[progress Krull-v5] step=3072000 SPS=1616 return(last 20)=6420.0 entropy=1.417
+[progress Krull-v5] step=3174400 SPS=1618 return(last 20)=7411.0 entropy=1.399
+[progress Krull-v5] step=3276800 SPS=1618 return(last 20)=7236.0 entropy=1.277
+[progress Krull-v5] step=3379200 SPS=1619 return(last 20)=6836.5 entropy=1.523
+[progress Krull-v5] step=3481600 SPS=1621 return(last 20)=7572.5 entropy=1.367
+[progress Krull-v5] step=3584000 SPS=1621 return(last 20)=7354.0 entropy=1.518
+[progress Krull-v5] step=3686400 SPS=1622 return(last 20)=7497.0 entropy=1.553
+[progress Krull-v5] step=3788800 SPS=1623 return(last 20)=7989.0 entropy=1.397
+[progress Krull-v5] step=3891200 SPS=1624 return(last 20)=8054.0 entropy=1.326
+[progress Krull-v5] step=3993600 SPS=1625 return(last 20)=7939.5 entropy=1.372
+[progress Krull-v5] step=4096000 SPS=1626 return(last 20)=8343.5 entropy=1.286
+[progress Krull-v5] step=4198400 SPS=1627 return(last 20)=8760.5 entropy=1.434
+[progress Krull-v5] step=4300800 SPS=1627 return(last 20)=8619.5 entropy=1.153
+[progress Krull-v5] step=4403200 SPS=1628 return(last 20)=8885.5 entropy=1.444
+[progress Krull-v5] step=4505600 SPS=1629 return(last 20)=8522.0 entropy=1.494
+[progress Krull-v5] step=4608000 SPS=1630 return(last 20)=8331.0 entropy=1.585
+[progress Krull-v5] step=4710400 SPS=1630 return(last 20)=8991.0 entropy=1.742
+[progress Krull-v5] step=4812800 SPS=1632 return(last 20)=8792.0 entropy=1.207
+[progress Krull-v5] step=4915200 SPS=1634 return(last 20)=8997.0 entropy=1.328
+[progress Krull-v5] step=5017600 SPS=1633 return(last 20)=8515.5 entropy=1.447
+[progress Krull-v5] step=5120000 SPS=1633 return(last 20)=8197.5 entropy=1.287
+[progress Krull-v5] step=5222400 SPS=1633 return(last 20)=8517.0 entropy=1.481
+[progress Krull-v5] step=5324800 SPS=1633 return(last 20)=8064.0 entropy=1.259
+[progress Krull-v5] step=5427200 SPS=1633 return(last 20)=8898.0 entropy=1.472
+[progress Krull-v5] step=5529600 SPS=1633 return(last 20)=8185.0 entropy=1.761
+[progress Krull-v5] step=5632000 SPS=1632 return(last 20)=8654.5 entropy=1.339
+[progress Krull-v5] step=5734400 SPS=1632 return(last 20)=9794.0 entropy=1.552
+[progress Krull-v5] step=5836800 SPS=1632 return(last 20)=9070.5 entropy=1.760
+[progress Krull-v5] step=5939200 SPS=1631 return(last 20)=8956.5 entropy=1.557
+[progress Krull-v5] step=6041600 SPS=1631 return(last 20)=9559.0 entropy=1.223
+[progress Krull-v5] step=6144000 SPS=1631 return(last 20)=9735.5 entropy=1.377
+[progress Krull-v5] step=6246400 SPS=1630 return(last 20)=9969.0 entropy=1.572
+[progress Krull-v5] step=6348800 SPS=1630 return(last 20)=9281.5 entropy=1.370
+[progress Krull-v5] step=6451200 SPS=1630 return(last 20)=9264.0 entropy=1.214
+[progress Krull-v5] step=6553600 SPS=1629 return(last 20)=9198.5 entropy=1.219
+[progress Krull-v5] step=6656000 SPS=1629 return(last 20)=8997.0 entropy=1.246
+[progress Krull-v5] step=6758400 SPS=1629 return(last 20)=10161.0 entropy=1.162
+[progress Krull-v5] step=6860800 SPS=1628 return(last 20)=8478.5 entropy=1.286
+[progress Krull-v5] step=6963200 SPS=1628 return(last 20)=9321.0 entropy=1.406
+[progress Krull-v5] step=7065600 SPS=1627 return(last 20)=9647.5 entropy=1.299
+[progress Krull-v5] step=7168000 SPS=1628 return(last 20)=10346.5 entropy=1.557
+[progress Krull-v5] step=7270400 SPS=1629 return(last 20)=9497.0 entropy=1.530
+[progress Krull-v5] step=7372800 SPS=1630 return(last 20)=9563.0 entropy=1.521
+[progress Krull-v5] step=7475200 SPS=1630 return(last 20)=9643.5 entropy=1.527
+[progress Krull-v5] step=7577600 SPS=1631 return(last 20)=9073.0 entropy=1.469
+[progress Krull-v5] step=7680000 SPS=1632 return(last 20)=9984.0 entropy=1.597
+[progress Krull-v5] step=7782400 SPS=1633 return(last 20)=8830.5 entropy=1.638
+[progress Krull-v5] step=7884800 SPS=1634 return(last 20)=9158.0 entropy=1.584
+[progress Krull-v5] step=7987200 SPS=1634 return(last 20)=9303.5 entropy=1.490
+[progress Krull-v5] step=8089600 SPS=1635 return(last 20)=9164.0 entropy=1.550
+[progress Krull-v5] step=8192000 SPS=1636 return(last 20)=9075.0 entropy=1.670
+[progress Krull-v5] step=8294400 SPS=1636 return(last 20)=9547.0 entropy=1.409
+[progress Krull-v5] step=8396800 SPS=1636 return(last 20)=9357.0 entropy=1.598
+[progress Krull-v5] step=8499200 SPS=1637 return(last 20)=9792.5 entropy=1.285
+[progress Krull-v5] step=8601600 SPS=1637 return(last 20)=9927.0 entropy=1.210
+[progress Krull-v5] step=8704000 SPS=1638 return(last 20)=9487.5 entropy=1.332
+[progress Krull-v5] step=8806400 SPS=1638 return(last 20)=9609.0 entropy=1.491
+[progress Krull-v5] step=8908800 SPS=1638 return(last 20)=9851.0 entropy=1.187
+[progress Krull-v5] step=9011200 SPS=1639 return(last 20)=9426.5 entropy=1.532
+[progress Krull-v5] step=9113600 SPS=1640 return(last 20)=9005.0 entropy=1.649
+[progress Krull-v5] step=9216000 SPS=1641 return(last 20)=9951.5 entropy=1.555
+[progress Krull-v5] step=9318400 SPS=1643 return(last 20)=9748.5 entropy=1.406
+[progress Krull-v5] step=9420800 SPS=1644 return(last 20)=9396.0 entropy=1.295
+[progress Krull-v5] step=9523200 SPS=1644 return(last 20)=9418.0 entropy=1.858
+[progress Krull-v5] step=9625600 SPS=1645 return(last 20)=10101.0 entropy=1.504
+[progress Krull-v5] step=9728000 SPS=1645 return(last 20)=9790.5 entropy=1.527
+[progress Krull-v5] step=9830400 SPS=1646 return(last 20)=9786.5 entropy=1.614
+[progress Krull-v5] step=9932800 SPS=1647 return(last 20)=9245.5 entropy=1.383
+[progress Krull-v5] step=9998336 SPS=1648 return(last 20)=9882.0 entropy=1.486
+[T0] active policy return=11111.0 ± 674.5 (6074 s)
+[compress] epoch 0 kl=0.8411 ewc=0.0000
+[compress] epoch 1 kl=0.5087 ewc=0.0000
+[compress] epoch 2 kl=0.3169 ewc=0.0000
+[compress] epoch 3 kl=0.2221 ewc=0.0000
+[compress] epoch 4 kl=0.1741 ewc=0.0000
+[compress] epoch 5 kl=0.1456 ewc=0.0000
+[compress] epoch 6 kl=0.1261 ewc=0.0000
+[compress] epoch 7 kl=0.1129 ewc=0.0000
+[compress] epoch 8 kl=0.1011 ewc=0.0000
+[compress] epoch 9 kl=0.0936 ewc=0.0000
+[compress] epoch 0 kl=0.0991 ewc=0.0000
+[compress] epoch 1 kl=0.0883 ewc=0.0000
+[compress] epoch 2 kl=0.0770 ewc=0.0000
+[compress] epoch 3 kl=0.0681 ewc=0.0000
+[compress] epoch 4 kl=0.0616 ewc=0.0000
+[compress] epoch 5 kl=0.0569 ewc=0.0000
+[compress] epoch 6 kl=0.0533 ewc=0.0000
+[compress] epoch 7 kl=0.0492 ewc=0.0000
+[compress] epoch 8 kl=0.0470 ewc=0.0000
+[compress] epoch 9 kl=0.0436 ewc=0.0000
+[compress] epoch 0 kl=0.0434 ewc=0.0000
+[compress] epoch 1 kl=0.0396 ewc=0.0000
+[compress] epoch 2 kl=0.0375 ewc=0.0000
+[compress] epoch 3 kl=0.0350 ewc=0.0000
+[compress] epoch 4 kl=0.0333 ewc=0.0000
+[compress] epoch 5 kl=0.0307 ewc=0.0000
+[compress] epoch 6 kl=0.0293 ewc=0.0000
+[compress] epoch 7 kl=0.0278 ewc=0.0000
+[compress] epoch 8 kl=0.0274 ewc=0.0000
+[compress] epoch 9 kl=0.0262 ewc=0.0000
+[compress] epoch 0 kl=0.0254 ewc=0.0000
+[compress] epoch 1 kl=0.0243 ewc=0.0000
+[compress] epoch 2 kl=0.0235 ewc=0.0000
+[compress] epoch 3 kl=0.0229 ewc=0.0000
+[compress] epoch 4 kl=0.0222 ewc=0.0000
+[compress] epoch 5 kl=0.0215 ewc=0.0000
+[compress] epoch 6 kl=0.0204 ewc=0.0000
+[compress] epoch 7 kl=0.0199 ewc=0.0000
+[compress] epoch 8 kl=0.0196 ewc=0.0000
+[compress] epoch 9 kl=0.0193 ewc=0.0000
+Computing Fisher matrix for task 0
+[Fisher T0] total_mass=4.239652e+02  per-param mean=2.517417e-04  max=1.000000e-02
+After T0: Krull-v5: 10502.0 (kl 0.002)
+Results saved to /root/pc-cleanup/outputs/atari/pc_single/pcsingle_Krull_s1/results.json
+wandb: WARNING Symlinked 1 file into the W&B run directory; call wandb.save again to sync new files.
+wandb: updating run metadata
+wandb: uploading history steps 4914-4922, summary, console lines 132-144
+wandb: 
+wandb: Run history:
+wandb:       compress/epoch ▁▁▁▂▂▂▂▂▂▃▃▃▃▃▄▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇███
+wandb:         compress/ewc ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:          compress/kl █▅▄▃▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:        compress/loss █▅▄▃▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     eval/Krull-v5/kl ▁
+wandb:   eval/Krull-v5/norm ▁
+wandb: eval/Krull-v5/return ▁
+wandb:    eval/all_avg_norm ▁
+wandb:          global_step ▁▁▁▁▁▂▂▂▂▂▃▃▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▆▆▆▆▇▇▇▇▇▇██
+wandb:     progress/entropy █▆▅▅▅▄▅▄▄▂▂▂▃▁▃▂▂▃▁▂▃▄▄▂▄▃▃▃▃▂▄▁▁▂▄▃▃▃▃▃
+wandb:                  +11 ...
+wandb: 
+wandb: Run summary:
+wandb:       compress/epoch 39
+wandb:         compress/ewc 0
+wandb:          compress/kl 0.01934
+wandb:        compress/loss 0.01934
+wandb:     eval/Krull-v5/kl 0.00204
+wandb:   eval/Krull-v5/norm 0.93464
+wandb: eval/Krull-v5/return 10502
+wandb:    eval/all_avg_norm 0.93464
+wandb:   eval/prev_avg_norm nan
+wandb:          global_step 10000000
+wandb:                  +11 ...
+wandb: 
+wandb: 🚀 View run pcsingle_Krull_s1 at: https://forge.coreweave.com/wandb/tg-2746-n-a/progress-compress/runs/s8ry82lj
+wandb: ⭐️ View project at: https://forge.coreweave.com/wandb/tg-2746-n-a/progress-compress
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 1 other file(s)
+wandb: Find logs at: ./outputs/atari/pc_single/pcsingle_Krull_s1/wandb/run-20261022_115418-s8ry82lj/logs
+[W1022 13:36:14.725223961 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())
